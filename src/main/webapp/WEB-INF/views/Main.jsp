@@ -178,7 +178,7 @@ setInterval(function() {
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="navbar-menu">
+              <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item"><a class="nav-link" href="loginForm">Login</a></li>
                         <li class="dropdown">
@@ -203,13 +203,13 @@ setInterval(function() {
                                 <li><a href="my-account.html">자유 게시판</a></li>
                             </ul>
                         </li>
-                       <!-- <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>-->
+                       <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
                     </ul>
-                </div>
+                </div> -->
                 <!-- /.navbar-collapse -->
 
                 <!-- Start Atribute Navigation -->
-                <div class="attr-nav">
+               <div class="attr-nav">
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu"><a href="#">
@@ -218,7 +218,7 @@ setInterval(function() {
 					</a></li>
                     </ul>
                 </div>
-                <!-- End Atribute Navigation -->
+               <!--  End Atribute Navigation -->
             </div>
             <!-- Start Side Menu -->
             <div class="side">
@@ -536,8 +536,8 @@ setInterval(function() {
     </div>
     <!-- End copyright  -->
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-
+   <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+	<jsp:include page="common/bottom.jsp"></jsp:include>
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

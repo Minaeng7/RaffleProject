@@ -27,11 +27,11 @@ public class RaffleController {
 	public String AddProduct() {//화면전환
 		return "Product/AddSell";
 	}
-	
-	@RequestMapping(value="/loginCheck/AddReSell")
-	public String AddResellProduct() {
-		return "Product/AddResell";
-	}	
+//	
+//	@RequestMapping(value="/AddResell")
+//	public String AddResellProduct() {
+//		return "redirect:../Product/AddResell";
+//	}	
 	
 	@RequestMapping(value="/loginCheck/SellRetrieve")
 	public ModelAndView AddSell(SellRDTO sdto, HttpSession session) {//sell 상품등록
@@ -43,7 +43,7 @@ public class RaffleController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/loginCheck/ResellRetrieve")
+	@RequestMapping(value="/loginCheck/AddResell")
 	public ModelAndView AddResell(ResellRDTO rdto, HttpSession session) {
 		service.addResell_r(rdto);
 		System.out.println(rdto);
