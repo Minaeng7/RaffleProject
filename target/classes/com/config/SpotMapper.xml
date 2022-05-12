@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SpotMapper">
 
-	<insert id="Rregistringlist" parameterType="RListDTO">
+	<insert id="Rregistringlist" parameterType="RSpotDTO">
 		insert into
 		RList(resell_rno, memberno, rafflename, nickname, username, post,
 		addr1, addr2, phone, spot)
@@ -14,7 +14,7 @@
 		#{addr1},#{addr2},
 		#{phone}, #{spot})
 	</insert>
-	<insert id="Sregistringlist" parameterType="SListDTO">
+	<insert id="Sregistringlist" parameterType="SSpotDTO">
 		insert into
 		RList(sell_rno, memberno, rafflename, nickname, username, post, addr1,
 		addr2, phone)
@@ -24,25 +24,25 @@
 	</insert>
 
 	<select id="RShuffle" parameterType="int"
-		resultType="RListDTO">
+		resultType="RSpotDTO">
 		select *
 		from rlist
 		where resell_rno = #{resell_rno}
 	</select>
 	<select id="SShuffle" parameterType="int"
-		resultType="SListDTO">
+		resultType="SSpotDTO">
 		select *
 		from slist
 		where sell_rno = #{sell_rno}
 	</select>
-	<update id = "UpdateMyAttendingR" parameterType = "RListDTO">
+	<update id = "UpdateMyAttendingR" parameterType = "RSpotDTO">
 	update rlist
 	set username = #{username}, post = #{post}, addr1 = #{addr1},
 	addr2 = #{addr2}, phone = #{phone}, spot = #{spot}
 	where memberno = #{memberno}
 	and resell_rno = #{resell_rno}
 	</update>
-	<update id = "UpdateMyAttendingS" parameterType = "SListDTO">
+	<update id = "UpdateMyAttendingS" parameterType = "SSpotDTO">
 	update slist
 	set username = #{username}, post = #{post}, addr1 = #{addr1},
 	addr2 = #{addr2}, phone = #{phone}

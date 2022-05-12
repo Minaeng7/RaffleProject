@@ -14,14 +14,13 @@ public class MemberDTO {
 	String addr2;
 	String phone;
 	String birth;
-	String email1;
-	String email2;
+	String email;
 	public MemberDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public MemberDTO(int memberno, String userid, String passwd, String username, String nickname, String post,
-			String addr1, String addr2, String phone, String birth, String email1, String email2) {
+			String addr1, String addr2, String phone, String birth, String email) {
 		super();
 		this.memberno = memberno;
 		this.userid = userid;
@@ -33,14 +32,7 @@ public class MemberDTO {
 		this.addr2 = addr2;
 		this.phone = phone;
 		this.birth = birth;
-		this.email1 = email1;
-		this.email2 = email2;
-	}
-	@Override
-	public String toString() {
-		return "MemberDTO [memberno=" + memberno + ", userid=" + userid + ", passwd=" + passwd + ", username="
-				+ username + ", nickname=" + nickname + ", post=" + post + ", addr1=" + addr1 + ", addr2=" + addr2
-				+ ", phone=" + phone + ", birth=" + birth + ", email1=" + email1 + ", email2=" + email2 + "]";
+		this.email = email;
 	}
 	public int getMemberno() {
 		return memberno;
@@ -102,17 +94,18 @@ public class MemberDTO {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public String getEmail1() {
-		return email1;
+	public String getEmail() {
+		return email;
 	}
-	public void setEmail1(String email1) {
-		this.email1 = email1;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getEmail2() {
-		return email2;
+	@Override
+	public String toString() {
+		return "MemberDTO [memberno=" + memberno + ", userid=" + userid + ", passwd=" + passwd + ", username="
+				+ username + ", nickname=" + nickname + ", post=" + post + ", addr1=" + addr1 + ", addr2=" + addr2
+				+ ", phone=" + phone + ", birth=" + birth + ", email=" + email + "]";
 	}
-	public void setEmail2(String email2) {
-		this.email2 = email2;
-	}
+	
 	
 }
