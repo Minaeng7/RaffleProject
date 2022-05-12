@@ -9,9 +9,9 @@ public class ResellRDTO {
 	int memberno;
 	String nickname;
 	String rafflename;
-	String totalprice;
-	String attendamount;
-	String perprice;
+	String total_price;
+	String attend_amount;
+	String per_price;
 	String deadline;
 	String text;
 	String img;
@@ -19,25 +19,19 @@ public class ResellRDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public ResellRDTO(int resell_rno, int memberno, String nickname, String rafflename, String totalprice,
-			String attendamount, String perprice, String deadline, String text, String img) {
+	public ResellRDTO(int resell_rno, int memberno, String nickname, String rafflename, String total_price,
+			String attend_amount, String per_price, String deadline, String text, String img) {
 		super();
 		this.resell_rno = resell_rno;
 		this.memberno = memberno;
 		this.nickname = nickname;
 		this.rafflename = rafflename;
-		this.totalprice = totalprice;
-		this.attendamount = attendamount;
-		this.perprice = perprice;
+		this.total_price = total_price;
+		this.attend_amount = attend_amount;
+		this.per_price = per_price;
 		this.deadline = deadline;
 		this.text = text;
 		this.img = img;
-	}
-	@Override
-	public String toString() {
-		return "ResellRDTO [resell_rno=" + resell_rno + ", memberno=" + memberno + ", nickname=" + nickname
-				+ ", rafflename=" + rafflename + ", totalprice=" + totalprice + ", attendamount=" + attendamount
-				+ ", perprice=" + perprice + ", deadline=" + deadline + ", text=" + text + ", img=" + img + "]";
 	}
 	public int getResell_rno() {
 		return resell_rno;
@@ -63,23 +57,23 @@ public class ResellRDTO {
 	public void setRafflename(String rafflename) {
 		this.rafflename = rafflename;
 	}
-	public String getTotalprice() {
-		return totalprice;
+	public String getTotal_price() {
+		return total_price;
 	}
-	public void setTotalprice(String totalprice) {
-		this.totalprice = totalprice;
+	public void setTotal_price(String total_price) {
+		this.total_price = total_price;
 	}
-	public String getAttendamount() {
-		return attendamount;
+	public String getAttend_amount() {
+		return attend_amount;
 	}
-	public void setAttendamount(String attendamount) {
-		this.attendamount = attendamount;
+	public void setAttend_amount(String attend_amount) {
+		this.attend_amount = attend_amount;
 	}
-	public String getPerprice() {
-		return perprice;
+	public String getPer_price() {
+		return per_price;
 	}
-	public void setPerprice(String perprice) {
-		this.perprice = perprice;
+	public void setPer_price(String per_price) {
+		this.per_price = per_price;
 	}
 	public String getDeadline() {
 		return deadline;
@@ -99,6 +93,13 @@ public class ResellRDTO {
 	public void setImg(String img) {
 		this.img = img;
 	}
+	@Override
+	public String toString() {
+		return "ResellRDTO [resell_rno=" + resell_rno + ", memberno=" + memberno + ", nickname=" + nickname
+				+ ", rafflename=" + rafflename + ", total_price=" + total_price + ", attend_amount=" + attend_amount
+				+ ", per_price=" + per_price + ", deadline=" + deadline + ", text=" + text + ", img=" + img + "]";
+	}
+	
 	
 	
 }

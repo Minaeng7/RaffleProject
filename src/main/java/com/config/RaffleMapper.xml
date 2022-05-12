@@ -26,11 +26,11 @@
 		#{deadline})
 	</insert>
 	
-	<select id="SellList" parameterType="arraylist" resultType="SellRDTO">
+	<select id="SellList" resultType="SellRDTO">
 		select * from sell_r
 	</select>
 	
-	<select id="ResellList" parameterType="arraylist" resultType="ResellRDTO">
+	<select id="ResellList" resultType="ResellRDTO">
 		select * from resell_r
 	</select>	
 

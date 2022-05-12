@@ -10,10 +10,9 @@
 </head>
 <body>
 <h1>MyPage</h1>
-<jsp:include page="common/top.jsp" flush="true"></jsp:include><BR>
-<jsp:include page="common/menu.jsp" flush="true"></jsp:include><BR>
-<hr>
-<jsp:include page="Mypage/Mypage.jsp" flush="true"></jsp:include><BR>
+<a href = "Myinfo">내 정보 관리</a>
+<a href = "MyAttendedRaffle">응모한 래플 관리</a>
+<a href = "SupervisingRaffle">나의 래플 관리</a>
 
 </body>
 </html>

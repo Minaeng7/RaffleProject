@@ -20,10 +20,6 @@ public class AttendController {
 	SSpotService Sservice;
 	
 	
-	@RequestMapping("/AttendingRaffle")
-	public String AttendingRaffle() {//참가 신청화면전환
-		return "AttendingRaffle";
-	}
 	@RequestMapping("/RAttend")
 	public String RAttend(RSpotDTO dto) {//응모
 		Rservice.registinglist(dto);
@@ -34,15 +30,6 @@ public class AttendController {
 		Sservice.registinglist(dto);
 		return null;
 	}
-	@RequestMapping("/loginCheck/UpdateMyAttendingR")
-	public String UpdateAttendingR() {//수정화면으로 전환
-		return "UpdateAttendingR";
-	}
-	@RequestMapping("/loginCheck/UpdateMyAttendingS")
-	public String UpdateAttendingS() {
-		return "UpdateAttendingS";
-	}
-	
 	@RequestMapping("UpdateMyAttendingRR")
 	public String UpdateMyAttendingRR(RSpotDTO rdto, HttpSession session) {//수정화면에서 update 실행
 		Rservice.UpdateMyAttendingR(rdto);
@@ -52,15 +39,6 @@ public class AttendController {
 	public String UpdateMyAttendingSS(SSpotDTO rdto, HttpSession session) {
 		Sservice.UpdateMyAttendingS(rdto);
 		return "redirect:Mypage";
-	}
-
-	@RequestMapping("/loginCheck/DeleteMyAttendingR")
-	public String DeleteMyAttendingR(HttpSession session) {//delete 화면전환
-		return "MyRaffle/DeleteAttendingR";
-	}
-	@RequestMapping("/loginCheck/DeleteMyAttendingS")
-	public String DeleteMyAttendingS(HttpSession session) {
-		return "MyRaffle/DeleteAttendingS";
 	}
 	@RequestMapping("DeleteMyAttendingRR")// Raffleno도 같이 넘겨주도록 향후 수정
 	public String DeleteMyAttendingRR(HttpSession session) {//delete 실행
@@ -77,9 +55,4 @@ public class AttendController {
 			return "redirect:Mypage";
 	}
 	
-//	@RequestMapping("/loginCheck/RAttendingRaffle")
-//	public String RAttendingRaffle() {//보류
-//		System.out.println("RAttendingRaffle 호출");
-//		return "redirect:../RAttendingRaffle";
-//	}
 }

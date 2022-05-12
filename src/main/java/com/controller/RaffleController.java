@@ -25,12 +25,12 @@ public class RaffleController {
 	
 	@RequestMapping(value="/loginCheck/AddSell")
 	public String AddProduct() {//화면전환
-		return "redirect:../AddSell";
+		return "Product/AddSell";
 	}
 	
 	@RequestMapping(value="/loginCheck/AddReSell")
 	public String AddResellProduct() {
-		return "redirect:../AddResell";
+		return "Product/AddResell";
 	}	
 	
 	@RequestMapping(value="/loginCheck/SellRetrieve")
@@ -84,14 +84,6 @@ public class RaffleController {
 		return mav;
 	}
 
-	@RequestMapping("/loginCheck/UpdateRaffleR")
-	public String UpdateMyRaffleR() {//만든 래플 수정 (등록상품 수정) - 화면전환
-		return "MyRaffle/UpdateMyRaffleR";
-	}
-	@RequestMapping("/loginCheck/UpdateRaffleS")
-	public String UpdateMyRaffleS() {
-		return "MyRaffle/UpdateMyRaffleS";
-	}
 	@RequestMapping("UpdateMyRaffleRR")
 	public String UpdateMyRaffleRR(ResellRDTO rdto, HttpSession session) {//수정
 		service.UpdateResell_r(rdto);
@@ -101,14 +93,6 @@ public class RaffleController {
 	public String UpdateMyRaffleSS(SellRDTO rdto, HttpSession session) {
 		service.UpdateSell_r(rdto);
 		return "redirect:Mypage";
-	}
-	@RequestMapping("/loginCheck/DeleteMyRaffleR")
-	public String DeleteMyRaffleR() {//화면전환
-		return "MyRaffle/DeleteMyRaffleR";
-	}
-	@RequestMapping("/loginCheck/DeleteMyRaffleS")
-	public String DeleteMyRaffleS() {
-		return "MyRaffle/DeleteMyRaffleS";
 	}
 	@RequestMapping("DeleteMyRaffleRR")// Raffleno를 넘겨주도록 향후 수정
 	public String DeleteMyRaffleRR(HttpSession session) {//삭제

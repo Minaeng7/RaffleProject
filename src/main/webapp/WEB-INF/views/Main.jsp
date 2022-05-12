@@ -180,20 +180,20 @@ setInterval(function() {
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item"><a class="nav-link" href="loginForm.html">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="loginForm">Login</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-                                <li><a href="shop-raffle.html">Raffle</a></li>
-                                <li><a href="shop-resell.html">Resell</a></li>
+                                <li><a href="SList">Seller's Raffle</a></li>
+                                <li><a href="RList">Reseller's Raffle</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">MyPage</a>
                             <ul class="dropdown-menu">
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
+                                <li><a href="Myinfo">My info</a></li>
+                                <li><a href="MyAttendedRaffle">응모한 래플 관리</a></li>
+                                <li><a href="SupervisingRaffle">나의 래플 관리</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

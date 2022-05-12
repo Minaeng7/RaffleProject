@@ -11,25 +11,19 @@
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
-	<view-controller path="/" view-name="Main"/>
-	<view-controller path="/Mypage" view-name="Mypage"/>
+	<default-servlet-handler/>
 	<view-controller path="/memberForm" view-name="memberForm"/>
 	<view-controller path="/loginForm" view-name="loginForm"/>
-	<view-controller path="/AddSell" view-name="/Product/AddSell"/>
-	<view-controller path="/AddResell" view-name="/Product/AddResell"/>
-	<view-controller path="/SellRetrieve" view-name="/Product/SellRetrieve"/>
-	<view-controller path="/ResellRetrieve" view-name="/Product/ResellRetrieve"/>
-	<view-controller path="/SList" view-name="/Product/SList"/>
 	<view-controller path="/UpdateMyRaffleR" view-name="/MyRaffle/UpdateMyRaffleR"/>
-	<view-controller path="/UpdateMyRaffleS" view-name="/MyRaffle/UpdateMyRaffleS"/>
-	<view-controller path="/UpdateMyAttendingR" view-name="/MyRaffle/UpdateAttendingR"/>
-	<view-controller path="/UpdateMyAttendingS" view-name="/MyRaffle/UpdateAttendingS"/>
+	<view-controller path="/UpdateMyRaffleS" view-name="/MyRaffle/UpdateMyRaffleS"/> 
+ 	<view-controller path="/UpdateMyAttendingR" view-name="/MyRaffle/UpdateAttendingR"/>
+	<view-controller path="/UpdateMyAttendingS" view-name="/MyRaffle/UpdateAttendingS"/> 
 	<view-controller path="/RAttendingRaffle" view-name="RAttendingRaffle"/>
+	<view-controller path="/SAttendingRaffle" view-name="SAttendingRaffle"/>
 	<view-controller path="/DeleteMyRaffleR" view-name="/MyRaffle/DeleteMyRaffleR"/>
 	<view-controller path="/DeleteMyRaffleS" view-name="/MyRaffle/DeleteMyRaffleS"/>
 	<view-controller path="/DeleteMyAttendingR" view-name="/MyRaffle/DeleteAttendingR"/>
 	<view-controller path="/DeleteMyAttendingS" view-name="/MyRaffle/DeleteAttendingS"/>
-	<view-controller path="/RList" view-name="/Product/RList"/>
 	<view-controller path="/board" view-name="board"/>
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
