@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SpotMapper">
+
+	<insert id="Rregistringlist" parameterType="RListDTO">
+		insert into
+		RList(resell_rno, memberno, rafflename, nickname, username, post,
+		addr1, addr2, phone, spot)
+		values ( #{resell_rno},
+		#{memberno},#{rafflename}
+		,#{nickname},#{username},#{post},
+		#{addr1},#{addr2},
+		#{phone}, #{spot})
+	</insert>
+	<insert id="Sregistringlist" parameterType="SListDTO">
+		insert into
+		RList(sell_rno, memberno, rafflename, nickname, username, post, addr1,
+		addr2, phone)
+		values ( #{sell_rno}, #{memberno},#{rafflename}
+		,#{nickname},#{username},#{post},
+		#{addr1},#{addr2})
+	</insert>
+
+	<select id="RShuffle" parameterType="int"
+		resultType="RListDTO">
+		select *
+		from rlist
+		where resell_rno = #{resell_rno}
+	</select>
+	<select id="SShuffle" parameterType="int"
+		resultType="SListDTO">
+		select *
+		from slist
+		where sell_rno = #{sell_rno}
+	</select>
+	<update id = "UpdateMyAttendingR" parameterType = "RListDTO">
+	update rlist
+	set username = #{username}, post = #{post}, addr1 = #{addr1},
+	addr2 = #{addr2}, phone = #{phone}, spot = #{spot}
+	where memberno = #{memberno}
+	and resell_rno = #{resell_rno}
+	</update>
+	<update id = "UpdateMyAttendingS" parameterType = "SListDTO">
+	update slist
+	set username = #{username}, post = #{post}, addr1 = #{addr1},
+	addr2 = #{addr2}, phone = #{phone}
+	where memberno = #{memberno}
+	and sell_rno = #{sell_rno}
+	</update>
+	<delete id = "DeleteMyAttendingR" parameterType = "int">
+	delete
+	from rlist
+	where memberno = #{memberno}
+	</delete>
+	<delete id = "DeleteMyAttendingS" parameterType = "int">
+	delete
+	from slist
+	where memberno = #{memberno}
+	</delete>
+</mapper>

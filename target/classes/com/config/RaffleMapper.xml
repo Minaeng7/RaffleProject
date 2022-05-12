@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="RaffleMapper">
+
+	<insert id="addResell_r" parameterType="ResellRDTO">
+		insert into resell_r
+		(resell_rno, memberno, nickname, rafflename,
+		attend_amount, per_price,
+		text, total_price, deadline, img)
+		values (SEQ_RESELL_RNO.nextval, #{memberno},
+		#{nickname}, #{rafflename},
+		#{attendamount}, #{perprice}, #{text},
+		#{totalprice}, #{deadline}, #{img})
+	</insert>
+
+	<insert id="addSell_r" parameterType="SellRDTO">
+		insert into sell_r
+		(sell_rno, memberno, nickname, rafflename, raffleprice,
+		raffleamount,
+		img, text, deadline)
+		values (SEQ_SELL_RNO.nextval, #{memberno}, #{nickname},
+		#{rafflename},
+		#{raffleprice}, #{raffleamount}, #{img}, #{text},
+		#{deadline})
+	</insert>
+	
+	<select id="SellList" parameterType="arraylist" resultType="SellRDTO">
+		select * from sell_r
+	</select>
+	
+	<select id="ResellList" parameterType="arraylist" resultType="ResellRDTO">
+		select * from resell_r
+	</select>	
+
+	<update id="UpdateResell_r" parameterType = "ResellRDTO">
+	update resell_r
+	set rafflename = #{rafflename}, total_price = #{totalprice}
+	,attend_amount = #{attendamount},deadline = #{deadline}, text = #{text}, img = #{img}
+	where resell_rno = #{resell_rno}
+	</update>
+	<update id="UpdateSell_r" parameterType = "SellRDTO">
+	update sell_r
+	set rafflename = #{rafflename}, raffleprice = #{raffleprice}
+	,raffleamount = #{raffleamount},deadline = #{deadline}, text = #{text}, img = #{img}
+	where sell_rno = #{sell_rno}
+	</update>
+	
+	<select id="ResellRetrieve" parameterType="int" resultType="ResellRDTO">
+		select *
+		from resell_r
+		where resell_rno = #{resell_rno}
+	</select>
+	
+	<delete id = "DeleteResell_r" parameterType = "int">
+	delete 
+	from resell_r
+	where memberno = #{memberno}
+	</delete>
+	<delete id = "Deletesell_r" parameterType = "int">
+	delete 
+	from sell_r
+	where memberno = #{memberno}
+	</delete>
+	<select id = "mainListS" resultType = "SellRDTO">
+	select *
+	from sell_r
+	</select>
+	<select id = "mainListR" resultType = "ResellRDTO">
+	select *
+	from resell_r
+	</select>
+</mapper>
