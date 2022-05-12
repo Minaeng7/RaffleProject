@@ -7,10 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>게시판</h1>
 <jsp:include page="common/top.jsp" flush="true"></jsp:include><BR>
-<jsp:include page="common/menu.jsp" flush="true"></jsp:include>
-<hr>
 <jsp:include page="board/list.jsp"></jsp:include>
 </body>
 </html>

@@ -2,7 +2,7 @@ package com.dto;
 
 import org.apache.ibatis.type.Alias;
 
-@Alias("SListDTO")
+@Alias("SSpotDTO")
 public class SSpotDTO {
 
 	int sell_rno;
@@ -33,7 +33,7 @@ public class SSpotDTO {
 	}
 	@Override
 	public String toString() {
-		return "SListDTO [sell_rno=" + sell_rno + ", memberno=" + memberno + ", Rafflename=" + Rafflename
+		return "SSpotDTO [sell_rno=" + sell_rno + ", memberno=" + memberno + ", Rafflename=" + Rafflename
 				+ ", nickname=" + nickname + ", username=" + username + ", post=" + post + ", addr1=" + addr1
 				+ ", addr2=" + addr2 + ", phone=" + phone + "]";
 	}

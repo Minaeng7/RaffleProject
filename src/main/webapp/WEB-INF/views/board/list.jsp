@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-	<div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left" align="left" style = "width: 200px" >
+	<div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left" align="left" style = "width: 200px"  >
 		<div class="product-categori">
 			<div class="filter-sidebar-left">
 				<div class="title-left">
@@ -62,7 +62,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="wishlist-box-main" style = "width:100%" align = "left" >
+	<div class="wishlist-box-main" style = "width:100%">
+
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -89,12 +90,13 @@
 								</tr>
 							</c:forEach>
 						</table>
+						<a href="write">글쓰기</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<a href="write">글쓰기</a>
+	
 </body>
 </html>

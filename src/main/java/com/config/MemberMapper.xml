@@ -14,9 +14,9 @@
 
 	<insert id="memberAdd" parameterType="MemberDTO">
 		insert into member(memberno,userid,passwd,username,nickname,post,
-		addr1,addr2,phone,birth,email1,email2)
+		addr1,addr2,phone,birth,email)
 		values( SEQ_MEMBERNO.nextval,#{userid},#{passwd},#{username},#{nickname},#{post},
-		#{addr1},#{addr2},#{phone},#{birth},#{email1},#{email2})
+		#{addr1},#{addr2},#{phone},#{birth},#{email})
 	</insert>
 <!-- 
 	<select id="login" parameterType="hashmap" resultType="MemberDTO">

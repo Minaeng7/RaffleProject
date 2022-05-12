@@ -2,7 +2,7 @@ package com.dto;
 
 import org.apache.ibatis.type.Alias;
 
-@Alias("RListDTO")
+@Alias("RSpotDTO")
 public class RSpotDTO {
 
 	int resell_rno;
@@ -35,7 +35,7 @@ public class RSpotDTO {
 	}
 	@Override
 	public String toString() {
-		return "RListDTO [resell_rno=" + resell_rno + ", memberno=" + memberno + ", rafflename=" + rafflename
+		return "RSpotDTO [resell_rno=" + resell_rno + ", memberno=" + memberno + ", rafflename=" + rafflename
 				+ ", nickname=" + nickname + ", username=" + username + ", post=" + post + ", addr1=" + addr1
 				+ ", addr2=" + addr2 + ", phone=" + phone + ", spot=" + spot + "]";
 	}
