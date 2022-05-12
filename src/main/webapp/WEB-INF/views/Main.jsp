@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+    <title>Raffles! For Collectors</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -173,7 +173,7 @@ setInterval(function() {
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="redirect:Main"><img src="images/logo.png" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="/raffle/"><img src="images/logo.png" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -199,8 +199,8 @@ setInterval(function() {
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">게시판</a>
                             <ul class="dropdown-menu">
-                                <li><a href="cart.html">공지사항</a></li>
-                                <li><a href="my-account.html">자유 게시판</a></li>
+                                <li><a href="board">공지사항</a></li>
+                                <li><a href="board">자유 게시판</a></li>
                             </ul>
                         </li>
                        <!-- <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>-->
@@ -212,7 +212,7 @@ setInterval(function() {
                 <div class="attr-nav">
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li class="side-menu"><a href="#">
+                        <li class="side-menu"><a href="MyAttendedRaffle">
 						<i class="fa fa-shopping-bag"></i>
                             <span class="badge">3</span>
 					</a></li>
