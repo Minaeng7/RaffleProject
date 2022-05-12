@@ -65,4 +65,8 @@ public class RaffleService {
 		return list;
 	}
 
+	public SellRDTO SellRetrieve(int sell_rno) {
+		return dao.SellRetrieve(sell_rno);
+	}
+
 }

@@ -53,6 +53,12 @@
 		where resell_rno = #{resell_rno}
 	</select>
 	
+	<select id="SellRetrieve" parameterType="int" resultType="SellRDTO">
+		select *
+		from sell_r
+		where sell_rno = #{sell_rno}
+	</select>
+	
 	<delete id = "DeleteResell_r" parameterType = "int">
 	delete 
 	from resell_r
