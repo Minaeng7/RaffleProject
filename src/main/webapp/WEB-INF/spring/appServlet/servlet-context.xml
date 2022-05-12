@@ -34,7 +34,9 @@
 	<resources mapping="/js/**" location="/resources/js/" />
 	<resources mapping="/php/**" location="/resources/php/" />
 	<resources mapping="/webfonts/**" location="/resources/webfonts/" />
-	
+	<resources mapping="/package/**" location="/resources/package/" />
+	<resources mapping="/dist/**" location="/resources/package/dist/" />
+	<resources mapping="/src/**" location="/resources/package/src/" />
 
 	<!-- interceptor -->
 	<beans:bean id="LoginCheckInterceptor" class="com.interceptor.LoginCheckInterceptor"></beans:bean>

@@ -32,13 +32,42 @@
 <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-	<h1>게시글 목록</h1>
-	<a href="write">글쓰기</a>
-	<div class="wishlist-box-main">
+	<div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left" align="left" style = "width: 200px" >
+		<div class="product-categori">
+			<div class="filter-sidebar-left">
+				<div class="title-left">
+					<h3>게시판</h3>
+				</div>
+				<div
+					class="list-group list-group-collapse list-group-sm list-group-tree"
+					id="list-group-men" data-children=".sub-men" >
+					<div class="list-group-collapse sub-men">
+						<a class="list-group-item list-group-item-action" href="#sub-men1"
+							data-toggle="collapse" aria-expanded="true"
+							aria-controls="sub-men1">게시판 <small class="text-muted">(100)</small>
+						</a>
+						<div class="collapse show" id="sub-men1"
+							data-parent="#list-group-men">
+							<div class="list-group">
+								<a href="#"
+									class="list-group-item list-group-item-action active">공지사항
+									<small class="text-muted">(50)</small>
+								</a> <a href="#" class="list-group-item list-group-item-action">자유게시판
+									<small class="text-muted">(10)</small>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wishlist-box-main" style = "width:100%" align = "left" >
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="table-main table-responsive">
+					<h1>공지사항</h1>
 						<table class="table">
 							<thead>
 								<tr>
@@ -65,5 +94,7 @@
 			</div>
 		</div>
 	</div>
+
+	<a href="write">글쓰기</a>
 </body>
 </html>

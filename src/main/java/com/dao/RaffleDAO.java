@@ -64,5 +64,9 @@ public class RaffleDAO {
 		List<ResellRDTO> list = template.selectList("RaffleMapper.mainListR");
 		return list;
 	}
+
+	public SellRDTO SellRetrieve(int sell_rno) {
+		return template.selectOne("RaffleMapper.SellRetrieve", sell_rno);
+	}
 	
 }
