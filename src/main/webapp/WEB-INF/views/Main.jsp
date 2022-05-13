@@ -468,7 +468,9 @@ setInterval(function() {
     </div>
     <!-- End Products  -->
 
+
 	<jsp:include page="common/bottom.jsp"></jsp:include>
+
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

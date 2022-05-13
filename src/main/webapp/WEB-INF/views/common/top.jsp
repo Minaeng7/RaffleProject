@@ -1,11 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!-- <a href="/raffle/">Main</a>&nbsp;
-<a href="SList">SELL</a>&nbsp;
-<a href="RList">RESELL</a>&nbsp;
-<a href="board">게시판</a>&nbsp; -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-	<!--메인 메뉴 -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+    
+	<c:if test="${!empty login }">	<!-- 로그인 됐을 경우 -->
+		<!--메인 메뉴 -->
     <header class="main-header">
         <!-- Start Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
@@ -22,8 +55,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    	<li class="nav-item active"><a class="nav-link" href="/raffle/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="loginForm">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="loginCheck/logout">Logout</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
@@ -32,7 +64,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#"  class="nav-link dropdown-toggle arrow" data-toggle="dropdown">MyPage</a>
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">MyPage</a>
                             <ul class="dropdown-menu">
                                 <li><a href="Myinfo">My info</a></li>
                                 <li><a href="MyAttendedRaffle">응모한 래플 관리</a></li>
@@ -42,8 +74,8 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">게시판</a>
                             <ul class="dropdown-menu">
-                                <li><a href="board">공지사항</a></li>
-                                <li><a href="board">자유 게시판</a></li>
+                                <li><a href="cart.html">공지사항</a></li>
+                                <li><a href="my-account.html">자유 게시판</a></li>
                             </ul>
                         </li>
                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
@@ -94,8 +126,9 @@
         </nav>
         <!-- End Navigation -->
     </header>
-    <!-- End Main Top -->	
-    
+    <!-- End Main Top -->
+	
+    </c:if>
      <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
