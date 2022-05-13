@@ -44,8 +44,7 @@
 
  <!--메인 메뉴 -->
  
-     <jsp:include page="../common/top.jsp"></jsp:include>
-    
+   
      <!-- Start Top Search -->
     <div class="top-search">
         <div class="container">
@@ -194,7 +193,7 @@
     <!-- End Instagram Feed  -->
 
 
-   <jsp:include page="../common/bottom.jsp"></jsp:include>
+
 
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>

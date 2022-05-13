@@ -64,7 +64,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">MyPage</a>
+                            <a href="#"  class="nav-link dropdown-toggle arrow" data-toggle="dropdown">MyPage</a>
                             <ul class="dropdown-menu">
                                 <li><a href="Myinfo">My info</a></li>
                                 <li><a href="MyAttendedRaffle">응모한 래플 관리</a></li>
@@ -74,8 +74,8 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">게시판</a>
                             <ul class="dropdown-menu">
-                                <li><a href="cart.html">공지사항</a></li>
-                                <li><a href="my-account.html">자유 게시판</a></li>
+                                <li><a href="board">공지사항</a></li>
+                                <li><a href="board">자유 게시판</a></li>
                             </ul>
                         </li>
                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>

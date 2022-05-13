@@ -9,6 +9,7 @@
 	crossorigin="anonymous"></script>
 <script src="package/dist/sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="package/dist/sweetalert2.min.css">
+
 <script>
 
       function check_pw(){
@@ -67,71 +68,72 @@
 					</div>
 					<input type="submit" value="Login" class="btn solid" />
 				</form>
-				<form action="memberAdd" class="sign-up-form">
-					<h2 class="title">Sign up</h2>
-					<div class="input-field">
-						<i class="fas fa-user"></i> <input type="text" name="userid"
-							id="userid" placeholder="UserID" />
-						<!-- 회원가입_아이디 -->
-					</div>
-					<div class="input-field">
-						<i class="fas fa-envelope"></i> <input type="email" name="email"
-							placeholder="Email" />
-					</div>
-					<div class="input-field">
-						<i class="fas fa-lock"></i> <input type="password" name="passwd"
-							id="passwd" placeholder="userPW" onchange="check_pw()" />
-						<!-- 회원가입_비밀번호 -->
-					</div>
-					<div class="input-field">
-						<i class="fas fa-lock"></i>
-						<!-- 회원가입_비밀번호 확인 -->
-						<a><input type="password" placeholder="userPW2" name="passwd2"
-							id="passwd2" onchange="check_pw()" />&nbsp;<span id="check" name="check"></span></a>
-						</td>
-					</div>
-					<div class="input-field">
-						<i class="fas fa-lock"></i> <input type="text" placeholder="Name"
-							name="username" />
-						<!-- 회원가입_이름 -->
-					</div>
-					<div class="input-field">
-						<i class="fas fa-lock"></i> <input type="text"
-							placeholder="Nickname" name="nickname" />
-						<!-- 회원가입_닉네임 -->
-					</div>
-					<div class="input-field">
-						<i class="fas fa-lock"></i> <input type="date" id="start"
-							name="birth" value="2000-01-01" min="1900-01-01" max="2022-12-31" />
-						<!-- 회원가입_생년월일 -->
-					</div>
-					<div class="input-field">
-						<i class="fas fa-lock"></i> <input type="text"
-							placeholder="Phone Number" name="phone" />
-						<!-- 회원가입_핸드폰 번호 -->
-					</div>
-					<div class="input-field">
-						<i class="fas fa-lock"></i>
-					 	<a><input type="text" name="post" id="sample4_postcode" placeholder="우편번호"/>
-					 	<img src="images/find.png" height="30px" width="30px" id="searchPost" onclick="sample4_execDaumPostcode()"></a>
-					</div>
-					<div class="input-field">
-						<i class="fas fa-lock"></i>
-					 	<input type="text" name="addr1" id="sample4_roadAddress" placeholder="도로명주소"/>
-					</div>
-					<div class="input-field">
-						<i class="fas fa-lock"></i>
-					 	<input type="text" name="addr2" id="sample4_jibunAddress" placeholder="지번주소"/>
-					</div>				
-					<span id="guide" style="color:#999"></span>		
-					
-					
-					
-					
-					<input type="submit" class="btn" value="Sign up" />
-				</form>
+		
+					<form action="memberAdd" class="sign-up-form">
+						<h2 class="title">Sign up</h2>
+						<div class="input-field">
+							<i class="fas fa-user"></i> <input type="text" name="userid"
+								id="userid" placeholder="UserID" />
+							<!-- 회원가입_아이디 -->
+						</div>
+						<div class="input-field">
+							<i class="fas fa-envelope"></i> <input type="email" name="email"
+								placeholder="Email" />
+						</div>
+						<div class="input-field">
+							<i class="fas fa-lock"></i> <input type="password" name="passwd"
+								id="passwd" placeholder="userPW" onchange="check_pw()" />
+							<!-- 회원가입_비밀번호 -->
+						</div>
+						<div class="input-field">
+							<i class="fas fa-lock"></i>
+							<!-- 회원가입_비밀번호 확인 -->
+							<a><input type="password" placeholder="userPW2"
+								name="passwd2" id="passwd2" onchange="check_pw()" />&nbsp;<span
+								id="check" name="check"></span></a>
+
+						</div>
+						<div class="input-field">
+							<i class="fas fa-lock"></i> <input type="text" placeholder="Name"
+								name="username" />
+							<!-- 회원가입_이름 -->
+						</div>
+						<div class="input-field">
+							<i class="fas fa-lock"></i> <input type="text"
+								placeholder="Nickname" name="nickname" />
+							<!-- 회원가입_닉네임 -->
+						</div>
+						<div class="input-field">
+							<i class="fas fa-lock"></i> <input type="date" id="start"
+								name="birth" value="2000-01-01" min="1900-01-01"
+								max="2022-12-31" />
+							<!-- 회원가입_생년월일 -->
+						</div>
+						<div class="input-field">
+							<i class="fas fa-lock"></i> <input type="text"
+								placeholder="Phone Number" name="phone" />
+							<!-- 회원가입_핸드폰 번호 -->
+						</div>
+						<div class="input-field">
+							<i class="fas fa-lock"></i> <a><input type="text" name="post"
+								id="sample4_postcode" placeholder="우편번호" /> <img
+								src="images/find.png" height="30px" width="30px" id="searchPost"
+								onclick="sample4_execDaumPostcode()"></a>
+						</div>
+						<div class="input-field">
+							<i class="fas fa-lock"></i> <input type="text" name="addr1"
+								id="sample4_roadAddress" placeholder="도로명주소" />
+						</div>
+						<div class="input-field">
+							<i class="fas fa-lock"></i> <input type="text" name="addr2"
+								id="sample4_jibunAddress" placeholder="지번주소" />
+						</div>
+						<span id="guide" style="color: #999"></span> <input type="submit"
+							class="btn" value="Sign up" />
+					</form>
+				</div>
 			</div>
-		</div>
+
 
 		<div class="panels-container">
 			<div class="panel left-panel">

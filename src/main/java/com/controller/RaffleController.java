@@ -50,7 +50,7 @@ public class RaffleController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rdto);
 		//System.out.println("rdto는    " + rdto);
-		mav.setViewName("Product/RList");
+		mav.setViewName("RList");
 		return mav;
 	}
 	
@@ -70,7 +70,7 @@ public class RaffleController {
 		System.out.println("rlist는 "+rlist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rlist);
-		mav.setViewName("Product/RList");
+		mav.setViewName("RList");
 		return mav;
 	}	
 	@RequestMapping(value="/ResellRetrieve")

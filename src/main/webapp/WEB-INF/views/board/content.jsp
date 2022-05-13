@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -51,6 +47,59 @@
 
  
 
+     <!-- Start Main Top -->
+     <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+                </div>
+                <!-- End Header Navigation -->
+    
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="shop-raffle.html">Raffle</a></li>
+                                <li><a href="shop-resell.html">Resell</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">MyPage</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="MyPage.html">My Account</a></li>
+                                <li><a href="wishlist.html">Wishlist</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">게시판</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cart.html">공지사항</a></li>
+                                <li><a href="my-account.html">자유 게시판</a></li>
+                            </ul>
+                        </li>
+                       <!-- <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>-->
+                    </ul>
+                </div>
+             
+                    <!-- Start Atribute Navigation -->
+                    <div class="attr-nav">
+                        <ul>
+                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- End Atribute Navigation -->
+                </div>
+\            </nav>
+        </header>
     <!-- End Main Top -->
 
     <!-- Start Top Search -->
@@ -74,74 +123,18 @@
     <div class="board_list_wrap">
 
         <table class="board_list">
-            <caption class="notice">자유게시판</caption>
-            <thead>
-                <tr class="notice_menu">
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>글쓴이</th>
-                    <th>작성일</th>
-                    <th>조회</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>5</td>
-                    <td class="tit" style="width:440px;">
-                        <a href="#">크롬 개발자도구 활용하는 방법</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-11-20</td>
-                    <td>111</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td class="tit">
-                        <a href="#">html과 css로 웹사이트를 만들어요.</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-11-12</td>
-                    <td>222</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td class="tit">
-                        <a href="#">코딩은 즐거워요.</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-11-02</td>
-                    <td>333</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td class="tit">
-                        <a href="#">코딩.</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-10-28</td>
-                    <td>222</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td class="tit">
-                        <a href="#">코딩공지</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-10-24</td>
-                    <td>111</td>
-                </tr>
-            </tbody>
+            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 15px;">자유게시판 작성</caption>
+              
         </table>
-        <div class="paging">
-            <a href="#" class="bt">첫 페이지</a>
-            <a href="#" class="bt">이전 페이지</a>
-            <a href="#" class="num on">1</a>
-            <a href="#" class="num">2</a>
-            <a href="#" class="num">3</a>
-            <a href="#" class="bt">다음 페이지</a>
-            <a href="#" class="bt">마지막 페이지</a>
-            <button type="button" onclick="location.href='edit'" class="btn btn-secondary" style="float: right;  ">글 쓰기</button>
+        <div id="forum_title">
+            <input name="title" id="utitle" rows="1" cols="55" placeholder="대충 제목 대충제목." maxlength="100" required></input>
+
         </div>
+        <div id="forum_content">
+            <textarea name="content" id="ucontent" placeholder="대충 내용 대충 내용" required></textarea>
+        </div>
+
+
     </div>
     <!-- End My Account -->
 

@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,6 +48,59 @@
 
  
 
+     <!-- Start Main Top -->
+     <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+                </div>
+                <!-- End Header Navigation -->
+    
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="shop-raffle.html">Raffle</a></li>
+                                <li><a href="shop-resell.html">Resell</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">MyPage</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="MyPage.html">My Account</a></li>
+                                <li><a href="wishlist.html">Wishlist</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">게시판</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cart.html">공지사항</a></li>
+                                <li><a href="my-account.html">자유 게시판</a></li>
+                            </ul>
+                        </li>
+                       <!-- <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>-->
+                    </ul>
+                </div>
+             
+                    <!-- Start Atribute Navigation -->
+                    <div class="attr-nav">
+                        <ul>
+                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- End Atribute Navigation -->
+                </div>
+\            </nav>
+        </header>
     <!-- End Main Top -->
 
     <!-- Start Top Search -->
@@ -66,15 +116,15 @@
     <!-- End Top Search -->
     <ul class="left-board">
         <li class="left-side-menu">게시판 목록</li>
-        <li><a href="notice.html">공지사항</a></li>
-        <li><a class="notice_color" href="forum.html">자유 게시판</a></li>
+        <li><a class="notice_color" href="notice.html">공지사항</a></li>
+        <li><a href="forum.html">자유 게시판</a></li>
 
     </ul>
 
     <div class="board_list_wrap">
 
         <table class="board_list">
-            <caption class="notice">자유게시판</caption>
+            <caption class="notice">공지사항</caption>
             <thead>
                 <tr class="notice_menu">
                     <th>번호</th>
@@ -140,7 +190,6 @@
             <a href="#" class="num">3</a>
             <a href="#" class="bt">다음 페이지</a>
             <a href="#" class="bt">마지막 페이지</a>
-            <button type="button" onclick="location.href='edit'" class="btn btn-secondary" style="float: right;  ">글 쓰기</button>
         </div>
     </div>
     <!-- End My Account -->
