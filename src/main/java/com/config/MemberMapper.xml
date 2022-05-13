@@ -25,5 +25,11 @@
       where userid = #{userid} and passwd = #{passwd}
 	</select> 
  -->
+
+	<select id="idCheck" parameterType="string" resultType="MemberDTO">
+		select *
+		from member
+		where userid =#{userid}
+	</select>
 	
 </mapper>

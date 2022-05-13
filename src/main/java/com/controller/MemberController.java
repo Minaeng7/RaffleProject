@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
@@ -43,6 +44,17 @@ public class MemberController {
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:../";
+	}
+	
+	@RequestMapping(value = "/idDuplicateCheck", produces="text/plain;charset=UTF-8")
+	@ResponseBody
+	public String idDuplicatedCheck(@RequestParam("id") String userid) {
+		MemberDTO dto= service.idCheck(userid);
+		String mesg="";
+		if(dto != null) {
+			mesg="아이디 중복";
+		}
+		return mesg;
 	}
 
 }
