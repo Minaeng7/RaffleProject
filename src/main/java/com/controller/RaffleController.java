@@ -60,7 +60,7 @@ public class RaffleController {
 		System.out.println(slist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", slist);
-		mav.setViewName("Product/SList");
+		mav.setViewName("SList");
 		return mav;
 	}
 	
