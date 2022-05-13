@@ -11,8 +11,8 @@
 		text, total_price, deadline, img)
 		values (SEQ_RESELL_RNO.nextval, #{memberno},
 		#{nickname}, #{rafflename},
-		#{attendamount}, #{perprice}, #{text},
-		#{totalprice}, #{deadline}, #{img})
+		#{attend_amount}, #{per_price}, #{text},
+		#{total_price}, #{deadline}, #{img})
 	</insert>
 
 	<insert id="addSell_r" parameterType="SellRDTO">
@@ -36,8 +36,8 @@
 
 	<update id="UpdateResell_r" parameterType = "ResellRDTO">
 	update resell_r
-	set rafflename = #{rafflename}, total_price = #{totalprice}
-	,attend_amount = #{attendamount},deadline = #{deadline}, text = #{text}, img = #{img}
+	set rafflename = #{rafflename}, total_price = #{total_price}
+	,attend_amount = #{attend_amount}, deadline = #{deadline}, text = #{text}, img = #{img}
 	where resell_rno = #{resell_rno}
 	</update>
 	<update id="UpdateSell_r" parameterType = "SellRDTO">

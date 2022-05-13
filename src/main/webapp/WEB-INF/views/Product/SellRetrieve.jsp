@@ -261,9 +261,8 @@
 
 						<div class="price-box-bar">
 							<div class="cart-and-bay-btn">
-								<a class="btn hvr-hover" data-fancybox-close="" href="#"
-									style="margin-right: 15px">결제하기</a> <a class="btn hvr-hover"
-									data-fancybox-close="" href="#">장바구니</a>
+								<a class="btn hvr-hover" data-fancybox-close="" href="SAttendingRaffle" style="margin-right: 15px">결제하기</a> 
+								<a class="btn hvr-hover" data-fancybox-close="" href="#">장바구니</a>
 							</div>
 						</div>
 

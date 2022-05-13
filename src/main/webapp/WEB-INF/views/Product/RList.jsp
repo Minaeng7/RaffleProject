@@ -40,11 +40,7 @@
 
 </head>
 
-<body>
-
- <!--메인 메뉴 -->
- 
-     <jsp:include page="../common/top.jsp"></jsp:include>
+	<jsp:include page="../common/top.jsp"></jsp:include>	
     
      <!-- Start Top Search -->
     <div class="top-search">
@@ -189,10 +185,6 @@
         </div>
     </div>
     <!-- End Shop Page -->
-
-    <!-- Start Instagram Feed  -->
-    <!-- End Instagram Feed  -->
-
 
    <jsp:include page="../common/bottom.jsp"></jsp:include>
 

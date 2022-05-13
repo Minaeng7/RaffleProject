@@ -33,7 +33,7 @@ public class RaffleController {
 //		return "redirect:../Product/AddResell";
 //	}	
 	
-	@RequestMapping(value="/loginCheck/SellRetrieve")
+	@RequestMapping(value="/loginCheck/AddSell")
 	public ModelAndView AddSell(SellRDTO sdto, HttpSession session) {//sell 상품등록
 		service.addSell_r(sdto);
 		System.out.println(sdto);
@@ -60,7 +60,7 @@ public class RaffleController {
 		System.out.println(slist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", slist);
-		mav.setViewName("Product/SList");
+		mav.setViewName("SList");
 		return mav;
 	}
 	
