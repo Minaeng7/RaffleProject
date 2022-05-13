@@ -40,11 +40,12 @@
 
 </head>
 
+
 <body>
 
- <!--메인 메뉴 -->
- 
-   
+
+	<jsp:include page="../common/top.jsp"></jsp:include>	
+
      <!-- Start Top Search -->
     <div class="top-search">
         <div class="container">
@@ -189,11 +190,15 @@
     </div>
     <!-- End Shop Page -->
 
+<<<<<<< HEAD
     <!-- Start Instagram Feed  -->
     <!-- End Instagram Feed  -->
 
 
 
+=======
+   <jsp:include page="../common/bottom.jsp"></jsp:include>
+>>>>>>> 990f249e79663379405bd6c53002792b271e6380
 
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>

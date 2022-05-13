@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,9 +52,10 @@ $(document).ready(function(){
 			}
 			reader.readAsDataURL(input.files[0]);
 		} 
-	};//end func
+	};
 	
 	function setThumbnail(event) {
+		
 	     for (var image of event.target.files) { 
 	         var reader = new FileReader();
 	         
@@ -116,6 +118,9 @@ $(document).ready(function(){
                   </div>
                   
                   <form action="loginCheck/AddResell" class="tm-edit-product-form">
+                  
+                  <input type="hidden" name="resell_rno" value="1">
+                  
                   <div class="row tm-edit-product-row">
                     <div class="col-xl-6 col-lg-6 col-md-12">
                         <div class="tm-product-img-dummy mx-auto">
@@ -124,7 +129,7 @@ $(document).ready(function(){
                               onclick="document.getElementById('fileInput').click();"
                             ></i>
                         </div>
-                        <input type="file" id="upImgFiles" onChange="uploadImgPreview();" accept="image/*" multiple>
+                        <input type="file" id="upImgFiles" name="img" onChange="uploadImgPreview();" accept="image/*" multiple>
 
                         <hr/>
                     
@@ -134,25 +139,40 @@ $(document).ready(function(){
                     <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
                             <div class="form-group mb-3">
                               <label for="name">Product Name</label>
-                              <input id="name" name="name" type="text" class="form-control validate" required/>
+                              <input id="name" name="rafflename" type="text" class="form-control validate" required/>
+                            </div>
+                            <div class="form-group mb-3">
+                              <label for="name">memberno</label>
+                              <input id="name" name="memberno" type="text" value="${login.memberno}" class="form-control validate" readonly/>
+                            </div>
+                            <div class="form-group mb-3">
+                              <label for="name">Nickname</label>
+                              <input id="name" name="nickname" type="text" value="${login.nickname }"class="form-control validate" readonly/>
                             </div>
                             <div class="form-group mb-3">
                               <label for="description">Description</label>
-                              <textarea class="form-control validate" rows="3" required></textarea>
+                              <textarea class="form-control validate" name="text" rows="3" required></textarea>
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="price">Price</label>
-                                <input id="price" name="price" type="text" class="form-control validate" required/>
+                            <div class="row">
+                              	 <div class="form-group mb-3 col-xs-12 col-sm-6">
+                                    <label for="price">Total_price</label>
+                                    <input id="price" name="total_price"  type="text" class="form-control validate" required/>
+                                  </div>
+                                   <div class="form-group mb-3 col-xs-12 col-sm-6">
+                                    <label for="price">Per_price</label>
+                                    <input id="price" name="per_price"  type="text" class="form-control validate" required/>
+                                  </div>
                             </div>
                             <div class="row">
                                 <div class="form-group mb-3 col-xs-12 col-sm-6">
-                                    <label for="expire_date">Expire Date</label>
-                                    <input id="expire_date" name="expire_date" type="datetime-local" class="form-control validate" data-large-mode="true"/>
-                                </div>
-                                <div class="form-group mb-3 col-xs-12 col-sm-6">
+                                    <label for="expire_date" >Deadline</label>
+                                    <input
+                                      id="expire_date" name="deadline" type="datetime-local" class="form-control validate" data-large-mode="true"/>
+                                  </div>
+                                  <div class="form-group mb-3 col-xs-12 col-sm-6">
                                     <label for="stock">Units In Stock</label>
-                                    <input id="stock" name="stock" type="text" class="form-control validate" required/>
-                                </div>
+                                    <input id="stock" name="attend_amount" type="text" class="form-control validate" required/>
+                                  </div>
                             </div>
                       </div>
                     </div>
@@ -160,7 +180,6 @@ $(document).ready(function(){
                       <button type="submit" class="btn btn-primary btn-block text-uppercase">Add Product Now</button>
                     </div>
                   </form>
-                  
                   </div>
                 </div>
               </div>
