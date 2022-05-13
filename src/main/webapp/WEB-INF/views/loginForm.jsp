@@ -10,10 +10,9 @@
 <script src="package/dist/sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="package/dist/sweetalert2.min.css">
 <script>
-
       function check_pw(){
 
-          var pw = document.getElementById('passwd').value;
+          var passwd = document.getElementById('passwd').value;
           var SC = ["!","@","#","$","%"];
           var check_SC = 0;
         console.log(passwd.length);
@@ -46,7 +45,31 @@
               }
           }
       }
+      
+
+      
   </script>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">   
+   $(document).ready(function(){
+	  $("#userid").on("keyup",function(){
+		  	$.ajax({
+			 url:'idDuplicateCheck',
+			 type:'get',
+			 data:{
+				 id:$("#userid").val(),
+			 },
+			 dataType:"text",
+			 success:function(data,status,xhr){
+				 console.log(data);
+				 $("#result").text(data);
+			 },
+			 error:function(xhr,status,error){}
+		  });
+	  });
+   });
+</script> 
 
 <link rel="stylesheet" href="css/loginForm.css" />
 <title>Sign in & Sign up Form</title>
@@ -59,7 +82,7 @@
 					<h2 class="title">Sign in</h2>
 					<div class="input-field">
 						<i class="fas fa-user"></i> <input type="text" name="userid"
-							placeholder="Username" />
+							placeholder="UserID" />
 					</div>
 					<div class="input-field">
 						<i class="fas fa-lock"></i> <input type="password" name="passwd"
@@ -72,6 +95,7 @@
 					<div class="input-field">
 						<i class="fas fa-user"></i> <input type="text" name="userid"
 							id="userid" placeholder="UserID" />
+							&nbsp;<span id="result" style="color: red;"></span>
 						<!-- 회원가입_아이디 -->
 					</div>
 					<div class="input-field">
@@ -86,8 +110,9 @@
 					<div class="input-field">
 						<i class="fas fa-lock"></i>
 						<!-- 회원가입_비밀번호 확인 -->
-						<a><input type="password" placeholder="userPW2" name="passwd2"
-							id="passwd2" onchange="check_pw()" />&nbsp;<span id="check" name="check"></span></a>
+						<input type="password" placeholder="userPW2" name="passwd2"
+							id="passwd2" onchange="check_pw()" />&nbsp;<span id="check"
+							name="check"></span>
 						</td>
 					</div>
 					<div class="input-field">
@@ -111,24 +136,21 @@
 						<!-- 회원가입_핸드폰 번호 -->
 					</div>
 					<div class="input-field">
-						<i class="fas fa-lock"></i>
-					 	<a><input type="text" name="post" id="sample4_postcode" placeholder="우편번호"/>
-					 	<img src="images/find.png" height="30px" width="30px" id="searchPost" onclick="sample4_execDaumPostcode()"></a>
+						<i class="fas fa-lock"></i> <a><input type="text" name="post"
+							id="sample4_postcode" placeholder="우편번호" /> <img
+							src="images/find.png" height="30px" width="30px" id="searchPost"
+							onclick="sample4_execDaumPostcode()"></a>
 					</div>
 					<div class="input-field">
-						<i class="fas fa-lock"></i>
-					 	<input type="text" name="addr1" id="sample4_roadAddress" placeholder="도로명주소"/>
+						<i class="fas fa-lock"></i> <input type="text" name="addr1"
+							id="sample4_roadAddress" placeholder="도로명주소" />
 					</div>
 					<div class="input-field">
-						<i class="fas fa-lock"></i>
-					 	<input type="text" name="addr2" id="sample4_jibunAddress" placeholder="지번주소"/>
-					</div>				
-					<span id="guide" style="color:#999"></span>		
-					
-					
-					
-					
-					<input type="submit" class="btn" value="Sign up" />
+						<i class="fas fa-lock"></i> <input type="text" name="addr2"
+							id="sample4_jibunAddress" placeholder="지번주소" />
+					</div>
+					<span id="guide" style="color: #999"></span> <input type="submit"
+						class="btn" value="Sign up" />
 				</form>
 			</div>
 		</div>

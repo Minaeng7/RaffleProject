@@ -24,4 +24,9 @@ public class MemberSerivce {
 		return dto;
 	}
 
+	public MemberDTO idCheck(String userid) {
+		MemberDTO dto= dao.idCheck(userid);
+		return dto;
+	}
+
 }
