@@ -23,10 +23,10 @@ public class RaffleController {
 	@Autowired
 	RaffleService service;
 	
-	@RequestMapping(value="/AddSell")
-	public String AddProduct() {//화면전환
-		return "Product/AddSell";
-	}
+//	@RequestMapping(value="/AddSell")
+//	public String AddProduct() {//화면전환
+//		return "Product/AddSell";
+//	}
 //	
 //	@RequestMapping(value="/AddResell")
 //	public String AddResellProduct() {
