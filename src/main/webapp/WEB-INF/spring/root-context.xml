@@ -36,7 +36,8 @@
 				<value>classpath:com/config/MemberMapper.xml</value>
 				<value>classpath:com/config/RaffleMapper.xml</value>
 				<value>classpath:com/config/SupervisingMapper.xml</value>
-				<value>classpath:com/config/BoardMapper.xml</value>
+				<value>classpath:com/config/ForumMapper.xml</value>
+				<value>classpath:com/config/NoticeMapper.xml</value>
 			</list>
 		</property>
 		<property name="typeAliases">
@@ -48,7 +49,8 @@
 				<value>com.dto.MemberDTO</value>
 				<value>com.dto.SwinDTO</value>
 				<value>com.dto.RwinDTO</value>
-				<value>com.dto.BoardDTO</value>
+				<value>com.dto.NoticeDTO</value>
+				<value>com.dto.ForumDTO</value>
 			</list>
 		</property>
 	</bean>
