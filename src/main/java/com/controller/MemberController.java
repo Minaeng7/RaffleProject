@@ -61,6 +61,7 @@ public class MemberController {
 		MemberDTO dto2 = (MemberDTO)session.getAttribute("login");
 		int memberno = dto2.getMemberno();
 		dto.setMemberno(memberno);
+		System.out.println(dto);
 		service.updateMyinfo(dto);
 		dto = service.myinfo(memberno);
 		ModelAndView mav = new ModelAndView();

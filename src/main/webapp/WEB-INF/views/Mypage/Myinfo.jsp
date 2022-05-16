@@ -57,7 +57,7 @@
     <!-- End All Title Box -->
 
     <!-- Start My Account  -->
-    <form>
+    <form action = "updateMyinfo">
       <div class="mypagebox">
         <h1 style="border-bottom: 3px solid #222; margin-left:20px">회원정보</h1>
         <div class="name_profile" >
@@ -106,7 +106,7 @@
                 </div>
         </div>
 
-        <button type="button" onclick="location.href='updateMyinfo'" class="btn btn-dark">저장하기</button>
+        <button class="btn btn-dark">저장하기</button>
     </div>
         
         </div>

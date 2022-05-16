@@ -12,7 +12,7 @@
 		from resell_R
 		where resell_rno in (
 		select resell_rno
-		from rlist
+		from rspot
 		where memberno = #{memberno}
 		)
 	</select>
@@ -29,7 +29,7 @@
 		where sell_rno in (
 		select sell_rno
 		from
-		slist
+		sspot
 		where memberno = #{memberno}
 		)
 	</select>
