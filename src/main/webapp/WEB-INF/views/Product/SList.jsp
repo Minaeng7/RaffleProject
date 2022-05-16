@@ -37,7 +37,7 @@
     <![endif]-->
 
 </head>
-
+<body>
     <!-- Start Top Search -->
     <div class="top-search">
         <div class="container">
@@ -123,31 +123,14 @@
                             <div class="col-12 col-sm-8 text-center text-sm-left">
                                 <div class="toolbar-sorter-right">
                                     <span>상품등록은--------------></span>
-                                <!-- <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-									<option data-display="Select">Nothing</option>
-									<option value="1">Popularity</option>
-									<option value="2">High Price → High Price</option>
-									<option value="3">Low Price → High Price</option>
-									<option value="4">Best Selling</option>
-								</select> -->
                                 </div>
-                                <!-- <p>Showing all 4 results</p> -->
                             </div>
                             <div class="col-12 col-sm-4 text-center text-sm-right">
                                 <ul class="nav nav-tabs ml-auto">
                                 	<a href="AddSell"><button>상품 등록</button></a>
-                                    <!-- <li>
-                                        <a class="nav-link active" href="#grid-view" data-toggle="tab"> <i class="fa fa-th"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="#list-view" data-toggle="tab"> <i class="fa fa-list-ul"></i> </a>
-                                    </li> -->
                                 </ul>
                             </div>
                         </div>
-						
-						
-							
 						
                         <div class="row product-categorie-box">
                             <div class="tab-content">
@@ -163,202 +146,16 @@
                                                         <p class="sale">Sale</p>
                                                     </div>
                                                     <a href="SellRetrieve?sell_rno=${sdto.sell_rno }"><img src="images/img-pro-01.jpg" class="img-fluid" alt="Image" border="0"></a>
-                                                    <!-- <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="여러"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="옵션"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="설정"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">장바구니 추가
-                                                        </a>
-                                                    </div> -->
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4>상품1
-                                                    </h4>
-                                                    <h5> 상품1 가격</h5>
+                                                    <h4>래플이름 : ${sdto.rafflename }</h4>
+                                                    <h5>래플가격 : ${sdto.raffleprice }</h5>
                                                 </div>
                                             </div>
                                         </div>
                                         </c:forEach>
-                                       <!-- <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="new">뉴뉴</p>
-                                                    </div>
-                                                    <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>상품2</h4>
-                                                    <h5> 상품2 가격</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">세일</p>
-                                                    </div>
-                                                    <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>상품3</h4>
-                                                    <h5> 상품3 가격</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="new">New</p>
-                                                    </div>
-                                                    <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                                    <h5> $9.79</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">Sale</p>
-                                                    </div>
-                                                    <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                                    <h5> $9.79</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">Sale</p>
-                                                    </div>
-                                                    <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                                    <h5> $9.79</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">Sale</p>
-                                                    </div>
-                                                    <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                                    <h5> $9.79</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">Sale</p>
-                                                    </div>
-                                                    <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                                    <h5> $9.79</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="new">New</p>
-                                                    </div>
-                                                    <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                                    <h5> $9.79</h5>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
-                                </div> -->
+                                </div> 
                                 <div role="tabpanel" class="tab-pane fade" id="list-view">
                                     <div class="list-view-box">
                                         <div class="row">

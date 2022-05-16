@@ -1239,6 +1239,7 @@
  .footer-main{
      padding: 70px 0px;
      background: #202020;
+     max-width: 100%;
 }
  .footer-widget h4 {
      color: #ffffff;
