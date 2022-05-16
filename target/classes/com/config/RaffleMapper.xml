@@ -6,21 +6,14 @@
 
 	<insert id="addResell_r" parameterType="ResellRDTO">
 		insert into resell_r
-		(resell_rno, memberno, nickname, rafflename,
-		attend_amount, per_price,
-		text, total_price, deadline, img)
-		values (SEQ_RESELL_RNO.nextval, #{memberno},
-		#{nickname}, #{rafflename},
-		#{attend_amount}, #{per_price}, #{text},
-		#{total_price}, #{deadline}, #{img})
+		(resell_rno, memberno, nickname, rafflename, attend_amount, per_price, text, total_price, deadline)
+		values (RESELL_R_SEQ_RESELL_RNO.nextval, #{memberno}, #{nickname}, #{rafflename}, #{attend_amount}, #{per_price}, #{text}, #{total_price}, #{deadline})
 	</insert>
 
 	<insert id="addSell_r" parameterType="SellRDTO">
 		insert into sell_r
-		(sell_rno, memberno, nickname, rafflename, raffleprice,
-		raffleamount, text, deadline)
-		values (SEQ_SELL_RNO.nextval, #{memberno}, #{nickname},
-		#{rafflename}, #{raffleprice}, #{raffleamount}, #{text}, #{deadline})
+		(sell_rno, memberno, nickname, rafflename, raffleprice, raffleamount, text, deadline)
+		values (SELL_R_SEQ_SELL_RNO.nextval, #{memberno}, #{nickname}, #{rafflename}, #{raffleprice}, #{raffleamount}, #{text}, #{deadline})
 	</insert>
 	
 	<select id="SellList" resultType="SellRDTO">
@@ -34,13 +27,13 @@
 	<update id="UpdateResell_r" parameterType = "ResellRDTO">
 	update resell_r
 	set rafflename = #{rafflename}, total_price = #{total_price}
-	,attend_amount = #{attend_amount}, deadline = #{deadline}, text = #{text}, img = #{img}
+	,attend_amount = #{attend_amount}, deadline = #{deadline}, text = #{text}}
 	where resell_rno = #{resell_rno}
 	</update>
 	<update id="UpdateSell_r" parameterType = "SellRDTO">
 	update sell_r
 	set rafflename = #{rafflename}, raffleprice = #{raffleprice}
-	,raffleamount = #{raffleamount},deadline = #{deadline}, text = #{text}, img = #{img}
+	,raffleamount = #{raffleamount},deadline = #{deadline}, text = #{text}
 	where sell_rno = #{sell_rno}
 	</update>
 	

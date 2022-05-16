@@ -81,7 +81,6 @@
 
 						<form action="loginCheck/AddSell" class="tm-edit-product-form">
 
-							<input type="hidden" name="resell_rno" value="1">
 
 							<div class="row tm-edit-product-row">
 								<div class="col-xl-6 col-lg-6 col-md-12">
@@ -89,7 +88,7 @@
 										<i class="fas fa-cloud-upload-alt tm-upload-icon"
 											onclick="document.getElementById('fileInput').click();"></i>
 									</div>
-									<input type="file" id="upImgFiles" name="img"
+									<input type="file" id="upImgFiles" name=""
 										onChange="uploadImgPreview();" accept="image/*" multiple>
 
 									<hr />
@@ -126,7 +125,7 @@
 									<div class="row">
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="expire_date">Deadline</label> <input
-												id="expire_date" name="deadline" type="datetime-local"
+												id="expire_date" name="deadline" type="date"
 												class="form-control validate" data-large-mode="true" />
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
@@ -175,7 +174,9 @@
 	<script src="js/custom.js"></script>
 	<script>
         $(function() {
-          $("#expire_date").datepicker();
+          $("#expire_date").datepicker({
+        	  dateFormat: 'yy/mm/dd'
+          });
         });
       </script>
 </body>

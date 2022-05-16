@@ -101,7 +101,6 @@ $(document).ready(function(){
 
 						<form action="loginCheck/AddResell" class="tm-edit-product-form">
 
-							<input type="hidden" name="resell_rno" value="1">
 
 							<div class="row tm-edit-product-row">
 								<div class="col-xl-6 col-lg-6 col-md-12">
@@ -109,7 +108,7 @@ $(document).ready(function(){
 										<i class="fas fa-cloud-upload-alt tm-upload-icon"
 											onclick="document.getElementById('fileInput').click();"></i>
 									</div>
-									<input type="file" id="upImgFiles" name="img"
+									<input type="file" id="upImgFiles" name=""
 										onChange="uploadImgPreview();" accept="image/*" multiple>
 
 									<hr />
@@ -153,11 +152,11 @@ $(document).ready(function(){
 									<div class="row">
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="expire_date">Deadline</label> <input
-												id="expire_date" name="deadline" type="datetime-local"
+												id="expire_date" name="deadline" type="date"
 												class="form-control validate" data-large-mode="true" />
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="stock">Units In Stock</label> <input id="stock"
+											<label for="stock">참여가능한 스팟 수</label> <input id="stock"
 												name="attend_amount" type="text"
 												class="form-control validate" required />
 										</div>
