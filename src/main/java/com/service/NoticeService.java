@@ -57,13 +57,14 @@ public class NoticeService {
 			session.setAttribute("update_time_"+bno, current_time);
 		}
 	}
-//	public Object read(int bno) {
-//		return dao.read(bno);
-//	}
+	public Object read(int bno) {
+		return dao.read(bno);
+	}
 //	public void update(ForumDTO dto) {
 //		dao.update(dto);
 //	}
 //	public void delete(int bno) {
 //		dao.delete(bno);
 //	}
+
 }

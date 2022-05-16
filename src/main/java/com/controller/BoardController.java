@@ -7,6 +7,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.ForumDTO;
@@ -30,6 +32,16 @@ public class BoardController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("notice", notice);
 		mav.setViewName("notice");
+		return mav;
+	}
+	//공지사항 상세내용 조회, 조회수 증가
+	@RequestMapping("/nview")
+	public ModelAndView nview (@RequestParam int bno, HttpSession session) {
+		//System.out.println("nview"+bno);
+		nservice.increaseViewcnt(bno, session);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("ndto", nservice.read(bno));
+		mav.setViewName("board/nview");
 		return mav;
 	}
 	
@@ -56,7 +68,7 @@ public class BoardController {
 	}
 	//게시글 상세내용 조회, 조회수 증가
 	@RequestMapping("/view")
-	public ModelAndView view (int bno, HttpSession session) {
+	public ModelAndView view (@RequestParam int bno, HttpSession session) {
 		fservice.increaseViewcnt(bno, session);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("dto", fservice.read(bno));
@@ -71,8 +83,9 @@ public class BoardController {
 	}
 	//게시글 삭제
 	@RequestMapping("/delete")
-	public String delete(int bno) {
+	public String delete(@RequestParam int bno) {
 		fservice.delete(bno);
 		return "redirect:forum";
 	}
+	
 }

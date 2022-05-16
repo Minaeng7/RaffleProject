@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -39,15 +38,47 @@
     <![endif]-->
     <script src="package/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="package/dist/sweetalert2.min.css">
-    <script>
+  
+<!-- <script type="text/javascript">
+$(document).ready(function(){
+	$("#btnDelete").on("click", function() {
+		if (confirm("삭제하시겠습니까?")) {
+			document.form.action = "${path}/board/delete";
+			document.form.submit();
+		}
+	});
+	
+	$("#btnUpdate").on("click", function() {
+		var title = $("#title").val();
+		var content = $("#content").val();
+		var writer = $("#username").val();
+		
+		if (title == "") {
+			alert("제목을 입력하세요");
+			document.form.title.focus();
+			return;
+		}
+		if (content == "") {
+			alert("내용을 입력하세요");
+			document.form.content.focus();
+			return;
+		}
+		if (username == "") {
+			alert("이름을 입력하세요");
+			document.form.username.focus();
+			return;
+		}
+		document.form.submit();
+	})
+})
 
-        </script>
-
+</script> -->
 </head>
-
 <body>
 
-    <!-- Start Top Search -->
+<jsp:include page="../common/top.jsp"></jsp:include>
+
+<!-- Start Top Search -->
     <div class="top-search">
         <div class="container">
             <div class="input-group">
@@ -59,7 +90,7 @@
     </div>
     <!-- End Top Search -->
     
-       <!-- Start All Title Box -->
+     <!-- Start All Title Box -->
     <div class="all-title-box">
         <div class="container">
             <div class="row">
@@ -67,7 +98,7 @@
                     <h2>공지사항 페이지입니다.</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/raffle/">Home</a></li>
-                        <li class="breadcrumb-item active">공지사항</li>
+                        <li class="breadcrumb-item active">자유게시판</li>
                     </ul>
                 </div>
             </div>
@@ -75,74 +106,31 @@
     </div>
     <!-- End All Title Box -->
     
-    
     <ul class="left-board">
         <li class="left-side-menu">게시판 목록</li>
         <li><a class="notice_color" href="notice">공지사항</a></li>
         <li><a href="forum">자유 게시판</a></li>
 
     </ul>
-    <div class="board_list_wrap">
+<div class="board_list_wrap">
         <table class="board_list">
-            <caption class="notice">공지사항</caption>
-            <thead>
-                <tr class="notice_menu">
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>글쓴이</th>
-                    <th>작성일</th>
-                    <th>조회</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach var="notice" items="${notice }" varStatus="status">
-                <tr>
-                    <td>${notice.bno }</td>
-                    <td class="tit" style="width:440px;">
-                        <a href="nview?bno=${notice.bno }">${notice.title }</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>${notice.regdate }</td>
-                    <td>${notice.viewcnt }</td>
-                </tr>
-                </c:forEach>
-            </tbody>
+            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 15px;">공지사항</caption>
         </table>
-        <div class="paging">
-            <a href="#" class="bt">첫 페이지</a>
-            <a href="#" class="bt">이전 페이지</a>
-            <a href="#" class="num on">1</a>
-            <a href="#" class="num">2</a>
-            <a href="#" class="num">3</a>
-            <a href="#" class="bt">다음 페이지</a>
-            <a href="#" class="bt">마지막 페이지</a>
+        <div id="forum_title">
+          	  제목 <input type="text" name="title" id="utitle" rows="1" cols="55" value="${ndto.title }" maxlength="100" readonly></input><br>
+			번호 <input type="text" name="bno" value="${ndto.bno }" readonly><br><br>
+			작성자 <input type="text" name="username" value="${ndto.username }" readonly> 
         </div>
+        <div id="forum_content">
+           	본문  <textarea name="content" id="ucontent" readonly>${ndto.content }</textarea>
+        </div>
+        <div style="text-align: right; margin-top:30px;">
+            <button type="button" onclick="location.href='notice'" class="btn btn-secondary">목록보기</button>
+        </div>
+
     </div>
-    <!-- End My Account -->
-
-<jsp:include page="../common/bottom.jsp"></jsp:include>
-
-    <!-- ALL JS FILES -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- ALL PLUGINS -->
-    <script src="js/jquery.superslides.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-    <script src="js/inewsticker.js"></script>
-    <script src="js/bootsnav.js."></script>
-    <script src="js/images-loded.min.js"></script>
-    <script src="js/isotope.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/baguetteBox.min.js"></script>
-    <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
-    <script src="js/custom.js"></script>
-    <script>
-        $(function() {
-          $("#expire_date").datepicker();
-        });
-      </script>
+    
+    <jsp:include page="../common/bottom.jsp"></jsp:include>
 </body>
 
 </html>

@@ -12,9 +12,14 @@
 	
 	<!-- 게시글 조회수 증가 -->
 	<update id="increaseViewcnt">
-		update forum
+		update notice
 		set viewcnt = viewcnt + 1
 		where bno = #{bno}
 	</update>
 	
+	<!-- 게시글 상세보기 -->
+	<select id="view" resultType="NoticeDTO">
+		select * from notice
+		where bno = #{bno}
+	</select>
 </mapper>

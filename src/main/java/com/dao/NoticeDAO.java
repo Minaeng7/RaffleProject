@@ -30,9 +30,9 @@ public class NoticeDAO {
 //		template.update("BoardMapper.increaseViewcnt", bno);
 //	}
 //
-//	public Object read(int bno) {
-//		return template.selectOne("BoardMapper.view", bno);
-//	}
+	public Object read(int bno) {
+		return template.selectOne("NoticeMapper.view", bno);
+	}
 //
 //	public void update(ForumDTO dto) {
 //		template.update("BoardMapper.update", dto);
