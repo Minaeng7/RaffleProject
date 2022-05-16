@@ -25,5 +25,12 @@ public class MemberDAO {
 		MemberDTO dto = template.selectOne("MemberMapper.idCheck",userid);
 		return dto;
 	}
+	public void updateMyinfo(MemberDTO dto) {
+		template.update("MemberMapper.updateMyinfo", dto);
+	}
+	public MemberDTO myinfo(int memberno) {
+		MemberDTO dto = template.selectOne("MemberMapper.myinfo", memberno);
+		return dto;
+	}
 
 }

@@ -29,4 +29,13 @@ public class MemberSerivce {
 		return dto;
 	}
 
+	public void updateMyinfo(MemberDTO dto) {
+		dao.updateMyinfo(dto);
+	}
+
+	public MemberDTO myinfo(int memberno) {
+		MemberDTO dto = dao.myinfo(memberno);
+		return dto;
+	}
+
 }
