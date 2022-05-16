@@ -72,9 +72,13 @@
 	<select id = "mainListS" resultType = "SellRDTO">
 	select *
 	from sell_r
+	where rownum &lt; 4
+	order by viewcnt desc
 	</select>
 	<select id = "mainListR" resultType = "ResellRDTO">
 	select *
 	from resell_r
+	where rownum &lt; 4
+	order by viewcnt desc
 	</select>
 </mapper>
