@@ -30,7 +30,7 @@
 	<!-- 게시글 수정 -->
 	<update id="update">
 		update forum
-		set title = #{title}, content = #{content}, username = #{username}
+		set title = #{title}, content = #{content}
 		where bno = #{bno}
 	</update>
 	<!-- 게시글 삭제 -->

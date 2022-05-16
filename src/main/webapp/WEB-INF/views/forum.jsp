@@ -42,8 +42,8 @@
 </head>
 <body>
 <jsp:include page="common/top.jsp" flush="true"></jsp:include><BR>
- <jsp:include page="board/list.jsp"></jsp:include>
- 
+<jsp:include page="board/list.jsp"></jsp:include>
+<jsp:include page="common/bottom.jsp"></jsp:include> 
    <script src="https://kit.fontawesome.com/1444dff67d.js" crossorigin="anonymous"></script>
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
