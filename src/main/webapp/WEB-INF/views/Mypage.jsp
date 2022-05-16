@@ -47,9 +47,15 @@
 <jsp:include page = "MyRaffle/MyAttendedRaffle.jsp"></jsp:include>
 </c:if>
 <c:if test="${empty AttendedRaffleR && empty AttendedRaffleS}">
-<h1>참여한 래플이 없습니다.</h1>
+<jsp:include page = "MyRaffle/NotAttendedRaffle.jsp"></jsp:include>
 </c:if>
-<a href = "SupervisingRaffle">나의 래플 관리</a>
+<c:if test="${!empty MyRaffleR || !empty MyRaffleS}">
+<jsp:include page = "MyRaffle/SupervisingRaffle.jsp"></jsp:include>
+</c:if>
+<c:if test="${empty MyRaffleR && empty MyRaffleS}">
+<jsp:include page = "MyRaffle/NotSupervisingRaffle.jsp"></jsp:include>
+</c:if>
+
    <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

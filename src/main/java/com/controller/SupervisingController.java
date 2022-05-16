@@ -34,7 +34,7 @@ public class SupervisingController {//mypage기능
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("AttendedRaffleR", listR);
 		mav.addObject("AttendedRaffleS", listS);
-		mav.setViewName("MyRaffle/MyAttendedRaffle");
+		mav.setViewName("Mypage");
 		return mav;
 	}
 	@RequestMapping("/SupervisingRaffle")
