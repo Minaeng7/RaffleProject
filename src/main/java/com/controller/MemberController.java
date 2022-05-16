@@ -57,9 +57,12 @@ public class MemberController {
 		return mesg;
 	}
 	@RequestMapping(value = "/updateMyinfo")
-	public ModelAndView updateMyinfo(MemberDTO dto) {
+	public ModelAndView updateMyinfo(MemberDTO dto, HttpSession session) {
+		MemberDTO dto2 = (MemberDTO)session.getAttribute("login");
+		int memberno = dto2.getMemberno();
+		dto.setMemberno(memberno);
 		service.updateMyinfo(dto);
-		dto = service.myinfo();
+		dto = service.myinfo(memberno);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mypage",dto);
 		mav.setViewName("Mypage");

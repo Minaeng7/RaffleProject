@@ -9,27 +9,37 @@
 		resultType="MemberDTO">
 		select *
 		from member
-		where userid =#{userid} and passwd=#{passwd}
+		where userid =#{userid} and
+		passwd=#{passwd}
 	</select>
 
 	<insert id="memberAdd" parameterType="MemberDTO">
-		insert into member(memberno,userid,passwd,username,nickname,post,
+		insert into
+		member(memberno,userid,passwd,username,nickname,post,
 		addr1,addr2,phone,birth,email)
-		values( SEQ_MEMBERNO.nextval,#{userid},#{passwd},#{username},#{nickname},#{post},
+		values(
+		SEQ_MEMBERNO.nextval,#{userid},#{passwd},#{username},#{nickname},#{post},
 		#{addr1},#{addr2},#{phone},#{birth},#{email})
 	</insert>
-<!-- 
-	<select id="login" parameterType="hashmap" resultType="MemberDTO">
-	  select *
-      from member
-      where userid = #{userid} and passwd = #{passwd}
-	</select> 
- -->
+	<!-- <select id="login" parameterType="hashmap" resultType="MemberDTO"> 
+		select * from member where userid = #{userid} and passwd = #{passwd} </select> -->
 
-	<select id="idCheck" parameterType="string" resultType="MemberDTO">
+	<select id="idCheck" parameterType="string"
+		resultType="MemberDTO">
 		select *
 		from member
 		where userid =#{userid}
 	</select>
-	
+	<update id="updateMyinfo" parameterType="MemberDTO">
+		update member
+		set
+		nickname = #{nickname}, email = #{email}, passwd = #{passwd}, phone =
+		#{phone}, addr1 = #{addr1}
+		where memberno = #{memberno}
+	</update>
+	<select id="myinfo" resultType="MemberDTO">
+		select *
+		from member
+		where memberno = #{memberno}
+	</select>
 </mapper>
