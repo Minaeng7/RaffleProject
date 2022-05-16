@@ -24,7 +24,7 @@ public class MainCotroller {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("slist", slist);
 		mav.addObject("rlist", rlist);
-		mav.setViewName("Main");
+		mav.setViewName("index");
 		return mav;
 	}
 }

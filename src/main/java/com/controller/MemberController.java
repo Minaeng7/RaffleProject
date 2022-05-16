@@ -24,7 +24,7 @@ public class MemberController {
 	public String memberAdd(MemberDTO m, Model model) {
 		service.memberAdd(m);
 		model.addAttribute("success", "회원가입성공");
-		return "Main";
+		return "index";
 	}
 	
 	@RequestMapping(value = "/login")
@@ -32,7 +32,7 @@ public class MemberController {
 		MemberDTO dto = service.login(map);
 		if (dto != null) {
 			session.setAttribute("login", dto);
-			return "Main";// main.jsp
+			return "index";// main.jsp
 		} else {
 			model.addAttribute("mesg", "아이디 또는 비번이 잘못되었습니다.");
 			return "loginForm";

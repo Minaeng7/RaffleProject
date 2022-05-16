@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<!-- Basic -->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +18,7 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
     <!-- Site CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Responsive CSS -->
@@ -34,7 +30,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script  src="https://code.jquery.com/jquery-3.6.0.js" ></script>
     <script type="text/javascript">
 /* for문 사용 필요 */
 setInterval(function() {
@@ -156,8 +152,10 @@ setInterval(function() {
         }, 1000);
 </script>
 </head>
+
 <body>
-    <!-- Start Top Search -->
+
+	
     <div class="top-search">
         <div class="container">
             <div class="input-group">
@@ -172,8 +170,8 @@ setInterval(function() {
     <div id="slides-shop" class="cover-slides">
         <ul class="slides-container">
             <li class="text-left">
-                <a href="링크">
-                <img src="images/banner-01.jpg" alt="">
+               <a href="링크">
+                 <img src="images/banner-01.jpg" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -369,6 +367,21 @@ setInterval(function() {
             </div>
         </div>
     </div>
-    <!-- End Products  -->
+  
+    <!-- ALL JS FILES -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/jquery.superslides.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/inewsticker.js"></script>
+    <script src="js/bootsnav.js"></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/custom.js"></script>
 </body>
-</html>
