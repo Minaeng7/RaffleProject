@@ -9,9 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>MyPage</h1>
-<c:if test="${!empty mypage}"></c:if>
-<a href = "Myinfo">내 정보 관리</a>
+<jsp:include page = "common/top.jsp"></jsp:include>
+<c:if test="${!empty mypage}">
+<jsp:include page = "Mypage/Myinfo.jsp"></jsp:include>
+</c:if>
+
 <a href = "MyAttendedRaffle">응모한 래플 관리</a>
 <a href = "SupervisingRaffle">나의 래플 관리</a>
 

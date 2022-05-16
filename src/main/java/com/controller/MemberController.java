@@ -56,5 +56,14 @@ public class MemberController {
 		}
 		return mesg;
 	}
+	@RequestMapping(value = "/updateMyinfo")
+	public ModelAndView updateMyinfo(MemberDTO dto) {
+		service.updateMyinfo(dto);
+		dto = service.myinfo();
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("mypage",dto);
+		mav.setViewName("Mypage");
+		return mav;
+	}
 
 }

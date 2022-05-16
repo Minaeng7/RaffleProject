@@ -60,7 +60,7 @@ public class SupervisingController {//mypage기능
 		System.out.println(dto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mypage", dto);
-		mav.setViewName("Mypage/Myinfo");
+		mav.setViewName("Mypage");
 		return mav;
 		
 		
