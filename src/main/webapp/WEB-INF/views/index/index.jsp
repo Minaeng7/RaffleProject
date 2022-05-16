@@ -239,7 +239,7 @@ setInterval(function() {
     <div class="categories-shop">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="height: 280px; ">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="height: 280px; "><!-- 여기 부터 반복 -->
                     <a href="링크">
                         <img class="img-fluid" src="images/t-shirts-img.jpg" alt="" />
                 </a>
@@ -258,7 +258,7 @@ setInterval(function() {
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><!-- 여기 부터 반복 -->
                     <div class="shop-cat-box1" style="height: 100px; ">
                         <a class="brand-text" href="#">래플1<br>
                             <h1  class="product_item" id="count3"></h1>
@@ -304,8 +304,8 @@ setInterval(function() {
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
                             <button class="active" data-filter="*">All</button>
-                            <button data-filter=".raffle">Raffle</button>
-                            <button data-filter=".resell">Re-sell</button>
+                            <button data-filter=".raffle">Raffle</button><!-- Seller -->
+                            <button data-filter=".resell">Re-sell</button><!-- Reseller -->
                         </div>
                     </div>
                 </div>
