@@ -82,8 +82,8 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">게시판</a>
                             <ul class="dropdown-menu">
-                                <li><a href="cart.html">공지사항</a></li>
-                                <li><a href="my-account.html">자유 게시판</a></li>
+                                <li><a href="notice">공지사항</a></li>
+                                <li><a href="forum">자유 게시판</a></li>
                             </ul>
                         </li>
                        <!-- <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>-->
@@ -98,7 +98,7 @@
                     </div>
                     <!-- End Atribute Navigation -->
                 </div>
-\            </nav>
+            </nav>
         </header>
     <!-- End Main Top -->
 
@@ -115,8 +115,8 @@
     <!-- End Top Search -->
     <ul class="left-board">
         <li class="left-side-menu">게시판 목록</li>
-        <li><a href="notice.html">공지사항</a></li>
-        <li><a class="notice_color" href="forum.html">자유 게시판</a></li>
+        <li><a href="notice">공지사항</a></li>
+        <li><a class="notice_color" href="forum">자유 게시판</a></li>
 
     </ul>
 
@@ -132,7 +132,7 @@
         </div>
         <div id="forum_content">
             <textarea name="content" id="ucontent" placeholder="내용을 입력해 주세요" required></textarea>
-            <button type="button" name="save_btn" onclick="location.href='forum.html'" class="btn btn-secondary" style="    margin-left: 710px;
+            <button type="button" name="save_btn" onclick="location.href='insert'" class="btn btn-secondary" style="    margin-left: 710px;
             margin-top: 15px;">저장하기</button>
 
         </div>

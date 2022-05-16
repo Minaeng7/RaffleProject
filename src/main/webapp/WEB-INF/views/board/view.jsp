@@ -4,8 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#btnDelete").on("click", function() {
@@ -65,5 +63,7 @@ $(document).ready(function(){
 <button id="btnDelete">삭제</button>
 </div>
 </form>
+
 </body>
+
 </html>

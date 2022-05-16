@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -46,63 +47,6 @@
 
 <body>
 
- 
-
-     <!-- Start Main Top -->
-     <header class="main-header">
-        <!-- Start Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
-            <div class="container">
-                <!-- Start Header Navigation -->
-                <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
-                </div>
-                <!-- End Header Navigation -->
-    
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="navbar-menu">
-                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="shop-raffle.html">Raffle</a></li>
-                                <li><a href="shop-resell.html">Resell</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">MyPage</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="MyPage.html">My Account</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">게시판</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="cart.html">공지사항</a></li>
-                                <li><a href="my-account.html">자유 게시판</a></li>
-                            </ul>
-                        </li>
-                       <!-- <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>-->
-                    </ul>
-                </div>
-             
-                    <!-- Start Atribute Navigation -->
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- End Atribute Navigation -->
-                </div>
-\            </nav>
-        </header>
-    <!-- End Main Top -->
-
     <!-- Start Top Search -->
     <div class="top-search">
         <div class="container">
@@ -116,13 +60,11 @@
     <!-- End Top Search -->
     <ul class="left-board">
         <li class="left-side-menu">게시판 목록</li>
-        <li><a class="notice_color" href="notice.html">공지사항</a></li>
-        <li><a href="forum.html">자유 게시판</a></li>
+        <li><a class="notice_color" href="notice">공지사항</a></li>
+        <li><a href="forum">자유 게시판</a></li>
 
     </ul>
-${notice }
     <div class="board_list_wrap">
-
         <table class="board_list">
             <caption class="notice">공지사항</caption>
             <thead>
@@ -135,51 +77,17 @@ ${notice }
                 </tr>
             </thead>
             <tbody>
+                <c:forEach var="notice" items="${notice }" varStatus="status">
                 <tr>
-                    <td>5</td>
+                    <td>${notice.bno }</td>
                     <td class="tit" style="width:440px;">
-                        <a href="#">크롬 개발자도구 활용하는 방법</a>
+                        <a href="view?bno=${notice.bno }">${notice.title }</a>
                     </td>
                     <td>관리자</td>
-                    <td>2019-11-20</td>
-                    <td>111</td>
+                    <td>${notice.regdate }</td>
+                    <td>${notice.viewcnt }</td>
                 </tr>
-                <tr>
-                    <td>4</td>
-                    <td class="tit">
-                        <a href="#">html과 css로 웹사이트를 만들어요.</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-11-12</td>
-                    <td>222</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td class="tit">
-                        <a href="#">코딩은 즐거워요.</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-11-02</td>
-                    <td>333</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td class="tit">
-                        <a href="#">코딩.</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-10-28</td>
-                    <td>222</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td class="tit">
-                        <a href="#">코딩공지</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-10-24</td>
-                    <td>111</td>
-                </tr>
+                </c:forEach>
             </tbody>
         </table>
         <div class="paging">
@@ -197,7 +105,7 @@ ${notice }
    
 
     <!-- Start Footer  -->
-    <footer>
+   <footer>
         <div class="footer-main">
             <div class="container">
                 <div class="row">
@@ -257,10 +165,9 @@ ${notice }
         <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
             <a href="https://html.design/">html design</a></p>
     </div>
-    <!-- End copyright  -->
+    <!-- End copyright --> 
     <script src="https://kit.fontawesome.com/1444dff67d.js" crossorigin="anonymous"></script>
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

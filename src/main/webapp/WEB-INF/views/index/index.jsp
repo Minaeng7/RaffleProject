@@ -155,7 +155,6 @@ setInterval(function() {
 
 <body>
 
-	
     <div class="top-search">
         <div class="container">
             <div class="input-group">
