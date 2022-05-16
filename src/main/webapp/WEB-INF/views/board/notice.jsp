@@ -120,7 +120,7 @@
         <li><a href="forum.html">자유 게시판</a></li>
 
     </ul>
-
+${notice }
     <div class="board_list_wrap">
 
         <table class="board_list">

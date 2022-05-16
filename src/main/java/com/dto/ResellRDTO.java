@@ -14,13 +14,12 @@ public class ResellRDTO {
 	String per_price;
 	String deadline;
 	String text;
-	String img;
 	public ResellRDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public ResellRDTO(int resell_rno, int memberno, String nickname, String rafflename, String total_price,
-			String attend_amount, String per_price, String deadline, String text, String img) {
+			String attend_amount, String per_price, String deadline, String text) {
 		super();
 		this.resell_rno = resell_rno;
 		this.memberno = memberno;
@@ -31,7 +30,12 @@ public class ResellRDTO {
 		this.per_price = per_price;
 		this.deadline = deadline;
 		this.text = text;
-		this.img = img;
+	}
+	@Override
+	public String toString() {
+		return "ResellRDTO [resell_rno=" + resell_rno + ", memberno=" + memberno + ", nickname=" + nickname
+				+ ", rafflename=" + rafflename + ", total_price=" + total_price + ", attend_amount=" + attend_amount
+				+ ", per_price=" + per_price + ", deadline=" + deadline + ", text=" + text + "]";
 	}
 	public int getResell_rno() {
 		return resell_rno;
@@ -87,19 +91,5 @@ public class ResellRDTO {
 	public void setText(String text) {
 		this.text = text;
 	}
-	public String getImg() {
-		return img;
-	}
-	public void setImg(String img) {
-		this.img = img;
-	}
-	@Override
-	public String toString() {
-		return "ResellRDTO [resell_rno=" + resell_rno + ", memberno=" + memberno + ", nickname=" + nickname
-				+ ", rafflename=" + rafflename + ", total_price=" + total_price + ", attend_amount=" + attend_amount
-				+ ", per_price=" + per_price + ", deadline=" + deadline + ", text=" + text + ", img=" + img + "]";
-	}
-	
-	
 	
 }

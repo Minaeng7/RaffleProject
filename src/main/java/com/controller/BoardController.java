@@ -9,19 +9,34 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.dto.BoardDTO;
-import com.service.BoardService;
+import com.dto.ForumDTO;
+import com.dto.NoticeDTO;
+import com.service.ForumService;
+import com.service.NoticeService;
 
 @Controller
 public class BoardController {
 
 	@Autowired
-	BoardService service;
+	ForumService fservice;
+	@Autowired
+	NoticeService nservice;
+	
+	//공지사항 목록
+	@RequestMapping("/notice")
+	public ModelAndView notice() {
+		List<NoticeDTO> list = nservice.notice();
+		System.out.println("notice : "+list);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("notice", list);
+		mav.setViewName("board/notice");
+		return mav;
+	}
 	
 	//게시글 목록
 	@RequestMapping("/list")
 	public ModelAndView list() {
-		List<BoardDTO> list = service.listAll();
+		List<ForumDTO> list = fservice.listAll();
 		System.out.println(list);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
@@ -35,29 +50,29 @@ public class BoardController {
 	}
 	//게시글 등록
 	@RequestMapping(value = "/insert")
-	public String insert(BoardDTO dto) {
-		service.create(dto);
+	public String insert(ForumDTO dto) {
+		fservice.create(dto);
 		return "redirect:list";
 	}
 	//게시글 상세내용 조회, 조회수 증가
 	@RequestMapping("/view")
 	public ModelAndView view (int bno, HttpSession session) {
-		service.increaseViewcnt(bno, session);
+		fservice.increaseViewcnt(bno, session);
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("dto", service.read(bno));
+		mav.addObject("dto", fservice.read(bno));
 		mav.setViewName("board/view");
 		return mav;
 	}
 	//게시글 수정
 	@RequestMapping("/update")
-	public String update(BoardDTO dto) {
-		service.update(dto);
+	public String update(ForumDTO dto) {
+		fservice.update(dto);
 		return "redirect:list";
 	}
 	//게시글 삭제
 	@RequestMapping("/delete")
 	public String delete(int bno) {
-		service.delete(bno);
+		fservice.delete(bno);
 		return "redirect:list";
 	}
 }

@@ -7,39 +7,39 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dao.BoardDAO;
-import com.dto.BoardDTO;
+import com.dao.NoticeDAO;
+import com.dto.NoticeDTO;
 
 @Service
-public class BoardService {
+public class NoticeService {
 
 	@Autowired
-	BoardDAO dao;
+	NoticeDAO dao;
 
 	//전체 목록
-	public List<BoardDTO> listAll() {
-		return dao.listAll();
+	public List<NoticeDTO> notice() {
+		return dao.notice();
 	}
-	//게시글 쓰기
-	public void create(BoardDTO dto) {
-		String title = dto.getTitle();
-		String content = dto.getContent();
-		String username = dto.getUsername();
-		//태그문자 처리
-		title = title.replace("<", "&lt;");
-		title = title.replace("<", "&gt;");
-		username = username.replace("<", "&lt;");
-		username = username.replace("<", "&gt;");
-		//공백문자 처리
-		title = title.replace("  ", "&nbsp;&nbsp;");
-		username = username.replace("  ", "&nbsp;&nbsp;");
-		//줄바꿈 문자처리
-		content = content.replace("\n", "<br>");
-		dto.setTitle(title);
-		dto.setContent(content);
-		dto.setUsername(username);;
-		dao.create(dto);
-	}
+//	//게시글 쓰기
+//	public void create(ForumDTO dto) {
+//		String title = dto.getTitle();
+//		String content = dto.getContent();
+//		String username = dto.getUsername();
+//		//태그문자 처리
+//		title = title.replace("<", "&lt;");
+//		title = title.replace("<", "&gt;");
+//		username = username.replace("<", "&lt;");
+//		username = username.replace("<", "&gt;");
+//		//공백문자 처리
+//		title = title.replace("  ", "&nbsp;&nbsp;");
+//		username = username.replace("  ", "&nbsp;&nbsp;");
+//		//줄바꿈 문자처리
+//		content = content.replace("\n", "<br>");
+//		dto.setTitle(title);
+//		dto.setContent(content);
+//		dto.setUsername(username);;
+//		dao.create(dto);
+//	}
 	public void increaseViewcnt(int bno, HttpSession session) {
 		long update_time = 0;
 		//세션에 저장된 조회시간 검색
@@ -57,13 +57,13 @@ public class BoardService {
 			session.setAttribute("update_time_"+bno, current_time);
 		}
 	}
-	public Object read(int bno) {
-		return dao.read(bno);
-	}
-	public void update(BoardDTO dto) {
-		dao.update(dto);
-	}
-	public void delete(int bno) {
-		dao.delete(bno);
-	}
+//	public Object read(int bno) {
+//		return dao.read(bno);
+//	}
+//	public void update(ForumDTO dto) {
+//		dao.update(dto);
+//	}
+//	public void delete(int bno) {
+//		dao.delete(bno);
+//	}
 }

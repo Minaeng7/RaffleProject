@@ -13,13 +13,12 @@ public class SellRDTO {
 	String raffleamount;
 	String text;
 	String deadline;
-	String img;
 	public SellRDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public SellRDTO(int sell_rno, int memberno, String nickname, String rafflename, String raffleprice,
-			String raffleamount, String text, String deadline, String img) {
+			String raffleamount, String text, String deadline) {
 		super();
 		this.sell_rno = sell_rno;
 		this.memberno = memberno;
@@ -29,13 +28,12 @@ public class SellRDTO {
 		this.raffleamount = raffleamount;
 		this.text = text;
 		this.deadline = deadline;
-		this.img = img;
 	}
 	@Override
 	public String toString() {
 		return "SellRDTO [sell_rno=" + sell_rno + ", memberno=" + memberno + ", nickname=" + nickname + ", rafflename="
 				+ rafflename + ", raffleprice=" + raffleprice + ", raffleamount=" + raffleamount + ", text=" + text
-				+ ", deadline=" + deadline + ", img=" + img + "]";
+				+ ", deadline=" + deadline + "]";
 	}
 	public int getSell_rno() {
 		return sell_rno;
@@ -85,11 +83,5 @@ public class SellRDTO {
 	public void setDeadline(String deadline) {
 		this.deadline = deadline;
 	}
-	public String getImg() {
-		return img;
-	}
-	public void setImg(String img) {
-		this.img = img;
-	}
-	
+
 }

@@ -4,8 +4,8 @@ import java.util.Date;
 
 import org.apache.ibatis.type.Alias;
 
-@Alias("BoardDTO")
-public class BoardDTO {
+@Alias("NoticeDTO")
+public class NoticeDTO {
 	
 	int bno;
 	String title;
@@ -13,12 +13,11 @@ public class BoardDTO {
 	String username;
 	Date regdate;
 	int viewcnt;
-	
-	public BoardDTO() {
+	public NoticeDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public BoardDTO(int bno, String title, String content, String username, Date regdate, int viewcnt) {
+	public NoticeDTO(int bno, String title, String content, String username, Date regdate, int viewcnt) {
 		super();
 		this.bno = bno;
 		this.title = title;
@@ -27,9 +26,10 @@ public class BoardDTO {
 		this.regdate = regdate;
 		this.viewcnt = viewcnt;
 	}
+	
 	@Override
 	public String toString() {
-		return "BoardDTO [bno=" + bno + ", title=" + title + ", content=" + content + ", username=" + username
+		return "NoticeDTO [bno=" + bno + ", title=" + title + ", content=" + content + ", username=" + username
 				+ ", regdate=" + regdate + ", viewcnt=" + viewcnt + "]";
 	}
 	public int getBno() {
