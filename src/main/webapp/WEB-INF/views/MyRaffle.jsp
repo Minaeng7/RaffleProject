@@ -40,8 +40,12 @@
 </head>
 <body>
 <jsp:include page = "common/top.jsp"></jsp:include>
-<jsp:include page = "Mypage/Myinfo.jsp"></jsp:include>
-
+<c:if test="${!empty MyRaffleR || !empty MyRaffleS}">
+<jsp:include page = "MyRaffle/SupervisingRaffle.jsp"></jsp:include>
+</c:if>
+<c:if test="${empty MyRaffleR && empty MyRaffleS}">
+<jsp:include page = "MyRaffle/NotSupervisingRaffle.jsp"></jsp:include>
+</c:if>
 
    <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
