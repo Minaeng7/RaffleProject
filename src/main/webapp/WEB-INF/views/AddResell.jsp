@@ -43,7 +43,7 @@
 
 <body>
 <jsp:include page="common/top.jsp" flush="true"></jsp:include>
-<jsp:include page="Product/SList.jsp"></jsp:include>
+<jsp:include page="Product/AddResell.jsp"></jsp:include>
 <jsp:include page="common/bottom.jsp"></jsp:include>
 
 

@@ -18,12 +18,9 @@
 	<insert id="addSell_r" parameterType="SellRDTO">
 		insert into sell_r
 		(sell_rno, memberno, nickname, rafflename, raffleprice,
-		raffleamount,
-		img, text, deadline)
+		raffleamount, text, deadline)
 		values (SEQ_SELL_RNO.nextval, #{memberno}, #{nickname},
-		#{rafflename},
-		#{raffleprice}, #{raffleamount}, #{img}, #{text},
-		#{deadline})
+		#{rafflename}, #{raffleprice}, #{raffleamount}, #{text}, #{deadline})
 	</insert>
 	
 	<select id="SellList" resultType="SellRDTO">

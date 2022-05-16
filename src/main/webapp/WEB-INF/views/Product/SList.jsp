@@ -38,28 +38,12 @@
 
 </head>
 <body>
-    <!-- Start Top Search -->
-    <div class="top-search">
-        <div class="container">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
-                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-            </div>
-        </div>
-    </div>
-    <!-- End Top Search -->
-
     <!-- Start All Title Box -->
     <div class="all-title-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>상품목록 페이지입니다.</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Shop</li>
-                    </ul>
+                    <h2>셀러 상품목록 페이지입니다.</h2>
                 </div>
             </div>
         </div>
@@ -80,41 +64,13 @@
                         </div>
                         <div class="filter-sidebar-left">
                             <div class="title-left">
-                                <h3>카테고리 적는 곳</h3>
+                                <h3>래플 종류</h3>
                             </div>
                             <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
-                                <div class="list-group-collapse sub-men">
-                                    <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">왕카테고리1 <small class="text-muted">(100)</small>
-								</a>
-                                    <div class="collapse show" id="sub-men1" data-parent="#list-group-men">
-                                        <div class="list-group">
-                                            <a href="#" class="list-group-item list-group-item-action active">목록1 <small class="text-muted">(50)</small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">목록2 <small class="text-muted">(10)</small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">목록3 <small class="text-muted">(10)</small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">목록4 <small class="text-muted">(10)</small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">목록5 <small class="text-muted">(20)</small></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-collapse sub-men">
-                                    <a class="list-group-item list-group-item-action" href="#sub-men2" data-toggle="collapse" aria-expanded="false" aria-controls="sub-men2">왕카테고리2 
-								<small class="text-muted">(50)</small>
-								</a>
-                                    <div class="collapse" id="sub-men2" data-parent="#list-group-men">
-                                        <div class="list-group">
-                                            <a href="#" class="list-group-item list-group-item-action">Sports Shoes <small class="text-muted">(10)</small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">Sneakers <small class="text-muted">(20)</small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">Formal Shoes <small class="text-muted">(20)</small></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="list-group-item list-group-item-action"> 왕카테고리3  <small class="text-muted">(150) </small></a>
-                                <a href="#" class="list-group-item list-group-item-action">왕카테고리4 <small class="text-muted">(11)</small></a>
-                                <a href="#" class="list-group-item list-group-item-action">왕카테고리5 <small class="text-muted">(22)</small></a>
+                                <a href="SList" class="list-group-item list-group-item-action">셀러 상품목록 </a>
+                                <a href="RList" class="list-group-item list-group-item-action">리셀러 상품목록 </a>
                             </div>
                         </div>
-                        
-
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
@@ -145,7 +101,9 @@
                                                     <div class="type-lb">
                                                         <p class="sale">Sale</p>
                                                     </div>
-                                                    <a href="SellRetrieve?sell_rno=${sdto.sell_rno }"><img src="images/img-pro-01.jpg" class="img-fluid" alt="Image" border="0"></a>
+                                                    <a href="SellRetrieve?sell_rno=${sdto.sell_rno }">
+                                                    <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image" border="0">
+                                                    </a>
                                                 </div>
                                                 <div class="why-text">
                                                     <h4>래플이름 : ${sdto.rafflename }</h4>

@@ -23,7 +23,8 @@
 	<view-controller path="/DeleteMyRaffleR" view-name="/MyRaffle/DeleteMyRaffleR"/>
 	<view-controller path="/DeleteMyRaffleS" view-name="/MyRaffle/DeleteMyRaffleS"/>
 	<view-controller path="/DeleteMyAttendingR" view-name="/MyRaffle/DeleteAttendingR"/>
-	<view-controller path="/AddResell" view-name="/Product/AddResell"/>
+	<view-controller path="/AddSell" view-name="AddSell"/>
+	<view-controller path="/AddResell" view-name="AddResell"/>
 	<view-controller path="/board" view-name="board"/>
 	<view-controller path="/edit" view-name="/board/edit"/>
 
