@@ -12,6 +12,7 @@ public class ResellRDTO {
 	String total_price;
 	String attend_amount;
 	String per_price;
+	int viewcnt;
 	String deadline;
 	String text;
 	public ResellRDTO() {
@@ -19,7 +20,7 @@ public class ResellRDTO {
 		// TODO Auto-generated constructor stub
 	}
 	public ResellRDTO(int resell_rno, int memberno, String nickname, String rafflename, String total_price,
-			String attend_amount, String per_price, String deadline, String text) {
+			String attend_amount, String per_price, int viewcnt, String deadline, String text) {
 		super();
 		this.resell_rno = resell_rno;
 		this.memberno = memberno;
@@ -28,14 +29,9 @@ public class ResellRDTO {
 		this.total_price = total_price;
 		this.attend_amount = attend_amount;
 		this.per_price = per_price;
+		this.viewcnt = viewcnt;
 		this.deadline = deadline;
 		this.text = text;
-	}
-	@Override
-	public String toString() {
-		return "ResellRDTO [resell_rno=" + resell_rno + ", memberno=" + memberno + ", nickname=" + nickname
-				+ ", rafflename=" + rafflename + ", total_price=" + total_price + ", attend_amount=" + attend_amount
-				+ ", per_price=" + per_price + ", deadline=" + deadline + ", text=" + text + "]";
 	}
 	public int getResell_rno() {
 		return resell_rno;
@@ -79,6 +75,12 @@ public class ResellRDTO {
 	public void setPer_price(String per_price) {
 		this.per_price = per_price;
 	}
+	public int getViewcnt() {
+		return viewcnt;
+	}
+	public void setViewcnt(int viewcnt) {
+		this.viewcnt = viewcnt;
+	}
 	public String getDeadline() {
 		return deadline;
 	}
@@ -91,5 +93,14 @@ public class ResellRDTO {
 	public void setText(String text) {
 		this.text = text;
 	}
+	@Override
+	public String toString() {
+		return "ResellRDTO [resell_rno=" + resell_rno + ", memberno=" + memberno + ", nickname=" + nickname
+				+ ", rafflename=" + rafflename + ", total_price=" + total_price + ", attend_amount=" + attend_amount
+				+ ", per_price=" + per_price + ", viewcnt=" + viewcnt + ", deadline=" + deadline + ", text=" + text
+				+ "]";
+	}
+	
+	
 	
 }

@@ -35,6 +35,7 @@ public class RaffleController {
 	
 	@RequestMapping(value="/loginCheck/AddSell")
 	public ModelAndView AddSell(SellRDTO sdto, HttpSession session) {//sell 상품등록
+		System.out.println(sdto);
 		service.addSell_r(sdto);
 		System.out.println(sdto);
 		ModelAndView mav = new ModelAndView();
@@ -94,17 +95,32 @@ public class RaffleController {
 		mav.setViewName("Product/SellRetrieve");
 		return mav;
 	}
-
+	@RequestMapping("UpdateMyRaffleR")
+	public ModelAndView UpdateMyRaffleR(ResellRDTO rdto) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("resellrdto",rdto);
+		mav.setViewName("MyRaffle/UpdateMyRaffleR");
+		return mav;
+	}
 	@RequestMapping("UpdateMyRaffleRR")
 	public String UpdateMyRaffleRR(ResellRDTO rdto, HttpSession session) {//수정
 		service.UpdateResell_r(rdto);
 		return "redirect:Mypage";
+	}
+	@RequestMapping("UpdateMyRaffleS")
+	public ModelAndView UpdateMyRaffleS(SellRDTO rdto) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("sellrdto",rdto);
+		mav.setViewName("MyRaffle/UpdateMyRaffleS");
+		return mav;
 	}
 	@RequestMapping("UpdateMyRaffleSS")
 	public String UpdateMyRaffleSS(SellRDTO rdto, HttpSession session) {
 		service.UpdateSell_r(rdto);
 		return "redirect:Mypage";
 	}
+	
+
 	@RequestMapping("DeleteMyRaffleRR")// Raffleno를 넘겨주도록 향후 수정
 	public String DeleteMyRaffleRR(HttpSession session) {//삭제
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");

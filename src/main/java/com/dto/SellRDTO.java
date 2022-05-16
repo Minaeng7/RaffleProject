@@ -11,6 +11,7 @@ public class SellRDTO {
 	String rafflename;
 	String raffleprice;
 	String raffleamount;
+	int viewcnt;
 	String text;
 	String deadline;
 	public SellRDTO() {
@@ -18,7 +19,7 @@ public class SellRDTO {
 		// TODO Auto-generated constructor stub
 	}
 	public SellRDTO(int sell_rno, int memberno, String nickname, String rafflename, String raffleprice,
-			String raffleamount, String text, String deadline) {
+			String raffleamount, int viewcnt, String text, String deadline) {
 		super();
 		this.sell_rno = sell_rno;
 		this.memberno = memberno;
@@ -26,14 +27,9 @@ public class SellRDTO {
 		this.rafflename = rafflename;
 		this.raffleprice = raffleprice;
 		this.raffleamount = raffleamount;
+		this.viewcnt = viewcnt;
 		this.text = text;
 		this.deadline = deadline;
-	}
-	@Override
-	public String toString() {
-		return "SellRDTO [sell_rno=" + sell_rno + ", memberno=" + memberno + ", nickname=" + nickname + ", rafflename="
-				+ rafflename + ", raffleprice=" + raffleprice + ", raffleamount=" + raffleamount + ", text=" + text
-				+ ", deadline=" + deadline + "]";
 	}
 	public int getSell_rno() {
 		return sell_rno;
@@ -71,6 +67,12 @@ public class SellRDTO {
 	public void setRaffleamount(String raffleamount) {
 		this.raffleamount = raffleamount;
 	}
+	public int getViewcnt() {
+		return viewcnt;
+	}
+	public void setViewcnt(int viewcnt) {
+		this.viewcnt = viewcnt;
+	}
 	public String getText() {
 		return text;
 	}
@@ -83,5 +85,12 @@ public class SellRDTO {
 	public void setDeadline(String deadline) {
 		this.deadline = deadline;
 	}
+	@Override
+	public String toString() {
+		return "SellRDTO [sell_rno=" + sell_rno + ", memberno=" + memberno + ", nickname=" + nickname + ", rafflename="
+				+ rafflename + ", raffleprice=" + raffleprice + ", raffleamount=" + raffleamount + ", viewcnt="
+				+ viewcnt + ", text=" + text + ", deadline=" + deadline + "]";
+	}
+	
 
 }
