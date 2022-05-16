@@ -25,22 +25,22 @@ public class BoardController {
 	//공지사항 목록
 	@RequestMapping("/notice")
 	public ModelAndView notice() {
-		List<NoticeDTO> list = nservice.notice();
-		System.out.println("notice : "+list);
+		List<NoticeDTO> notice = nservice.notice();
+		System.out.println("notice : "+notice);
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("notice", list);
-		mav.setViewName("board/notice");
+		mav.addObject("notice", notice);
+		mav.setViewName("notice");
 		return mav;
 	}
 	
 	//게시글 목록
-	@RequestMapping("/list")
+	@RequestMapping("/forum")
 	public ModelAndView list() {
 		List<ForumDTO> list = fservice.listAll();
-		System.out.println(list);
+		System.out.println("list" +list);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
-		mav.setViewName("board/list");
+		mav.setViewName("forum");
 		return mav;
 	}
 	//게시글 작성 화면
@@ -52,7 +52,7 @@ public class BoardController {
 	@RequestMapping(value = "/insert")
 	public String insert(ForumDTO dto) {
 		fservice.create(dto);
-		return "redirect:list";
+		return "redirect:forum";
 	}
 	//게시글 상세내용 조회, 조회수 증가
 	@RequestMapping("/view")
@@ -67,12 +67,12 @@ public class BoardController {
 	@RequestMapping("/update")
 	public String update(ForumDTO dto) {
 		fservice.update(dto);
-		return "redirect:list";
+		return "redirect:forum";
 	}
 	//게시글 삭제
 	@RequestMapping("/delete")
 	public String delete(int bno) {
 		fservice.delete(bno);
-		return "redirect:list";
+		return "redirect:forum";
 	}
 }

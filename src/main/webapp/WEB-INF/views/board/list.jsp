@@ -49,10 +49,6 @@
 
 <body>
 
- 
-
-    <!-- End Main Top -->
-
     <!-- Start Top Search -->
     <div class="top-search">
         <div class="container">
@@ -66,13 +62,11 @@
     <!-- End Top Search -->
     <ul class="left-board">
         <li class="left-side-menu">게시판 목록</li>
-        <li><a href="notice.html">공지사항</a></li>
-        <li><a class="notice_color" href="forum.html">자유 게시판</a></li>
+        <li><a href="notice">공지사항</a></li>
+        <li><a class="notice_color" href="forum">자유 게시판</a></li>
 
     </ul>
-
     <div class="board_list_wrap">
-
         <table class="board_list">
             <caption class="notice">자유게시판</caption>
             <thead>
@@ -85,51 +79,18 @@
                 </tr>
             </thead>
             <tbody>
+            <c:forEach var="list" items="${list }" varStatus="status">
                 <tr>
-                    <td>5</td>
+                    <td>${list.bno }</td>
                     <td class="tit" style="width:440px;">
-                        <a href="#">크롬 개발자도구 활용하는 방법</a>
+                        <a href="view?bno=${list.bno }">${list.title }</a>
                     </td>
                     <td>관리자</td>
-                    <td>2019-11-20</td>
-                    <td>111</td>
+                    <td>${list.regdate }</td>
+                    <td>${list.viewcnt }</td>
                 </tr>
-                <tr>
-                    <td>4</td>
-                    <td class="tit">
-                        <a href="#">html과 css로 웹사이트를 만들어요.</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-11-12</td>
-                    <td>222</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td class="tit">
-                        <a href="#">코딩은 즐거워요.</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-11-02</td>
-                    <td>333</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td class="tit">
-                        <a href="#">코딩.</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-10-28</td>
-                    <td>222</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td class="tit">
-                        <a href="#">코딩공지</a>
-                    </td>
-                    <td>관리자</td>
-                    <td>2019-10-24</td>
-                    <td>111</td>
-                </tr>
+                </c:forEach>
+                
             </tbody>
         </table>
         <div class="paging">

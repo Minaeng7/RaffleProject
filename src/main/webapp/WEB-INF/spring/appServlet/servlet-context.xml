@@ -24,7 +24,8 @@
 	<view-controller path="/DeleteMyRaffleS" view-name="/MyRaffle/DeleteMyRaffleS"/>
 	<view-controller path="/DeleteMyAttendingR" view-name="/MyRaffle/DeleteAttendingR"/>
 	<view-controller path="/AddResell" view-name="/Product/AddResell"/>
-	<view-controller path="/board" view-name="board"/>
+	<view-controller path="/forum" view-name="forum"/>
+	<view-controller path="/notice" view-name="notice"/>
 	<view-controller path="/edit" view-name="/board/edit"/>
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->

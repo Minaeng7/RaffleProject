@@ -74,8 +74,8 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">게시판</a>
                             <ul class="dropdown-menu">
-                                <li><a href="cart.html">공지사항</a></li>
-                                <li><a href="my-account.html">자유 게시판</a></li>
+                                <li><a href="notice">공지사항</a></li>
+                                <li><a href="forum">자유 게시판</a></li>
                             </ul>
                         </li>
                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
@@ -168,8 +168,8 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">게시판</a>
                             <ul class="dropdown-menu">
-                                <li><a href="cart.html">공지사항</a></li>
-                                <li><a href="my-account.html">자유 게시판</a></li>
+                                <li><a href="notice">공지사항</a></li>
+                                <li><a href="forum">자유 게시판</a></li>
                             </ul>
                         </li>
                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
