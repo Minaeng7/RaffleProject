@@ -82,14 +82,12 @@ public class RaffleController {
 	}
 	
 	@RequestMapping(value="/SellRetrieve")
-	public ModelAndView SellRetrieve(int sell_rno, HttpSession session) {//상품상세정보 
+	public ModelAndView SellRetrieve(int sell_rno) {//상품상세정보 
 //		System.out.println("SellRetrieve 호출");
-		MemberDTO mdto = (MemberDTO)session.getAttribute("login");
 		ModelAndView mav = new ModelAndView();
 		SellRDTO sdto = service.SellRetrieve(sell_rno);
 		//System.out.println(resell_rno);
 		mav.addObject("sdto", sdto);
-		mav.addObject("login", mdto);
 		mav.setViewName("SellRetrieve");
 		return mav;
 	}
