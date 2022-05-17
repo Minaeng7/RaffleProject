@@ -58,7 +58,7 @@
 								
 								<tr>
 									<td colspan = "7">만든 래플이 없습니다.
-									<a href = "AddSell">지금 상품 등록하러 가기</a>
+									<a href = "RList">지금 상품 등록하러 가기</a>
 									</td>
 								</tr>
 								

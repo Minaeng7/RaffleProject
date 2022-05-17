@@ -6,7 +6,6 @@ import org.apache.ibatis.type.Alias;
 public class SwinDTO {
 	
 	int sell_rno;
-	String nickname;
 	String username;
 	String post;
 	String addr1;
@@ -20,7 +19,6 @@ public class SwinDTO {
 			String phone) {
 		super();
 		this.sell_rno = sell_rno;
-		this.nickname = nickname;
 		this.username = username;
 		this.post = post;
 		this.addr1 = addr1;
@@ -29,7 +27,7 @@ public class SwinDTO {
 	}
 	@Override
 	public String toString() {
-		return "SwinDTO [sell_rno=" + sell_rno + ", nickname=" + nickname + ", username=" + username + ", post=" + post
+		return "SwinDTO [sell_rno=" + sell_rno +  ", username=" + username + ", post=" + post
 				+ ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone=" + phone + "]";
 	}
 	public int getSell_rno() {
@@ -38,12 +36,7 @@ public class SwinDTO {
 	public void setSell_rno(int sell_rno) {
 		this.sell_rno = sell_rno;
 	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
+	
 	public String getUsername() {
 		return username;
 	}

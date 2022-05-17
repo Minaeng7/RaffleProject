@@ -109,7 +109,7 @@ $(document).ready(function(){
 										<i class="fas fa-cloud-upload-alt tm-upload-icon"
 											onclick="document.getElementById('fileInput').click();"></i>
 									</div>
-									<input type="file" id="upImgFiles" name="img"
+									<input type="file" id="upImgFiles"
 										onChange="uploadImgPreview();" accept="image/*" multiple>
 
 									<hr />
@@ -153,7 +153,7 @@ $(document).ready(function(){
 									<div class="row">
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="expire_date">Deadline</label> <input
-												id="expire_date" name="deadline" type="datetime-local"value = "${resellrdto.deadline}"
+												id="expire_date" name="deadline" type="date"value = "${resellrdto.deadline}"
 												class="form-control validate" data-large-mode="true" />
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">

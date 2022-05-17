@@ -18,8 +18,8 @@ public class MemberDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public MemberDTO(int memberno, String userid, String passwd, String username, String post, String addr1,
-			String addr2, String phone, String birth, String email) {
+	public MemberDTO(int memberno, String userid, String passwd, String username, String post,
+			String addr1, String addr2, String phone, String birth, String email) {
 		super();
 		this.memberno = memberno;
 		this.userid = userid;

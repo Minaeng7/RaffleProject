@@ -34,4 +34,9 @@ public class RSpotService {
 		
 	}
 
+	public void AddWinner(RSpotDTO dto) {
+		dao.AddWinnder(dto);
+		
+	}
+
 }

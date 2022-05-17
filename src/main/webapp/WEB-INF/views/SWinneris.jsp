@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="../common/top.jsp"></jsp:include>
+<jsp:include page="common/top.jsp"></jsp:include>
 	<div class="top-search">
 		<div class="container">
 			<div class="input-group">
@@ -25,23 +25,21 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2>My Raffle 삭제</h2>
+					<h2>My Raffle 추첨 결과</h2>
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="shop-raffle.html">상점으로
-								이동하기</a></li>
-					</ul>
+						</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- End All Title Box -->
-<form action="DeleteMyRaffleSS" style="text-align: center;">
-&nbsp;
-<h1 align="center">정말 삭제하시겠습니까?</h1><br>
-<button >삭제</button>
-<button formaction="SupervisingRaffle">취소</button>
-</form>
-
-
+	&nbsp;
+<h1 align="center">당첨자 확인</h1><br>
+당첨 래플 이름 : ${Winner.rafflename}
+당첨자 이름 : ${Winner.username}
+당첨자 우편번호 : ${Winner.post}
+당첨자 주소 : ${Winner.addr1}
+당첨자 연락처 : ${Winner.phone}
+<button formaction="SupervisingRaffle">확인</button>
 </body>
 </html>

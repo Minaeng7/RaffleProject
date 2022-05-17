@@ -2685,7 +2685,7 @@ letter-spacing: -.27px;
     padding-bottom: 30px;
     margin-left:100px;
     margin-top: 110px;
-    position: fixed;
+    position: absolute;
     overflow: auto;
     border: 2px solid #000;
     height:300px;
