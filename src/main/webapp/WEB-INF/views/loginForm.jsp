@@ -50,8 +50,9 @@
 
       
   </script>
-  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">   
    $(document).ready(function(){
 	  $("#userid").on("keyup",function(){
@@ -70,7 +71,7 @@
 		  });
 	  });
    });
-</script> 
+</script>
 
 <link rel="stylesheet" href="css/loginForm.css" />
 <title>Sign in & Sign up Form</title>
@@ -96,8 +97,8 @@
 					<h2 class="title">Sign up</h2>
 					<div class="input-field">
 						<i class="fas fa-user"></i> <input type="text" name="userid"
-							id="userid" placeholder="UserID" />
-							&nbsp;<span id="result" style="color: red;"></span>
+							id="userid" placeholder="UserID" /> &nbsp;<span id="result"
+							style="color: red;"></span>
 						<!-- 회원가입_아이디 -->
 					</div>
 					<div class="input-field">
@@ -137,11 +138,12 @@
 							placeholder="Phone Number" name="phone" />
 						<!-- 회원가입_핸드폰 번호 -->
 					</div>
-					<div class="input-field">
-						<i class="fas fa-lock"></i> <a><input type="text" name="post"
+					<div class="input-field"
+						style="float: left; display: inline-block;">
+						<i class="fas fa-lock"></i> <input type="text" name="post"
 							id="sample4_postcode" placeholder="우편번호" /> <img
 							src="images/find.png" height="30px" width="30px" id="searchPost"
-							onclick="sample4_execDaumPostcode()"></a>
+							onclick="sample4_execDaumPostcode()">
 					</div>
 					<div class="input-field">
 						<i class="fas fa-lock"></i> <input type="text" name="addr1"
@@ -157,29 +159,29 @@
 			</div>
 
 
-		<div class="panels-container">
-			<div class="panel left-panel">
-				<div class="content">
-					<h3>처음 오셨나요?</h3>
-					<p>회원가입 해주세요.</p>
-					<button class="btn transparent" id="sign-up-btn">회원가입</button>
+			<div class="panels-container">
+				<div class="panel left-panel">
+					<div class="content">
+						<h3>처음 오셨나요?</h3>
+						<p>회원가입 해주세요.</p>
+						<button class="btn transparent" id="sign-up-btn">회원가입</button>
+					</div>
+					<img src="images/log.svg" class="image" alt="" />
 				</div>
-				<img src="images/log.svg" class="image" alt="" />
-			</div>
-			<div class="panel right-panel">
-				<div class="content">
-					<h3>가입이 되어있으시다면</h3>
-					<p>로그인 해주세요</p>
-					<button class="btn transparent" id="sign-in-btn">Sign in</button>
+				<div class="panel right-panel">
+					<div class="content">
+						<h3>가입이 되어있으시다면</h3>
+						<p>로그인 해주세요</p>
+						<button class="btn transparent" id="sign-in-btn">Sign in</button>
+					</div>
+					<img src="images/register.svg" class="image" alt="" />
 				</div>
-				<img src="images/register.svg" class="image" alt="" />
 			</div>
 		</div>
-	</div>
 
-	<script src="resources/app.js"></script>
-	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-	<script>
+		<script src="resources/app.js"></script>
+		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+		<script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function sample4_execDaumPostcode() {
         new daum.Postcode({
