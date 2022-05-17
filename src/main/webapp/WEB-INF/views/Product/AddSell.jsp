@@ -108,11 +108,6 @@
 											class="form-control validate" readonly />
 									</div>
 									<div class="form-group mb-3">
-										<label for="name">Nickname</label> <input id="name"
-											name="nickname" type="text" value="${login.nickname }"
-											class="form-control validate" readonly />
-									</div>
-									<div class="form-group mb-3">
 										<label for="description">Description</label>
 										<textarea class="form-control validate" name="text" rows="3"
 											required></textarea>
