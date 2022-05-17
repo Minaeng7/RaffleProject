@@ -66,11 +66,6 @@
         <div class="profile_info" >
             <h4 class="group_title">로그인정보</h4>
             <div class="mypage_unit"> 
-                <h5 class="login_title">닉네임</h5>
-                <input type="text" name = "nickname" value = "${mypage.nickname}"/>
-             
-            </div>
-            <div class="mypage_unit"> 
                 <h5 class="login_title">이메일주소</h5>
                 <input type="text" name = "email" value = "${mypage.email}"/>
             

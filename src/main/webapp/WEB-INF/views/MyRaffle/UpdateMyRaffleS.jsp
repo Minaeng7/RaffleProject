@@ -109,11 +109,7 @@
 											name="memberno" type="text" value="${login.memberno}"
 											class="form-control validate" readonly />
 									</div>
-									<div class="form-group mb-3">
-										<label for="name">Nickname</label> <input id="name"
-											name="nickname" type="text" value="${sellrdto.nickname}"
-											class="form-control validate" readonly />
-									</div>
+									
 									<div class="form-group mb-3">
 										<label for="description">Description</label>
 										<textarea class="form-control validate" name="text" rows="3" value = "${sellrdto.text}"
