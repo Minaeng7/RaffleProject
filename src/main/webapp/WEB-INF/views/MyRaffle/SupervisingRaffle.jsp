@@ -107,7 +107,7 @@
 									<th>images</th>
 									<th>상품이름</th>
 									<th>가격</th>
-									<th>총판매수량</th>
+									<th>참여가능인원</th>
 									<th>수정</th>
 									<th>추첨</th>
 									<th>삭제</th>
@@ -135,7 +135,7 @@
 									<input type = "hidden" name = text value = "${item.text}">
 									<button>수정</button>
 									</form></td>
-									<td><form>
+									<td><form action = "RShuffle">
 									<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
 									<button>추첨</button>
 									</form></td>

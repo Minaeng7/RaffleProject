@@ -35,7 +35,7 @@ public class RSpotDAO {
 	}
 
 	public void AddWinnder(RSpotDTO dto) {
-		session.insert("SpotMapper.AddwinnerR", dto);
+		session.insert("SpotMapper.AddWinnerR", dto);
 		
 	}
 }
