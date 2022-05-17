@@ -62,8 +62,6 @@ public class SupervisingController {//mypage기능
 		mav.addObject("mypage", dto);
 		mav.setViewName("Mypage");
 		return mav;
-		
-		
 	}
 
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.dao.SSpotDAO;
 import com.dto.RSpotDTO;
 import com.dto.SSpotDTO;
+import com.dto.SwinDTO;
 
 @Service
 public class SSpotService {
@@ -38,5 +39,10 @@ public class SSpotService {
 	public void AddWinner(SSpotDTO dto) {
 		dao.AddWinner(dto);
 		
+	}
+
+	public SwinDTO Winnercheck(int sell_rno) {
+		SwinDTO dto = dao.Winnercheck(sell_rno);
+		return dto;
 	}
 }

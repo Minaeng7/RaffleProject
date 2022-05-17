@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.RSpotDTO;
+import com.dto.RwinDTO;
 import com.dto.SSpotDTO;
+import com.dto.SwinDTO;
 import com.service.RSpotService;
 import com.service.SSpotService;
 
@@ -43,5 +45,20 @@ public class RandomController {
 		mav.setViewName("SWinneris");
 		return mav;
 	}
-
+	@RequestMapping("/WinnercheckR")
+	public ModelAndView WinnercheckR(int resell_rno) {
+		RwinDTO dto = rservice.Winnercheck(resell_rno);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("Winner",dto);
+		mav.setViewName("RWinneris");
+		return mav;
+	}
+	@RequestMapping("/WinnercheckS")
+	public ModelAndView WinnercheckS(int sell_rno) {
+		SwinDTO dto = sservice.Winnercheck(sell_rno);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("Winner",dto);
+		mav.setViewName("SWinneris");
+		return mav;
+	}
 }

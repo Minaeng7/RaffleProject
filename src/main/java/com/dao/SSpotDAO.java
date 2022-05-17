@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.dto.RSpotDTO;
 import com.dto.SSpotDTO;
+import com.dto.SwinDTO;
 
 @Repository
 public class SSpotDAO {
@@ -38,5 +39,10 @@ public class SSpotDAO {
 	public void AddWinner(SSpotDTO dto) {
 		session.insert("SpotMapper.AddWinnerS", dto);
 		
+	}
+
+	public SwinDTO Winnercheck(int sell_rno) {
+		SwinDTO dto = session.selectOne("SpotMapper.WinnercheckS",sell_rno);
+		return dto;
 	}
 }

@@ -53,6 +53,7 @@
 									<th>총판매수량</th>
 									<th>수정</th>
 									<th>추첨</th>
+									<th>당첨자확인</th>
 									<th>삭제</th>
 								</tr>
 							</thead>
@@ -80,6 +81,10 @@
 									<td><form action="SShuffle">
 									<input type = "hidden" name = sell_rno value = "${item.sell_rno}">
 									<button>추첨</button>
+									</form></td>
+									<td><form action = "WinnercheckS" >
+									<input type = "hidden" name = sell_rno value = "${item.sell_rno}">
+									<p align="center"><button>확인</button></p>
 									</form></td>
 									<td><form action ="DeleteMyRaffleS">
 									<input type = "hidden" name = sell_rno value = "${item.sell_rno}">
@@ -110,6 +115,7 @@
 									<th>참여가능인원</th>
 									<th>수정</th>
 									<th>추첨</th>
+									<th>당첨자정보</th>
 									<th>삭제</th>
 								</tr>
 							</thead>
@@ -138,6 +144,10 @@
 									<td><form action = "RShuffle">
 									<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
 									<button>추첨</button>
+									</form></td>
+									<td><form action = "WinnercheckR" >
+									<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
+									<p align="center"><button>확인</button></p>
 									</form></td>
 									<td><form action = "DeleteMyRaffleR">
 									<input type = "hidden" name = resell_rno value = "${item.resell_rno}">

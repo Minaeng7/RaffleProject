@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.dao.RSpotDAO;
 import com.dto.RSpotDTO;
+import com.dto.RwinDTO;
 
 @Service
 public class RSpotService {
@@ -37,6 +38,11 @@ public class RSpotService {
 	public void AddWinner(RSpotDTO dto) {
 		dao.AddWinnder(dto);
 		
+	}
+
+	public RwinDTO Winnercheck(int resell_rno) {
+		RwinDTO dto = dao.Winnercheck(resell_rno);
+		return dto;
 	}
 
 }
