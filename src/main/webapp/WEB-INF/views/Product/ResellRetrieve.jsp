@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <!-- Site CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Responsive CSS -->
@@ -120,44 +120,56 @@
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-6">
                     <div class="single-product-details">
-                        <h1 style="margin-top : 20px;">래플이름</h1>
-                        <h6> 셀러 이름 : {user}</h6>
-                        <h3 style="margin-left: 5px; margin : 10px"> 참가비 : </h3>
-                        <h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : </h3>
+                    
+                    <form action="RAttend">
+                    <input type="hidden" name="resell_rno" value="${rdto.resell_rno }">
+                    <input type="hidden" name="rafflename" value="${rdto.rafflename }">
+                    <input type="hidden" name="memberno" value="${login.memberno }">
+                    <input type="hidden" name="username" value="${login.username }">
+                    <input type="hidden" name="nickname" value="${rdto.nickname }">
+                    <input type="hidden" name="post" value="${login.post }">
+                    <input type="hidden" name="addr1" value="${login.addr1 }">
+                    <input type="hidden" name="addr2" value="${login.addr2 }">
+                    <input type="hidden" name="phone" value="${login.phone }">
+                    
+                        <h1 style="margin-top : 20px;">래플이름 : ${rdto.rafflename }</h1>
+                        <h6> 셀러 이름 : ${rdto.memberno}</h6>
+                        <h3 style="margin-left: 5px; margin : 10px"> 참가비 : ${rdto.per_price }</h3>
+                        <h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : ${rdto.attend_amount }</h3>
                             <p>
                                 <h4>Short Description:</h4>
-                                <p style="padding:20px;">대충 설명이라는중대충 설명이라는중 대충 설명이라는중 대충 설명이라는중  </p>
+                                <p style="padding:20px;">${rdto.text }대충 설명이라는중대충 설명이라는중 대충 설명이라는중 대충 설명이라는중  </p>
                                 <ul>
                                     <li>
                                         <div class="form-group size-st">
                                             <label class="size-label">Size</label>
                                             <select id="basic" class="selectpicker show-tick form-control">
-									<option value="0">Size</option>
-									<option value="230">230</option>
-									<option value="240">240</option>
-									<option value="250">250</option>
-									<option value="260">260</option>
-									<option value="270">270</option>
-									<option value="280">280</option>
-									<option value="290">290</option>
-								</select>
+												<option value="0">Size</option>
+												<option value="230">230</option>
+												<option value="240">240</option>
+												<option value="250">250</option>
+												<option value="260">260</option>
+												<option value="270">270</option>
+												<option value="280">280</option>
+												<option value="290">290</option>
+											</select>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="form-group quantity-box">
                                             <label class="control-label">Quantity</label>
-                                            <input class="form-control" id="quantity" value="0" min="0" max="2" type="number"  onclick="check_quantity()">
+                                            <input class="form-control" id="quantity" name="spot" value="0" min="0" max="2" type="number"  onclick="check_quantity()">
                                         </div>
                                     </li>
                                 </ul>
 
                                 <div class="price-box-bar">
                                     <div class="cart-and-bay-btn">
-                                        <a class="btn hvr-hover" data-fancybox-close="" href="RAttendingRaffle" style="margin-right:15px">참여하기</a>
-                                        <a class="btn hvr-hover" data-fancybox-close="" href="#">장바구니</a>
+                                       <a> <input type="submit" class="btn hvr-hover" data-fancybox-close="" style="margin-right:15px" value="구매하기"></a>
+                                        <!-- <a class="btn hvr-hover" data-fancybox-close="" href="#">장바구니</a> -->
                                     </div>
                                 </div>
-
+</form>
                              
                     </div>
                 </div>
@@ -298,7 +310,7 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
     <script src="js/jquery.superslides.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
+    <!-- <script src="js/bootstrap-select.js"></script> -->
     <script src="js/inewsticker.js"></script>
     <script src="js/bootsnav.js."></script>
     <script src="js/images-loded.min.js"></script>

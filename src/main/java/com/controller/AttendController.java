@@ -23,6 +23,7 @@ public class AttendController {
 	@RequestMapping("/RAttend")
 	public String RAttend(RSpotDTO dto) {//응모
 		Rservice.registinglist(dto);
+		System.out.println(dto);
 		return null;
 	}
 	@RequestMapping("/SAttend")

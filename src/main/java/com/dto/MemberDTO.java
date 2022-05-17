@@ -32,6 +32,12 @@ public class MemberDTO {
 		this.birth = birth;
 		this.email = email;
 	}
+	@Override
+	public String toString() {
+		return "MemberDTO [memberno=" + memberno + ", userid=" + userid + ", passwd=" + passwd + ", username="
+				+ username + ", post=" + post + ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone=" + phone
+				+ ", birth=" + birth + ", email=" + email + "]";
+	}
 	public int getMemberno() {
 		return memberno;
 	}
@@ -92,12 +98,5 @@ public class MemberDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	@Override
-	public String toString() {
-		return "MemberDTO [memberno=" + memberno + ", userid=" + userid + ", passwd=" + passwd + ", username="
-				+ username + ", post=" + post + ", addr1=" + addr1 + ", addr2=" + addr2
-				+ ", phone=" + phone + ", birth=" + birth + ", email=" + email + "]";
-	}
-	
 	
 }

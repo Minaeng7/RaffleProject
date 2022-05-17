@@ -123,6 +123,11 @@ $(document).ready(function(){
 											required />
 									</div>
 									<div class="form-group mb-3">
+										<label for="name">nickname</label> <input id="name"
+											name="nickname" type="text" class="form-control validate"
+											required />
+									</div>
+									<div class="form-group mb-3">
 										<label for="name">memberno</label> <input id="name"
 											name="memberno" type="text" value="${login.memberno}"
 											class="form-control validate" readonly />
