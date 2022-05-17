@@ -62,9 +62,10 @@ public class RaffleController {
 	}
 	
 	@RequestMapping("/RList")
-	public ModelAndView ResellList(ResellRDTO rdto) {
+	public ModelAndView ResellList(ResellRDTO rdto, HttpSession session) {
 		List<ResellRDTO> rlist = (List<ResellRDTO>) service.ResellList(rdto);
 //		System.out.println("rlist는 "+rlist);
+		session.setAttribute("mesg", rdto.getRafflename());
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rlist);
 		mav.setViewName("RList");
@@ -72,12 +73,12 @@ public class RaffleController {
 	}	
 	@RequestMapping(value="/ResellRetrieve")
 	public ModelAndView ResllRetrieve(int resell_rno) {//상품상세정보
-//		System.out.println("ResellRetrieve 호출");
+		System.out.println("ResellRetrieve 호출");
 		ModelAndView mav = new ModelAndView();
 		ResellRDTO rdto = service.ResellRetrieve(resell_rno);
 		//System.out.println(resell_rno);
 		mav.addObject("rdto", rdto);
-		mav.setViewName("Product/ResellRetrieve");
+		mav.setViewName("ResellRetrieve");
 		return mav;
 	}
 	
