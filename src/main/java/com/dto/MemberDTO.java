@@ -8,7 +8,6 @@ public class MemberDTO {
 	String userid;
 	String passwd;
 	String username;
-	String nickname;
 	String post;
 	String addr1;
 	String addr2;
@@ -19,14 +18,13 @@ public class MemberDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public MemberDTO(int memberno, String userid, String passwd, String username, String nickname, String post,
+	public MemberDTO(int memberno, String userid, String passwd, String username, String post,
 			String addr1, String addr2, String phone, String birth, String email) {
 		super();
 		this.memberno = memberno;
 		this.userid = userid;
 		this.passwd = passwd;
 		this.username = username;
-		this.nickname = nickname;
 		this.post = post;
 		this.addr1 = addr1;
 		this.addr2 = addr2;
@@ -57,12 +55,6 @@ public class MemberDTO {
 	}
 	public void setUsername(String username) {
 		this.username = username;
-	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
 	}
 	public String getPost() {
 		return post;
@@ -103,7 +95,7 @@ public class MemberDTO {
 	@Override
 	public String toString() {
 		return "MemberDTO [memberno=" + memberno + ", userid=" + userid + ", passwd=" + passwd + ", username="
-				+ username + ", nickname=" + nickname + ", post=" + post + ", addr1=" + addr1 + ", addr2=" + addr2
+				+ username + ", post=" + post + ", addr1=" + addr1 + ", addr2=" + addr2
 				+ ", phone=" + phone + ", birth=" + birth + ", email=" + email + "]";
 	}
 	

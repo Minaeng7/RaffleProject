@@ -34,4 +34,9 @@ public class SSpotDAO {
 		session.delete("SpotMapper.DeleteMyAttendingS", memberno);
 		
 	}
+
+	public void AddWinner(SSpotDTO dto) {
+		session.insert("SpotMapper.AddWinnerS", dto);
+		
+	}
 }

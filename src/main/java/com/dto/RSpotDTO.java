@@ -8,7 +8,6 @@ public class RSpotDTO {
 	int resell_rno;
 	int memberno;
 	String rafflename;
-	String nickname;
 	String username;
 	String post;
 	String addr1;
@@ -19,13 +18,12 @@ public class RSpotDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public RSpotDTO(int resell_rno, int memberno, String rafflename, String nickname, String username, String post,
+	public RSpotDTO(int resell_rno, int memberno, String rafflename, String username, String post,
 			String addr1, String addr2, String phone, int spot) {
 		super();
 		this.resell_rno = resell_rno;
 		this.memberno = memberno;
 		this.rafflename = rafflename;
-		this.nickname = nickname;
 		this.username = username;
 		this.post = post;
 		this.addr1 = addr1;
@@ -36,7 +34,7 @@ public class RSpotDTO {
 	@Override
 	public String toString() {
 		return "RSpotDTO [resell_rno=" + resell_rno + ", memberno=" + memberno + ", rafflename=" + rafflename
-				+ ", nickname=" + nickname + ", username=" + username + ", post=" + post + ", addr1=" + addr1
+				+  ", username=" + username + ", post=" + post + ", addr1=" + addr1
 				+ ", addr2=" + addr2 + ", phone=" + phone + ", spot=" + spot + "]";
 	}
 	public int getResell_rno() {
@@ -56,12 +54,6 @@ public class RSpotDTO {
 	}
 	public void setRafflename(String rafflename) {
 		this.rafflename = rafflename;
-	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
 	}
 	public String getUsername() {
 		return username;

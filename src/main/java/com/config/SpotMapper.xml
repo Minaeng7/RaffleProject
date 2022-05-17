@@ -6,44 +6,44 @@
 
 	<insert id="Rregistringlist" parameterType="RSpotDTO">
 		insert into
-		RList(resell_rno, memberno, rafflename, nickname, username, post,
+		Rspot(resell_rno, memberno, rafflename, username, post,
 		addr1, addr2, phone, spot)
 		values ( #{resell_rno},
 		#{memberno},#{rafflename}
-		,#{nickname},#{username},#{post},
+		,#{username},#{post},
 		#{addr1},#{addr2},
 		#{phone}, #{spot})
 	</insert>
 	<insert id="Sregistringlist" parameterType="SSpotDTO">
 		insert into
-		RList(sell_rno, memberno, rafflename, nickname, username, post, addr1,
+		Sspot(sell_rno, memberno, rafflename,  username, post, addr1,
 		addr2, phone)
 		values ( #{sell_rno}, #{memberno},#{rafflename}
-		,#{nickname},#{username},#{post},
+		,#{username},#{post},
 		#{addr1},#{addr2})
 	</insert>
 
 	<select id="RShuffle" parameterType="int"
 		resultType="RSpotDTO">
 		select *
-		from rlist
+		from rspot
 		where resell_rno = #{resell_rno}
 	</select>
 	<select id="SShuffle" parameterType="int"
 		resultType="SSpotDTO">
 		select *
-		from slist
+		from sspot
 		where sell_rno = #{sell_rno}
 	</select>
 	<update id = "UpdateMyAttendingR" parameterType = "RSpotDTO">
-	update rlist
+	update rspot
 	set username = #{username}, post = #{post}, addr1 = #{addr1},
 	addr2 = #{addr2}, phone = #{phone}, spot = #{spot}
 	where memberno = #{memberno}
 	and resell_rno = #{resell_rno}
 	</update>
 	<update id = "UpdateMyAttendingS" parameterType = "SSpotDTO">
-	update slist
+	update sspot
 	set username = #{username}, post = #{post}, addr1 = #{addr1},
 	addr2 = #{addr2}, phone = #{phone}
 	where memberno = #{memberno}
@@ -51,12 +51,20 @@
 	</update>
 	<delete id = "DeleteMyAttendingR" parameterType = "int">
 	delete
-	from rlist
+	from rspot
 	where memberno = #{memberno}
 	</delete>
 	<delete id = "DeleteMyAttendingS" parameterType = "int">
 	delete
-	from slist
+	from sspot
 	where memberno = #{memberno}
 	</delete>
+	<insert id="AddWinnerR" parameterType = "RSpotDTO">
+	insert into rwinning
+	values (#{resell_rno}, #{username}, #{post}, #{addr1}, #{addr2}, #{phone}, #{memberno})
+	</insert>
+	<insert id="AddWinnerS" parameterType = "SSpotDTO">
+	insert into swinning
+	values (#{sell_rno}, #{username}, #{post}, #{addr1}, #{addr2}, #{phone}, #{memberno})
+	</insert>
 </mapper>

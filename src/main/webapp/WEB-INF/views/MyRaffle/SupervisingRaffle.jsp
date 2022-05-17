@@ -77,8 +77,14 @@
 									<input type = "hidden" name = deadline value = "${item.deadline}">
 									<button>수정</button>
 									</form></td>
-									<td><button>추첨</button></td>
-									<td><button>삭제</button></td>
+									<td><form action="SShuffle">
+									<input type = "hidden" name = sell_rno value = "${item.sell_rno}">
+									<button>추첨</button>
+									</form></td>
+									<td><form action ="DeleteMyRaffleS">
+									<input type = "hidden" name = sell_rno value = "${item.sell_rno}">
+									<button>삭제</button>
+									</form></td>
 								</tr>
 								</c:forEach>
 							</tbody>
@@ -129,8 +135,11 @@
 									<input type = "hidden" name = text value = "${item.text}">
 									<button>수정</button>
 									</form></td>
-									<td><button>추첨</button></td>
-									<td><form action = "">
+									<td><form>
+									<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
+									<button>추첨</button>
+									</form></td>
+									<td><form action = "DeleteMyRaffleR">
 									<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
 									<button>삭제</button>
 									</form></td>

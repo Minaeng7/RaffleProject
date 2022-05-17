@@ -33,4 +33,9 @@ public class RSpotDAO {
 		session.delete("SpotMapper.DeleteMyAttendingR", memberno);
 		
 	}
+
+	public void AddWinnder(RSpotDTO dto) {
+		session.insert("SpotMapper.AddwinnerR", dto);
+		
+	}
 }

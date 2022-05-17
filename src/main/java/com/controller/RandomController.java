@@ -26,9 +26,10 @@ public class RandomController {
 		List<RSpotDTO>list = rservice.shuffle(resell_rno);
 		Collections.shuffle(list);
 		RSpotDTO dto = list.get(0);
+		rservice.AddWinner(dto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Winner",dto);
-		mav.setViewName("Winneris");
+		mav.setViewName("RWinneris");
 		return mav;
 	}
 	@RequestMapping("/SShuffle")
@@ -36,9 +37,10 @@ public class RandomController {
 		List<SSpotDTO>list = sservice.shuffle(sell_rno);
 		Collections.shuffle(list);
 		SSpotDTO dto = list.get(0);
+		sservice.AddWinner(dto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Winner",dto);
-		mav.setViewName("Winneris");
+		mav.setViewName("SWinneris");
 		return mav;
 	}
 

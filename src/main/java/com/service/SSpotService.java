@@ -34,4 +34,9 @@ public class SSpotService {
 		dao.DelteMyAttendingS(memberno);
 		
 	}
+
+	public void AddWinner(SSpotDTO dto) {
+		dao.AddWinner(dto);
+		
+	}
 }

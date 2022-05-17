@@ -6,7 +6,6 @@ import org.apache.ibatis.type.Alias;
 public class RwinDTO {
 
 	int resell_rno;
-	String nickname;
 	String username;
 	String post;
 	String addr1;
@@ -16,11 +15,10 @@ public class RwinDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public RwinDTO(int resell_rno, String nickname, String username, String post, String addr1, String addr2,
+	public RwinDTO(int resell_rno, String username, String post, String addr1, String addr2,
 			String phone) {
 		super();
 		this.resell_rno = resell_rno;
-		this.nickname = nickname;
 		this.username = username;
 		this.post = post;
 		this.addr1 = addr1;
@@ -29,7 +27,7 @@ public class RwinDTO {
 	}
 	@Override
 	public String toString() {
-		return "RwinDTO [resell_rno=" + resell_rno + ", nickname=" + nickname + ", username=" + username + ", post="
+		return "RwinDTO [resell_rno=" + resell_rno +  ", username=" + username + ", post="
 				+ post + ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone=" + phone + "]";
 	}
 	public int getResell_rno() {
@@ -38,12 +36,7 @@ public class RwinDTO {
 	public void setResell_rno(int resell_rno) {
 		this.resell_rno = resell_rno;
 	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
+	
 	public String getUsername() {
 		return username;
 	}

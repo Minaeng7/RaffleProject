@@ -2,6 +2,7 @@ package com.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -115,7 +116,16 @@ public class RaffleController {
 		return "redirect:Mypage";
 	}
 	
-
+	@RequestMapping("DeleteMyRaffleS")
+	public String DeleteMyRaffleS(String sell_rno, HttpServletRequest request) {
+		request.setAttribute("rno", sell_rno);
+		return "MyRaffle/DeleteMyRaffleS";
+	}
+	@RequestMapping("DeleteMyRaffleR")
+	public String DeleteMyRaffleR(String resell_rno, HttpServletRequest request) {
+		request.setAttribute("rno", resell_rno);
+		return "MyRaffle/DeleteMyRaffleR";
+	}
 	@RequestMapping("DeleteMyRaffleRR")// Raffleno를 넘겨주도록 향후 수정
 	public String DeleteMyRaffleRR(HttpSession session) {//삭제
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
