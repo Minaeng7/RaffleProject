@@ -88,7 +88,7 @@ public class RaffleController {
 		SellRDTO sdto = service.SellRetrieve(sell_rno);
 		//System.out.println(resell_rno);
 		mav.addObject("sdto", sdto);
-		mav.setViewName("Product/SellRetrieve");
+		mav.setViewName("SellRetrieve");
 		return mav;
 	}
 	@RequestMapping("UpdateMyRaffleR")
