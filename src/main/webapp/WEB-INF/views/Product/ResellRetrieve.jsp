@@ -153,7 +153,7 @@
 
                                 <div class="price-box-bar">
                                     <div class="cart-and-bay-btn">
-                                        <a class="btn hvr-hover" data-fancybox-close="" href="JoinRSpot?rafflename=${rdto.rafflename }" style="margin-right:15px">구매하기</a>
+                                        <a class="btn hvr-hover" data-fancybox-close="" href="RAttend" style="margin-right:15px">구매하기</a>
                                         <!-- <a class="btn hvr-hover" data-fancybox-close="" href="#">장바구니</a> -->
                                     </div>
                                 </div>
