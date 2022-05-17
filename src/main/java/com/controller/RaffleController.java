@@ -126,14 +126,14 @@ public class RaffleController {
 		request.setAttribute("rno", resell_rno);
 		return "MyRaffle/DeleteMyRaffleR";
 	}
-	@RequestMapping("DeleteMyRaffleRR")// Raffleno를 넘겨주도록 향후 수정
+	@RequestMapping("DeleteMyRaffleRR")
 	public String DeleteMyRaffleRR(HttpSession session) {//삭제
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		service.DeleteMyRaffleR(memberno);
 		return "redirect:Mypage";
 	}
-	@RequestMapping("/DeleteMyRaffleSS")// Raffleno를 넘겨주도록 향후 수정
+	@RequestMapping("/DeleteMyRaffleSS")
 	public String DeleteMyRaffleSS(HttpSession session) {
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
