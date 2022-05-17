@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,7 +27,7 @@ public class BoardController {
 	@RequestMapping("/notice")
 	public ModelAndView notice() {
 		List<NoticeDTO> notice = nservice.notice();
-		System.out.println("notice : "+notice);
+		//System.out.println("notice : "+notice);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("notice", notice);
 		mav.setViewName("notice");
@@ -44,7 +43,6 @@ public class BoardController {
 		mav.setViewName("board/nview");
 		return mav;
 	}
-	
 	//게시글 목록
 	@RequestMapping("/forum")
 	public ModelAndView list() {
