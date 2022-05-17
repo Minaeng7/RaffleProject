@@ -51,7 +51,7 @@
 /* for문 사용 필요 */
 setInterval(function() {
         
-        var dday = new Date("May 02, 2022, 2:00:00").getTime();
+        var dday = new Date("July 02, 2022, 0:00:00").getTime();
         
         var today = new Date().getTime();
         var gap = dday - today;
@@ -65,13 +65,13 @@ setInterval(function() {
                     
                     document.getElementById("count0").innerHTML = "종료되었습니다.";
         }else{
-        document.getElementById("count0").innerHTML = day + "일 " + hour + ":" + min + ":" + sec ;
+        document.getElementById("count0").innerHTML = "남은시간 : " +day + "일 " + hour + ":" + min + ":" + sec ;
     }
-        }, 1000);
+        }, 0000);
         
         setInterval(function() {
         
-        var dday = new Date("May 02, 2022, 2:00:00").getTime();
+        var dday = new Date("July 01, 2022, 1:00:00").getTime();
         
         var today = new Date().getTime();
         var gap = dday - today;
@@ -85,13 +85,13 @@ setInterval(function() {
                     
                     document.getElementById("count1").innerHTML = "종료되었습니다.";
         }else{
-        document.getElementById("count1").innerHTML = day + "일 " + hour + ":" + min + ":" + sec ;
+        document.getElementById("count1").innerHTML = "남은시간 : " +day + "일 " + hour + ":" + min + ":" + sec ;
     }
-        }, 1000);
+        }, 0000);
         
         setInterval(function() {
         
-        var dday = new Date("May 03, 2022, 2:00:00").getTime();
+        var dday = new Date("May 23, 2022, 3:00:00").getTime();
         
         var today = new Date().getTime();
         var gap = dday - today;
@@ -105,12 +105,12 @@ setInterval(function() {
                     
                     document.getElementById("count2").innerHTML = "종료되었습니다.";
         }else{
-        document.getElementById("count2").innerHTML = day + "일 " + hour + ":" + min + ":" + sec ;
+        document.getElementById("count2").innerHTML = "남은시간 : " +day + "일 " + hour + ":" + min + ":" + sec ;
     }
-        }, 1000);
+        }, 0000);
         setInterval(function() {
         
-        var dday = new Date("May 05, 2022, 2:00:00").getTime();
+        var dday = new Date("May 24, 2022, 3:00:00").getTime();
         
         var today = new Date().getTime();
         var gap = dday - today;
@@ -126,10 +126,10 @@ setInterval(function() {
         }else{
         document.getElementById("count3").innerHTML = day + "일 " + hour + ":" + min + ":" + sec ;
     }
-        }, 1000);
+        }, 0000);
         setInterval(function() {
         
-        var dday = new Date("May 05, 2022, 2:00:00").getTime();
+        var dday = new Date("May 19, 2022, 12:00:00").getTime();
         
         var today = new Date().getTime();
         var gap = dday - today;
@@ -145,11 +145,11 @@ setInterval(function() {
         }else{
         document.getElementById("count4").innerHTML = day + "일 " + hour + ":" + min + ":" + sec ;
     }
-        }, 1000);
+        }, 0000);
 
         setInterval(function() {
         
-        var dday = new Date("May 05, 2022, 2:00:00").getTime();
+        var dday = new Date("May 21, 2022, 2:00:00").getTime();
         
         var today = new Date().getTime();
         var gap = dday - today;
@@ -165,7 +165,7 @@ setInterval(function() {
         }else{
         document.getElementById("count5").innerHTML = day + "일 " + hour + ":" + min + ":" + sec ;
     }
-        }, 1000);
+        }, 0000);
 </script>
 </head>
 
@@ -190,7 +190,7 @@ setInterval(function() {
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="m-b-20">테스트1 화면입니다.</h1>
+                            <h1 class="m-b-20">나이키 범고래의 주인공은?</h1>
                             <p class="m-b-40" id="count0">id:count0</p>
                         </div>
                     </div>
@@ -203,7 +203,7 @@ setInterval(function() {
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="m-b-20">테스트2 화면입니다.</h1>
+                            <h1 class="m-b-20">에어 조던 의 당첨자는?</h1>
                             <p class="m-b-40" id="count1"></p>
                         </div>
                     </div>
@@ -216,7 +216,7 @@ setInterval(function() {
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="m-b-20">테스트3 화면입니다.</h1>
+                            <h1 class="m-b-20">나이키 x 슈프림 콜라보 신발!</h1>
                             <p class="m-b-40" id="count2">id:count2</p>
                         </div>
                     </div>
@@ -241,17 +241,17 @@ setInterval(function() {
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="height: 280px; "><!-- 여기 부터 반복 -->
                     <a href="링크">
-                        <img class="img-fluid" src="images/t-shirts-img.jpg" alt="" />
+                        <img class="img-fluid" src="images/main-popular-01.jpg" alt="" />
                 </a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="height: 280px;">
                     <a href="링크">
-                        <img class="img-fluid" src="images/wallet-img.jpg" alt="" />
+                        <img class="img-fluid" src="images/main-popular-02.jpg " alt="" />
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="height: 280px;" >
                     <a href="링크">
-                        <img class="img-fluid" src="images/shoes-img.jpg" alt="" />
+                        <img class="img-fluid" src="images/main-popular-03.jpg" alt="" />
                     </a>
                 </div>
             </div>
@@ -260,7 +260,7 @@ setInterval(function() {
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><!-- 여기 부터 반복 -->
                     <div class="shop-cat-box1" style="height: 100px; ">
-                        <a class="brand-text" href="#">래플1<br>
+                        <a class="brand-text" href="#">에어 조던 1 미드 우먼스 코코넛 밀크<br>
                             <h1  class="product_item" id="count3"></h1>
                             <p class="PI">남은시간</p>
 
@@ -269,7 +269,7 @@ setInterval(function() {
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box1" style="height: 100px;">
-                        <a class="brand-text" href="#">래플2<br>
+                        <a class="brand-text" href="#">아디다스 이지 500 유틸리티 블랙<br>
                             <h1  class="product_item" id="count4"></h1>
                             <p class="PI">남은시간</p>
                         </a>
@@ -277,7 +277,7 @@ setInterval(function() {
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box1" style="height: 100px;">
-                        <a class="brand-text" href="#">래플3<br>
+                        <a class="brand-text" href="#">뉴발란스 992 MADE IN USA 그레이<br>
                             <h1 class="product_item" id="count5"></h1>
                             <p class="PI">남은시간</p>
                         </a>
@@ -322,8 +322,8 @@ setInterval(function() {
                             <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
                         </div>
                         <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $7.79</h5>
+                            <h4>에어 조던 11 레트로 2021 쿨 그레이</h4>
+                            <h5></h5>
                         </div>
                     </div>
                     </a>
@@ -339,8 +339,8 @@ setInterval(function() {
                             <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
                         </div>
                         <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $9.79</h5>
+                            <h4>I4P X 아식스 젤-1130 밍크 글래시어 그레이</h4>
+                            <h5></h5>
                         </div>
                     </div>
                     </a>
@@ -356,8 +356,8 @@ setInterval(function() {
                             <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
                         </div>
                         <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $10.79</h5>
+                            <h4>오프화이트 X 에어 조던 1 레트로 하이 유니버시티 블루</h4>
+                            <h5></h5>
                         </div>
                     </div>
                     </a>
@@ -373,8 +373,8 @@ setInterval(function() {
                             <img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
                         </div>
                         <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $15.79</h5>
+                            <h4>에어 조던 1 미드 그레이 앤 그린</h4>
+                            <h5> </h5>
                         </div>
                     </div>
                     </a>
