@@ -9,7 +9,7 @@
 		Rspot(resell_rno, memberno, rafflename, username, post,
 		addr1, addr2, phone, spot)
 		values ( #{resell_rno},
-		#{memberno},#{rafflename}
+		#{memberno}, #{rafflename}
 		,#{username},#{post},
 		#{addr1},#{addr2},
 		#{phone}, #{spot})
