@@ -18,9 +18,7 @@
 		insert into
 		Sspot(sell_rno, memberno, rafflename,  username, post, addr1,
 		addr2, phone)
-		values ( #{sell_rno}, #{memberno},#{rafflename}
-		,#{username},#{post},
-		#{addr1},#{addr2})
+		values ( #{sell_rno}, #{memberno}, #{rafflename} , #{username}, #{post}, #{addr1}, #{addr2}, #{phone})
 	</insert>
 
 	<select id="RShuffle" parameterType="int"

@@ -22,7 +22,7 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <!-- <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="css/bootstrap.min.css">  -->
 <!-- Site CSS -->
 <link rel="stylesheet" href="css/style.css">
 <!-- Responsive CSS -->
@@ -128,6 +128,15 @@
 				
 				<div class="col-xl-7 col-lg-7 col-md-6">
 					<div class="single-product-details">
+					<form action="SAttend">
+					<input type="hidden" name="rafflename" value="${sdto.rafflename }">
+					<input type="hidden" name="sell_rno" value="${sdto.sell_rno }">
+					<input type="hidden" name="memberno" value="${login.memberno }">
+					<input type="hidden" name="username" value="${login.username }">
+					<input type="hidden" name="post" value="${login.post }">
+					<input type="hidden" name="addr1" value="${login.addr1 }">
+					<input type="hidden" name="addr2" value="${login.addr2 }">
+					<input type="hidden" name="phone" value="${login.phone }">
 						<h1 style="margin-top: 20px;">${sdto.rafflename }</h1>
 						<h6>셀러 이름 : ${sdto.nickname}</h6>
 						<h3 style="margin-left: 5px; margin: 10px">래플 가격 : ${sdto.raffleprice }</h3>
@@ -162,9 +171,10 @@
 
 						<div class="price-box-bar">
 							<div class="cart-and-bay-btn">
-								<a class="btn hvr-hover" data-fancybox-close="" href="SAttendingRaffle" style="margin-right: 15px">응모하기</a>
+								<a><input type="submit" class="btn hvr-hover" data-fancybox-close="" style="margin-right: 15px" value="응모하기"></a>
 							</div>
 						</div>
+						</form>
 					</div>
 				</div>
 			

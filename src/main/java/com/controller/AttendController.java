@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dto.MemberDTO;
 import com.dto.RSpotDTO;
@@ -26,9 +27,11 @@ public class AttendController {
 		return null;
 	}
 	@RequestMapping("/SAttend")
+	@ResponseBody
 	public String SAttend(SSpotDTO dto) {
+		System.out.println(dto);
 		Sservice.registinglist(dto);
-		return null;
+		return "응모";
 	}
 	@RequestMapping("UpdateMyAttendingRR")
 	public String UpdateMyAttendingRR(RSpotDTO rdto, HttpSession session) {//수정화면에서 update 실행
