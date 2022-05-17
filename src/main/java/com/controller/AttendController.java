@@ -20,12 +20,12 @@ public class AttendController {
 	@Autowired
 	SSpotService Sservice;
 	
-	
 	@RequestMapping("/RAttend")
-	public String RAttend(RSpotDTO dto) {//응모
+	public String RAttend(RSpotDTO dto, HttpSession session) {//응모
 		Rservice.registinglist(dto);
-		System.out.println(dto);
-		return null;
+		session.setAttribute("mesg", dto.getRafflename());
+		//return "redirect:RList";
+		return "redirect:ResellRetrieve?resell_rno="+dto.getResell_rno();
 	}
 	@RequestMapping("/SAttend")
 	@ResponseBody
