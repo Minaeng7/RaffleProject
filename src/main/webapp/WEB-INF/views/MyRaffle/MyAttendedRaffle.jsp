@@ -83,7 +83,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <%-- <c:forEach var = "item" items="${MyRaffleS}">
+                            <c:forEach var = "item" items="${AttendedRaffleS}">
 								<tr>
 									<td><c:out value = "${item.sell_rno}"/></td>
 									<td><c:out value ="${item.rafflename}"/></td>
@@ -92,7 +92,7 @@
 									<td><button>수정</button></td>
 									<td><button>삭제</button></td>
 								</tr>
-								</c:forEach> --%>
+								</c:forEach>
                             </tbody>
                         </table>
                     </div>
