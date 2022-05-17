@@ -43,16 +43,20 @@
 
 <body>
     <!-- Start All Title Box -->
-    <div class="all-title-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>리셀러 상품목록 페이지입니다.</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End All Title Box -->
+	<div class="all-title-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>Resell</h2>
+					<ul class="breadcrumb">
+						<li class="breadcrumb-item"><a href="RList">Shop</a></li>
+						<li class="breadcrumb-item active">Shop Detail</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Title Box -->
  <!-- Start Shop Page  -->
  <!-- 왼쪽 카테고리 -->
     <div class="shop-box-inner">
@@ -82,7 +86,18 @@
                 <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
                     <div class="right-product-box">
 <!-- 상품등록 버튼 -->  
-						<a href="AddResell">Resell 상품 등록</a> 
+						<div class="product-item-filter row">
+                            <div class="col-12 col-sm-8 text-center text-sm-left">
+                                <div class="toolbar-sorter-right">
+                                    <span>상품등록은--------------></span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4 text-center text-sm-right">
+                                <ul class="nav nav-tabs ml-auto">
+                                	<a href="AddResell"><button>상품 등록</button></a>
+                                </ul>
+                            </div>
+                        </div>
 <!-- 상품등록 버튼-->
                         <div class="row product-categorie-box">
                             <div class="tab-content">

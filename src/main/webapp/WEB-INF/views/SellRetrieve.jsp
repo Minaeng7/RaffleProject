@@ -24,7 +24,9 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
    <!--  <!-- Bootstrap CSS -->
+
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+
     <!-- Site CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Responsive CSS -->

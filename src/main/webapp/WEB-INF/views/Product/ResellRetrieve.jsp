@@ -39,14 +39,15 @@
 
         function check_quantity(){
 
-        var quantity = document.getElementById('quantity').value;
-            console.log(quantity);
-        if(quantity>=2){
-  Swal.fire(
-    "1개까지만 신청가능합니다."
-    )
-    document.getElementById('quantity').value=1 ;
-}
+	        var q = document.getElementById('quantity').value;
+	        var quantity = parseInt(q);
+	            //console.log(quantity);
+	        var a = "${rdto.attend_amount}";
+	        var amount = parseInt(a);
+	        //console.log(amount);
+	        if(quantity >= amount ){
+	  			Swal.fire(amount+" 개까지만 신청가능합니다.");
+			}
 
         };     
 
@@ -158,7 +159,7 @@
                                     <li>
                                         <div class="form-group quantity-box">
                                             <label class="control-label">Quantity</label>
-                                            <input class="form-control" id="quantity" name="spot" value="0" min="0" max="2" type="number"  onclick="check_quantity()">
+                                            <input class="form-control" id="quantity" name="spot" value="0" min="0" max="${rdto.attend_amount }" type="number"  onclick="check_quantity()">
                                         </div>
                                     </li>
                                 </ul>
