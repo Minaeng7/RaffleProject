@@ -1,16 +1,12 @@
 package com.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
@@ -22,43 +18,42 @@ import com.service.RaffleService;
 public class RaffleController {
 	@Autowired
 	RaffleService service;
-	
-//	@RequestMapping(value="/AddSell")
-//	public String AddProduct() {//화면전환
-//		return "Product/AddSell";
+
+//	@RequestMapping(value="/loginCheck/AddSell")
+//	public ModelAndView AddSell(SellRDTO sdto, HttpSession session) {//sell 상품등록
+//		service.addSell_r(sdto);
+//		System.out.println(sdto);
+//		ModelAndView mav = new ModelAndView();
+//		mav.addObject("sdto", sdto);
+//		mav.setViewName("SList");
+//		return mav;
 //	}
-//	
-//	@RequestMapping(value="/AddResell")
-//	public String AddResellProduct() {
-//		return "redirect:../Product/AddResell";
-//	}	
-	
-	@RequestMapping(value="/loginCheck/AddSell")
-	public ModelAndView AddSell(SellRDTO sdto, HttpSession session) {//sell 상품등록
-		System.out.println(sdto);
-		service.addSell_r(sdto);
-		System.out.println(sdto);
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("sdto", sdto);
-		mav.setViewName("Product/SList");
-		return mav;
+	@RequestMapping("/loginCheck/AddSell")
+	public String AddSell(SellRDTO sdto) {
+		service.addSell_r(sdto);		
+		return "redirect:../SList";
 	}
 	
-	@RequestMapping(value="/loginCheck/AddResell")
-	public ModelAndView AddResell(ResellRDTO rdto, HttpSession session) {
+//	@RequestMapping(value="/loginCheck/AddResell")
+//	public ModelAndView AddResell(ResellRDTO rdto, HttpSession session) {
+//		service.addResell_r(rdto);
+//		System.out.println(rdto);
+//		ModelAndView mav = new ModelAndView();
+//		mav.addObject("rdto", rdto);
+//		//System.out.println("rdto는    " + rdto);
+//		mav.setViewName("RList");
+//		return mav;
+//	}
+	@RequestMapping("/loginCheck/AddResell")
+	public String AddResell(ResellRDTO rdto) {
 		service.addResell_r(rdto);
-		System.out.println(rdto);
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("rdto", rdto);
-		//System.out.println("rdto는    " + rdto);
-		mav.setViewName("RList");
-		return mav;
+		return "redirect:../RList";
 	}
 	
 	@RequestMapping("/SList")
 	public ModelAndView SellList(SellRDTO sdto) {//리스트 뿌리기
 		List<SellRDTO> slist = (List<SellRDTO>) service.SellList(sdto);
-		System.out.println(slist);
+//		System.out.println(slist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", slist);
 		mav.setViewName("SList");
@@ -68,7 +63,7 @@ public class RaffleController {
 	@RequestMapping("/RList")
 	public ModelAndView ResellList(ResellRDTO rdto) {
 		List<ResellRDTO> rlist = (List<ResellRDTO>) service.ResellList(rdto);
-		System.out.println("rlist는 "+rlist);
+//		System.out.println("rlist는 "+rlist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rlist);
 		mav.setViewName("RList");
@@ -76,7 +71,7 @@ public class RaffleController {
 	}	
 	@RequestMapping(value="/ResellRetrieve")
 	public ModelAndView ResllRetrieve(int resell_rno) {//상품상세정보
-		System.out.println("ResellRetrieve 호출");
+//		System.out.println("ResellRetrieve 호출");
 		ModelAndView mav = new ModelAndView();
 		ResellRDTO rdto = service.ResellRetrieve(resell_rno);
 		//System.out.println(resell_rno);
@@ -87,7 +82,7 @@ public class RaffleController {
 	
 	@RequestMapping(value="/SellRetrieve")
 	public ModelAndView SellRetrieve(int sell_rno) {//상품상세정보 
-		System.out.println("SellRetrieve 호출");
+//		System.out.println("SellRetrieve 호출");
 		ModelAndView mav = new ModelAndView();
 		SellRDTO sdto = service.SellRetrieve(sell_rno);
 		//System.out.println(resell_rno);
