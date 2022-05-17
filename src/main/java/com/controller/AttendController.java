@@ -4,13 +4,18 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
 import com.dto.RSpotDTO;
 import com.dto.SSpotDTO;
+import com.dto.SellRDTO;
 import com.service.RSpotService;
+import com.service.RaffleService;
 import com.service.SSpotService;
 
 @Controller
@@ -19,6 +24,8 @@ public class AttendController {
 	RSpotService Rservice;
 	@Autowired
 	SSpotService Sservice;
+	@Autowired
+	RaffleService service;
 	
 	@RequestMapping("/RAttend")
 	public String RAttend(RSpotDTO dto, HttpSession session) {//응모
@@ -28,12 +35,13 @@ public class AttendController {
 		return "redirect:ResellRetrieve?resell_rno="+dto.getResell_rno();
 	}
 	@RequestMapping("/SAttend")
-	@ResponseBody
-	public String SAttend(SSpotDTO dto) {
-		System.out.println(dto);
-		Sservice.registinglist(dto);
-		return "응모";
+	public String SAttend(SSpotDTO dto,HttpSession session) {
+		int n = Sservice.registinglist(dto);
+//		System.out.println(n);
+		session.setAttribute("num", n);
+		return "redirect:SellRetrieve?sell_rno="+dto.getSell_rno();
 	}
+	
 	@RequestMapping("UpdateMyAttendingRR")
 	public String UpdateMyAttendingRR(RSpotDTO rdto, HttpSession session) {//수정화면에서 update 실행
 		Rservice.UpdateMyAttendingR(rdto);

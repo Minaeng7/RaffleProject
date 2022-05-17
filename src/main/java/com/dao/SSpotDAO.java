@@ -16,8 +16,9 @@ public class SSpotDAO {
 	@Autowired
 	SqlSessionTemplate session;
 
-	public void registinglist(SSpotDTO dto) {
-		session.insert("SpotMapper.Sregistringlist", dto);
+	public int registinglist(SSpotDTO dto) {
+		int n = session.insert("SpotMapper.Sregistringlist", dto);
+		return n;
 		
 	}
 

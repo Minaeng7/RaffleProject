@@ -16,9 +16,9 @@ public class SSpotService {
 	@Autowired
 	SSpotDAO dao;
 
-	public void registinglist(SSpotDTO dto) {
-		dao.registinglist(dto);
-		
+	public int registinglist(SSpotDTO dto) {
+		int n = dao.registinglist(dto);
+		return n;
 	}
 
 	public List<SSpotDTO> shuffle(int sell_rno) {

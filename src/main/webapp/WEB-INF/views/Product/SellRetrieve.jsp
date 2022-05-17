@@ -1,8 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
+<c:if test="${!empty num }">
+	<script>
+		alert("응모되었습니다.")
+	</script>
+</c:if>
+<% 
+	if( session.getAttribute("num")!=null) {
+		session.removeAttribute("num");
+	}
+	
+%>
 
 <head>
 <meta charset="utf-8">
@@ -140,7 +153,6 @@
 					<input type="hidden" name="addr2" value="${login.addr2 }">
 					<input type="hidden" name="phone" value="${login.phone }">
 						<h1 style="margin-top: 20px;">${sdto.rafflename }</h1>
-						<h6>셀러 이름 : ${sdto.nickname}</h6>
 						<h3 style="margin-left: 5px; margin: 10px">래플 가격 : ${sdto.raffleprice }</h3>
 						<h3 style="margin-left: 5px; margin: 10px">잔여 수량 : ${sdto.raffleamount }</h3>
 						<p>
@@ -173,7 +185,8 @@
 
 						<div class="price-box-bar">
 							<div class="cart-and-bay-btn">
-								<a><input type="submit" class="btn hvr-hover" data-fancybox-close="" style="margin-right: 15px" value="응모하기"></a>
+								<a><input type="submit" id="attend" class="btn hvr-hover" data-fancybox-close="" 
+								style="margin-right: 15px" value="응모하기" ></a>
 							</div>
 						</div>
 						</form>
@@ -251,7 +264,7 @@
 									<div class="box-img-hover">
 										<img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
 									</div>
-								</a>
+								
 								<div class="why-text">
 									<h4>Lorem ipsum dolor sit amet</h4>
 									<h5>$9.79</h5>
