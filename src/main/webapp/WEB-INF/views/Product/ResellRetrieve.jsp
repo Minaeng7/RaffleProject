@@ -120,13 +120,13 @@
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-6">
                     <div class="single-product-details">
-                        <h1 style="margin-top : 20px;">래플이름</h1>
-                        <h6> 셀러 이름 : {user}</h6>
-                        <h3 style="margin-left: 5px; margin : 10px"> 참가비 : </h3>
-                        <h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : </h3>
+                        <h1 style="margin-top : 20px;">래플이름 : ${rdto.rafflename }</h1>
+                        <h6> 셀러 이름 : ${rdto.memberno}</h6>
+                        <h3 style="margin-left: 5px; margin : 10px"> 참가비 : ${rdto.per_price }</h3>
+                        <h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : ${rdto.attend_amount }</h3>
                             <p>
                                 <h4>Short Description:</h4>
-                                <p style="padding:20px;">대충 설명이라는중대충 설명이라는중 대충 설명이라는중 대충 설명이라는중  </p>
+                                <p style="padding:20px;">${rdto.text }대충 설명이라는중대충 설명이라는중 대충 설명이라는중 대충 설명이라는중  </p>
                                 <ul>
                                     <li>
                                         <div class="form-group size-st">
@@ -153,8 +153,8 @@
 
                                 <div class="price-box-bar">
                                     <div class="cart-and-bay-btn">
-                                        <a class="btn hvr-hover" data-fancybox-close="" href="RAttendingRaffle" style="margin-right:15px">참여하기</a>
-                                        <a class="btn hvr-hover" data-fancybox-close="" href="#">장바구니</a>
+                                        <a class="btn hvr-hover" data-fancybox-close="" href="JoinRSpot?rafflename=${rdto.rafflename }" style="margin-right:15px">구매하기</a>
+                                        <!-- <a class="btn hvr-hover" data-fancybox-close="" href="#">장바구니</a> -->
                                     </div>
                                 </div>
 

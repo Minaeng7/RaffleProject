@@ -130,4 +130,11 @@ public class RaffleController {
 		service.DeleteMyRaffleS(memberno);
 		return "redirect:Mypage";
 	}
+	@RequestMapping("/JoinRSpot")
+	public String JoinRSpot(String rafflename, HttpSession session) {
+		//System.out.println("JoinRSpot"+rafflename);
+		MemberDTO dto = (MemberDTO) session.getAttribute("login");
+		
+		return "redirect:RList";
+	}
 }
