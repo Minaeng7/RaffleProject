@@ -65,4 +65,14 @@
 	insert into swinning
 	values (#{sell_rno}, #{username}, #{post}, #{addr1}, #{addr2}, #{phone}, #{memberno})
 	</insert>
+	<select id = "WinnercheckR" parameterType = "int" resultType = "RwinDTO">
+	select * 
+	from rwinning
+	where resell_rno = #{resell_rno}
+	</select>
+	<select id = "WinnercheckS" parameterType = "int" resultType = "SwinDTO">
+	select * 
+	from swinning
+	where sell_rno = #{sell_rno}
+	</select>
 </mapper>

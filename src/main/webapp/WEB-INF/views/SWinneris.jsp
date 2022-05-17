@@ -35,7 +35,7 @@
 <h1 align="center">당첨자 확인</h1><br>
 <form action="SupervisingRaffle">
 <h2 align="center">
-당첨 래플 이름 : ${Winner.rafflename}<br>
+당첨 래플 번호 : ${Winner.sell_rno}<br>
 당첨자 이름 : ${Winner.username}<br>
 당첨자 우편번호 : ${Winner.post}<br>
 당첨자 주소 : ${Winner.addr1}<br>

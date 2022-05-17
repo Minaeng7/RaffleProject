@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dto.RSpotDTO;
+import com.dto.RwinDTO;
 
 @Repository
 public class RSpotDAO {
@@ -37,5 +38,10 @@ public class RSpotDAO {
 	public void AddWinnder(RSpotDTO dto) {
 		session.insert("SpotMapper.AddWinnerR", dto);
 		
+	}
+
+	public RwinDTO Winnercheck(int resell_rno) {
+		RwinDTO dto = session.selectOne("SpotMapper.WinnercheckR",resell_rno);
+		return dto;
 	}
 }
