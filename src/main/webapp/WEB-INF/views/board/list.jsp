@@ -102,8 +102,8 @@
                     <td class="tit" style="width:440px;">
                         <a href="view?bno=${list.bno }">${list.title }</a>
                     </td>
-                    <td>관리자</td>
-                    <td>${list.regdate }</td>
+                    <td>${list.username }</td>
+                    <td><fmt:formatDate value="${list.regdate }" pattern="yy-MM-dd"/></td>
                     <td>${list.viewcnt }</td>
                 </tr>
                 </c:forEach>
@@ -122,15 +122,6 @@
         </div>
     </div>
     <!-- End My Account -->
-
-    <!-- Start copyright  -->
-    <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
-            <a href="https://html.design/">html design</a></p>
-    </div>
-    <!-- End copyright  -->
-    <script src="https://kit.fontawesome.com/1444dff67d.js" crossorigin="anonymous"></script>
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
