@@ -30,8 +30,8 @@ public class RSpotDAO {
 		
 	}
 
-	public void DeleteMyAttendingR(int memberno) {
-		session.delete("SpotMapper.DeleteMyAttendingR", memberno);
+	public void DeleteMyAttendingR(RSpotDTO rdto) {
+		session.delete("SpotMapper.DeleteMyAttendingR", rdto);
 		
 	}
 
@@ -43,5 +43,13 @@ public class RSpotDAO {
 	public RwinDTO Winnercheck(int resell_rno) {
 		RwinDTO dto = session.selectOne("SpotMapper.WinnercheckR",resell_rno);
 		return dto;
+	}
+
+	public void MyAttendingListR(RSpotDTO rdto) {
+		session.selectList("SpotMapper.MyAttendingListR", rdto);
+	}
+
+	public List<RSpotDTO> selectRSpotList(int memberno) {
+		return session.selectList("SpotMapper.RSpotList", memberno);
 	}
 }

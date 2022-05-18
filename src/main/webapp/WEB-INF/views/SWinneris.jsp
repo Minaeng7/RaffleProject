@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,17 +34,27 @@
 	</div>
 	<!-- End All Title Box -->
 	&nbsp;
-<h1 align="center">당첨자 확인</h1><br>
-<form action="SupervisingRaffle">
-<h2 align="center">
-당첨 래플 번호 : ${Winner.sell_rno}<br>
-당첨자 이름 : ${Winner.username}<br>
-당첨자 우편번호 : ${Winner.post}<br>
-당첨자 주소 : ${Winner.addr1}<br>
-당첨자 연락처 : ${Winner.phone}<br>
-<button>확인</button>
-</h2>
-</form>
-
+	
+	<h1 align="center">당첨자 확인</h1><br>
+		
+	<c:choose>
+		<c:when test="${!empty Winner.sell_rno }">
+			<form action="SupervisingRaffle">
+			<h2 align="center">
+			당첨 래플 번호 : ${Winner.sell_rno}<br>
+			당첨자 이름 : ${Winner.username}<br>
+			당첨자 우편번호 : ${Winner.post}<br>
+			당첨자 주소 : ${Winner.addr1}<br>
+			당첨자 연락처 : ${Winner.phone}<br>
+			<button>확인</button>
+			</h2>
+			</form>
+		</c:when>
+		<c:otherwise>
+			<script>
+				alert('안타깝습니다! 다음 기회에');
+			</script>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>

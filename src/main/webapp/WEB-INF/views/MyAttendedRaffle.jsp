@@ -46,7 +46,7 @@
 <c:if test="${empty AttendedRaffleR && empty AttendedRaffleS}">
 <jsp:include page = "MyRaffle/NotAttendedRaffle.jsp"></jsp:include>
 </c:if>
-
+<jsp:include page="common/bottom.jsp"></jsp:include>
 
    <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>

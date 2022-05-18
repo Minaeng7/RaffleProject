@@ -1,24 +1,220 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<script src="package/dist/sweetalert2.all.min.js"></script>
+<link rel="stylesheet" href="package/dist/sweetalert2.min.css">
+
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	$("#imgUpload").on("change", function() {
+		readURL(this);
+	});
+	
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function (e){
+			$("#View").attr("src", e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		} 
+	};
+	
+	function setThumbnail(event) {
+		
+	     for (var image of event.target.files) { 
+	         var reader = new FileReader();
+	         
+	          reader.onload = function(event) { 
+	              var img = document.createElement("img");
+	               img.setAttribute("src", event.target.result);
+	               img.style.width ="500    px";
+	                document.querySelector("div#image_container").appendChild(img);
+	             }; 
+	             console.log(image); 
+	             reader.readAsDataURL(image); } 
+	            }
+
+	            let flatpickrInstance
+	            
+});//end ready
+</script>
+
 <body>
-<h1>Attending Raffle</h1>
-<form action ="UpdateAttendingRR">
-<input type = "hidden" id = "raffleno" name = "Raffleno" value = "1">
-<input type = "hidden" id = "memberno" name = "memberno" value = "1"><!-- 참여하는 member의 number -->
-<input type = "hidden" id = "Rafflename" name = "Rafflename" value = "NIKE-limited">
-참여자 성함 : <input type = "text" id = "Ausername" name = "username"><br>
-우편번호 : <input type = "text" id = "post" name = "post"><br>
-배송지 주소 : <input type = "text" id = "addr1" name = "addr1"><br>
-배송지 상세 주소 : <input type = "text" id = "addr2" name = "addr2"><br>
-참여자 연락처 : <input type = "text" id = "phone" name ="phone"><br>
-참여 희망 스팟 수 :<input type = "text" id = "spot" name = "spot">
-<button>제출</button>
-</form>
+	
+<jsp:include page="../common/top.jsp"></jsp:include>
+
+<!-- Start Top Search -->
+	<div class="top-search">
+		<div class="container">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-search"></i></span>
+				<input type="text" class="form-control" placeholder="Search">
+				<span class="input-group-addon close-search"><i
+					class="fa fa-times"></i></span>
+			</div>
+		</div>
+	</div>
+	<!-- End Top Search -->
+
+	<!-- Start All Title Box -->
+	<div class="all-title-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>My Raffle 수정</h2>
+					<ul class="breadcrumb">
+						<li class="breadcrumb-item"><a href="shop-raffle.html">상점으로
+								이동하기</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Title Box -->
+
+<!-- Start My Account  -->
+	<div class="shop-add-box"
+		style="height: 600px; padding-bottom: 0px; margin-bottom: 200px;">
+		<h1
+			style="border-bottom: 3px solid #222; margin-left: 20px; padding-top: 40px;">래플
+			수정</h1>
+		<div class="container tm-mt-big tm-mb-big">
+			<div class="row">
+				<div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+					<div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+						<div class="row" style="padding-top: 20px;">
+							<div class="col-12">
+								<h2 class="tm-block-title d-inline-block"></h2>
+							</div>
+						</div>
+
+						<form action="UpdateMyAttendingRR" class="tm-edit-product-form">
+						<c:forEach var = "rlist" items="${RSpotList}">
+							<input type="hidden" name="resell_rno" value="${rdto.resell_rno}">
+							<input type="hidden" name="username" value="${rlist.username }">
+							<div class="row tm-edit-product-row">
+								<div class="col-xl-6 col-lg-6 col-md-12">
+									<div class="tm-product-img-dummy mx-auto">
+										<i class="fas fa-cloud-upload-alt tm-upload-icon"
+											onclick="document.getElementById('fileInput').click();"></i>
+									</div>
+									<input type="file" id="upImgFiles"
+										onChange="uploadImgPreview();" accept="image/*" multiple>
+
+									<hr />
+
+									<div id="thumbnailImgs"></div>
+
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+									<div class="form-group mb-3">
+										<label for="name">Raffle Name</label> <input id="name" value = "${rdto.rafflename}"
+											name="rafflename" type="text" class="form-control validate"
+											readonly />
+									</div>
+									<div class="form-group mb-3">
+										<label for="name">memberno</label> <input id="name"
+											name="memberno" type="text" value="${rlist.memberno }"
+											class="form-control validate" readonly />
+									</div>
+									<div class="row">
+										<div class="form-group mb-3 col-xs-12 col-sm-6">
+											<label for="price">post</label> <input id="price"
+												name="post" type="text" class="form-control validate" value = "${rlist.post }"
+												required />
+										</div>
+										<div class="form-group mb-3 col-xs-12 col-sm-6">
+											<label for="price">addr1</label> <input id="price"value = "${rlist.addr1 }"
+												name="addr1" type="text" class="form-control validate"
+												required />
+										</div>
+										<div class="form-group mb-3 col-xs-12 col-sm-6">
+											<label for="price">addr2</label> <input id="price"value = "${rlist.addr2 }"
+												name="addr2" type="text" class="form-control validate"
+												required />
+										</div>
+									</div>
+									<div class="form-group mb-3">
+										<label for="name">phone</label> <input id="name"
+											name="phone" type="text" value="${rlist.phone }"
+											class="form-control validate" required />
+									</div>
+									<div class="row">
+										<div class="form-group mb-3 col-xs-12 col-sm-6">
+											<label for="price">Total_price</label> <input id="price"
+												type="text" class="form-control validate" value = "${rdto.total_price}"
+												readonly />
+										</div>
+										<div class="form-group mb-3 col-xs-12 col-sm-6">
+											<label for="price">Per_price</label> <input id="price"value = "${rdto.per_price}"
+												type="text" class="form-control validate"
+												readonly />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group mb-3 col-xs-12 col-sm-6">
+											<label for="expire_date">Deadline</label> 
+											<input
+												id="expire_date" type="text" value = "${rdto.deadline}"
+												class="form-control validate" data-large-mode="true" readonly/>
+										</div>
+										<div class="form-group mb-3 col-xs-12 col-sm-6">
+											<label for="stock">Spot 수</label> <input id="stock"
+												name="spot" type="text" value = "${rlist.spot }"
+												class="form-control validate" required />
+										</div>
+									</div>
+								</div>
+							</div>
+							</c:forEach>
+							<div class="col-12">
+								<button type="submit"
+									class="btn btn-primary btn-block text-uppercase">Update
+									Product Now</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- End My Account -->
+	
+	<!-- ALL JS FILES -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- ALL PLUGINS -->
+	<script src="js/jquery.superslides.min.js"></script>
+	<script src="js/bootstrap-select.js"></script>
+	<script src="js/inewsticker.js"></script>
+	<script src="js/bootsnav.js."></script>
+	<script src="js/images-loded.min.js"></script>
+	<script src="js/isotope.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/baguetteBox.min.js"></script>
+	<script src="js/form-validator.min.js"></script>
+	<script src="js/contact-form-script.js"></script>
+	<script src="js/custom.js"></script>
+
+	<script>
+        $(function() {
+          $("#expire_date").datepicker();
+        });
+      </script>
 </body>
+
 </html>
