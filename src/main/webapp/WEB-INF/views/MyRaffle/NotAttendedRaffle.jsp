@@ -91,18 +91,8 @@
                     </div>
                 </div>
             </div>
-           
-    
-
-    <!-- Start copyright  -->
-    <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
-            <a href="https://html.design/">html design</a></p>
-    </div>
-    <!-- End copyright  -->
-
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-
+           </div>
+           </div>
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

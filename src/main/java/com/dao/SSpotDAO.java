@@ -32,8 +32,8 @@ public class SSpotDAO {
 		
 	}
 
-	public void DelteMyAttendingS(int memberno) {
-		session.delete("SpotMapper.DeleteMyAttendingS", memberno);
+	public void DelteMyAttendingS(SSpotDTO sdto) {
+		session.delete("SpotMapper.DeleteMyAttendingS", sdto);
 		
 	}
 

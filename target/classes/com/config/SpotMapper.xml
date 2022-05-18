@@ -47,15 +47,16 @@
 	where memberno = #{memberno}
 	and sell_rno = #{sell_rno}
 	</update>
-	<delete id = "DeleteMyAttendingR" parameterType = "int">
+	<delete id = "DeleteMyAttendingR" parameterType = "RSpotDTO">
 	delete
 	from rspot
-	where memberno = #{memberno}
+	where memberno = #{memberno} and resell_rno = #{resell_rno}
 	</delete>
-	<delete id = "DeleteMyAttendingS" parameterType = "int">
+	<delete id = "DeleteMyAttendingS" parameterType = "SSpotDTO">
 	delete
 	from sspot
 	where memberno = #{memberno}
+	and sell_rno = #{sell_rno}
 	</delete>
 	<insert id="AddWinnerR" parameterType = "RSpotDTO">
 	insert into rwinning
@@ -74,5 +75,13 @@
 	select * 
 	from swinning
 	where sell_rno = #{sell_rno}
+	</select>
+	<select id="MyAttendingListR" resultType="RSpotDTO">
+		select * from rspot
+		where resell_rno = #{resell_rno} and memberno = #{memberno}
+	</select>
+	<select id="RSpotList" parameterType="int" resultType="RSpotDTO">
+		select * from rspot
+		where memberno = #{memberno}
 	</select>
 </mapper>

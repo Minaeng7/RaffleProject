@@ -31,8 +31,8 @@ public class SSpotService {
 		
 	}
 
-	public void DeleteMyAttendingS(int memberno) {
-		dao.DelteMyAttendingS(memberno);
+	public void DeleteMyAttendingS(SSpotDTO sdto) {
+		dao.DelteMyAttendingS(sdto);
 		
 	}
 
