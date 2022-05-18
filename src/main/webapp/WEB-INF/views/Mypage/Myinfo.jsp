@@ -58,7 +58,7 @@
 
     <!-- Start My Account  -->
     <form action = "updateMyinfo">
-      <div class="mypagebox">
+      <div class="mypagebox" align="center">
         <h1 style="border-bottom: 3px solid #222; margin-left:20px">회원정보</h1>
         <div class="name_profile" >
         <strong class="name" style="font-size : 20px; color:#000; padding:25px 60px 18px 0;"  >${mypage.username}</strong>

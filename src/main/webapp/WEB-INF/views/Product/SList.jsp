@@ -43,7 +43,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>셀러 상품목록 페이지입니다.</h2>
+                    <h2>For Seller</h2>
                 </div>
             </div>
         </div>
@@ -58,17 +58,17 @@
                     <div class="product-categori">
                         <div class="search-product">
                             <form action="#">
-                                <input class="form-control" placeholder="검색기능구현..." type="text">
+                                <input class="form-control" placeholder="" type="text">
                                 <button type="submit"> <i class="fa fa-search"></i> </button>
                             </form>
                         </div>
                         <div class="filter-sidebar-left">
                             <div class="title-left">
-                                <h3>래플 종류</h3>
+                                <h3>Category</h3>
                             </div>
                             <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
-                                <a href="SList" class="list-group-item list-group-item-action">셀러 상품목록 </a>
-                                <a href="RList" class="list-group-item list-group-item-action">리셀러 상품목록 </a>
+                                <a href="SList" class="list-group-item list-group-item-action">Seller's Raffle </a>
+                                <a href="RList" class="list-group-item list-group-item-action">Reseller's Raffle</a>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                         <div class="product-item-filter row">
                             <div class="col-12 col-sm-8 text-center text-sm-left">
                                 <div class="toolbar-sorter-right">
-                                    <span>상품등록은--------------></span>
+                                    <span></span>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4 text-center text-sm-right">
@@ -98,16 +98,14 @@
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">Sale</p>
-                                                    </div>
+                                                   
                                                     <a href="SellRetrieve?sell_rno=${sdto.sell_rno }">
                                                     <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image" border="0">
                                                     </a>
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4>래플이름 : ${sdto.rafflename }</h4>
-                                                    <h5>래플가격 : ${sdto.raffleprice }</h5>
+                                                    <h4>RaffleName : ${sdto.rafflename }</h4>
+                                                    <h5>Price : ${sdto.raffleprice }</h5>
                                                 </div>
                                             </div>
                                         </div>

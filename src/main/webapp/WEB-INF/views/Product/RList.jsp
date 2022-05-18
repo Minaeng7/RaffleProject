@@ -47,11 +47,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2>Resell</h2>
-					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="RList">Shop</a></li>
-						<li class="breadcrumb-item active">Shop Detail</li>
-					</ul>
+					<h2>For Reseller</h2>
 				</div>
 			</div>
 		</div>
@@ -66,17 +62,17 @@
                     <div class="product-categori">
                         <div class="search-product">
                             <form action="#">
-                                <input class="form-control" placeholder="검색기능구현..." type="text">
+                                <input class="form-control" placeholder="" type="text">
                                 <button type="submit"> <i class="fa fa-search"></i> </button>
                             </form>
                         </div>
                          <div class="filter-sidebar-left">
                             <div class="title-left">
-                                <h3>래플 종류</h3>
+                                <h3>Category</h3>
                             </div>
                             <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
-                                <a href="SList" class="list-group-item list-group-item-action">셀러 상품목록 </a>
-                                <a href="RList" class="list-group-item list-group-item-action">리셀러 상품목록 </a>
+                                <a href="SList" class="list-group-item list-group-item-action">Seller's Raffle </a>
+                                <a href="RList" class="list-group-item list-group-item-action">Reseller's Raffle</a>
                             </div>
                         </div>
                     </div>
@@ -89,7 +85,7 @@
 						<div class="product-item-filter row">
                             <div class="col-12 col-sm-8 text-center text-sm-left">
                                 <div class="toolbar-sorter-right">
-                                    <span>상품등록은--------------></span>
+                                    <span></span>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4 text-center text-sm-right">
@@ -111,8 +107,8 @@
 				                                <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
 				                                </a>
 	                                            <div class="why-text">
-	                                                 <h4> rafflename : ${rdto.rafflename }</h4>
-	                                                 <h5> total_price : ${rdto.total_price }</h5>
+	                                                 <h4> RaffleName : ${rdto.rafflename }</h4>
+	                                                 <h5> Entry fee : ${rdto.per_price }</h5>
 	                                            </div>
                                             </div>
                                         </div>
