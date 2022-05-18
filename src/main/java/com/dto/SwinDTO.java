@@ -11,12 +11,12 @@ public class SwinDTO {
 	String addr1;
 	String addr2;
 	String phone;
+	int memberno;
 	public SwinDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public SwinDTO(int sell_rno, String nickname, String username, String post, String addr1, String addr2,
-			String phone) {
+	public SwinDTO(int sell_rno, String username, String post, String addr1, String addr2, String phone, int memberno) {
 		super();
 		this.sell_rno = sell_rno;
 		this.username = username;
@@ -24,11 +24,7 @@ public class SwinDTO {
 		this.addr1 = addr1;
 		this.addr2 = addr2;
 		this.phone = phone;
-	}
-	@Override
-	public String toString() {
-		return "SwinDTO [sell_rno=" + sell_rno +  ", username=" + username + ", post=" + post
-				+ ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone=" + phone + "]";
+		this.memberno = memberno;
 	}
 	public int getSell_rno() {
 		return sell_rno;
@@ -36,7 +32,6 @@ public class SwinDTO {
 	public void setSell_rno(int sell_rno) {
 		this.sell_rno = sell_rno;
 	}
-	
 	public String getUsername() {
 		return username;
 	}
@@ -67,5 +62,18 @@ public class SwinDTO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
+	public int getMemberno() {
+		return memberno;
+	}
+	public void setMemberno(int memberno) {
+		this.memberno = memberno;
+	}
+	@Override
+	public String toString() {
+		return "SwinDTO [sell_rno=" + sell_rno + ", username=" + username + ", post=" + post + ", addr1=" + addr1
+				+ ", addr2=" + addr2 + ", phone=" + phone + ", memberno=" + memberno + "]";
+	}
+	
+	
 }
+

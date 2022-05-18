@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.dto.MemberDTO;
 import com.dto.RSpotDTO;
 import com.dto.ResellRDTO;
+import com.dto.RwinDTO;
 import com.dto.SellRDTO;
 import com.service.RSpotService;
 import com.service.SupervisingService;

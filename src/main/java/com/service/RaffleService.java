@@ -22,8 +22,8 @@ public class RaffleService {
 		dao.addSell_r(sdto);
 	}
 
-	public List<SellRDTO> SellList(SellRDTO sdto) {
-		return dao.SellList(sdto);
+	public List<SellRDTO> SellList() {
+		return dao.SellList();
 	}
 
 
@@ -36,8 +36,8 @@ public class RaffleService {
 		dao.UpdateSell_R(rdto);
 		
 	}
-	public List<ResellRDTO> ResellList(ResellRDTO rdto) {
-		return dao.ResellList(rdto);
+	public List<ResellRDTO> ResellList() {
+		return dao.ResellList();
 
 	}
 

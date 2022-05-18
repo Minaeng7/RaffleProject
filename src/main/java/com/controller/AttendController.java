@@ -7,11 +7,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
 import com.dto.RSpotDTO;
 import com.dto.ResellRDTO;
+import com.dto.RwinDTO;
 import com.dto.SSpotDTO;
 import com.service.RSpotService;
 import com.service.RaffleService;
@@ -30,7 +32,7 @@ public class AttendController {
 	public String RAttend(RSpotDTO dto, HttpSession session) {// 응모
 		Rservice.registinglist(dto);
 		session.setAttribute("mesg", dto.getRafflename());
-		return "redirect:ResellRetrieve?resell_rno=" + dto.getResell_rno();
+		return "redirect:RAttendingRaffle?resell_rno=" + dto.getResell_rno();
 	}
 
 	@RequestMapping("/SAttend")

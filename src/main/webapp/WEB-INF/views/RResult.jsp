@@ -36,6 +36,8 @@
 	&nbsp;
 	
 	<h1 align="center">당첨자 확인</h1><br>
+	<c:choose>
+		<c:when test="${RResult.memberno == Winner.memberno }">
 			<form action="MyAttendedRaffle">
 			<h2 align="center">
 			당첨 래플 번호 : ${Winner.resell_rno}<br>
@@ -46,6 +48,13 @@
 			<button>확인</button>
 			</h2>
 			</form>
-	
+		</c:when>
+		<c:otherwise>
+			<script>
+				alert('안타깝습니다! 다음 기회에');
+				location.href="MyAttendedRaffle";
+			</script>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>
