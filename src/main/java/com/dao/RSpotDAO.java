@@ -41,8 +41,7 @@ public class RSpotDAO {
 	}
 
 	public RwinDTO Winnercheck(int resell_rno) {
-		RwinDTO dto = session.selectOne("SpotMapper.WinnercheckR",resell_rno);
-		return dto;
+		return session.selectOne("SpotMapper.WinnercheckR", resell_rno);
 	}
 
 	public void MyAttendingListR(RSpotDTO rdto) {
@@ -52,4 +51,5 @@ public class RSpotDAO {
 	public List<RSpotDTO> selectRSpotList(int memberno) {
 		return session.selectList("SpotMapper.RSpotList", memberno);
 	}
+
 }

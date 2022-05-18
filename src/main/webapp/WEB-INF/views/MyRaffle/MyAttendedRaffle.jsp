@@ -59,7 +59,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2>응모한 래플</h2>
+					<h2>My Raffle</h2>
 				</div>
 			</div>
 		</div>
@@ -79,9 +79,8 @@
 									<th>번호</th>
 									<th>Product Name</th>
 									<th>Price</th>
-									<th>당/락 확인</th>
-									<th>취소</th>
-									<th>결제</th>
+									<th>결과</th>
+									<th>응모 취소</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -90,17 +89,13 @@
 										<td><c:out value="${item.sell_rno}" /></td>
 										<td><c:out value="${item.rafflename}" /></td>
 										<td><c:out value="${item.raffleprice}" /></td>
-										<td><form action="WinnercheckS">
+										<td><form action=SResult>
 												<input type="hidden" name=sell_rno value="${item.sell_rno}">
-												<button>추첨</button>
+												<button>확인</button>
 											</form></td>
 										<td><form action="DeleteMyAttendingS">
 												<input type="hidden" name=sell_rno value="${item.sell_rno}">
-												<button>삭제</button>
-											</form></td>
-										<td><form action="SAttendingRaffle">
-												<input type="hidden" name=sell_rno value="${item.sell_rno}">
-												<button>결제</button>
+												<button>응모 취소</button>
 											</form></td>
 									</tr>
 								</c:forEach>
@@ -111,7 +106,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<div class="cart-box-main">
 		<div class="container">
 			<div class="row">
@@ -122,14 +117,13 @@
 							<thead>
 								<tr>
 									<th>S/R</th>
-									<th>Resell_rno</th>
+									<th>번호</th>
 									<th>상품이름</th>
-									<th>가격</th>
-									<th>spot</th>
+									<th>PRICE</th>
+									<th>SPOT</th>
 									<th>수정</th>
 									<th>결과</th>
-									<th>삭제</th>
-									<th>결제</th>
+									<th>응모 취소</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -139,7 +133,7 @@
 										<td>R</td>
 										<td><c:out value="${item.resell_rno}" /></td>
 										<td><c:out value="${item.rafflename}" /></td>
-										<td><c:out value="${item.total_price}" /></td>
+										<td><c:out value="${item.per_price}" /></td>
 										<td><c:out value="${RSpotList[status.index].spot}" /></td>
 
 										<td><form action="UpdateAttendingR">
@@ -157,24 +151,15 @@
 												<input type="hidden" name="text" value="${item.text }">
 												<button>수정</button>
 											</form></td>
-										<td><form action="WinnercheckR">
-												<input type="hidden" name=resell_rno
-													value="${item.resell_rno}">
-												<p align="center">
+										<td><form action="RResult">
+												<input type="hidden" name="resell_rno" value="${item.resell_rno }">
 													<button>확인</button>
-												</p>
 											</form></td>
 
 										<td><form action="DeleteAttendingR">
 												<input type="hidden" name="resell_rno"
 													value="${item.resell_rno }">
-												<button>삭제</button>
-											</form></td>
-
-										<td><form action="RAttendingRaffle">
-												<input type="hidden" name="resell_rno"
-													value="${item.resell_rno }">
-												<button>결제</button>
+												<button>응모 취소</button>
 											</form></td>
 									</tr>
 								</c:forEach>

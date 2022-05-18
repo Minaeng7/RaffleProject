@@ -20,31 +20,12 @@ public class RaffleController {
 	@Autowired
 	RaffleService service;
 
-//	@RequestMapping(value="/loginCheck/AddSell")
-//	public ModelAndView AddSell(SellRDTO sdto, HttpSession session) {//sell 상품등록
-//		service.addSell_r(sdto);
-//		System.out.println(sdto);
-//		ModelAndView mav = new ModelAndView();
-//		mav.addObject("sdto", sdto);
-//		mav.setViewName("SList");
-//		return mav;
-//	}
 	@RequestMapping("/loginCheck/AddSell")
 	public String AddSell(SellRDTO sdto) {
 		service.addSell_r(sdto);		
 		return "redirect:../SList";
 	}
-	
-//	@RequestMapping(value="/loginCheck/AddResell")
-//	public ModelAndView AddResell(ResellRDTO rdto, HttpSession session) {
-//		service.addResell_r(rdto);
-//		System.out.println(rdto);
-//		ModelAndView mav = new ModelAndView();
-//		mav.addObject("rdto", rdto);
-//		//System.out.println("rdto는    " + rdto);
-//		mav.setViewName("RList");
-//		return mav;
-//	}
+
 	@RequestMapping("/loginCheck/AddResell")
 	public String AddResell(ResellRDTO rdto) {
 		service.addResell_r(rdto);
@@ -53,7 +34,7 @@ public class RaffleController {
 	
 	@RequestMapping("/SList")
 	public ModelAndView SellList(SellRDTO sdto) {//리스트 뿌리기
-		List<SellRDTO> slist = (List<SellRDTO>) service.SellList(sdto);
+		List<SellRDTO> slist = (List<SellRDTO>) service.SellList();
 //		System.out.println(slist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", slist);
@@ -62,10 +43,9 @@ public class RaffleController {
 	}
 	
 	@RequestMapping("/RList")
-	public ModelAndView ResellList(ResellRDTO rdto, HttpSession session) {
-		List<ResellRDTO> rlist = (List<ResellRDTO>) service.ResellList(rdto);
+	public ModelAndView ResellList(ResellRDTO rdto) {
+		List<ResellRDTO> rlist = (List<ResellRDTO>) service.ResellList();
 //		System.out.println("rlist는 "+rlist);
-		session.setAttribute("mesg", rdto.getRafflename());
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rlist);
 		mav.setViewName("RList");
@@ -73,7 +53,7 @@ public class RaffleController {
 	}	
 	@RequestMapping(value="/ResellRetrieve")
 	public ModelAndView ResllRetrieve(int resell_rno) {//상품상세정보
-		System.out.println("ResellRetrieve 호출");
+//		System.out.println("ResellRetrieve 호출");
 		ModelAndView mav = new ModelAndView();
 		ResellRDTO rdto = service.ResellRetrieve(resell_rno);
 		//System.out.println(resell_rno);

@@ -3,15 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<c:if test="${!empty mesg }">
-<script>
-	alert("${mesg} 응모 완료");
-</script>
-</c:if>
-<% if (session.getAttribute("mesg") != null){
-	session.removeAttribute("mesg");
-}
-%>
+
 
 <!DOCTYPE html>
 <html>

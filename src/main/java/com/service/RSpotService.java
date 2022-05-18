@@ -41,8 +41,7 @@ public class RSpotService {
 	}
 
 	public RwinDTO Winnercheck(int resell_rno) {
-		RwinDTO dto = dao.Winnercheck(resell_rno);
-		return dto;
+		return dao.Winnercheck(resell_rno);
 	}
 
 	public void MyAttendingListR(RSpotDTO rdto) {

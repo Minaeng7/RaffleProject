@@ -23,8 +23,8 @@ public class RaffleDAO {
 		template.insert("RaffleMapper.addSell_r", sdto);
 	}
 
-	public List<SellRDTO> SellList(SellRDTO sdto) {
-		return template.selectList("RaffleMapper.SellList", sdto);
+	public List<SellRDTO> SellList() {
+		return template.selectList("RaffleMapper.SellList");
 	}
 
 
@@ -36,8 +36,8 @@ public class RaffleDAO {
 	public void UpdateSell_R(SellRDTO rdto) {
 		template.update("RaffleMapper.UpdateSell_r",rdto);
 	}
-	public List<ResellRDTO> ResellList(ResellRDTO rdto) {
-		return template.selectList("RaffleMapper.ResellList", rdto);
+	public List<ResellRDTO> ResellList() {
+		return template.selectList("RaffleMapper.ResellList");
 
 	}
 

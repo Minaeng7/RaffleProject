@@ -11,12 +11,13 @@ public class RwinDTO {
 	String addr1;
 	String addr2;
 	String phone;
+	int memberno;
 	public RwinDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public RwinDTO(int resell_rno, String username, String post, String addr1, String addr2,
-			String phone) {
+	public RwinDTO(int resell_rno, String username, String post, String addr1, String addr2, String phone,
+			int memberno) {
 		super();
 		this.resell_rno = resell_rno;
 		this.username = username;
@@ -24,11 +25,12 @@ public class RwinDTO {
 		this.addr1 = addr1;
 		this.addr2 = addr2;
 		this.phone = phone;
+		this.memberno = memberno;
 	}
 	@Override
 	public String toString() {
-		return "RwinDTO [resell_rno=" + resell_rno +  ", username=" + username + ", post="
-				+ post + ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone=" + phone + "]";
+		return "RwinDTO [resell_rno=" + resell_rno + ", username=" + username + ", post=" + post + ", addr1=" + addr1
+				+ ", addr2=" + addr2 + ", phone=" + phone + ", memberno=" + memberno + "]";
 	}
 	public int getResell_rno() {
 		return resell_rno;
@@ -36,7 +38,6 @@ public class RwinDTO {
 	public void setResell_rno(int resell_rno) {
 		this.resell_rno = resell_rno;
 	}
-	
 	public String getUsername() {
 		return username;
 	}
@@ -66,6 +67,12 @@ public class RwinDTO {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	public int getMemberno() {
+		return memberno;
+	}
+	public void setMemberno(int memberno) {
+		this.memberno = memberno;
 	}
 	
 }
