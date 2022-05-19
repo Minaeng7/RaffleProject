@@ -99,86 +99,69 @@ $(document).ready(function(){
 								<h2 class="tm-block-title d-inline-block"></h2>
 							</div>
 						</div>
-
+${RSpotList }
 						<form action="UpdateMyAttendingRR" class="tm-edit-product-form">
-						<c:forEach var = "rlist" items="${RSpotList}">
-							<input type="hidden" name="resell_rno" value="${rdto.resell_rno}">
-							<input type="hidden" name="username" value="${rlist.username }">
+							<input type="hidden" name="resell_rno" value="${RSpotList.resell_rno}">
+							<input type="hidden" name="username" value="${RSpotList.username }">
 							<div class="row tm-edit-product-row">
 								<div class="col-xl-6 col-lg-6 col-md-12">
 									<div class="tm-product-img-dummy mx-auto">
 										<i class="fas fa-cloud-upload-alt tm-upload-icon"
 											onclick="document.getElementById('fileInput').click();"></i>
 									</div>
-									<input type="file" id="upImgFiles"
-										onChange="uploadImgPreview();" accept="image/*" multiple>
-
+									<input type="file" id="upImgFiles" onChange="uploadImgPreview();" accept="image/*" multiple>
 									<hr />
-
 									<div id="thumbnailImgs"></div>
-
-								</div>
+s								</div>
 								<div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
 									<div class="form-group mb-3">
-										<label for="name">Raffle Name</label> <input id="name" value = "${rdto.rafflename}"
-											name="rafflename" type="text" class="form-control validate"
-											readonly />
+										<label for="name">Raffle Name</label> <input id="name" value = "${RSpotList.rafflename}"
+											name="rafflename" type="text" class="form-control validate" readonly />
 									</div>
 									<div class="form-group mb-3">
-										<label for="name">memberno</label> <input id="name"
-											name="memberno" type="text" value="${rlist.memberno }"
-											class="form-control validate" readonly />
+										<label for="name">memberno</label> 
+										<input id="name" name="memberno" type="text" value="${RSpotList.memberno }" class="form-control validate" readonly />
 									</div>
 									<div class="row">
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="price">post</label> <input id="price"
-												name="post" type="text" class="form-control validate" value = "${rlist.post }"
-												required />
+											<label for="price">post</label> 
+											<input id="price" name="post" type="text" class="form-control validate" value = "${RSpotList.post }" required />
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="price">addr1</label> <input id="price"value = "${rlist.addr1 }"
-												name="addr1" type="text" class="form-control validate"
-												required />
+											<label for="price">addr1</label> 
+											<input id="price" value = "${RSpotList.addr1 }" name="addr1" type="text" class="form-control validate" required />
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="price">addr2</label> <input id="price"value = "${rlist.addr2 }"
-												name="addr2" type="text" class="form-control validate"
-												required />
+											<label for="price">addr2</label> 
+											<input id="price" value = "${RSpotList.addr2 }" name="addr2" type="text" class="form-control validate" required />
 										</div>
 									</div>
 									<div class="form-group mb-3">
-										<label for="name">phone</label> <input id="name"
-											name="phone" type="text" value="${rlist.phone }"
-											class="form-control validate" required />
+										<label for="name">phone</label> 
+										<input id="name" name="phone" type="text" value="${RSpotList.phone }" class="form-control validate" required />
 									</div>
 									<div class="row">
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="price">Total_price</label> <input id="price"
-												type="text" class="form-control validate" value = "${rdto.total_price}"
-												readonly />
+											<label for="price">Total_price</label> 
+											<input id="price" type="text" class="form-control validate" value = "${rdto.total_price}" readonly />
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="price">Per_price</label> <input id="price"value = "${rdto.per_price}"
-												type="text" class="form-control validate"
-												readonly />
+											<label for="price">Per_price</label> 
+											<input id="price"value = "${rdto.per_price}" type="text" class="form-control validate" readonly />
 										</div>
 									</div>
 									<div class="row">
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="expire_date">Deadline</label> 
-											<input
-												id="expire_date" type="text" value = "${rdto.deadline}"
-												class="form-control validate" data-large-mode="true" readonly/>
+											<input id="expire_date" type="text" value = "${rdto.deadline}" class="form-control validate" data-large-mode="true" readonly/>
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="stock">Spot 수</label> <input id="stock"
-												name="spot" type="text" value = "${rlist.spot }"
-												class="form-control validate" required />
+											<label for="stock">Spot 수</label> 
+											<input id="stock" name="spot" type="text" value = "${RSpotList.spot }" class="form-control validate" required />
 										</div>
 									</div>
 								</div>
 							</div>
-							</c:forEach>
 							<div class="col-12">
 								<button type="submit"
 									class="btn btn-primary btn-block text-uppercase">Update

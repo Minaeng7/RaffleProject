@@ -135,19 +135,15 @@
 										<td><c:out value="${item.rafflename}" /></td>
 										<td><c:out value="${item.per_price}" /></td>
 										<td><c:out value="${RSpotList[status.index].spot}" /></td>
-
 										<td><form action="UpdateAttendingR">
-												<input type="hidden" name="resell_rno"
-													value="${item.resell_rno }"> <input type="hidden"
-													name="memberno" value="${item.memberno }"> <input
-													type="hidden" name="rafflename" value="${item.rafflename }">
-												<input type="hidden" name="total_price"
-													value="${item.total_price }"> <input type="hidden"
-													name="attend_amount" value="${item.attend_amount }">
-												<input type="hidden" name="per_price"
-													value="${item.per_price }"> <input type="hidden"
-													name="viewcnt" value="${item.viewcnt }"> <input
-													type="hidden" name="deadline" value="${item.deadline }">
+												<input type="hidden" name="resell_rno" value="${item.resell_rno }"> 
+												<input type="hidden" name="memberno" value="${item.memberno }"> 
+												<input type="hidden" name="rafflename" value="${item.rafflename }">
+												<input type="hidden" name="total_price" value="${item.total_price }"> 
+												<input type="hidden" name="attend_amount" value="${item.attend_amount }">
+												<input type="hidden" name="per_price" value="${item.per_price }"> 
+												<input type="hidden" name="viewcnt" value="${item.viewcnt }"> 
+												<input type="hidden" name="deadline" value="${item.deadline }">
 												<input type="hidden" name="text" value="${item.text }">
 												<button>수정</button>
 											</form></td>

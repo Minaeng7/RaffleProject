@@ -1,5 +1,6 @@
 package com.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,10 @@ public class RSpotService {
 
 	public void MyAttendingListR(RSpotDTO rdto) {
 		dao.MyAttendingListR(rdto);
+	}
+
+	public RSpotDTO selectRSpot(HashMap<String, Integer> map) {
+		return dao.selectRSpot(map);
 	}
 
 	public List<RSpotDTO> selectRSpotList(int memberno) {

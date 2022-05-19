@@ -1,19 +1,17 @@
 package com.controller;
 
-import java.util.List;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
 import com.dto.RSpotDTO;
 import com.dto.ResellRDTO;
-import com.dto.RwinDTO;
 import com.dto.SSpotDTO;
 import com.service.RSpotService;
 import com.service.RaffleService;
@@ -46,8 +44,14 @@ public class AttendController {
 	@RequestMapping("/UpdateAttendingR")
 	public ModelAndView UpdateAttendingR(ResellRDTO rdto, HttpSession session) {
 		MemberDTO dto = (MemberDTO) session.getAttribute("login");
-		int memberno = dto.getMemberno();
-		List<RSpotDTO> list = Rservice.selectRSpotList(memberno);
+//		System.out.println("rdto"+rdto);
+		int n = dto.getMemberno();
+		int n2 = rdto.getResell_rno();
+		HashMap <String, Integer> map = new HashMap<String, Integer>();
+		map.put("memberno", n);
+		map.put("resell_rno", n2);
+		RSpotDTO list = Rservice.selectRSpot(map);
+//		System.out.println("update" +list);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rdto);
 		mav.addObject("RSpotList", list);

@@ -1,5 +1,6 @@
 package com.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -46,6 +47,10 @@ public class RSpotDAO {
 
 	public void MyAttendingListR(RSpotDTO rdto) {
 		session.selectList("SpotMapper.MyAttendingListR", rdto);
+	}
+
+	public RSpotDTO selectRSpot(HashMap<String, Integer> map) {
+		return session.selectOne("SpotMapper.RSpot", map);
 	}
 
 	public List<RSpotDTO> selectRSpotList(int memberno) {
