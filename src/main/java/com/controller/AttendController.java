@@ -1,6 +1,8 @@
 package com.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -46,11 +48,14 @@ public class AttendController {
 	@RequestMapping("/UpdateAttendingR")
 	public ModelAndView UpdateAttendingR(ResellRDTO rdto, HttpSession session) {
 		MemberDTO dto = (MemberDTO) session.getAttribute("login");
-		int memberno = dto.getMemberno();
-		List<RSpotDTO> list = Rservice.selectRSpotList(memberno);
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("memberno", dto.getMemberno());
+		map.put("resell_rno", rdto.getResell_rno());
+		RSpotDTO Rdto = Rservice.selectRSpot(map);
+//		System.out.println("Rdto"+Rdto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rdto);
-		mav.addObject("RSpotList", list);
+		mav.addObject("Rdto", Rdto);
 //		System.out.println(list);
 		mav.setViewName("MyRaffle/UpdateAttendingR");
 		return mav;

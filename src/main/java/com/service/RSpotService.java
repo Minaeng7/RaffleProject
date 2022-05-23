@@ -1,6 +1,7 @@
 package com.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,6 +51,10 @@ public class RSpotService {
 
 	public List<RSpotDTO> selectRSpotList(int memberno) {
 		return dao.selectRSpotList(memberno);
+	}
+
+	public RSpotDTO selectRSpot(Map<String, Integer> map) {
+		return dao.selectRSpot(map);
 	}
 
 }

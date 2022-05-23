@@ -1,6 +1,7 @@
 package com.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,10 @@ public class RSpotDAO {
 
 	public List<RSpotDTO> selectRSpotList(int memberno) {
 		return session.selectList("SpotMapper.RSpotList", memberno);
+	}
+
+	public RSpotDTO selectRSpot(Map<String, Integer> map) {
+		return session.selectOne("SpotMapper.RSpot", map);
 	}
 
 }

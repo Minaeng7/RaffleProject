@@ -84,4 +84,8 @@
 		select * from rspot
 		where memberno = #{memberno}
 	</select>
+	<select id="RSpot" parameterType="hashmap" resultType="RSpotDTO">
+		select * from rspot
+		where memberno = #{memberno} and resell_rno = #{resell_rno}
+	</select>
 </mapper>
