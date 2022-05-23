@@ -1,0 +1,21 @@
+memberno - 회원번호
+userid - 회원ID
+passwd - 비밀번호
+nickname - Raffle 상품 개요
+post - 우편번호
+addr1 - 도로명 or 지번주소
+addr2 - 상세주소
+phone - 연락처 (-없이 번호만)
+birth - 생년월일
+email1 - email중 @ 앞자리
+email2 - email중 @ 뒷자리(ex : naver.com)
+resell_Rno - resell 래플번호
+rafflename - 래플이름(상품이름)
+Total_price - 판매자의 희망수입(참가비 총합 금액)
+Attend_amount - (판매자 지정) 리스트 전체 스팟 수
+per_price - 스팟 당 래플 참가비
+sell_Rno - sell 래플번호
+raffleprice - 상품가격
+raffleamount - 판매할 수량
+duration - 래플 진행 기간
+spot - 참가자가 점유희망하는 스팟
