@@ -1,5 +1,6 @@
 package com.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -49,12 +50,12 @@ public class RSpotDAO {
 		session.selectList("SpotMapper.MyAttendingListR", rdto);
 	}
 
-	public List<RSpotDTO> selectRSpotList(int memberno) {
-		return session.selectList("SpotMapper.RSpotList", memberno);
+	public RSpotDTO selectRSpot(HashMap<String, Integer> map) {
+		return session.selectOne("SpotMapper.RSpot", map);
 	}
 
-	public RSpotDTO selectRSpot(Map<String, Integer> map) {
-		return session.selectOne("SpotMapper.RSpot", map);
+	public List<RSpotDTO> selectRSpotList(int memberno) {
+		return session.selectList("SpotMapper.RSpotList", memberno);
 	}
 
 }

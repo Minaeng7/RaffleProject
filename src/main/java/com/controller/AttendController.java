@@ -45,11 +45,12 @@ public class AttendController {
 	@RequestMapping("/UpdateAttendingR")
 	public ModelAndView UpdateAttendingR(ResellRDTO rdto, HttpSession session) {
 		MemberDTO dto = (MemberDTO) session.getAttribute("login");
-		Map<String, Integer> map = new HashMap<String, Integer>();
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		map.put("memberno", dto.getMemberno());
 		map.put("resell_rno", rdto.getResell_rno());
 		RSpotDTO Rdto = Rservice.selectRSpot(map);
 //		System.out.println("Rdto"+Rdto);
+//		System.out.println("rdto"+rdto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rdto);
 		mav.addObject("Rdto", Rdto);

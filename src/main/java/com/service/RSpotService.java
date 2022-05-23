@@ -1,5 +1,6 @@
 package com.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -49,12 +50,12 @@ public class RSpotService {
 		dao.MyAttendingListR(rdto);
 	}
 
-	public List<RSpotDTO> selectRSpotList(int memberno) {
-		return dao.selectRSpotList(memberno);
+	public RSpotDTO selectRSpot(HashMap<String, Integer> map) {
+		return dao.selectRSpot(map);
 	}
 
-	public RSpotDTO selectRSpot(Map<String, Integer> map) {
-		return dao.selectRSpot(map);
+	public List<RSpotDTO> selectRSpotList(int memberno) {
+		return dao.selectRSpotList(memberno);
 	}
 
 }
