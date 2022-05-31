@@ -101,9 +101,8 @@ $(document).ready(function(){
 						</div>
 
 						<form action="UpdateMyAttendingRR" class="tm-edit-product-form">
-						<c:forEach var = "rlist" items="${RSpotList}">
 							<input type="hidden" name="resell_rno" value="${rdto.resell_rno}">
-							<input type="hidden" name="username" value="${rlist.username }">
+							<input type="hidden" name="username" value="${Rdto.username }">
 							<div class="row tm-edit-product-row">
 								<div class="col-xl-6 col-lg-6 col-md-12">
 									<div class="tm-product-img-dummy mx-auto">
@@ -126,29 +125,29 @@ $(document).ready(function(){
 									</div>
 									<div class="form-group mb-3">
 										<label for="name">memberno</label> <input id="name"
-											name="memberno" type="text" value="${rlist.memberno }"
+											name="memberno" type="text" value="${Rdto.memberno }"
 											class="form-control validate" readonly />
 									</div>
 									<div class="row">
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="price">post</label> <input id="price"
-												name="post" type="text" class="form-control validate" value = "${rlist.post }"
+												name="post" type="text" class="form-control validate" value = "${Rdto.post }"
 												required />
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="price">addr1</label> <input id="price"value = "${rlist.addr1 }"
+											<label for="price">addr1</label> <input id="price"value = "${Rdto.addr1 }"
 												name="addr1" type="text" class="form-control validate"
 												required />
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="price">addr2</label> <input id="price"value = "${rlist.addr2 }"
+											<label for="price">addr2</label> <input id="price"value = "${Rdto.addr2 }"
 												name="addr2" type="text" class="form-control validate"
 												required />
 										</div>
 									</div>
 									<div class="form-group mb-3">
 										<label for="name">phone</label> <input id="name"
-											name="phone" type="text" value="${rlist.phone }"
+											name="phone" type="text" value="${Rdto.phone }"
 											class="form-control validate" required />
 									</div>
 									<div class="row">
@@ -172,13 +171,12 @@ $(document).ready(function(){
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="stock">Spot 수</label> <input id="stock"
-												name="spot" type="text" value = "${rlist.spot }"
+												name="spot" type="text" value = "${Rdto.spot }"
 												class="form-control validate" required />
 										</div>
 									</div>
 								</div>
 							</div>
-							</c:forEach>
 							<div class="col-12">
 								<button type="submit"
 									class="btn btn-primary btn-block text-uppercase">Update

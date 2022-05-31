@@ -42,8 +42,8 @@ public class ResellRDTO {
 	public int getMemberno() {
 		return memberno;
 	}
-	public void setMemberno(int memberno) {
-		this.memberno = memberno;
+	public int setMemberno(int memberno) {
+		return this.memberno = memberno;
 	}
 	public String getNickname() {
 		return nickname;

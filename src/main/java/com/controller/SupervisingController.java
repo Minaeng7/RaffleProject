@@ -1,9 +1,7 @@
 package com.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -15,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.dto.MemberDTO;
 import com.dto.RSpotDTO;
 import com.dto.ResellRDTO;
-import com.dto.RwinDTO;
 import com.dto.SellRDTO;
 import com.service.RSpotService;
 import com.service.SupervisingService;
@@ -37,6 +34,7 @@ public class SupervisingController {//mypage기능
 		List<SellRDTO> listS = new ArrayList<>();
 		listS = service.selectMyAttendedRaffleS(memberno);
 		List<RSpotDTO> list = Rservice.selectRSpotList(memberno);
+//		System.out.println("myattended "+list);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("AttendedRaffleR", listR);
 		mav.addObject("AttendedRaffleS", listS);
@@ -65,7 +63,7 @@ public class SupervisingController {//mypage기능
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();		
 		dto = service.Mypage(memberno);
-		System.out.println(dto);
+//		System.out.println(dto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mypage", dto);
 		mav.setViewName("Mypage");
