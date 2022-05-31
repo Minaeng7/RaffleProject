@@ -10,7 +10,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 public class LoginCheckInterceptor extends HandlerInterceptorAdapter {
 
 	@Override
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler )
 			throws Exception {
 
 		System.out.println("LoginCheckInterceptor>>>");
@@ -25,8 +25,9 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter {
 
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
-			ModelAndView modelAndView) throws Exception {
-		super.postHandle(request, response, handler, modelAndView);
+			ModelAndView mav) throws Exception {
+		super.postHandle(request, response, handler, mav);
+
 	}
 
 	@Override
