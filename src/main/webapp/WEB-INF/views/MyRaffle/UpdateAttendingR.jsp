@@ -17,6 +17,20 @@
 
 $(document).ready(function(){
 	
+	function check_quantity(){
+
+        var q = document.getElementById('stock').value;
+        var quantity = parseInt(q);
+            //console.log(quantity);
+        var a = "${rdto.attend_amount}";
+        var amount = parseInt(a);
+        //console.log(amount);
+        if(quantity >= amount ){
+  			Swal.fire(amount+" 개까지만 신청가능합니다.");
+		}
+
+    };  
+	
 	$("#imgUpload").on("change", function() {
 		readURL(this);
 	});
@@ -170,9 +184,10 @@ $(document).ready(function(){
 												class="form-control validate" data-large-mode="true" readonly/>
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="stock">Spot 수</label> <input id="stock"
-												name="spot" type="text" value = "${Rdto.spot }"
-												class="form-control validate" required />
+											<label for="stock">Spot 수(최대 ${rdto.attend_amount } 개) </label>
+											<input id="stock" name="spot" type="number" value = "${Rdto.spot }"
+												class="form-control validate" onclick="check_quantity()"
+												min="0" max="${rdto.attend_amount }" required />
 										</div>
 									</div>
 								</div>

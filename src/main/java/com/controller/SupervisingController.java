@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
@@ -25,7 +26,7 @@ public class SupervisingController {//mypage기능
 	@Autowired
 	RSpotService Rservice;
 	
-	@RequestMapping("MyAttendedRaffle")
+	@RequestMapping(value = "/loginCheck/MyAttendedRaffle")
 	public ModelAndView MyAttendedRaffle(HttpSession session) {//내가 응모한 리스트
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
@@ -43,7 +44,7 @@ public class SupervisingController {//mypage기능
 		mav.setViewName("MyAttendedRaffle");
 		return mav;
 	}
-	@RequestMapping("/SupervisingRaffle")
+	@RequestMapping("/loginCheck/SupervisingRaffle")
 	public ModelAndView MyRaffle(HttpSession session) {//내가 등록한 상품 리스트
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
@@ -58,7 +59,7 @@ public class SupervisingController {//mypage기능
 		return mav;
 	}
 
-	@RequestMapping(value = "/Myinfo")
+	@RequestMapping(value = "/loginCheck/Myinfo")
 	public ModelAndView Mypage(HttpSession session) {//내정보보 보기 (회원정보 수정 등)
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();		

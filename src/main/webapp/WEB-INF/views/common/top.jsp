@@ -72,7 +72,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">게시판</a>
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdloown">게시판</a>
                             <ul class="dropdown-menu">
                                 <li><a href="notice">공지사항</a></li>
                                 <li><a href="forum">자유 게시판</a></li>
@@ -160,9 +160,9 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">MyPage</a>
                             <ul class="dropdown-menu">
-                                <li><a href="Myinfo">My info</a></li>
-                                <li><a href="MyAttendedRaffle">응모한 래플 관리</a></li>
-                                <li><a href="SupervisingRaffle">나의 래플 관리</a></li>
+                                <li><a href="loginCheck/Myinfo">My info</a></li>
+                                <li><a href="loginCheck/MyAttendedRaffle">응모한 래플 관리</a></li>
+                                <li><a href="loginCheck/SupervisingRaffle">나의 래플 관리</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

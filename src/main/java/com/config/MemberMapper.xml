@@ -18,7 +18,7 @@
 		member(memberno,userid,passwd,username,post,
 		addr1,addr2,phone,birth,email)
 		values(
-		SEQ_MEMBERNO.nextval,#{userid},#{passwd},#{username},#{post},
+		MEMBER_SEQ_MEMBERNO.nextval,#{userid},#{passwd},#{username},#{post},
 		#{addr1},#{addr2},#{phone},#{birth},#{email})
 	</insert>
 	<!-- <select id="login" parameterType="hashmap" resultType="MemberDTO"> 
