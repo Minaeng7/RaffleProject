@@ -39,6 +39,7 @@
 		<c:choose>
 		<c:when test="${memberno==Winner.memberno }">
 			<form action="SAttendingRaffle">
+			<input type="hidden" value="${Winner.sell_rno }" name="sell_rno">
 			<h2 align="center">
 			당첨 래플 번호 : ${Winner.sell_rno}<br>
 			당첨자 이름 : ${Winner.username}<br>

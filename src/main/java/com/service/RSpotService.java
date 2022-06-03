@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.dao.RSpotDAO;
 import com.dto.RSpotDTO;
 import com.dto.RwinDTO;
+import com.dto.SSpotDTO;
 
 @Service
 public class RSpotService {
@@ -19,9 +20,8 @@ public class RSpotService {
 
 	public void registinglist(RSpotDTO dto) {//응모
 		dao.registinglist(dto);
-		
 	}
-
+	
 	public List<RSpotDTO> shuffle(int resell_rno) {//추첨 전 참가자 명단
 		List<RSpotDTO> list = dao.shuffle(resell_rno);
 		return list;
