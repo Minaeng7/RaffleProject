@@ -26,7 +26,7 @@ public class SupervisingController {//mypage기능
 	@Autowired
 	RSpotService Rservice;
 	
-	@RequestMapping(value = "/loginCheck/MyAttendedRaffle")
+	@RequestMapping(value = "loginCheck/MyAttendedRaffle")
 	public ModelAndView MyAttendedRaffle(HttpSession session) {//내가 응모한 리스트
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
@@ -41,10 +41,10 @@ public class SupervisingController {//mypage기능
 		mav.addObject("AttendedRaffleS", listS);
 		mav.addObject("RSpotList", list);
 		//System.out.println(list);
-		mav.setViewName("MyAttendedRaffle");
+		mav.setViewName("redirect:../MyAttendedRaffle");
 		return mav;
 	}
-	@RequestMapping("/loginCheck/SupervisingRaffle")
+	@RequestMapping("loginCheck/SupervisingRaffle")
 	public ModelAndView MyRaffle(HttpSession session) {//내가 등록한 상품 리스트
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
@@ -59,7 +59,7 @@ public class SupervisingController {//mypage기능
 		return mav;
 	}
 
-	@RequestMapping(value = "/loginCheck/Myinfo")
+	@RequestMapping(value = "loginCheck/Myinfo")
 	public ModelAndView Mypage(HttpSession session) {//내정보보 보기 (회원정보 수정 등)
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();		
@@ -67,7 +67,7 @@ public class SupervisingController {//mypage기능
 //		System.out.println(dto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mypage", dto);
-		mav.setViewName("Mypage");
+		mav.setViewName("redirect:..Mypage");
 		return mav;
 	}
 
