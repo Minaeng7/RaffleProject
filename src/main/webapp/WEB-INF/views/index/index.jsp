@@ -319,7 +319,7 @@ setInterval(function() {
                             <div class="type-lb">
                              <!--마감임박 넣을거면 넣는곳-->
                             </div>
-                            <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                            <img src="images/img-pro-1.jpg" class="img-fluid" alt="Image">
                         </div>
                         <div class="why-text">
                             <h4>에어 조던 11 레트로 2021 쿨 그레이</h4>
@@ -336,7 +336,7 @@ setInterval(function() {
                             <div class="type-lb">
                               <!--마감임박 넣을거면 넣는곳-->
                             </div>
-                            <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                            <img src="images/img-pro-2.jpg" class="img-fluid" alt="Image">
                         </div>
                         <div class="why-text">
                             <h4>I4P X 아식스 젤-1130 밍크 글래시어 그레이</h4>
@@ -353,7 +353,7 @@ setInterval(function() {
                             <div class="type-lb">
                                                                <!--마감임박 넣을거면 넣는곳-->
                              </div>
-                            <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                            <img src="images/img-pro-3.jpg" class="img-fluid" alt="Image">
                         </div>
                         <div class="why-text">
                             <h4>오프화이트 X 에어 조던 1 레트로 하이 유니버시티 블루</h4>
@@ -370,7 +370,7 @@ setInterval(function() {
                             <div class="type-lb">
                                 <!--마감임박 넣을거면 넣는곳-->
                             </div>
-                            <img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
+                            <img src="images/img-pro-4.jpg" class="img-fluid" alt="Image">
                         </div>
                         <div class="why-text">
                             <h4>에어 조던 1 미드 그레이 앤 그린</h4>
