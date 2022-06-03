@@ -41,7 +41,7 @@ public class SupervisingController {//mypage기능
 		mav.addObject("AttendedRaffleS", listS);
 		mav.addObject("RSpotList", list);
 		//System.out.println(list);
-		mav.setViewName("redirect:../MyAttendedRaffle");
+		mav.setViewName("MyAttendedRaffle");
 		return mav;
 	}
 	@RequestMapping("loginCheck/SupervisingRaffle")
@@ -67,7 +67,7 @@ public class SupervisingController {//mypage기능
 //		System.out.println(dto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mypage", dto);
-		mav.setViewName("redirect:..Mypage");
+		mav.setViewName("Mypage");
 		return mav;
 	}
 
