@@ -94,17 +94,19 @@
                                     <div class="row">
                                     
                                     <!-- 사진 반복 시작 부분 -->
+                                    <!-- RaffleController에서 키값으로 sdto -->
                                     <c:forEach var="sdto" items="${sdto}" >
+                                      <c:set var ="i" value = "${i+1 }"/>
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                    
                                                     <a href="SellRetrieve?sell_rno=${sdto.sell_rno }">
-                                                    <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image" border="0">
+                                                    <img src="images/img-pro-${i }.jpg" class="img-fluid" alt="Image" border="0">
                                                     </a>
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4>RaffleName : ${sdto.rafflename }</h4>
+                                                    <h4>RaffleName : ${sdto.nickname }</h4>
                                                     <h5>Price : ${sdto.raffleprice }</h5>
                                                 </div>
                                             </div>
