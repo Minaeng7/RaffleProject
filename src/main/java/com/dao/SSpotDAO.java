@@ -46,4 +46,8 @@ public class SSpotDAO {
 		SwinDTO dto = session.selectOne("SpotMapper.WinnercheckS",sell_rno);
 		return dto;
 	}
+
+	public void Sorder(int sell_rno) {
+		session.selectOne("SpotMapper.Sorder", sell_rno);
+	}
 }

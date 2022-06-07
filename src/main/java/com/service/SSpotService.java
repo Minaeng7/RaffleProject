@@ -45,4 +45,8 @@ public class SSpotService {
 		SwinDTO dto = dao.Winnercheck(sell_rno);
 		return dto;
 	}
+
+	public void Sorder(int sell_rno) {
+		dao.Sorder(sell_rno);
+	}
 }

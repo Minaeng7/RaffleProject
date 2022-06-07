@@ -57,5 +57,5 @@ public class RSpotDAO {
 	public List<RSpotDTO> selectRSpotList(int memberno) {
 		return session.selectList("SpotMapper.RSpotList", memberno);
 	}
-
+	
 }

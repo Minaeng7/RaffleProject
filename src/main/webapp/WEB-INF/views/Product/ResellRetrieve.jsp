@@ -125,7 +125,7 @@
                 <div class="col-xl-7 col-lg-7 col-md-6">
                     <div class="single-product-details">
                     
-                    <form action="RAttend">
+                    <form action="RAttendingRaffle?resell_rno=${rdto.resell_rno }">
                     <input type="hidden" name="resell_rno" value="${rdto.resell_rno }">
                     <input type="hidden" name="rafflename" value="${rdto.rafflename }">
                     <input type="hidden" name="memberno" value="${login.memberno }">
