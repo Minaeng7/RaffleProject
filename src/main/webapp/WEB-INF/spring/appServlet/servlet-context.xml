@@ -45,7 +45,13 @@
 	<beans:bean id="LoginCheckInterceptor" class="com.interceptor.LoginCheckInterceptor"></beans:bean>
 	<interceptors>
 		<interceptor>
-			<mapping path="/loginCheck/**"/>
+			<mapping path="/**"/>	
+			<exclude-mapping path="/"/>
+			<exclude-mapping path="/loginForm"/>
+			<exclude-mapping path="/login"/>
+			<exclude-mapping path="/logout"/>
+			<exclude-mapping path="/SList"/>
+			<exclude-mapping path="/RList"/>
 			<beans:ref bean="LoginCheckInterceptor"/>
 		</interceptor>
 	</interceptors>

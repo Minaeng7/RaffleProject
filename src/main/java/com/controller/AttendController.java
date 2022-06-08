@@ -1,7 +1,6 @@
 package com.controller;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -13,7 +12,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.dto.MemberDTO;
 import com.dto.RSpotDTO;
 import com.dto.ResellRDTO;
+import com.dto.RwinDTO;
 import com.dto.SSpotDTO;
+import com.dto.SellRDTO;
+import com.dto.SwinDTO;
 import com.service.RSpotService;
 import com.service.RaffleService;
 import com.service.SSpotService;
@@ -27,17 +29,51 @@ public class AttendController {
 	@Autowired
 	RaffleService service;
 
-	@RequestMapping("/RAttend")
-	public String RAttend(RSpotDTO dto, HttpSession session) {// 응모
-		Rservice.registinglist(dto);
+	@RequestMapping("/RAttendingRaffle")
+	public ModelAndView RAttendingRaffle(RSpotDTO dto, HttpSession session) {// 응모
+		ResellRDTO rdto = service.ResellRetrieve(dto.getResell_rno());
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("rdto", rdto);
+		mav.addObject("dto", dto);
+		mav.setViewName("RAttendingRaffle");
+		return mav;
+	}
+	
+	@RequestMapping("/Rorder")
+	public ModelAndView Rorder(RwinDTO Rdto, RSpotDTO dto, ResellRDTO rdto, HttpSession session) {
 		session.setAttribute("mesg", dto.getRafflename());
-		return "redirect:RAttendingRaffle?resell_rno=" + dto.getResell_rno();
+		Rservice.registinglist(dto);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("Rdto", Rdto);
+		mav.addObject("dto", dto);
+		mav.addObject("rdto", rdto);
+		mav.setViewName("Rorder");
+		return mav;
+	}
+	
+	@RequestMapping("/SAttendingRaffle")
+	public ModelAndView SAttendingRaffle(SwinDTO dto, HttpSession session) {// 응모
+		SellRDTO sdto = service.SellRetrieve(dto.getSell_rno());
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("sdto", sdto);
+		mav.setViewName("SAttendingRaffle");
+		return mav;
+	}
+	
+	@RequestMapping("/Sorder")
+	public ModelAndView Sorder(SwinDTO Sdto, SellRDTO dto) {
+		dto = service.SellRetrieve(Sdto.getSell_rno());
+		Sservice.Sorder(Sdto.getSell_rno());
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("Sdto", Sdto);
+		mav.addObject("dto", dto);
+		mav.setViewName("Sorder");
+		return mav;
 	}
 
 	@RequestMapping("/SAttend")
 	public String SAttend(SSpotDTO dto, HttpSession session) {
 		int n = Sservice.registinglist(dto);
-//		System.out.println(n);
 		session.setAttribute("num", n);
 		return "redirect:SellRetrieve?sell_rno=" + dto.getSell_rno();
 	}
@@ -49,12 +85,9 @@ public class AttendController {
 		map.put("memberno", dto.getMemberno());
 		map.put("resell_rno", rdto.getResell_rno());
 		RSpotDTO Rdto = Rservice.selectRSpot(map);
-//		System.out.println("Rdto"+Rdto);
-//		System.out.println("rdto"+rdto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rdto);
 		mav.addObject("Rdto", Rdto);
-//		System.out.println(list);
 		mav.setViewName("MyRaffle/UpdateAttendingR");
 		return mav;
 	}
@@ -62,7 +95,6 @@ public class AttendController {
 	@RequestMapping("UpdateMyAttendingRR")
 	public String UpdateMyAttendingRR(RSpotDTO rdto, HttpSession session) {// 수정화면에서 update 실행
 		Rservice.UpdateMyAttendingR(rdto);
-		// System.out.println("updatemyattendingrr : "+rdto);
 		return "redirect:MyAttendedRaffle";
 	}
 

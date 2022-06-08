@@ -88,5 +88,9 @@
 		select * from rspot
 		where memberno = #{memberno}
 	</select>
+	<select id="Sorder" parameterType="int" resultType="SWinDTO">
+		select * from swinning
+		where sell_rno = #{sell_rno}
+	</select>
 
 </mapper>

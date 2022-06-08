@@ -40,7 +40,7 @@ public class MemberController {
 
 	}
 	
-	@RequestMapping(value = "/loginCheck/logout")
+	@RequestMapping(value = "/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:../";

@@ -23,13 +23,13 @@ public class RaffleController {
 	@Autowired
 	RaffleService service;
 
-	@RequestMapping("/loginCheck/AddSell")
+	@RequestMapping("/AddSell")
 	public String AddSell(SellRDTO sdto) {
 		service.addSell_r(sdto);		
 		return "redirect:../SList";
 	}
 
-	@RequestMapping("/loginCheck/AddResell")
+	@RequestMapping("/AddResell")
 	public String AddResell(ResellRDTO rdto) {
 		service.addResell_r(rdto);
 		return "redirect:../RList";
