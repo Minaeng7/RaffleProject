@@ -43,7 +43,7 @@ public class MemberController {
 	@RequestMapping(value = "/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:../";
+		return "redirect:../raffle";
 	}
 	
 	@RequestMapping(value = "/idDuplicateCheck", produces="text/plain;charset=UTF-8")

@@ -17,7 +17,7 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter {
 		System.out.println("LoginCheckInterceptor>>>");
 		HttpSession session = request.getSession();
 		if (session.getAttribute("login") == null) {
-			response.sendRedirect("../loginForm");
+			response.sendRedirect("../raffle/loginForm");
 			return false;
 		} else {
 			return true;
