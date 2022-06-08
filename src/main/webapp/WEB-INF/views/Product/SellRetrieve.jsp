@@ -205,7 +205,7 @@
 							<div class="products-single fix">
 								<a href="링크">
 									<div class="box-img-hover">
-										<img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
+										<img src="images/img-pro-1.jpg" class="img-fluid" alt="Image">
 									</div>
 
 									<div class="why-text">
@@ -219,7 +219,7 @@
 							<div class="products-single fix">
 								<a href="링크">
 									<div class="box-img-hover">
-										<img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
+										<img src="images/img-pro-2.jpg" class="img-fluid" alt="Image">
 
 									</div>
 
@@ -234,7 +234,7 @@
 							<div class="products-single fix">
 								<a href="링크">
 									<div class="box-img-hover">
-										<img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
+										<img src="images/img-pro-3.jpg" class="img-fluid" alt="Image">
 									</div>
 
 									<div class="why-text">
@@ -248,7 +248,7 @@
 							<div class="products-single fix">
 								<a href="링크">
 									<div class="box-img-hover">
-										<img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
+										<img src="images/img-pro-4.jpg" class="img-fluid" alt="Image">
 									</div>
 
 									<div class="why-text">
@@ -262,7 +262,7 @@
 							<div class="products-single fix">
 								<a href="링크">
 									<div class="box-img-hover">
-										<img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
+										<img src="images/img-pro-1.jpg" class="img-fluid" alt="Image">
 									</div>
 								
 								<div class="why-text">
@@ -276,7 +276,7 @@
 							<div class="products-single fix">
 								<a href="링크">
 									<div class="box-img-hover">
-										<img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
+										<img src="images/img-pro-2.jpg" class="img-fluid" alt="Image">
 									</div>
 
 									<div class="why-text">
@@ -290,7 +290,7 @@
 							<div class="products-single fix">
 								<a href="링크">
 									<div class="box-img-hover">
-										<img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
+										<img src="images/img-pro-3.jpg" class="img-fluid" alt="Image">
 									</div>
 
 									<div class="why-text">
@@ -305,7 +305,7 @@
 							<div class="products-single fix">
 								<a href="링크">
 									<div class="box-img-hover">
-										<img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
+										<img src="images/img-pro-4.jpg" class="img-fluid" alt="Image">
 									</div>
 
 									<div class="why-text">

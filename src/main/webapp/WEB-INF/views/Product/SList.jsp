@@ -101,7 +101,7 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                    
-                                                    <a href="SellRetrieve?sell_rno=${sdto.sell_rno }">
+                                                    <a href="SellRetrieve?sell_rno=${sdto.sell_rno }&img=${i }">
                                                     <img src="images/img-pro-${i }.jpg" class="img-fluid" alt="Image" border="0">
                                                     </a>
                                                 </div>
