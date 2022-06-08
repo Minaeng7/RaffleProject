@@ -52,6 +52,10 @@
 			<exclude-mapping path="/logout"/>
 			<exclude-mapping path="/SList"/>
 			<exclude-mapping path="/RList"/>
+			<exclude-mapping path="/ResellRetrieve"/>
+			<exclude-mapping path="/SellRetrieve"/>
+			<exclude-mapping path="/notice"/>
+			<exclude-mapping path="/nview"/>
 			<beans:ref bean="LoginCheckInterceptor"/>
 		</interceptor>
 	</interceptors>
