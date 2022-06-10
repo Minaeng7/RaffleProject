@@ -74,13 +74,13 @@
 	<select id="RRlist" resultType="ResellRDTO">
 	select * from
 	(select * from resell_r
-	order by DBMS_RANDOM.RANDOM )
+	order by resell_rno desc )
 	where <![CDATA[rownum<8]]>
 	</select>
 	<select id="SSlist" resultType="SellRDTO">
 	select * from
 	(select * from sell_r
-	order by DBMS_RANDOM.RANDOM )
+	order by sell_rno desc )
 	where <![CDATA[rownum<8]]>
 	</select>
 </mapper>

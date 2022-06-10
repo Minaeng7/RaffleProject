@@ -47,7 +47,6 @@ public class BoardController {
 	@RequestMapping("/forum")
 	public ModelAndView list() {
 		List<ForumDTO> list = fservice.listAll();
-		System.out.println("list" +list);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
 		mav.setViewName("forum");
@@ -71,6 +70,13 @@ public class BoardController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("dto", fservice.read(bno));
 		mav.setViewName("board/view");
+		return mav;
+	}
+	@RequestMapping("/edit")
+	public ModelAndView edit(ForumDTO dto, HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("fdto", dto);
+		mav.setViewName("board/edit");
 		return mav;
 	}
 	//게시글 수정

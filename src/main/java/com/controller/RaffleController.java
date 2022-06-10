@@ -20,13 +20,13 @@ public class RaffleController {
 	@Autowired
 	RaffleService service;
 
-	@RequestMapping("/AddSell")
+	@RequestMapping("/loginCheck/AddSell")
 	public String AddSell(SellRDTO sdto) {
 		service.addSell_r(sdto);		
 		return "redirect:../SList";
 	}
 
-	@RequestMapping("/AddResell")
+	@RequestMapping("/loginCheck/AddResell")
 	public String AddResell(ResellRDTO rdto) {
 		service.addResell_r(rdto);
 		return "redirect:../RList";
@@ -93,7 +93,7 @@ public class RaffleController {
 	@RequestMapping("UpdateMyRaffleSS")
 	public String UpdateMyRaffleSS(SellRDTO rdto, HttpSession session) {
 		service.UpdateSell_r(rdto);
-		return "redirect:Mypage";
+		return "redirect:MyAttendedRaffle";
 	}
 	
 	@RequestMapping("DeleteMyRaffleS")
@@ -111,7 +111,7 @@ public class RaffleController {
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		service.DeleteMyRaffleR(memberno);
-		return "redirect:Mypage";
+		return "redirect:MyAttendedRaffle";
 	}
 	@RequestMapping("/DeleteMyRaffleSS")
 	public String DeleteMyRaffleSS(HttpSession session) {

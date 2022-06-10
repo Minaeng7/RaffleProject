@@ -88,10 +88,6 @@ $(document).ready(function(){
 			<div class="row">
 				<div class="col-lg-12">
 					<h2>My Raffle 수정</h2>
-					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="shop-raffle.html">상점으로
-								이동하기</a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
@@ -136,29 +132,29 @@ $(document).ready(function(){
 									</div>
 									<div class="form-group mb-3">
 										<label for="name">memberno</label> <input id="name"
-											name="memberno" type="text" value="${Rdto.memberno }"
+											name="memberno" type="text" value="${login.memberno }"
 											class="form-control validate" readonly />
 									</div>
 									<div class="row">
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="price">post</label> <input id="price"
-												name="post" type="text" class="form-control validate" value = "${Rdto.post }"
+												name="post" type="text" class="form-control validate" value = "${login.post }"
 												required />
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="price">addr1</label> <input id="price"value = "${Rdto.addr1 }"
+											<label for="price">addr1</label> <input id="price"value = "${login.addr1 }"
 												name="addr1" type="text" class="form-control validate"
 												required />
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="price">addr2</label> <input id="price"value = "${Rdto.addr2 }"
+											<label for="price">addr2</label> <input id="price"value = "${login.addr2 }"
 												name="addr2" type="text" class="form-control validate"
 												required />
 										</div>
 									</div>
 									<div class="form-group mb-3">
 										<label for="name">phone</label> <input id="name"
-											name="phone" type="text" value="${Rdto.phone }"
+											name="phone" type="text" value="${login.phone }"
 											class="form-control validate" required />
 									</div>
 									<div class="row">

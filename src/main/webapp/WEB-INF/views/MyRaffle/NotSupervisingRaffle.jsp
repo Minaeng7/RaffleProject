@@ -45,13 +45,12 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th>images</th>
-									<th>상품이름</th>
-									<th>가격</th>
-									<th>총판매수량</th>
-									<th>수정</th>
-									<th>추첨</th>
-									<th>삭제</th>
+									<th>S/R</th>
+									<th>번호</th>
+									<th>Product Name</th>
+									<th>Price</th>
+									<th>결과</th>
+									<th>응모 취소</th>
 								</tr>
 							</thead>
 							<tbody>
