@@ -97,9 +97,9 @@
                 <div class="col-xl-5 col-lg-5 col-md-6">
                     <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"> <img class="d-block w-100" src="images/big-img-01.jpg" alt="First slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/big-img-02.jpg" alt="Second slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/big-img-03.jpg" alt="Third slide"> </div>
+                            <div class="carousel-item active"> <img class="d-block w-100" src="images/${rdto.image }.jpg" alt="First slide"> </div>
+                            <div class="carousel-item"> <img class="d-block w-100" src="images/${rdto.image }-1.jpg" alt="Second slide"> </div>
+                            <div class="carousel-item"> <img class="d-block w-100" src="images/${rdto.image }-2.jpg" alt="Third slide"> </div>
                         </div>
                         <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev"> 
 						<i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -111,13 +111,13 @@
 					</a>
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-example-1" data-slide-to="0" class="active">
-                                <img class="d-block w-100 img-fluid" src="images/smp-img-01.jpg" alt="" />
+                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }.jpg" alt="" />
                             </li>
                             <li data-target="#carousel-example-1" data-slide-to="1">
-                                <img class="d-block w-100 img-fluid" src="images/smp-img-02.jpg" alt="" />
+                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }-1.jpg" alt="" />
                             </li>
                             <li data-target="#carousel-example-1" data-slide-to="2">
-                                <img class="d-block w-100 img-fluid" src="images/smp-img-03.jpg" alt="" />
+                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }-2.jpg" alt="" />
                             </li>
                         </ol>
                     </div>
@@ -136,8 +136,8 @@
                     <input type="hidden" name="addr2" value="${login.addr2 }">
                     <input type="hidden" name="phone" value="${login.phone }">
                     
-                        <h1 style="margin-top : 20px;">래플이름 : ${rdto.rafflename }</h1>
-                        <h6> 셀러 이름 : ${rdto.memberno}</h6>
+                        <h1 style="margin-top : 20px;">${rdto.nickname }</h1>
+                        <h4 style="margin-left: 5px; margin : 10px"> 판매자: ${rdto.memberno}</h4>
                         <h3 style="margin-left: 5px; margin : 10px"> 참가비 : ${rdto.per_price }</h3>
                         <h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : ${rdto.attend_amount }</h3>
                             <p>

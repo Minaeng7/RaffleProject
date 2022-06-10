@@ -41,6 +41,7 @@ public class RaffleController {
 //		System.out.println(slist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", slist);
+//		System.out.println(slist);
 		mav.setViewName("SList");
 		return mav;
 	}
