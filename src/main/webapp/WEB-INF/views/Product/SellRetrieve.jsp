@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -153,7 +154,7 @@
 					<input type="hidden" name="addr2" value="${login.addr2 }">
 					<input type="hidden" name="phone" value="${login.phone }">
 						<h1 style="margin-top: 20px;">${sdto.rafflename }</h1>
-						<h3 style="margin-left: 5px; margin: 10px">래플 가격 : ${sdto.raffleprice }</h3>
+						<h3 style="margin-left: 5px; margin: 10px">래플 가격 : <fmt:formatNumber value="${sdto.raffleprice }" maxFractionDigits="3"/></h3>
 						<h3 style="margin-left: 5px; margin: 10px">잔여 수량 : ${sdto.raffleamount }</h3>
 						<p>
 						<h4>Short Description:</h4>
@@ -212,112 +213,12 @@
 
 									<div class="why-text">
 										<h4>${slist.rafflename }</h4>
-										<h5>${slist.raffleprice }</h5>
+										<h5><fmt:formatNumber value="${slist.raffleprice }" maxFractionDigits="3"/></h5>
 									</div>
 									</a>
 							</div>
 						</div>
 						</c:forEach>
-						<!-- <div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
-
-									</div>
-
-									<div class="why-text">
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<h5>$9.79</h5>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
-									</div>
-
-									<div class="why-text">
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<h5>$9.79</h5>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
-									</div>
-
-									<div class="why-text">
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<h5>$9.79</h5>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
-									</div>
-								
-								<div class="why-text">
-									<h4>Lorem ipsum dolor sit amet</h4>
-									<h5>$9.79</h5>
-								</div>
-								</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
-									</div>
-
-									<div class="why-text">
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<h5>$9.79</h5>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
-									</div>
-
-									<div class="why-text">
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<h5>$9.79</h5>
-									</div>
-								</a>
-							</div>
-
-						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
-									</div>
-
-									<div class="why-text">
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<h5>$9.79</h5>
-									</div>
-								</a>
-							</div>
-						</div> -->
 					</div>
 				</div>
 			</div>

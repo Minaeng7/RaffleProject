@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -109,7 +109,7 @@
 				                                </a>
 	                                            <div class="why-text">
 	                                                 <h4> RaffleName : ${rdto.nickname }</h4>
-	                                                 <h5> Entry fee : ${rdto.per_price }</h5>
+	                                                 <h5> Entry fee : <fmt:formatNumber value="${rdto.per_price }" maxFractionDigits="3"/></h5>
 	                                            </div>
                                             </div>
                                         </div>

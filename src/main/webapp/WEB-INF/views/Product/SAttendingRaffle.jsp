@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,7 +146,8 @@ $(document).ready(function() {
                                 <div class="rounded p-2 bg-light">
                                     <div class="media mb-2 border-bottom">
                                         <div class="media-body"> <a href="SellRetrieve?sell_rno=${sdto.sell_rno }">${sdto.nickname }</a>
-                                            <div class="small text-muted">가격 : ${sdto.raffleprice }</div>
+                                            <div class="small text-muted">가격 : ${sdto.rafflename }</div>
+                                            <img src="images/img-pro-${sdto.sell_rno }.jpg" class="img-fluid" alt="Image" style="height:200px; length:200px;">
                                         </div>
                                     </div>
                                 </div>
@@ -163,7 +165,7 @@ $(document).ready(function() {
                                 <hr class="my-1">
                                 <div class="d-flex">
                                     <label>Price</label>
-                                    <div class="ml-auto font-weight-bold"> ${sdto.raffleprice } </div>
+                                    <div class="ml-auto font-weight-bold"> <fmt:formatNumber value="${sdto.raffleprice }" maxFractionDigits="3"/> </div>
                                 </div>
                                 <div class="d-flex">
                                     <label>Amount</label>

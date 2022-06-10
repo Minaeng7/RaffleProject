@@ -65,7 +65,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>공지사항 페이지입니다.</h2>
+                    <h2>공지사항</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/raffle/">Home</a></li>
                         <li class="breadcrumb-item active">공지사항</li>
