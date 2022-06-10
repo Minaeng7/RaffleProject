@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -107,7 +108,7 @@
                                                 </div>
                                                 <div class="why-text">
                                                     <h4>RaffleName : ${sdto.nickname }</h4>
-                                                    <h5>Price : ${sdto.raffleprice }</h5>
+                                                    <h5>Price : <fmt:formatNumber value="${sdto.raffleprice }" maxFractionDigits="3"/></h5>
                                                 </div>
                                             </div>
                                         </div>

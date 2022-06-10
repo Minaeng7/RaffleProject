@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -137,8 +136,8 @@
                     <input type="hidden" name="phone" value="${login.phone }">
                     
                         <h1 style="margin-top : 20px;">래플이름 : ${rdto.rafflename }</h1>
-                        <h6> 셀러 이름 : ${rdto.memberno}</h6>
-                        <h3 style="margin-left: 5px; margin : 10px"> 참가비 : ${rdto.per_price }</h3>
+                        <h3 style="margin-left: 5px; margin : 10px"> 셀러 이름 : ${rdto.memberno}</h3>
+                        <h3 style="margin-left: 5px; margin : 10px"> 참가비 : <fmt:formatNumber value="${rdto.per_price }" maxFractionDigits="3"/></h3>
                         <h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : ${rdto.attend_amount }</h3>
                             <p>
                                 <h4>Short Description:</h4>
@@ -173,7 +172,7 @@
                                         <!-- <a class="btn hvr-hover" data-fancybox-close="" href="#">장바구니</a> -->
                                     </div>
                                 </div>
-</form>
+						</form>
                              
                     </div>
                 </div>
@@ -196,7 +195,7 @@
                             
                                 <div class="why-text">
                                     <h4>${rlist.rafflename }</h4>
-                                    <h5>${rlist.per_price }</h5>
+                                    <h5><fmt:formatNumber value="${rlist.per_price }" maxFractionDigits="3"/></h5>
                                 </div>
                           		</a>
                             </div>

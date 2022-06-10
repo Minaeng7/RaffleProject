@@ -31,11 +31,11 @@ $(document).ready(function(){
 
     };  
 	
-	$("#imgUpload").on("change", function() {
+	/* $("#imgUpload").on("change", function() {
 		readURL(this);
-	});
+	}); */
 	
-	function readURL(input) {
+	/* function readURL(input) {
 		if (input.files && input.files[0]) {
 			var reader = new FileReader();
 			reader.onload = function (e){
@@ -60,7 +60,7 @@ $(document).ready(function(){
 	             reader.readAsDataURL(image); } 
 	            }
 
-	            let flatpickrInstance
+	            let flatpickrInstance */
 	            
 });//end ready
 </script>
@@ -101,9 +101,7 @@ $(document).ready(function(){
 <!-- Start My Account  -->
 	<div class="shop-add-box"
 		style="height: 600px; padding-bottom: 0px; margin-bottom: 200px;">
-		<h1
-			style="border-bottom: 3px solid #222; margin-left: 20px; padding-top: 40px;">래플
-			수정</h1>
+		<h1 style="border-bottom: 3px solid #222; margin-left: 20px; padding-top: 40px;">래플 수정</h1>
 		<div class="container tm-mt-big tm-mb-big">
 			<div class="row">
 				<div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
@@ -119,15 +117,14 @@ $(document).ready(function(){
 							<input type="hidden" name="username" value="${Rdto.username }">
 							<div class="row tm-edit-product-row">
 								<div class="col-xl-6 col-lg-6 col-md-12">
-									<div class="tm-product-img-dummy mx-auto">
+									<!-- <div class="tm-product-img-dummy mx-auto">
 										<i class="fas fa-cloud-upload-alt tm-upload-icon"
 											onclick="document.getElementById('fileInput').click();"></i>
 									</div>
-									<input type="file" id="upImgFiles"
-										onChange="uploadImgPreview();" accept="image/*" multiple>
-
-									<hr />
-
+									<input type="file" id="upImgFiles" onChange="uploadImgPreview();" accept="image/*" multiple>
+									<input type="text" 
+									<hr /> -->
+									<img class="d-block w-100 img-fluid" src="images/smp-img-03.jpg" alt="" />
 									<div id="thumbnailImgs"></div>
 
 								</div>
@@ -167,11 +164,10 @@ $(document).ready(function(){
 									<div class="row">
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="price">Total_price</label> <input id="price"
-												type="text" class="form-control validate" value = "${rdto.total_price}"
-												readonly />
+												type="text" class="form-control validate" value = "${rdto.total_price}" readonly />
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
-											<label for="price">Per_price</label> <input id="price"value = "${rdto.per_price}"
+											<label for="price">Per_price</label> <input id="price"value = "${rdto.per_price}"		
 												type="text" class="form-control validate"
 												readonly />
 										</div>
