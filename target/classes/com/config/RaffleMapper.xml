@@ -61,14 +61,45 @@
 	</delete>
 	<select id = "mainListS" resultType = "SellRDTO">
 	select *
+	from (select *
 	from sell_r
+	order by viewcnt desc)
 	where rownum &lt; 4
-	order by viewcnt desc
 	</select>
+	
+	<select id = "mainListS_new" resultType = "SellRDTO">
+	select *
+	from (select *
+	from sell_r
+	order by sell_rno desc)
+	where rownum &lt; 3
+	</select>
+	
 	<select id = "mainListR" resultType = "ResellRDTO">
 	select *
+	from (select *
 	from resell_r
+	order by viewcnt desc)
 	where rownum &lt; 4
-	order by viewcnt desc
+	</select>
+	
+	<select id = "mainListR_new" resultType = "ResellRDTO">
+	select *
+	from (select *
+	from resell_r
+	order by resell_rno desc)
+	where rownum &lt; 3
+	</select>
+	<select id="RRlist" resultType="ResellRDTO">
+	select * from
+	(select * from resell_r
+	order by resell_rno desc )
+	where <![CDATA[rownum<8]]>
+	</select>
+	<select id="SSlist" resultType="SellRDTO">
+	select * from
+	(select * from sell_r
+	order by sell_rno desc )
+	where <![CDATA[rownum<8]]>
 	</select>
 </mapper>

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -101,15 +101,14 @@
                                     <div class="row">
 <!-- 상품뿌리기 시작 -->                          
 								<c:forEach var="rdto" items="${rdto}">
-									<c:set var ="i" value = "${i+1 }"/>
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
                                             	<a href="ResellRetrieve?resell_rno=${rdto.resell_rno }">
-				                                <img src="images/img-resell-${i }.jpg" class="img-fluid" alt="Image">
+				                                <img src="images/${rdto.image }.jpg" class="img-fluid" alt="Image">
 				                                </a>
 	                                            <div class="why-text">
 	                                                 <h4> RaffleName : ${rdto.nickname }</h4>
-	                                                 <h5> Entry fee : ${rdto.per_price }</h5>
+	                                                 <h5> Entry fee : <fmt:formatNumber value="${rdto.per_price }" maxFractionDigits="3"/></h5>
 	                                            </div>
                                             </div>
                                         </div>

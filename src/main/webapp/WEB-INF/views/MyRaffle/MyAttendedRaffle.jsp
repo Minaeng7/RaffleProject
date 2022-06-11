@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -76,6 +77,7 @@
 						<table class="table">
 							<thead>
 								<tr>
+									<th>S/R</th>
 									<th>번호</th>
 									<th>Product Name</th>
 									<th>Price</th>
@@ -86,9 +88,10 @@
 							<tbody>
 								<c:forEach var="item" items="${AttendedRaffleS}">
 									<tr>
+										<td>S</td>
 										<td><c:out value="${item.sell_rno}" /></td>
 										<td><c:out value="${item.rafflename}" /></td>
-										<td><c:out value="${item.raffleprice}" /></td>
+										<td><fmt:formatNumber value="${item.raffleprice }" maxFractionDigits="3"/></td>
 										<td><form action=SResult>
 												<input type="hidden" name=sell_rno value="${item.sell_rno}">
 												<button>확인</button>
@@ -118,9 +121,9 @@
 								<tr>
 									<th>S/R</th>
 									<th>번호</th>
-									<th>상품이름</th>
-									<th>PRICE</th>
-									<th>SPOT</th>
+									<th>Product Name</th>
+									<th>Price</th>
+									<th>Spot</th>
 									<th>수정</th>
 									<th>결과</th>
 									<th>응모 취소</th>
@@ -133,7 +136,7 @@
 										<td>R</td>
 										<td><c:out value="${item.resell_rno}" /></td>
 										<td><c:out value="${item.rafflename}" /></td>
-										<td><c:out value="${item.per_price}" /></td>
+										<td><fmt:formatNumber value="${item.per_price }" maxFractionDigits="3"/></td>
 										<td><c:out value="${RSpotList[status.index].spot}" /></td>
 										<td><form action="UpdateAttendingR">
 												<input type="hidden" name="resell_rno" value="${item.resell_rno }"> 

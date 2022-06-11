@@ -113,23 +113,24 @@ $(document).ready(function(){
 
     </ul>
 <div class="board_list_wrap">
-
         <table class="board_list">
             <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 15px;">자유게시판</caption>
         </table>
+        <form action="edit">
+        <input type="hidden" name="memberno" value="${dto.memberno }">
         <div id="forum_title">
-          	  제목 <input type="text" name="title" id="utitle" rows="1" cols="55" value="${dto.title }" placeholder="제목을 입력해 주세요." maxlength="100"></input><br>
+          	  제목 <input type="text" name="title" id="utitle" rows="1" cols="55" value="${dto.title }" maxlength="100" readonly></input><br>
 			번호 <input type="text" name="bno" value="${dto.bno }" readonly><br><br>
 			작성자 <input type="text" name="username" value="${dto.username }" readonly> 
         </div>
         <div id="forum_content">
-           	본문  <textarea name="content" id="ucontent" placeholder="내용을 입력해 주세요">${dto.content }</textarea>
+           	본문  <textarea name="content" id="ucontent" readonly>${dto.content }</textarea>
         </div>
         <div style="text-align: right; margin-top:30px;">
-            <button type="button" onclick="location.href='update'" class="btn btn-secondary">수정</button>
-            <button type="button" onclick="location.href='delete'" class="btn btn-secondary">삭제</button>
+            <button type="submit" class="btn btn-secondary">수정</button>
+            <button type="button" onclick="location.href='delete?bno=${dto.bno}'" class="btn btn-secondary">삭제</button>
         </div>
-
+		</form>
     </div>
     
     <jsp:include page="../common/bottom.jsp"></jsp:include>

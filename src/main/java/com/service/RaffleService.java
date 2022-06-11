@@ -59,14 +59,32 @@ public class RaffleService {
 		List<SellRDTO> list = dao.mainListS();
 		return list;
 	}
+	
+	public List<SellRDTO> mainListS_new() {
+		List<SellRDTO> list = dao.mainListS_new();
+		return list;
+	}
 
 	public List<ResellRDTO> mainListR() {
 		List<ResellRDTO> list = dao.mainListR();
 		return list;
 	}
+	
+	public List<ResellRDTO> mainListR_new() {
+		List<ResellRDTO> list = dao.mainListR_new();
+		return list;
+	}
 
 	public SellRDTO SellRetrieve(int sell_rno) {
 		return dao.SellRetrieve(sell_rno);
+	}
+
+	public List<ResellRDTO> RRlist() {
+		return dao.RRlist();
+	}
+
+	public List<SellRDTO> SSlist() {
+		return dao.SSlist();
 	}
 
 }

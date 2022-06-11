@@ -87,6 +87,7 @@
 	<select id="RSpotList" parameterType="int" resultType="RSpotDTO">
 		select * from rspot
 		where memberno = #{memberno}
+		order by resell_rno
 	</select>
 	<select id="Sorder" parameterType="int" resultType="SWinDTO">
 		select * from swinning

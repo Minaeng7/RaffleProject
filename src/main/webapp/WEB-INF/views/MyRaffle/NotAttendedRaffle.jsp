@@ -72,12 +72,12 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Images</th>
-                                    <th>Product Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                    <th>Remove</th>
+                                    <th>S/R</th>
+									<th>번호</th>
+									<th>Product Name</th>
+									<th>Price</th>
+									<th>결과</th>
+									<th>응모 취소</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -59,14 +59,32 @@ public class RaffleDAO {
 		List<SellRDTO> list = template.selectList("RaffleMapper.mainListS");
 		return list;
 	}
+	
+	public List<SellRDTO> mainListS_new() {
+		List<SellRDTO> list = template.selectList("RaffleMapper.mainListS_new");
+		return list;
+	}
 
 	public List<ResellRDTO> mainListR() {
 		List<ResellRDTO> list = template.selectList("RaffleMapper.mainListR");
 		return list;
 	}
+	
+	public List<ResellRDTO> mainListR_new() {
+		List<ResellRDTO> list = template.selectList("RaffleMapper.mainListR_new");
+		return list;
+	}
 
 	public SellRDTO SellRetrieve(int sell_rno) {
 		return template.selectOne("RaffleMapper.SellRetrieve", sell_rno);
+	}
+
+	public List<ResellRDTO> RRlist() {
+		return template.selectList("RaffleMapper.RRlist");
+	}
+
+	public List<SellRDTO> SSlist() {
+		return template.selectList("RaffleMapper.SSlist");
 	}
 	
 }

@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -97,9 +96,9 @@
                 <div class="col-xl-5 col-lg-5 col-md-6">
                     <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"> <img class="d-block w-100" src="images/big-img-01.jpg" alt="First slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/big-img-02.jpg" alt="Second slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/big-img-03.jpg" alt="Third slide"> </div>
+                            <div class="carousel-item active"> <img class="d-block w-100" src="images/${rdto.image }.jpg" alt="First slide"> </div>
+                            <div class="carousel-item"> <img class="d-block w-100" src="images/${rdto.image }-1.jpg" alt="Second slide"> </div>
+                            <div class="carousel-item"> <img class="d-block w-100" src="images/${rdto.image }-2.jpg" alt="Third slide"> </div>
                         </div>
                         <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev"> 
 						<i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -111,13 +110,13 @@
 					</a>
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-example-1" data-slide-to="0" class="active">
-                                <img class="d-block w-100 img-fluid" src="images/smp-img-01.jpg" alt="" />
+                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }.jpg" alt="" />
                             </li>
                             <li data-target="#carousel-example-1" data-slide-to="1">
-                                <img class="d-block w-100 img-fluid" src="images/smp-img-02.jpg" alt="" />
+                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }-1.jpg" alt="" />
                             </li>
                             <li data-target="#carousel-example-1" data-slide-to="2">
-                                <img class="d-block w-100 img-fluid" src="images/smp-img-03.jpg" alt="" />
+                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }-2.jpg" alt="" />
                             </li>
                         </ol>
                     </div>
@@ -137,8 +136,8 @@
                     <input type="hidden" name="phone" value="${login.phone }">
                     
                         <h1 style="margin-top : 20px;">래플이름 : ${rdto.rafflename }</h1>
-                        <h6> 셀러 이름 : ${rdto.memberno}</h6>
-                        <h3 style="margin-left: 5px; margin : 10px"> 참가비 : ${rdto.per_price }</h3>
+                        <h3 style="margin-left: 5px; margin : 10px"> 셀러 이름 : ${rdto.memberno}</h3>
+                        <h3 style="margin-left: 5px; margin : 10px"> 참가비 : <fmt:formatNumber value="${rdto.per_price }" maxFractionDigits="3"/></h3>
                         <h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : ${rdto.attend_amount }</h3>
                             <p>
                                 <h4>Short Description:</h4>
@@ -173,7 +172,7 @@
                                         <!-- <a class="btn hvr-hover" data-fancybox-close="" href="#">장바구니</a> -->
                                     </div>
                                 </div>
-</form>
+						</form>
                              
                     </div>
                 </div>
@@ -185,120 +184,23 @@
                         <h1>다른 래플들</h1>
                     </div>
                     <div class="featured-products-box owl-carousel owl-theme">
+					<c:forEach items="${rlist }" var="rlist">
+                   	<c:set var ="i" value = "${i+1 }"/>
                         <div class="item">
                             <div class="products-single fix">
-                                <a href="링크">
+                                <a href="ResellRetrieve?resell_rno=${rlist.resell_rno }">
                                 <div class="box-img-hover">
-                                    <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/img-resell-${i }.jpg" class="img-fluid" alt="Image">
                                 </div>
                             
                                 <div class="why-text">
-                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                    <h5> $9.79</h5>
+                                    <h4>${rlist.rafflename }</h4>
+                                    <h5><fmt:formatNumber value="${rlist.per_price }" maxFractionDigits="3"/></h5>
                                 </div>
-                            </div>
-                        </a>
-                        </div>
-                        <div class="item">
-                            <div class="products-single fix">
-                                <a href="링크">
-                                <div class="box-img-hover">
-                                    <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
-
-                                </div>
-                                
-                                <div class="why-text">
-                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                    <h5> $9.79</h5>
-                                </div>
-                            </a>
+                          		</a>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="products-single fix">
-                                <a href="링크">
-                                <div class="box-img-hover">
-                                    <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
-                                </div>
-                                
-                                <div class="why-text">
-                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                    <h5> $9.79</h5>
-                                </div>
-                            </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="products-single fix">
-                                <a href="링크">
-                                <div class="box-img-hover">
-                                    <img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
-                                </div>
-                               
-                                <div class="why-text">
-                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                    <h5> $9.79</h5>
-                                </div>
-                            </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="products-single fix">
-                                <a href="링크">
-                                <div class="box-img-hover">
-                                    <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
-                                </div>
-                                </a>
-                                <div class="why-text">
-                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                    <h5> $9.79</h5>
-                                </div>
-                            </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="products-single fix">
-                                <a href="링크">
-                                <div class="box-img-hover">
-                                    <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
-                                </div>
-                            
-                                <div class="why-text">
-                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                    <h5> $9.79</h5>
-                                </div>
-                            </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="products-single fix">
-                             <a href="링크">
-                                <div class="box-img-hover">
-                                    <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
-                                </div>
-                           
-                                <div class="why-text">
-                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                    <h5> $9.79</h5>
-                                </div>
-                            </a>
-                            </div>
-                        
-                        </div>
-                        <div class="item">
-                            <div class="products-single fix">
-                                <a href="링크">
-                                <div class="box-img-hover">
-                                    <img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
-                                </div>
-                                
-                                <div class="why-text">
-                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                    <h5> $9.79</h5>
-                                </div>
-                            </a>
-                            </div>
-                        </div>
+						</c:forEach>
                     </div>
                 </div>
             </div>
@@ -307,7 +209,6 @@
     </div>
     <!-- End Cart -->
 
-    <jsp:include page="../common/bottom.jsp"></jsp:include>
  <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

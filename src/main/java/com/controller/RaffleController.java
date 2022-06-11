@@ -23,13 +23,13 @@ public class RaffleController {
 	@Autowired
 	RaffleService service;
 
-	@RequestMapping("/AddSell")
+	@RequestMapping("/loginCheck/AddSell")
 	public String AddSell(SellRDTO sdto) {
 		service.addSell_r(sdto);		
 		return "redirect:../SList";
 	}
 
-	@RequestMapping("/AddResell")
+	@RequestMapping("/loginCheck/AddResell")
 	public String AddResell(ResellRDTO rdto) {
 		service.addResell_r(rdto);
 		return "redirect:../RList";
@@ -41,6 +41,7 @@ public class RaffleController {
 //		System.out.println(slist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", slist);
+//		System.out.println(slist);
 		mav.setViewName("SList");
 		return mav;
 	}
@@ -48,7 +49,6 @@ public class RaffleController {
 	@RequestMapping("/RList")
 	public ModelAndView ResellList(ResellRDTO rdto) {
 		List<ResellRDTO> rlist = (List<ResellRDTO>) service.ResellList();
-//		System.out.println("rlist는 "+rlist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rlist);
 		mav.setViewName("RList");
@@ -56,22 +56,22 @@ public class RaffleController {
 	}	
 	@RequestMapping(value="/ResellRetrieve")
 	public ModelAndView ResllRetrieve(int resell_rno) {//상품상세정보
-//		System.out.println("ResellRetrieve 호출");
+		List<ResellRDTO> rlist = service.RRlist();
 		ModelAndView mav = new ModelAndView();
 		ResellRDTO rdto = service.ResellRetrieve(resell_rno);
-		//System.out.println(resell_rno);
 		mav.addObject("rdto", rdto);
+		mav.addObject("rlist", rlist);
 		mav.setViewName("ResellRetrieve");
 		return mav;
 	}
 	
 	@RequestMapping(value="/SellRetrieve")
 	public ModelAndView SellRetrieve(int sell_rno) {//상품상세정보 
-//		System.out.println("SellRetrieve 호출");
+		List<SellRDTO> slist = service.SSlist();
 		ModelAndView mav = new ModelAndView();
 		SellRDTO sdto = service.SellRetrieve(sell_rno);
-		//System.out.println(resell_rno);
 		mav.addObject("sdto", sdto);
+		mav.addObject("slist", slist);
 		mav.setViewName("SellRetrieve");
 		return mav;
 	}
@@ -97,7 +97,7 @@ public class RaffleController {
 	@RequestMapping("UpdateMyRaffleSS")
 	public String UpdateMyRaffleSS(SellRDTO rdto, HttpSession session) {
 		service.UpdateSell_r(rdto);
-		return "redirect:Mypage";
+		return "redirect:MyAttendedRaffle";
 	}
 	
 	@RequestMapping("DeleteMyRaffleS")
@@ -115,7 +115,7 @@ public class RaffleController {
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		service.DeleteMyRaffleR(memberno);
-		return "redirect:Mypage";
+		return "redirect:MyAttendedRaffle";
 	}
 	@RequestMapping("/DeleteMyRaffleSS")
 	public String DeleteMyRaffleSS(HttpSession session) {

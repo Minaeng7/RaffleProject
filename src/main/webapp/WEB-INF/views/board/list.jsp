@@ -66,7 +66,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>자유게시판 페이지입니다.</h2>
+                    <h2>자유게시판</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/raffle/">Home</a></li>
                         <li class="breadcrumb-item active">자유게시판</li>
@@ -118,7 +118,7 @@
             <a href="#" class="num">3</a>
             <a href="#" class="bt">다음 페이지</a>
             <a href="#" class="bt">마지막 페이지</a>
-            <button type="button" onclick="location.href='edit'" class="btn btn-secondary" style="float: right;  ">글 쓰기</button>
+            <button type="button" onclick="location.href='write'" class="btn btn-secondary" style="float: right;  ">글 쓰기</button>
         </div>
     </div>
     <!-- End My Account -->
