@@ -142,7 +142,7 @@ public class AttendController {
 		int memberno = dto.getMemberno();
 		sdto.setMemberno(memberno);
 		Sservice.DeleteMyAttendingS(sdto);
-		return "redirect:Myinfo";
+		return "redirect:MyAttendedRaffle";
 	}
 
 }

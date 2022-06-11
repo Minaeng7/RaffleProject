@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <!-- Basic -->
 
 <head>
@@ -37,10 +37,7 @@
     <![endif]-->
     <script src="package/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="package/dist/sweetalert2.min.css">
-    <script>
-
-        </script>
-
+ 
 </head>
 
 <body>
@@ -63,19 +60,19 @@
         <li><a class="notice_color" href="forum">자유 게시판</a></li>
 
     </ul>
-${dto }
     <div class="board_list_wrap">
         <table class="board_list">
-            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 10px;">자유게시판 작성</caption>
+            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 10px;">자유게시판 수정</caption>
         </table>
         <form action="update">
+        <input type="hidden" name="memberno" value="${fdto.memberno }" />
 	        <div id="forum_title">
-	            제목 <input name="title" id="utitle" rows="1" cols="55" value="${dto.title }" maxlength="100" required></input>
+	            제목 <input name="title" id="utitle" rows="1" cols="55" value="${fdto.title }" maxlength="100" required></input>
 	        </div>
 	        <div id="forum_content">
-	           번호 <input type="text" name="bno" value="${dto.bno }" readonly><br><br>
+	           번호 <input type="text" name="bno" value="${fdto.bno }" readonly><br><br>
 	           작성자 <input type="text" name="username" value="${login.username }" readonly><br>
-	            본문 <textarea name="content" id="ucontent" required>${dto.content }</textarea>
+	            본문 <textarea name="content" id="ucontent" required>${fdto.content }</textarea>
 	            <button type="submit" name="" class="btn btn-secondary" style="margin-left: 710px;
 	            margin-top: 15px;">저장하기</button>
 	        </div>

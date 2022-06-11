@@ -26,10 +26,6 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h2>My Raffle 삭제</h2>
-					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="shop-raffle.html">상점으로
-								이동하기</a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
