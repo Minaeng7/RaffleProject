@@ -90,7 +90,7 @@
                             </div>
                             <div class="col-12 col-sm-4 text-center text-sm-right">
                                 <ul class="nav nav-tabs ml-auto">
-                                	<a href="AddResell"><button>상품 등록</button></a>
+                                	<a href="AddResell"><button style="border: 1px solid #e8e8e8">상품 등록</button></a>
                                 </ul>
                             </div>
                         </div>
@@ -101,11 +101,10 @@
                                     <div class="row">
 <!-- 상품뿌리기 시작 -->                          
 								<c:forEach var="rdto" items="${rdto}">
-									<c:set var ="i" value = "${i+1 }"/>
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
                                             	<a href="ResellRetrieve?resell_rno=${rdto.resell_rno }">
-				                                <img src="images/img-resell-${i }.jpg" class="img-fluid" alt="Image">
+				                                <img src="images/${rdto.image }.jpg" class="img-fluid" alt="Image">
 				                                </a>
 	                                            <div class="why-text">
 	                                                 <h4> RaffleName : ${rdto.nickname }</h4>

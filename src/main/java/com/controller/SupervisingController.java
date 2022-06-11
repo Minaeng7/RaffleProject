@@ -64,7 +64,7 @@ public class SupervisingController {//mypage기능
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();		
 		dto = service.Mypage(memberno);
-//		System.out.println(dto);
+		System.out.println(dto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mypage", dto);
 		mav.setViewName("Mypage");

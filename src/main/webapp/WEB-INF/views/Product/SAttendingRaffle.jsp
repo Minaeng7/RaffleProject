@@ -100,7 +100,6 @@ $(document).ready(function() {
                                 <label for="username">이름 *</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="username" name="username" value="${login.username }" readonly>
-                                    <div class="invalid-feedback" style="width: 100%;"> 이름을 입력하세요. </div>
                                 </div>
                             </div>
                             
@@ -121,14 +120,14 @@ $(document).ready(function() {
                             <div class="mb-3">
                                 <label for="username">이름 *</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="name" name="" value="">
+                                    <input type="text" class="form-control" id="name" name="" value="" required>
                                     <div class="invalid-feedback" style="width: 100%"> 이름을 입력하세요. </div>
                                 </div>
                             </div>
                        
                             <div class="mb-3">
                                 <label for="post">주소 *</label><br>
-                                <input type="text" class="" id="sample4_postcode" name="" value="" style="border: 1px solid #e8e8e8">
+                                <input type="text" class="" id="sample4_postcode" name="" value="" style="border: 1px solid #e8e8e8" required>
                                 <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" style="border: 1px solid #e5e5e5"><br>
                                 <input type="text" class="" id="sample4_roadAddress" name="" value="" style="border: 1px solid #e8e8e8">
                                 <input type="text" class="" id="sample4_jibunAddress" name="" value="" style="border: 1px solid #e8e8e8"> 

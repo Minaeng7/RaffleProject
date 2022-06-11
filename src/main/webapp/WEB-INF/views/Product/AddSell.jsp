@@ -89,7 +89,7 @@
 											onclick="document.getElementById('fileInput').click();"></i>
 									</div>
 									<input type="file" id="upImgFiles" name=""
-										onChange="uploadImgPreview();" accept="image/*" multiple>
+										onChange="uploadImgPreview();" accept="image/*" multiple required>
 
 									<hr />
 
@@ -126,7 +126,7 @@
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="expire_date">Deadline</label> <input
 												id="expire_date" name="deadline" type="date"
-												class="form-control validate" data-large-mode="true" />
+												class="form-control validate" data-large-mode="true" required/>
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="stock">Raffleamount</label> <input id="stock"

@@ -8,6 +8,7 @@ import org.apache.ibatis.type.Alias;
 public class ForumDTO {
 	
 	int bno;
+	int memberno;
 	String title;
 	String content;
 	String username;
@@ -17,9 +18,10 @@ public class ForumDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public ForumDTO(int bno, String title, String content, String username, Date regdate, int viewcnt) {
+	public ForumDTO(int bno, int memberno, String title, String content, String username, Date regdate, int viewcnt) {
 		super();
 		this.bno = bno;
+		this.memberno = memberno;
 		this.title = title;
 		this.content = content;
 		this.username = username;
@@ -28,14 +30,20 @@ public class ForumDTO {
 	}
 	@Override
 	public String toString() {
-		return "ForumDTO [bno=" + bno + ", title=" + title + ", content=" + content + ", username=" + username
-				+ ", regdate=" + regdate + ", viewcnt=" + viewcnt + "]";
+		return "ForumDTO [bno=" + bno + ", memberno=" + memberno + ", title=" + title + ", content=" + content
+				+ ", username=" + username + ", regdate=" + regdate + ", viewcnt=" + viewcnt + "]";
 	}
 	public int getBno() {
 		return bno;
 	}
 	public void setBno(int bno) {
 		this.bno = bno;
+	}
+	public int getMemberno() {
+		return memberno;
+	}
+	public void setMemberno(int memberno) {
+		this.memberno = memberno;
 	}
 	public String getTitle() {
 		return title;

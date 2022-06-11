@@ -109,15 +109,15 @@
 						class="single-product-slider carousel slide" data-ride="carousel">
 						<div class="carousel-inner" role="listbox">
 							<div class="carousel-item active">
-								<img class="d-block w-100" src="images/big-img-01.jpg"
+								<img class="d-block w-100" src="images/${sdto.image }.jpg"
 									alt="First slide">
 							</div>
 							<div class="carousel-item">
-								<img class="d-block w-100" src="images/big-img-02.jpg"
+								<img class="d-block w-100" src="images/${sdto.image }-1.jpg"
 									alt="Second slide">
 							</div>
 							<div class="carousel-item">
-								<img class="d-block w-100" src="images/big-img-03.jpg"
+								<img class="d-block w-100" src="images/${sdto.image }-2.jpg"
 									alt="Third slide">
 							</div>
 						</div>
@@ -131,13 +131,13 @@
 						<ol class="carousel-indicators">
 							<li data-target="#carousel-example-1" data-slide-to="0"
 								class="active"><img class="d-block w-100 img-fluid"
-								src="images/smp-img-01.jpg" alt="" /></li>
+								src="images/${sdto.image }.jpg" alt="" /></li>
 							<li data-target="#carousel-example-1" data-slide-to="1"><img
-								class="d-block w-100 img-fluid" src="images/smp-img-02.jpg"
+								class="d-block w-100 img-fluid" src="images/${sdto.image }-1.jpg"
 								alt="" /></li>
 							<li data-target="#carousel-example-1" data-slide-to="2"><img
-								class="d-block w-100 img-fluid" src="images/smp-img-03.jpg"
-								alt="" /></li>
+								class="d-block w-100 img-fluid" src="images/${sdto.image }-2.jpg"
+								alt="" /></li> 
 						</ol>
 					</div>
 				</div>
@@ -153,6 +153,7 @@
 					<input type="hidden" name="addr1" value="${login.addr1 }">
 					<input type="hidden" name="addr2" value="${login.addr2 }">
 					<input type="hidden" name="phone" value="${login.phone }">
+
 						<h1 style="margin-top: 20px;">${sdto.rafflename }</h1>
 						<h3 style="margin-left: 5px; margin: 10px">래플 가격 : <fmt:formatNumber value="${sdto.raffleprice }" maxFractionDigits="3"/></h3>
 						<h3 style="margin-left: 5px; margin: 10px">잔여 수량 : ${sdto.raffleamount }</h3>
@@ -208,14 +209,122 @@
 							<div class="products-single fix">
 								<a href="링크">
 									<div class="box-img-hover">
+<<<<<<< HEAD
 										<img src="images/img-pro-${i }.jpg" class="img-fluid" alt="Image">
+=======
+										<img src="images/img-pro-1.jpg" class="img-fluid" alt="Image">
+>>>>>>> a899d8c26dc9774bf6a73fe8388080aea1200cbf
 									</div>
 
 									<div class="why-text">
 										<h4>${slist.rafflename }</h4>
 										<h5><fmt:formatNumber value="${slist.raffleprice }" maxFractionDigits="3"/></h5>
 									</div>
+<<<<<<< HEAD
 									</a>
+=======
+							</div>
+							</a>
+						</div>
+						<div class="item">
+							<div class="products-single fix">
+								<a href="링크">
+									<div class="box-img-hover">
+										<img src="images/img-pro-2.jpg" class="img-fluid" alt="Image">
+
+									</div>
+
+									<div class="why-text">
+										<h4>Lorem ipsum dolor sit amet</h4>
+										<h5>$9.79</h5>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="products-single fix">
+								<a href="링크">
+									<div class="box-img-hover">
+										<img src="images/img-pro-3.jpg" class="img-fluid" alt="Image">
+									</div>
+
+									<div class="why-text">
+										<h4>Lorem ipsum dolor sit amet</h4>
+										<h5>$9.79</h5>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="products-single fix">
+								<a href="링크">
+									<div class="box-img-hover">
+										<img src="images/img-pro-4.jpg" class="img-fluid" alt="Image">
+									</div>
+
+									<div class="why-text">
+										<h4>Lorem ipsum dolor sit amet</h4>
+										<h5>$9.79</h5>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="products-single fix">
+								<a href="링크">
+									<div class="box-img-hover">
+										<img src="images/img-pro-1.jpg" class="img-fluid" alt="Image">
+									</div>
+								
+								<div class="why-text">
+									<h4>Lorem ipsum dolor sit amet</h4>
+									<h5>$9.79</h5>
+								</div>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="products-single fix">
+								<a href="링크">
+									<div class="box-img-hover">
+										<img src="images/img-pro-2.jpg" class="img-fluid" alt="Image">
+									</div>
+
+									<div class="why-text">
+										<h4>Lorem ipsum dolor sit amet</h4>
+										<h5>$9.79</h5>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="products-single fix">
+								<a href="링크">
+									<div class="box-img-hover">
+										<img src="images/img-pro-3.jpg" class="img-fluid" alt="Image">
+									</div>
+
+									<div class="why-text">
+										<h4>Lorem ipsum dolor sit amet</h4>
+										<h5>$9.79</h5>
+									</div>
+								</a>
+							</div>
+
+						</div>
+						<div class="item">
+							<div class="products-single fix">
+								<a href="링크">
+									<div class="box-img-hover">
+										<img src="images/img-pro-4.jpg" class="img-fluid" alt="Image">
+									</div>
+
+									<div class="why-text">
+										<h4>Lorem ipsum dolor sit amet</h4>
+										<h5>$9.79</h5>
+									</div>
+								</a>
+>>>>>>> a899d8c26dc9774bf6a73fe8388080aea1200cbf
 							</div>
 						</div>
 						</c:forEach>

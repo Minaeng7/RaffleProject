@@ -13,8 +13,8 @@
 	
 	<!-- 게시글 작성 -->
 	<insert id="insert">
-		insert into forum(bno, title, content, username)
-		values(#{bno}, #{title}, #{content}, #{username})
+		insert into forum(bno, title, content, username, memberno)
+		values(forum_seq_bno.nextval, #{title}, #{content}, #{username}, #{memberno})
 	</insert>
 	<!-- 게시글 상세보기 -->
 	<select id="view" resultType="ForumDTO">
@@ -28,13 +28,13 @@
 		where bno = #{bno}
 	</update>
 	<!-- 게시글 수정 -->
-	<update id="update">
+	<update id="update" parameterType="ForumDTO">
 		update forum
 		set title = #{title}, content = #{content}
-		where bno = #{bno}
+		where bno = #{bno} and memberno = #{memberno}
 	</update>
 	<!-- 게시글 삭제 -->
-	<delete id="delete">
+	<delete id="delete" parameterType="int">
 		delete from forum
 		where bno = #{bno}
 	</delete>

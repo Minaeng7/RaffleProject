@@ -7,7 +7,10 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
@@ -20,13 +23,13 @@ public class RaffleController {
 	@Autowired
 	RaffleService service;
 
-	@RequestMapping("/AddSell")
+	@RequestMapping("/loginCheck/AddSell")
 	public String AddSell(SellRDTO sdto) {
 		service.addSell_r(sdto);		
 		return "redirect:../SList";
 	}
 
-	@RequestMapping("/AddResell")
+	@RequestMapping("/loginCheck/AddResell")
 	public String AddResell(ResellRDTO rdto) {
 		service.addResell_r(rdto);
 		return "redirect:../RList";
@@ -38,6 +41,7 @@ public class RaffleController {
 //		System.out.println(slist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", slist);
+//		System.out.println(slist);
 		mav.setViewName("SList");
 		return mav;
 	}
@@ -93,7 +97,7 @@ public class RaffleController {
 	@RequestMapping("UpdateMyRaffleSS")
 	public String UpdateMyRaffleSS(SellRDTO rdto, HttpSession session) {
 		service.UpdateSell_r(rdto);
-		return "redirect:Mypage";
+		return "redirect:MyAttendedRaffle";
 	}
 	
 	@RequestMapping("DeleteMyRaffleS")
@@ -111,7 +115,7 @@ public class RaffleController {
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		service.DeleteMyRaffleR(memberno);
-		return "redirect:Mypage";
+		return "redirect:MyAttendedRaffle";
 	}
 	@RequestMapping("/DeleteMyRaffleSS")
 	public String DeleteMyRaffleSS(HttpSession session) {

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -239,12 +241,14 @@ setInterval(function() {
     <div class="categories-shop">
         <div class="container">
             <div class="row">
+              <c:forEach var="slist" items="${slist}" >
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="height: 280px; "><!-- 여기 부터 반복 -->
-                    <a href="링크">
-                        <img class="img-fluid" src="images/main-popular-01.jpg" alt="" />
-                </a>
+                    <a href="SellRetrieve?sell_rno=${slist.sell_rno }">
+                        <img class="img-fluid" src="images/${slist.image }.jpg" alt="" />
+                	</a>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="height: 280px;">
+              </c:forEach>
+                <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="height: 280px;">
                     <a href="링크">
                         <img class="img-fluid" src="images/main-popular-02.jpg " alt="" />
                     </a>
@@ -253,21 +257,24 @@ setInterval(function() {
                     <a href="링크">
                         <img class="img-fluid" src="images/main-popular-03.jpg" alt="" />
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
+        
         <div class="container">
             <div class="row">
+              <c:forEach var="slist" items="${slist}" >
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><!-- 여기 부터 반복 -->
                     <div class="shop-cat-box1" style="height: 100px; ">
-                        <a class="brand-text" href="#">에어 조던 1 미드 우먼스 코코넛 밀크<br>
+                        <a class="brand-text" href="#">${slist.nickname}<br>
                             <h1  class="product_item" id="count3"></h1>
                             <p class="PI">남은시간</p>
 
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+               </c:forEach>
+                <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box1" style="height: 100px;">
                         <a class="brand-text" href="#">아디다스 이지 500 유틸리티 블랙<br>
                             <h1  class="product_item" id="count4"></h1>
@@ -282,7 +289,7 @@ setInterval(function() {
                             <p class="PI">남은시간</p>
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -313,45 +320,49 @@ setInterval(function() {
 
             <div class="row special-list">
                 <div class="col-lg-3 col-md-6 special-grid resell">
-                    <a href="링크">
+                  <c:forEach var="slist_new" items="${slist_new}">
+                    <a href="SellRetrieve?sell_rno=${slist_new.sell_rno }">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
                              <!--마감임박 넣을거면 넣는곳-->
                             </div>
-                            <img src="images/img-pro-1.jpg" class="img-fluid" alt="Image">
+                            <img src="images/${slist_new.image }.jpg" class="img-fluid" alt="Image">
                         </div>
                         <div class="why-text">
-                            <h4>에어 조던 11 레트로 2021 쿨 그레이</h4>
+                            <h4>${slist_new.nickname }</h4>
                             <h5></h5>
                         </div>
                     </div>
                     </a>
+                  </c:forEach>
                 </div>
 
                 <div class="col-lg-3 col-md-6 special-grid raffle">
-                    <a href="링크">
+                  <c:forEach var="rlist_new" items="${rlist_new}">
+                    <a href="ResellRetrieve?resell_rno=${rlist_new.resell_rno }">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
                               <!--마감임박 넣을거면 넣는곳-->
                             </div>
-                            <img src="images/img-pro-2.jpg" class="img-fluid" alt="Image">
+                            <img src="images/${rlist_new.image }.jpg" class="img-fluid" alt="Image">
                         </div>
                         <div class="why-text">
-                            <h4>I4P X 아식스 젤-1130 밍크 글래시어 그레이</h4>
+                            <h4>${rlist_new.nickname }</h4>
                             <h5></h5>
                         </div>
                     </div>
                     </a>
+                  </c:forEach>
                 </div>
 
-                <div class="col-lg-3 col-md-6 special-grid raffle">
+                <!-- <div class="col-lg-3 col-md-6 special-grid raffle">
                     <a href="링크">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
-                                                               <!--마감임박 넣을거면 넣는곳-->
+                                                               마감임박 넣을거면 넣는곳
                              </div>
                             <img src="images/img-pro-3.jpg" class="img-fluid" alt="Image">
                         </div>
@@ -361,14 +372,14 @@ setInterval(function() {
                         </div>
                     </div>
                     </a>
-                </div>
+                </div> -->
 
-                <div class="col-lg-3 col-md-6 special-grid resell">
+                <!-- <div class="col-lg-3 col-md-6 special-grid resell">
                     <a href="링크">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
-                                <!--마감임박 넣을거면 넣는곳-->
+                                마감임박 넣을거면 넣는곳
                             </div>
                             <img src="images/img-pro-4.jpg" class="img-fluid" alt="Image">
                         </div>
@@ -378,7 +389,7 @@ setInterval(function() {
                         </div>
                     </div>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

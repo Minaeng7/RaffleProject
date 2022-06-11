@@ -3,6 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +65,7 @@
 									<td>S</td>
 									<td><c:out value = "${item.sell_rno}"/></td>
 									<td><c:out value ="${item.rafflename}"/></td>
-									<td><c:out value ="${item.raffleprice}"/></td>
+									<td><fmt:formatNumber value="${item.raffleprice }" maxFractionDigits="3"/></td>
 									<td><c:out value ="${item.raffleamount}"/></td>
 									<td><form action = "UpdateMyRaffleS">
 									<input type = "hidden" name = sell_rno value = "${item.sell_rno}">
@@ -126,7 +127,7 @@
 									<td>R</td>
 									<td><c:out value = "${item.resell_rno}"/></td>
 									<td><c:out value ="${item.rafflename}"/></td>
-									<td><c:out value ="${item.total_price}"/></td>
+									<td><fmt:formatNumber value="${item.total_price }" maxFractionDigits="3"/></td>
 									<td><c:out value ="${item.attend_amount}"/></td>
 									<td><form action = "UpdateMyRaffleR">
 									<input type = "hidden" name = resell_rno value = "${item.resell_rno}">

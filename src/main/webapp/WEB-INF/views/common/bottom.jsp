@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+    <title>Raffles! For Collectors</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -40,8 +40,8 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
-                            <h4>About ThewayShop</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            <h4>About Raffles</h4>
+                            <p>for Collectors! <br>한정판, 구하기 힘든 제품들을 저렴한 가격에 구매,<br> 원하는 가격에 판매해보세요!
                                 </p>
                             <ul>
                                 <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
@@ -59,11 +59,12 @@
                             <h4>Information</h4>
                             <ul>
                                 <li><a href="#">About Us</a></li>
-                                <li><a href="#">Customer Service</a></li>
-                                <li><a href="#">Our Sitemap</a></li>
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="#">Project Raffle!</a></li>
+                                <li><a href="#">Min hyeong</a></li>
+                                <li><a href="#">Jin hong</a></li>
+                                <li><a href="#">eun ji</a></li>
+                                <li><a href="#">chan won</a></li>
+                                <li><a href="#">jin woo</a></li>
                             </ul>
                         </div>
                     </div>
@@ -72,13 +73,13 @@
                             <h4>Contact Us</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Team Raffle <br>for collectors<br> New Trading Platform</p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
+                                    <p><i class="fas fa-phone-square"></i>Github: <a href="https://github.com/Minaeng7/RaffleProject.git">https://github.com/Minaeng7/RaffleProject.git</a></p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:m271704@kakao.com">Send to Raffle Team</a></p>
                                 </li>
                             </ul>
                         </div>

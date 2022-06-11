@@ -72,7 +72,7 @@ $(document).ready(function(){
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2>My Account</h2>
+					<h2>Add Raffle</h2>
 					<ul class="breadcrumb">
 						<li class="breadcrumb-item"><a href="RList">상점으로
 								이동하기</a></li>
@@ -109,7 +109,7 @@ $(document).ready(function(){
 											onclick="document.getElementById('fileInput').click();"></i>
 									</div>
 									<input type="file" id="upImgFiles" name=""
-										onChange="uploadImgPreview();" accept="image/*" multiple>
+										onChange="uploadImgPreview();" accept="image/*" multiple required>
 
 									<hr />
 
@@ -153,7 +153,7 @@ $(document).ready(function(){
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="expire_date">Deadline</label> <input
 												id="expire_date" name="deadline" type="date"
-												class="form-control validate" data-large-mode="true" />
+												class="form-control validate" data-large-mode="true" required/>
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="stock">참여가능한 스팟 수</label> <input id="stock"
