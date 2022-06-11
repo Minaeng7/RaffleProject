@@ -80,7 +80,7 @@
 	<div class="container">
 		<div class="forms-container">
 			<div class="signin-signup">
-				<form action="login" class="sign-in-form" method="get">
+				<form action="login" class="sign-in-form" method="post">
 					<h2 class="title">Sign in</h2>
 					<div class="input-field">
 						<i class="fas fa-user"></i> <input type="text" name="userid"
