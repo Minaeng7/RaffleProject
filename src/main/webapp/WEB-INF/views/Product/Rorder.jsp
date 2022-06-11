@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,10 +86,12 @@
                            </div>
                            <div class="rounded p-2 bg-light">
                                <div class="media mb-2 border-bottom">
+                               <img src="images/img-resell-${rdto.resell_rno }.jpg" class="img-fluid" alt="Image" style="height:200px; length:200px; float: left;">
                                    <div class="media-body">
 	                                   <div class="font-weight-bold">${Rdto.post } ${Rdto.addr1} ${Rdto.addr2}</div>
 	                                   <a href="SellRetrieve?sell_rno=${Rdto.resell_rno }">${dto.rafflename }</a>
                                        <div class="small text-muted">가격 : ${rdto.per_price }</div>
+                                       
                                    </div>
                                </div>
                            </div>
