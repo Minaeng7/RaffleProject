@@ -187,7 +187,7 @@ setInterval(function() {
     <div id="slides-shop" class="cover-slides">
         <ul class="slides-container">
             <li class="text-left">
-               <a href="링크">
+               <a href="ResellRetrieve?resell_rno=4">
                  <img src="images/banner-01.jpg" alt="">
                 <div class="container">
                     <div class="row">
@@ -200,7 +200,7 @@ setInterval(function() {
                 </a>
             </li>
             <li class="text-center">
-                <a href="링크">
+                <a href="SellRetrieve?sell_rno=5">
                 <img src="images/banner-02.jpg" alt="">
                 <div class="container">
                     <div class="row">
@@ -213,7 +213,7 @@ setInterval(function() {
                 </a>
             </li>
             <li class="text-right">
-                <a href="링크">
+                <a href="SellRetrieve?sell_rno=3">
                 <img src="images/banner-03.jpg" alt="">
                 <div class="container">
                     <div class="row">

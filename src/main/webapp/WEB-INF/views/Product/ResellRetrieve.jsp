@@ -135,13 +135,13 @@
                     <input type="hidden" name="addr2" value="${login.addr2 }">
                     <input type="hidden" name="phone" value="${login.phone }">
                     
-                        <h1 style="margin-top : 20px;">래플이름 : ${rdto.rafflename }</h1>
+                        <h1 style="margin-top : 20px;">래플이름 : ${rdto.nickname }</h1>
                         <h3 style="margin-left: 5px; margin : 10px"> 셀러 이름 : ${rdto.memberno}</h3>
                         <h3 style="margin-left: 5px; margin : 10px"> 참가비 : <fmt:formatNumber value="${rdto.per_price }" maxFractionDigits="3"/></h3>
                         <h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : ${rdto.attend_amount }</h3>
                             <p>
                                 <h4>Short Description:</h4>
-                                <p style="padding:20px;">${rdto.text }대충 설명이라는중대충 설명이라는중 대충 설명이라는중 대충 설명이라는중  </p>
+                                <p style="padding:20px;">${rdto.text }</p>
                                 <ul>
                                     <li>
                                         <div class="form-group size-st">

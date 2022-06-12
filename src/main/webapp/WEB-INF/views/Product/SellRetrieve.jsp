@@ -154,7 +154,7 @@
 					<input type="hidden" name="addr2" value="${login.addr2 }">
 					<input type="hidden" name="phone" value="${login.phone }">
 
-						<h1 style="margin-top: 20px;">${sdto.rafflename }</h1>
+						<h1 style="margin-top: 20px;">${sdto.nickname }</h1>
 						<h3 style="margin-left: 5px; margin: 10px">래플 가격 : <fmt:formatNumber value="${sdto.raffleprice }" maxFractionDigits="3"/></h3>
 						<h3 style="margin-left: 5px; margin: 10px">잔여 수량 : ${sdto.raffleamount }</h3>
 						<p>
