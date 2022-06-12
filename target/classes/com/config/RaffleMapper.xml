@@ -53,7 +53,7 @@
 	delete 
 	from resell_r
 	where memberno = #{memberno}
-	and resell_rno = #{Resell_rno}
+	and resell_rno = #{resell_rno}
 	</delete>
 	<delete id = "Deletesell_r" parameterType = "HashMap">
 	delete 

@@ -116,12 +116,12 @@ public class RaffleController {
 		return "MyRaffle/DeleteMyRaffleR";
 	}
 	@RequestMapping("DeleteMyRaffleRR")
-	public ModelAndView DeleteMyRaffleRR(HttpSession session, int resell_rno) {//삭제
+	public ModelAndView DeleteMyRaffleRR(int resell_rno, HttpSession session ) {//삭제
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		HashMap <String, Integer> map = new HashMap<>();
 		map.put("memberno", memberno);
-		map.put("Resell_rno", resell_rno);
+		map.put("resell_rno", resell_rno);
 		service.DeleteMyRaffleR(map);
 		ModelAndView mav = new ModelAndView();
 		mav = con.MyRaffle(session);
@@ -129,7 +129,8 @@ public class RaffleController {
 
 	}
 	@RequestMapping("/DeleteMyRaffleSS")
-	public ModelAndView DeleteMyRaffleSS(HttpSession session, int sell_rno) {
+	public ModelAndView DeleteMyRaffleSS(int sell_rno, HttpSession session) {
+		System.out.println(sell_rno);
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		HashMap <String, Integer> map = new HashMap<>();

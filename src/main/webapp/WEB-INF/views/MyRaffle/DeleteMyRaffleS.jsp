@@ -32,7 +32,7 @@
 	</div>
 	<!-- End All Title Box -->
 <form action="DeleteMyRaffleSS" style="text-align: center;">
-<input type = "hidden" name = "sell_rno" value = "${sell_rno}">
+<input type = "hidden" name = "sell_rno" value = "${rno}"/>
 &nbsp;
 <h2>정말 삭제하시겠습니까?</h2>
 <button>삭제</button>
