@@ -131,7 +131,7 @@
 								</div>
 							</div>
 							<div class="col-12">
-								<button type="submit"
+								<button
 									class="btn btn-primary btn-block text-uppercase">Update
 									Product Now</button>
 							</div>

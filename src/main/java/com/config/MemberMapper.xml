@@ -34,7 +34,7 @@
 		update member
 		set
 		email = #{email}, passwd = #{passwd}, phone =
-		#{phone}, addr1 = #{addr1}
+		#{phone}, post = #{post}, addr1 = #{addr1}, addr2 = #{addr2}
 		where memberno = #{memberno}
 	</update>
 	<select id="myinfo" resultType="MemberDTO">

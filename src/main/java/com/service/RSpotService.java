@@ -58,4 +58,9 @@ public class RSpotService {
 		return dao.selectRSpotList(memberno);
 	}
 
+	public void DeleteSpotR(HashMap<String, Integer> map) {
+		dao.DeleteSpotR(map);
+		
+	}
+
 }

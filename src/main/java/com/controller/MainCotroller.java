@@ -28,7 +28,7 @@ public class MainCotroller {
 		mav.addObject("slist_new", slist_new);
 		mav.addObject("rlist", rlist);
 		mav.addObject("rlist_new", rlist_new);
-//		System.out.println(slist_new+"\t"+rlist_new);
+		System.out.println(slist_new+"\t"+rlist_new);
 		mav.setViewName("index");
 		return mav;
 	}

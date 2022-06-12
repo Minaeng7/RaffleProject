@@ -108,7 +108,7 @@ $(document).ready(function(){
 							</div>
 						</div>
 
-						<form action="UpdateMyAttendingRR" class="tm-edit-product-form">
+						<form action="RAttendingRaffle" class="tm-edit-product-form">
 							<input type="hidden" name="resell_rno" value="${rdto.resell_rno}">
 							<input type="hidden" name="username" value="${Rdto.username }">
 							<div class="row tm-edit-product-row">
@@ -120,7 +120,7 @@ $(document).ready(function(){
 									<input type="file" id="upImgFiles" onChange="uploadImgPreview();" accept="image/*" multiple>
 									<input type="text" 
 									<hr /> -->
-									<img class="d-block w-100 img-fluid" src="images/smp-img-03.jpg" alt="" />
+									<img class="d-block w-100 img-fluid" src="images/${rdto.image}.jpg" alt="" />
 									<div id="thumbnailImgs"></div>
 
 								</div>

@@ -57,5 +57,10 @@ public class RSpotDAO {
 	public List<RSpotDTO> selectRSpotList(int memberno) {
 		return session.selectList("SpotMapper.RSpotList", memberno);
 	}
+
+	public void DeleteSpotR(HashMap<String, Integer> map) {
+		session.delete("SpotMapper.DeleteSpotR", map);
+		
+	}
 	
 }

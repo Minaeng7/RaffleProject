@@ -93,5 +93,9 @@
 		select * from swinning
 		where sell_rno = #{sell_rno}
 	</select>
-
+	<delete id="DeleteSpotR" parameterType = "Hashmap">
+		delete 
+		from rspot
+		where resell_rno = #{Resell_rno} and memberno = #{memberno}
+	</delete>
 </mapper>

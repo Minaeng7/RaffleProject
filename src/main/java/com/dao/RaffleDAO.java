@@ -1,5 +1,6 @@
 package com.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -45,13 +46,13 @@ public class RaffleDAO {
 		return template.selectOne("RaffleMapper.ResellRetrieve", resell_rno);
 	}
 
-	public void DeleteMyRaffleR(int memberno) {
-		template.delete("RaffleMapper.DeleteResell_r",memberno);
+	public void DeleteMyRaffleR(HashMap<String, Integer> map) {
+		template.delete("RaffleMapper.DeleteResell_r",map);
 		
 	}
 
-	public void DeleteMyRaffleS(int memberno) {
-		template.delete("RaffleMapper.Deletesell_r",memberno);
+	public void DeleteMyRaffleS(HashMap<String, Integer> map) {
+		template.delete("RaffleMapper.Deletesell_r",map);
 		
 	}
 
