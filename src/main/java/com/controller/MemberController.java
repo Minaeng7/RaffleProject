@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,12 +28,12 @@ public class MemberController {
 		return "index";
 	}
 	
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@RequestParam Map<String, String> map, Model model, HttpSession session) {
 		MemberDTO dto = service.login(map);
 		if (dto != null) {
 			session.setAttribute("login", dto);
-			return "index";// main.jsp
+			return "redirect:../raffle";// main.jsp
 		} else {
 			model.addAttribute("mesg", "아이디 또는 비번이 잘못되었습니다.");
 			return "loginForm";

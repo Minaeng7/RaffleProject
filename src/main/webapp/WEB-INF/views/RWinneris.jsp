@@ -3,6 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
+<c:if test="${!empty mesg}">
+<script>
+alert("해당 래플은 이미 추첨이 완료 되었습니다.")
+</script>
+</c:if>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -36,16 +41,22 @@
 	&nbsp;
 	
 	<h1 align="center">당첨자 확인</h1><br>
-			<form action="MyAttendedRaffle">
+		<c:if test="${!empty Winner.sell_rno }">
 			<h2 align="center">
-			당첨 래플 번호 : ${Winner.resell_rno}<br>
+			당첨 래플 번호 : ${Winner.sell_rno}<br>
 			당첨자 이름 : ${Winner.username}<br>
 			당첨자 우편번호 : ${Winner.post}<br>
 			당첨자 주소 : ${Winner.addr1}<br>
 			당첨자 연락처 : ${Winner.phone}<br>
-			<button>확인</button>
+			<a href = "SupervisingRaffle"><button>확인</button></a>
 			</h2>
-			</form>
-	
+		</c:if>
+		<c:if test="${empty Winner.sell_rno }">
+			<h2 align="center">
+			아직 추첨이 진행되지 않았습니다. 
+			추첨 후 확인해주세요
+			<a href = "SupervisingRaffle"><button>확인</button></a>
+			</h2>
+		</c:if>
 </body>
 </html>

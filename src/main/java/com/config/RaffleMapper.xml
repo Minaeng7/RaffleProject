@@ -49,15 +49,17 @@
 		where sell_rno = #{sell_rno}
 	</select>
 	
-	<delete id = "DeleteResell_r" parameterType = "int">
+	<delete id = "DeleteResell_r" parameterType = "HashMap">
 	delete 
 	from resell_r
 	where memberno = #{memberno}
+	and resell_rno = #{resell_rno}
 	</delete>
-	<delete id = "Deletesell_r" parameterType = "int">
+	<delete id = "Deletesell_r" parameterType = "HashMap">
 	delete 
 	from sell_r
 	where memberno = #{memberno}
+	and sell_rno = #{sell_rno}
 	</delete>
 	<select id = "mainListS" resultType = "SellRDTO">
 	select *

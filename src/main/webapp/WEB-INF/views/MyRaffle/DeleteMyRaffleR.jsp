@@ -36,6 +36,7 @@
 	</div>
 	<!-- End All Title Box -->
 <form action="DeleteMyRaffleRR" style="text-align: center;">
+<input type = "hidden" name = "resell_rno" value = "${rno}"/>
 &nbsp;
 <h1 align="center">정말 삭제하시겠습니까?</h1><br>
 <button >삭제</button>

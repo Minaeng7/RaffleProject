@@ -3,7 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
+
+
 <!DOCTYPE html>
+<c:if test="${!empty mesg}">
+	<script>
+		alert("해당 래플은 참가자가 없습니다. 메인페이지로 이동합니다.")
+	</script>
+</c:if>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -37,6 +44,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
     <script  src="https://code.jquery.com/jquery-3.6.0.js" ></script>
     <script type="text/javascript">
 /* for문 사용 필요 */
