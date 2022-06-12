@@ -69,7 +69,7 @@ alert("해당 래플은 이미 추첨이 완료 되었습니다.")
 	<!-- End All Title Box -->
 	&nbsp;
 	<h1 align="center">당첨자 확인</h1><br>
-		<c:if test="${!empty Winner.sell_rno }">
+		<c:if test="${!empty Winner.resell_rno }">
 			<h2 align="center">
 			당첨 래플 번호 : ${Winner.sell_rno}<br>
 			당첨자 이름 : ${Winner.username}<br>
@@ -79,7 +79,7 @@ alert("해당 래플은 이미 추첨이 완료 되었습니다.")
 			<a href = "SupervisingRaffle"><button>확인</button></a>
 			</h2>
 		</c:if>
-		<c:if test="${empty Winner.sell_rno }">
+		<c:if test="${empty Winner.resell_rno }">
 			<h2 align="center">
 			아직 추첨이 진행되지 않았습니다. 
 			추첨 후 확인해주세요
