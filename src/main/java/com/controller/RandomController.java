@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
 import com.dto.RSpotDTO;
+import com.dto.ResellRDTO;
 import com.dto.RwinDTO;
 import com.dto.SSpotDTO;
 import com.dto.SwinDTO;
@@ -27,13 +28,14 @@ public class RandomController {
 	SSpotService sservice;
 	
 	@RequestMapping("/RShuffle")
-	public ModelAndView RShuffle(int resell_rno) {//추첨
+	public ModelAndView RShuffle(int resell_rno, ResellRDTO rdto) {//추첨
 		List<RSpotDTO>list = rservice.shuffle(resell_rno);
 		Collections.shuffle(list);
 		RSpotDTO dto = list.get(0);
 		rservice.AddWinner(dto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Winner",dto);
+		mav.addObject("rdto", rdto);
 		mav.setViewName("RWinneris");
 		return mav;
 	}
@@ -49,21 +51,24 @@ public class RandomController {
 		return mav;
 	}
 	@RequestMapping("/WinnercheckR")
-	public ModelAndView WinnercheckR(int resell_rno) {
+	public ModelAndView WinnercheckR(int resell_rno, ResellRDTO rdto) {
 		RwinDTO dto = rservice.Winnercheck(resell_rno);
 		ModelAndView mav = new ModelAndView();
+		System.out.println(rdto);
 		mav.addObject("Winner",dto);
+		mav.addObject("rdto", rdto);
 		mav.setViewName("RWinneris");
 		return mav;
 	}
 	
 	@RequestMapping("/RResult")
-	public ModelAndView RResult(int resell_rno, HttpSession session) {
+	public ModelAndView RResult(int resell_rno, HttpSession session, ResellRDTO rdto) {
 		MemberDTO mdto = (MemberDTO) session.getAttribute("login");
 		RwinDTO dto = rservice.Winnercheck(resell_rno);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Winner",dto);
 		mav.addObject("RResult", mdto);
+		mav.addObject("rdto", rdto);
 		mav.setViewName("RResult");
 		return mav;
 	}

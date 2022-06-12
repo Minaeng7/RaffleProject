@@ -48,9 +48,9 @@
 							<thead>
 								<tr>
 									<th>S/R</th>
-									<th>images</th>
-									<th>상품이름</th>
-									<th>가격</th>
+									<th>번호</th>
+									<th>Raffle Name</th>
+									<th>Price</th>
 									<th>총판매수량</th>
 									<th>수정</th>
 									<th>추첨</th>
@@ -110,9 +110,9 @@
 							<thead>
 								<tr>
 									<th>S/R</th>
-									<th>images</th>
-									<th>상품이름</th>
-									<th>가격</th>
+									<th>번호</th>
+									<th>Raffle Name</th>
+									<th>Price</th>
 									<th>참여가능인원</th>
 									<th>수정</th>
 									<th>추첨</th>
@@ -130,24 +130,44 @@
 									<td><fmt:formatNumber value="${item.total_price }" maxFractionDigits="3"/></td>
 									<td><c:out value ="${item.attend_amount}"/></td>
 									<td><form action = "UpdateMyRaffleR">
-									<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
-									<input type = "hidden" name = memberno value = "${item.memberno}">
-									<input type = "hidden" name = nickname value = "${item.nickname}">
-									<input type = "hidden" name = rafflename value = "${item.rafflename}">
-									<input type = "hidden" name = total_price value = "${item.total_price}">
-									<input type = "hidden" name = attend_amount value = "${item.attend_amount}">
-									<input type = "hidden" name = per_price value = "${item.per_price}">
-									<input type = "hidden" name = viewcnt value = "${item.viewcnt}">
-									<input type = "hidden" name = deadline value = "${item.deadline}">
-									<input type = "hidden" name = text value = "${item.text}">
+										<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
+										<input type = "hidden" name = memberno value = "${item.memberno}">
+										<input type = "hidden" name = nickname value = "${item.nickname}">
+										<input type = "hidden" name = rafflename value = "${item.rafflename}">
+										<input type = "hidden" name = total_price value = "${item.total_price}">
+										<input type = "hidden" name = attend_amount value = "${item.attend_amount}">
+										<input type = "hidden" name = per_price value = "${item.per_price}">
+										<input type = "hidden" name = viewcnt value = "${item.viewcnt}">
+										<input type = "hidden" name = deadline value = "${item.deadline}">
+										<input type = "hidden" name = text value = "${item.text}">
 									<button>수정</button>
 									</form></td>
 									<td><form action = "RShuffle">
-									<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
+										<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
+										<input type = "hidden" name = memberno value = "${item.memberno}">
+										<input type = "hidden" name = nickname value = "${item.nickname}">
+										<input type = "hidden" name = rafflename value = "${item.rafflename}">
+										<input type = "hidden" name = total_price value = "${item.total_price}">
+										<input type = "hidden" name = attend_amount value = "${item.attend_amount}">
+										<input type = "hidden" name = per_price value = "${item.per_price}">
+										<input type = "hidden" name = viewcnt value = "${item.viewcnt}">
+										<input type = "hidden" name = deadline value = "${item.deadline}">
+										<input type = "hidden" name = text value = "${item.text}">
+										<input type = "hidden" name = image value = "${item.image}">
 									<button>추첨</button>
 									</form></td>
 									<td><form action = "WinnercheckR" >
-									<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
+										<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
+										<input type = "hidden" name = memberno value = "${item.memberno}">
+										<input type = "hidden" name = nickname value = "${item.nickname}">
+										<input type = "hidden" name = rafflename value = "${item.rafflename}">
+										<input type = "hidden" name = total_price value = "${item.total_price}">
+										<input type = "hidden" name = attend_amount value = "${item.attend_amount}">
+										<input type = "hidden" name = per_price value = "${item.per_price}">
+										<input type = "hidden" name = viewcnt value = "${item.viewcnt}">
+										<input type = "hidden" name = deadline value = "${item.deadline}">
+										<input type = "hidden" name = text value = "${item.text}">
+										<input type = "hidden" name = image value = "${item.image}">
 									<p align="center"><button>확인</button></p>
 									</form></td>
 									<td><form action = "DeleteMyRaffleR">

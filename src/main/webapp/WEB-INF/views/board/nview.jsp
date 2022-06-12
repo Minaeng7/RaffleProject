@@ -38,41 +38,7 @@
     <![endif]-->
     <script src="package/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="package/dist/sweetalert2.min.css">
-  
-<!-- <script type="text/javascript">
-$(document).ready(function(){
-	$("#btnDelete").on("click", function() {
-		if (confirm("삭제하시겠습니까?")) {
-			document.form.action = "${path}/board/delete";
-			document.form.submit();
-		}
-	});
-	
-	$("#btnUpdate").on("click", function() {
-		var title = $("#title").val();
-		var content = $("#content").val();
-		var writer = $("#username").val();
-		
-		if (title == "") {
-			alert("제목을 입력하세요");
-			document.form.title.focus();
-			return;
-		}
-		if (content == "") {
-			alert("내용을 입력하세요");
-			document.form.content.focus();
-			return;
-		}
-		if (username == "") {
-			alert("이름을 입력하세요");
-			document.form.username.focus();
-			return;
-		}
-		document.form.submit();
-	})
-})
 
-</script> -->
 </head>
 <body>
 
@@ -131,6 +97,23 @@ $(document).ready(function(){
     </div>
     
     <jsp:include page="../common/bottom.jsp"></jsp:include>
+    <!-- ALL JS FILES -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- ALL PLUGINS -->
+	<script src="js/jquery.superslides.min.js"></script>
+	<script src="js/bootstrap-select.js"></script>
+	<script src="js/inewsticker.js"></script>
+	<script src="js/bootsnav.js."></script>
+	<script src="js/images-loded.min.js"></script>
+	<script src="js/isotope.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/baguetteBox.min.js"></script>
+	<script src="js/form-validator.min.js"></script>
+	<script src="js/contact-form-script.js"></script>
+	<script src="js/custom.js"></script>
+    
 </body>
 
 </html>

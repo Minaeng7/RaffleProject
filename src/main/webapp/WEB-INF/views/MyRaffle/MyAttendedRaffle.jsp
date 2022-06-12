@@ -151,7 +151,17 @@
 												<button>수정</button>
 											</form></td>
 										<td><form action="RResult">
-												<input type="hidden" name="resell_rno" value="${item.resell_rno }">
+												<input type="hidden" name="resell_rno" value="${item.resell_rno }"> 
+												<input type="hidden" name="memberno" value="${item.memberno }"> 
+												<input type="hidden" name="nickname" value="${item.nickname }"> 
+												<input type="hidden" name="rafflename" value="${item.rafflename }">
+												<input type="hidden" name="total_price" value="${item.total_price }"> 
+												<input type="hidden" name="attend_amount" value="${item.attend_amount }">
+												<input type="hidden" name="per_price" value="${item.per_price }"> 
+												<input type="hidden" name="viewcnt" value="${item.viewcnt }"> 
+												<input type="hidden" name="deadline" value="${item.deadline }">
+												<input type="hidden" name="text" value="${item.text }">
+												<input type="hidden" name="image" value="${item.image }">
 													<button>확인</button>
 											</form></td>
 
