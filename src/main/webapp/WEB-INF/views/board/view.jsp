@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,41 +39,7 @@
     <![endif]-->
     <script src="package/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="package/dist/sweetalert2.min.css">
-  
-<!-- <script type="text/javascript">
-$(document).ready(function(){
-	$("#btnDelete").on("click", function() {
-		if (confirm("삭제하시겠습니까?")) {
-			document.form.action = "${path}/board/delete";
-			document.form.submit();
-		}
-	});
-	
-	$("#btnUpdate").on("click", function() {
-		var title = $("#title").val();
-		var content = $("#content").val();
-		var writer = $("#username").val();
-		
-		if (title == "") {
-			alert("제목을 입력하세요");
-			document.form.title.focus();
-			return;
-		}
-		if (content == "") {
-			alert("내용을 입력하세요");
-			document.form.content.focus();
-			return;
-		}
-		if (username == "") {
-			alert("이름을 입력하세요");
-			document.form.username.focus();
-			return;
-		}
-		document.form.submit();
-	})
-})
 
-</script> -->
 </head>
 <body>
 
@@ -117,7 +84,7 @@ $(document).ready(function(){
             <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 15px;">자유게시판</caption>
         </table>
         <form action="edit">
-        <input type="hidden" name="memberno" value="${dto.memberno }">
+        <input type="hidden" name="memberno" value="${login.memberno }">
         <div id="forum_title">
           	  제목 <input type="text" name="title" id="utitle" rows="1" cols="55" value="${dto.title }" maxlength="100" readonly></input><br>
 			번호 <input type="text" name="bno" value="${dto.bno }" readonly><br><br>
@@ -126,10 +93,21 @@ $(document).ready(function(){
         <div id="forum_content">
            	본문  <textarea name="content" id="ucontent" readonly>${dto.content }</textarea>
         </div>
+        
+        <!-- 작성자 -->
+        <c:if test="${login.memberno  == dto.memberno }">
         <div style="text-align: right; margin-top:30px;">
             <button type="submit" class="btn btn-secondary">수정</button>
             <button type="button" onclick="location.href='delete?bno=${dto.bno}'" class="btn btn-secondary">삭제</button>
         </div>
+        </c:if>
+        <!-- 작성자 아닌경우 -->
+         <c:if test="${login.memberno != dto.memberno }">
+        <div style="text-align: right; margin-top:30px;">
+            <button type="button" onclick="location.href='forum'" class="btn btn-secondary">목록보기</button>
+        </div>
+        </c:if>
+        
 		</form>
     </div>
     

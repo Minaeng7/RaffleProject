@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <!-- Basic -->
 
 <head>
@@ -76,52 +76,82 @@
     </div>
     <!-- End All Title Box -->
     
-    
-    <ul class="left-board">
-        <li class="left-side-menu">게시판 목록</li>
-        <li><a class="notice_color" href="notice">공지사항</a></li>
-        <li><a href="forum">자유 게시판</a></li>
-
-    </ul>
-    <div class="board_list_wrap">
-        <table class="board_list">
-            <caption class="notice">공지사항</caption>
-            <thead>
-                <tr class="notice_menu">
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>글쓴이</th>
-                    <th>작성일</th>
-                    <th>조회</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach var="notice" items="${notice }" varStatus="status">
-                <tr>
-                    <td>${notice.bno }</td>
-                    <td class="tit" style="width:440px;">
-                        <a href="nview?bno=${notice.bno }">${notice.title }</a>
-                    </td>
-                    <td>${notice.username }</td>
-                    <td><fmt:formatDate value="${notice.regdate }" pattern="yy-MM-dd"/></td>
-                    <td>${notice.viewcnt }</td>
-                </tr>
-                </c:forEach>
-            </tbody>
-        </table>
-        <div class="paging">
-            <a href="#" class="bt">첫 페이지</a>
-            <a href="#" class="bt">이전 페이지</a>
-            <a href="#" class="num on">1</a>
-            <a href="#" class="num">2</a>
-            <a href="#" class="num">3</a>
-            <a href="#" class="bt">다음 페이지</a>
-            <a href="#" class="bt">마지막 페이지</a>
-        </div>
+    <!-- 왼쪽 카테고리 -->
+    <div class="shop-box-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
+                    <div class="product-categori">
+                        <div class="search-product">
+                            <form action="#">
+                                <input class="form-control" placeholder="" type="text">
+                                <button type="submit"> <i class="fa fa-search"></i> </button>
+                            </form>
+                        </div>
+                         <div class="filter-sidebar-left">
+                            <div class="title-left">
+                                <h3>게시판 목록</h3>
+                            </div>
+                            <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
+                                <a href="notice" class="list-group-item list-group-item-action notice_color">공지사항 </a>
+                                <a href="forum" class="list-group-item list-group-item-action">자유게시판</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                	<!-- 왼쪽 카테고리 끝 -->
+			    <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
+			    	<div class="right-product-box">
+                        <div class="row product-categorie-box">
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                                    <div class="row">
+									    <div class="board_list_wrap">
+									        <table class="board_list">
+									            <caption class="notice">공지사항</caption>
+									            <thead>
+									                <tr class="notice_menu">
+									                    <th>번호</th>
+									                    <th>제목</th>
+									                    <th>글쓴이</th>
+									                    <th>작성일</th>
+									                    <th>조회</th>
+									                </tr>
+									            </thead>
+									            <tbody>
+									                <c:forEach var="notice" items="${notice }" varStatus="status">
+									                <tr>
+									                    <td>${notice.bno }</td>
+									                    <td class="tit" style="width:440px;">
+									                        <a href="nview?bno=${notice.bno }">${notice.title }</a>
+									                    </td>
+									                    <td>${notice.username }</td>
+									                    <td><fmt:formatDate value="${notice.regdate }" pattern="yy-MM-dd"/></td>
+									                    <td>${notice.viewcnt }</td>
+									                </tr>
+									                </c:forEach>
+									            </tbody>
+									        </table>
+									        <div class="paging">
+									            <a href="#" class="bt">첫 페이지</a>
+									            <a href="#" class="bt">이전 페이지</a>
+									            <a href="#" class="num on">1</a>
+									            <a href="#" class="num">2</a>
+									            <a href="#" class="num">3</a>
+									            <a href="#" class="bt">다음 페이지</a>
+									            <a href="#" class="bt">마지막 페이지</a>
+									        </div>
+									    </div>
+									 </div>
+			    				 </div>
+			    			</div>
+			    		</div>
+			    	</div>
+			    </div>
+    		</div>
+    	</div>
     </div>
     <!-- End My Account -->
-
-<jsp:include page="../common/bottom.jsp"></jsp:include>
 
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
