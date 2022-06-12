@@ -27,7 +27,7 @@
 	<update id="UpdateResell_r" parameterType = "ResellRDTO">
 	update resell_r
 	set rafflename = #{rafflename}, total_price = #{total_price}
-	,attend_amount = #{attend_amount}, deadline = #{deadline}, text = #{text}}
+	,attend_amount = #{attend_amount}, deadline = #{deadline}, text = #{text}
 	where resell_rno = #{resell_rno}
 	</update>
 	<update id="UpdateSell_r" parameterType = "SellRDTO">

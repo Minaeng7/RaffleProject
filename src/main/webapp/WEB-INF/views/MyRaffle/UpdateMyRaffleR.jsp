@@ -73,10 +73,6 @@ $(document).ready(function(){
 			<div class="row">
 				<div class="col-lg-12">
 					<h2>My Raffle 수정</h2>
-					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="shop-raffle.html">상점으로
-								이동하기</a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
@@ -99,21 +95,21 @@ $(document).ready(function(){
 							</div>
 						</div>
 
-						<form action="loginCheck/AddResell" class="tm-edit-product-form">
+						<form action="UpdateMyRaffleRR" class="tm-edit-product-form">
 
-							<input type="hidden" name="resell_rno" value="${resell_rno}">
+							<input type="hidden" name="resell_rno" value="${resellrdto.resell_rno}">
 
 							<div class="row tm-edit-product-row">
 								<div class="col-xl-6 col-lg-6 col-md-12">
-									<div class="tm-product-img-dummy mx-auto">
+									<!-- <div class="tm-product-img-dummy mx-auto">
 										<i class="fas fa-cloud-upload-alt tm-upload-icon"
 											onclick="document.getElementById('fileInput').click();"></i>
 									</div>
 									<input type="file" id="upImgFiles"
 										onChange="uploadImgPreview();" accept="image/*" multiple>
 
-									<hr />
-
+									<hr /> -->
+									<img class="d-block w-100 img-fluid" src="images/${resellrdto.image}.jpg" alt="" />
 									<div id="thumbnailImgs"></div>
 
 								</div>
@@ -130,8 +126,8 @@ $(document).ready(function(){
 									</div>
 									<div class="form-group mb-3">
 										<label for="description">Description</label>
-										<textarea class="form-control validate" name="text" rows="3" value = "${resellrdto.text}"
-											required></textarea>
+										<textarea class="form-control validate" name="text" rows="15"
+											required>${resellrdto.text}</textarea>
 									</div>
 									<div class="row">
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
@@ -149,7 +145,7 @@ $(document).ready(function(){
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="expire_date">Deadline</label> <input
 												id="expire_date" name="deadline" type="date"value = "${resellrdto.deadline}"
-												class="form-control validate" data-large-mode="true" />
+												class="form-control validate" data-large-mode="true" required/>
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="stock">Units In Stock</label> <input id="stock"

@@ -82,15 +82,15 @@
 
 							<div class="row tm-edit-product-row">
 								<div class="col-xl-6 col-lg-6 col-md-12">
-									<div class="tm-product-img-dummy mx-auto">
+									<!-- <div class="tm-product-img-dummy mx-auto">
 										<i class="fas fa-cloud-upload-alt tm-upload-icon"
 											onclick="document.getElementById('fileInput').click();"></i>
 									</div>
 									<input type="file" id="upImgFiles" 
 										onChange="uploadImgPreview();" accept="image/*" multiple>
 
-									<hr />
-
+									<hr /> -->
+									<img class="d-block w-100 img-fluid" src="images/${sellrdto.image}.jpg" alt="" />
 									<div id="thumbnailImgs"></div>
 
 								</div>
@@ -108,8 +108,8 @@
 									
 									<div class="form-group mb-3">
 										<label for="description">Description</label>
-										<textarea class="form-control validate" name="text" rows="3" value = "${sellrdto.text}"
-											required></textarea>
+										<textarea class="form-control validate" name="text" rows="15"
+											required>${sellrdto.text}</textarea>
 									</div>
 									<div class="form-group mb-3">
 										<label for="price">Raffleprice</label> <input id="price"value = "${sellrdto.raffleprice}"
@@ -120,7 +120,7 @@
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="expire_date">Deadline</label> <input
 												id="expire_date" name="deadline" type="date" value = "${sellrdto.deadline}"
-												class="form-control validate" data-large-mode="true" />
+												class="form-control validate" data-large-mode="true" required/>
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="stock">Raffleamount</label> <input id="stock"

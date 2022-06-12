@@ -148,6 +148,7 @@
 												<input type="hidden" name="viewcnt" value="${item.viewcnt }"> 
 												<input type="hidden" name="deadline" value="${item.deadline }">
 												<input type="hidden" name="text" value="${item.text }">
+												<input type="hidden" name="image" value="${item.image }">
 												<button>수정</button>
 											</form></td>
 										<td><form action="RResult">

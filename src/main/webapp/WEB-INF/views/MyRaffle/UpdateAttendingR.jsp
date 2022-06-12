@@ -122,7 +122,6 @@ $(document).ready(function(){
 									<hr /> -->
 									<img class="d-block w-100 img-fluid" src="images/${rdto.image}.jpg" alt="" />
 									<div id="thumbnailImgs"></div>
-
 								</div>
 								<div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
 									<div class="form-group mb-3">
