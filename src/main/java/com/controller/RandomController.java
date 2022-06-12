@@ -28,7 +28,22 @@ public class RandomController {
 	
 	@RequestMapping("/RShuffle")
 	public ModelAndView RShuffle(int resell_rno) {//추첨
+		RwinDTO Wdto = rservice.Winnercheck(resell_rno);
+		if (Wdto != null) {
+			String mesg = "해당 래플은 이미 추첨이 완료 되었습니다.";
+			ModelAndView mav = new ModelAndView();
+			mav = WinnercheckR(resell_rno);
+			mav.addObject("mesg", mesg);
+			return mav;
+		}
 		List<RSpotDTO>list = rservice.shuffle(resell_rno);
+		if (list.size() == 0) {
+			String mesg = "해당 래플은 참가자가 없습니다. 메인페이지로 이동합니다.";
+			ModelAndView mav = new ModelAndView();
+			mav.addObject("mesg", mesg);
+			mav.setViewName("index");
+			return mav;
+		}
 		Collections.shuffle(list);
 		RSpotDTO dto = list.get(0);
 		rservice.AddWinner(dto);
@@ -39,7 +54,22 @@ public class RandomController {
 	}
 	@RequestMapping("/SShuffle")
 	public ModelAndView SShuffle(int sell_rno) {
+		SwinDTO Wdto = sservice.Winnercheck(sell_rno);
+		if (Wdto != null) {
+			String mesg = "해당 래플은 이미 추첨이 완료 되었습니다.";
+			ModelAndView mav = new ModelAndView();
+			mav = WinnercheckS(sell_rno);
+			mav.addObject("mesg", mesg);
+			return mav;
+		}
 		List<SSpotDTO>list = sservice.shuffle(sell_rno);
+		if (list.size() == 0) {
+			String mesg = "Anybody didn't attend";
+			ModelAndView mav = new ModelAndView();
+			mav.addObject("mesg", mesg);
+			mav.setViewName("index");
+			return mav;
+		}
 		Collections.shuffle(list);
 		SSpotDTO dto = list.get(0);
 		sservice.AddWinner(dto);

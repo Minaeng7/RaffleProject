@@ -41,6 +41,12 @@ public class AttendController {
 	
 	@RequestMapping("/Rorder")
 	public ModelAndView Rorder(RwinDTO Rdto, RSpotDTO dto, ResellRDTO rdto, HttpSession session) {
+		int memberno = dto.getMemberno();
+		int Resell_rno = dto.getResell_rno();
+		HashMap <String, Integer> map = new HashMap<>();
+		map.put("memberno", memberno);
+		map.put("Resell_rno", Resell_rno);
+		Rservice.DeleteSpotR(map);
 		session.setAttribute("mesg", dto.getRafflename());
 		Rservice.registinglist(dto);
 		ModelAndView mav = new ModelAndView();

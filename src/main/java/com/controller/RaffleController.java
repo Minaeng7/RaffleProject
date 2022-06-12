@@ -1,5 +1,6 @@
 package com.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,10 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
@@ -22,7 +20,10 @@ import com.service.RaffleService;
 public class RaffleController {
 	@Autowired
 	RaffleService service;
-
+	@Autowired
+	SupervisingController con;
+	
+	
 	@RequestMapping("/loginCheck/AddSell")
 	public String AddSell(SellRDTO sdto) {
 		service.addSell_r(sdto);		
@@ -83,9 +84,11 @@ public class RaffleController {
 		return mav;
 	}
 	@RequestMapping("UpdateMyRaffleRR")
-	public String UpdateMyRaffleRR(ResellRDTO rdto, HttpSession session) {//수정
+	public ModelAndView UpdateMyRaffleRR(ResellRDTO rdto, HttpSession session) {//수정
 		service.UpdateResell_r(rdto);
-		return "redirect:Mypage";
+		ModelAndView mav = new ModelAndView();
+		mav = con.MyRaffle(session);
+		return mav;
 	}
 	@RequestMapping("UpdateMyRaffleS")
 	public ModelAndView UpdateMyRaffleS(SellRDTO rdto) {
@@ -95,34 +98,47 @@ public class RaffleController {
 		return mav;
 	}
 	@RequestMapping("UpdateMyRaffleSS")
-	public String UpdateMyRaffleSS(SellRDTO rdto, HttpSession session) {
+	public ModelAndView UpdateMyRaffleSS(SellRDTO rdto, HttpSession session) {
 		service.UpdateSell_r(rdto);
-		return "redirect:MyAttendedRaffle";
+		ModelAndView mav = new ModelAndView();
+		mav = con.MyRaffle(session);
+		return mav;
 	}
 	
 	@RequestMapping("DeleteMyRaffleS")
-	public String DeleteMyRaffleS(String sell_rno, HttpServletRequest request) {
+	public String DeleteMyRaffleS(int sell_rno, HttpServletRequest request) {
 		request.setAttribute("rno", sell_rno);
 		return "MyRaffle/DeleteMyRaffleS";
 	}
 	@RequestMapping("DeleteMyRaffleR")
-	public String DeleteMyRaffleR(String resell_rno, HttpServletRequest request) {
+	public String DeleteMyRaffleR(int resell_rno, HttpServletRequest request) {
 		request.setAttribute("rno", resell_rno);
 		return "MyRaffle/DeleteMyRaffleR";
 	}
 	@RequestMapping("DeleteMyRaffleRR")
-	public String DeleteMyRaffleRR(HttpSession session) {//삭제
+	public ModelAndView DeleteMyRaffleRR(HttpSession session, int resell_rno) {//삭제
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
-		service.DeleteMyRaffleR(memberno);
-		return "redirect:MyAttendedRaffle";
+		HashMap <String, Integer> map = new HashMap<>();
+		map.put("memberno", memberno);
+		map.put("Resell_rno", resell_rno);
+		service.DeleteMyRaffleR(map);
+		ModelAndView mav = new ModelAndView();
+		mav = con.MyRaffle(session);
+		return mav;
+
 	}
 	@RequestMapping("/DeleteMyRaffleSS")
-	public String DeleteMyRaffleSS(HttpSession session) {
+	public ModelAndView DeleteMyRaffleSS(HttpSession session, int sell_rno) {
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
-		service.DeleteMyRaffleS(memberno);
-		return "redirect:Mypage";
+		HashMap <String, Integer> map = new HashMap<>();
+		map.put("memberno", memberno);
+		map.put("sell_rno", sell_rno);
+		service.DeleteMyRaffleS(map);
+		ModelAndView mav = new ModelAndView();
+		mav = con.MyRaffle(session);
+		return mav;
 	}
 	@RequestMapping("/JoinRSpot")
 	public String JoinRSpot(String rafflename, HttpSession session) {

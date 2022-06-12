@@ -1,5 +1,6 @@
 package com.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,13 +46,13 @@ public class RaffleService {
 		return dao.ResellRetrieve(resell_rno);
 	}
 
-	public void DeleteMyRaffleR(int memberno) {
-		dao.DeleteMyRaffleR(memberno);
+	public void DeleteMyRaffleR(HashMap<String, Integer> map) {
+		dao.DeleteMyRaffleR(map);
 		
 	}
 
-	public void DeleteMyRaffleS(int memberno) {
-		dao.DeleteMyRaffleS(memberno);
+	public void DeleteMyRaffleS(HashMap<String, Integer> map) {
+		dao.DeleteMyRaffleS(map);
 		
 	}
 
