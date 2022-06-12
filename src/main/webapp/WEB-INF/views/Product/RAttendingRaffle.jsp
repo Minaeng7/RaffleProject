@@ -103,7 +103,7 @@ $(document).ready(function() {
                             <div class="mb-3">
                                 <label for="username">이름 *</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="username" name="" value="${login.username }" readonly>
+                                    <input type="text" class="form-control" id="username" name="username" value="${login.username }" readonly>
                                 </div>
                             </div>
                             
@@ -114,21 +114,12 @@ $(document).ready(function() {
                                 <input type="text" class="" id="address2" name="" value="${login.addr2 }" style="border: 1px solid #e8e8e8" readonly> 
                             </div>
                        
-                            <hr class="mb-4">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="same-address">
                                 <label class="custom-control-label" for="same-address">배송지 정보가 동일한 경우 선택하세요</label>
                             </div> 
 							<hr class="mb-4">
 <!-- 배송지 정보 수정 -->
-                            <div class="mb-3">
-                                <label for="username">이름 *</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="name" name="username" value="" required>
-                                    <div class="invalid-feedback" style="width: 100%"> 이름을 입력하세요. </div>
-                                </div>
-                            </div>
-                       
                             <div class="mb-3">
                                 <label for="post">주소 *</label><br>
                                 <input type="text" class="" id="sample4_postcode" name="post" value="" style="border: 1px solid #e8e8e8" required>
@@ -151,7 +142,8 @@ $(document).ready(function() {
                                     	
                                         <div class="media-body"> <a href="ResellRetrieve?resell_rno=${rdto.resell_rno }">${rdto.nickname }</a>
                                         	<div class="small text-muted" >${rdto.rafflename }</div>
-                                        	<img src="images/img-resell-${rdto.resell_rno }.jpg" class="img-fluid" alt="Image" style="height:200px; length:200px;">
+                                        	<img src="images/${rdto.image }.jpg" class="img-fluid" alt="Image" style="height:200px; length:200px;">
+                                        	<input type="hidden" name="image" value="${rdto.image }"/>
                                         </div>
                                     </div>
                                 </div>

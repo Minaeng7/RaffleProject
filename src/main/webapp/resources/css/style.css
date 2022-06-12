@@ -2610,9 +2610,8 @@ letter-spacing: -.27px;
 
 
 .board_list_wrap {
-    padding: 50px;
-    padding-left: 400px;
-    padding-top:80px;
+    padding: 20px;
+    padding-left: 40px;
 }
 
 .board_list {

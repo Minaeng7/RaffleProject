@@ -45,7 +45,7 @@
 <body>
 <jsp:include page="common/top.jsp" flush="true"></jsp:include><BR>
 <jsp:include page="board/notice.jsp"></jsp:include>
-
+<jsp:include page="common/bottom.jsp"></jsp:include>
 
 
     <!-- ALL JS FILES -->
