@@ -65,69 +65,39 @@
 	&nbsp;
 	
     <!-- Start Cart  -->
-    <c:choose>
-	<c:when test="${RResult.memberno == Winner.memberno }">
-	<form action="MyAttendedRaffle">
     
-    <div class="cart-box-main">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-lg-12">
-                    <div class="odr-box">
-                    	<div class="title-left">
-                    	<h3>${Winner.username } 님이 응모하신 ${rdto.rafflename } 상품에 당첨되셨습니다.</h3>
-                    	</div>
-                        <div class="title-left">
-                            <h3>상품</h3>
-                        </div>
-                        <div class="rounded p-2 bg-light">
-                            <div class="media mb-2 border-bottom">
-                                <div class="media-body"> <a href="ResellRetrieve?resell_rno=${rdto.resell_rno }"></a>
-                                	<div class="font-weight-bold" >${rdto.nickname }</div>
-                                	<div class="small text-muted" >${rdto.rafflename }</div>
-                                	<img src="images/${rdto.image }.jpg" class="img-fluid" alt="Image" style="height:300px; length:300px;">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        	<div class="checkout-address">
-	            <div class="title-left">
-	                <h3>당첨자 정보</h3>
-	            </div>
-	            <div class="mb-3">
-	                <label for="username">이름 *</label>
-	                <div class="">
-	                    <input type="text" class="form-control" id="username" name="" value="${Winner.username }" readonly>
-	                </div><br>
-	                <label for="username">연락처 *</label>
-	                <div class="">
-	                    <input type="text" class="form-control" id="phone" name="" value="${Winner.phone }" readonly>
-	                </div>
-	            </div>
-	            
-	            <div class="mb-3">
-	                <label for="post">주소 *</label><br>
-	                <input type="text" class="form-control" id="" name="" value="${Winner.post}" style="border: 1px solid #e8e8e8" readonly>
-	                <input type="text" class="form-control" id="address1" name="" value="${Winner.addr1} ${Winner.addr2}" style="border: 1px solid #e8e8e8" readonly>
-	            </div>
-	        </div>
-        </div>
-	</div>
-	</form>
-	</c:when>
-		<c:otherwise>
+    <h1 align="center">당첨자 확인</h1><br>
+
+		<c:if test="${RResult.memberno == Winner.memberno }">
+			<form action="MyAttendedRaffle">
+			<input type="hidden" value=${Winner.resell_rno }" name="resell_rno">
+			<h2 align="center">
+			당첨 래플 번호 : ${Winner.resell_rno}<br>
+			당첨자 이름 : ${Winner.username}<br>
+			당첨자 우편번호 : ${Winner.post}<br>
+			당첨자 주소 : ${Winner.addr1}<br>
+			당첨자 연락처 : ${Winner.phone}<br>
+			<button>확인</button>
+			</h2>
+			</form>
+			<c:if test="${RResult.memberno!=Winner.memberno}">
 			<script>
-				alert('안타깝습니다! 다음 기회에');
-				location.href="MyAttendedRaffle";
+			alert('안타깝습니다! 다음 기회에');
+			document.location.href = "MyAttendedRaffle";
 			</script>
-		</c:otherwise>
-	</c:choose>
+			</c:if>
+		</c:if>
+		<c:if test="${empty Winner.resell_rno }">
+			<h2 align="center">
+			아직 추첨이 진행되지 않았습니다. 
+			추첨 후 확인해주세요
+			<a href = "MyAttendedRaffle"><button>확인</button></a>
+			</h2>
+			
+		</c:if>
+
 <!-- End Cart -->
     
-    <jsp:include page="common/bottom.jsp"></jsp:include>
-
      <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
