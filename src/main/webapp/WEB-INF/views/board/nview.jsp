@@ -64,7 +64,7 @@
                     <h2>공지사항 페이지입니다.</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/raffle/">Home</a></li>
-                        <li class="breadcrumb-item active">자유게시판</li>
+                        <li class="breadcrumb-item active">공지사항</li>
                     </ul>
                 </div>
             </div>
@@ -72,31 +72,31 @@
     </div>
     <!-- End All Title Box -->
     
-    <ul class="left-board">
-        <li class="left-side-menu">게시판 목록</li>
-        <li><a class="notice_color" href="notice">공지사항</a></li>
-        <li><a href="forum">자유 게시판</a></li>
-
-    </ul>
-<div class="board_list_wrap">
-        <table class="board_list">
-            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 15px;">공지사항</caption>
-        </table>
-        <div id="forum_title">
-          	  제목 <input type="text" name="title" id="utitle" rows="1" cols="55" value="${ndto.title }" maxlength="100" readonly></input><br>
-			번호 <input type="text" name="bno" value="${ndto.bno }" readonly><br><br>
-			작성자 <input type="text" name="username" value="${ndto.username }" readonly> 
-        </div>
-        <div id="forum_content">
-           	본문  <textarea name="content" id="ucontent" readonly>${ndto.content }</textarea>
-        </div>
-        <div style="text-align: right; margin-top:30px;">
-            <button type="button" onclick="location.href='notice'" class="btn btn-secondary">목록보기</button>
-        </div>
-
+ <!-- Start All Title Box -->
+    <div class="shop-box-inner">
+        <div class="container">
+            <div class="row">
+				<div class="board_list_wrap">
+			        <table class="board_list">
+			            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 15px;">공지사항</caption>
+			        </table>
+			        <div id="forum_title">
+			          	  제목 <input type="text" name="title" id="utitle" rows="1" cols="55" value="${ndto.title }" maxlength="100" readonly></input><br>
+						번호 <input type="text" name="bno" value="${ndto.bno }" readonly><br><br>
+						작성자 <input type="text" name="username" value="${ndto.username }" readonly> 
+			        </div>
+			        <div id="forum_content">
+			           	본문  <textarea name="content" id="ucontent" cols="2" readonly>${ndto.content }</textarea>
+			        </div>
+			        <div style="text-align: right; margin-top:30px;">
+			            <button type="button" onclick="location.href='notice'" class="btn btn-secondary">목록보기</button>
+			        </div>
+				
+			    </div>
+		    </div>
+	    </div>
     </div>
-    
-    <jsp:include page="../common/bottom.jsp"></jsp:include>
+
     <!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/popper.min.js"></script>

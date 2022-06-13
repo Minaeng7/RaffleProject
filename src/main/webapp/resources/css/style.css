@@ -2733,7 +2733,7 @@ li a:hover:not(.notice_color){
 
 #ucontent{
     display: block;
-    height:800px;
+    height:400px;
     width:800px;
     resize: none;
 }

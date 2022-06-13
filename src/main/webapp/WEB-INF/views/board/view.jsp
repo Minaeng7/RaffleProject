@@ -73,45 +73,65 @@
     </div>
     <!-- End All Title Box -->
     
-    <ul class="left-board">
-        <li class="left-side-menu">게시판 목록</li>
-        <li><a href="notice">공지사항</a></li>
-        <li><a class="notice_color" href="forum">자유 게시판</a></li>
-
-    </ul>
-<div class="board_list_wrap">
-        <table class="board_list">
-            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 15px;">자유게시판</caption>
-        </table>
-        <form action="edit">
-        <input type="hidden" name="memberno" value="${login.memberno }">
-        <div id="forum_title">
-          	  제목 <input type="text" name="title" id="utitle" rows="1" cols="55" value="${dto.title }" maxlength="100" readonly></input><br>
-			번호 <input type="text" name="bno" value="${dto.bno }" readonly><br><br>
-			작성자 <input type="text" name="username" value="${dto.username }" readonly> 
-        </div>
-        <div id="forum_content">
-           	본문  <textarea name="content" id="ucontent" readonly>${dto.content }</textarea>
-        </div>
-        
-        <!-- 작성자 -->
-        <c:if test="${login.memberno  == dto.memberno }">
-        <div style="text-align: right; margin-top:30px;">
-            <button type="submit" class="btn btn-secondary">수정</button>
-            <button type="button" onclick="location.href='delete?bno=${dto.bno}'" class="btn btn-secondary">삭제</button>
-        </div>
-        </c:if>
-        <!-- 작성자 아닌경우 -->
-         <c:if test="${login.memberno != dto.memberno }">
-        <div style="text-align: right; margin-top:30px;">
-            <button type="button" onclick="location.href='forum'" class="btn btn-secondary">목록보기</button>
-        </div>
-        </c:if>
-        
-		</form>
-    </div>
+ <div class="shop-box-inner">
+        <div class="container">
+            <div class="row">
+				<div class="board_list_wrap">
+				        <table class="board_list">
+				            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 15px;">자유게시판</caption>
+				        </table>
+				        <form action="edit">
+				        <input type="hidden" name="memberno" value="${login.memberno }">
+				        <div id="forum_title">
+				          	  제목 <input type="text" name="title" id="utitle" rows="1" cols="55" value="${dto.title }" maxlength="100" readonly></input><br>
+							번호 <input type="text" name="bno" value="${dto.bno }" readonly><br><br>
+							작성자 <input type="text" name="username" value="${dto.username }" readonly> 
+				        </div>
+				        <div id="forum_content">
+				           	본문  <textarea name="content" id="ucontent" readonly>${dto.content }</textarea>
+				        </div>
+				        
+				        <!-- 작성자 -->
+				        <c:if test="${login.memberno  == dto.memberno }">
+				        <div style="text-align: right; margin-top:30px;">
+				            <button type="submit" class="btn btn-secondary">수정</button>
+				            <button type="button" onclick="location.href='delete?bno=${dto.bno}'" class="btn btn-secondary">삭제</button>
+				        </div>
+				        </c:if>
+				        <!-- 작성자 아닌경우 -->
+				         <c:if test="${login.memberno != dto.memberno }">
+				        <div style="text-align: right; margin-top:30px;">
+				            <button type="button" onclick="location.href='forum'" class="btn btn-secondary">목록보기</button>
+				        </div>
+				        </c:if>
+				        
+						</form>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
     
-    <jsp:include page="../common/bottom.jsp"></jsp:include>
+ <!-- ALL JS FILES -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/jquery.superslides.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/inewsticker.js"></script>
+    <script src="js/bootsnav.js."></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        $(function() {
+          $("#expire_date").datepicker();
+        });
+      </script>
 </body>
 
 </html>
