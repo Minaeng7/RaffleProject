@@ -116,7 +116,7 @@
 						<input type="password" placeholder="userPW2" name="passwd2"
 							id="passwd2" onchange="check_pw()" />&nbsp;<span id="check"
 							name="check"></span>
-						</td>
+
 					</div>
 					<div class="input-field">
 						<i class="fas fa-lock"></i> <input type="text" placeholder="Name"
@@ -157,7 +157,7 @@
 						class="btn" value="Sign up" />
 				</form>
 			</div>
-
+	</div>
 
 			<div class="panels-container">
 				<div class="panel left-panel">

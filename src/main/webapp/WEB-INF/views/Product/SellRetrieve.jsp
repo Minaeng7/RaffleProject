@@ -217,117 +217,18 @@
 										<h4>${slist.rafflename }</h4>
 										<h5><fmt:formatNumber value="${slist.raffleprice }" maxFractionDigits="3"/></h5>
 									</div>
-									</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-2.jpg" class="img-fluid" alt="Image">
-
-									</div>
-
-									<div class="why-text">
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<h5>$9.79</h5>
-									</div>
 								</a>
 							</div>
+							
 						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-3.jpg" class="img-fluid" alt="Image">
-									</div>
+					</c:forEach>
 
-									<div class="why-text">
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<h5>$9.79</h5>
-									</div>
-								</a>
 							</div>
 						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-4.jpg" class="img-fluid" alt="Image">
-									</div>
-
-									<div class="why-text">
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<h5>$9.79</h5>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-1.jpg" class="img-fluid" alt="Image">
-									</div>
-								
-								<div class="why-text">
-									<h4>Lorem ipsum dolor sit amet</h4>
-									<h5>$9.79</h5>
-								</div>
-								</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-2.jpg" class="img-fluid" alt="Image">
-									</div>
-
-									<div class="why-text">
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<h5>$9.79</h5>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-3.jpg" class="img-fluid" alt="Image">
-									</div>
-
-									<div class="why-text">
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<h5>$9.79</h5>
-									</div>
-								</a>
-							</div>
-
-						</div>
-						<div class="item">
-							<div class="products-single fix">
-								<a href="링크">
-									<div class="box-img-hover">
-										<img src="images/img-pro-4.jpg" class="img-fluid" alt="Image">
-									</div>
-
-									<div class="why-text">
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<h5>$9.79</h5>
-									</div>
-								</a>
->>>>>>> a899d8c26dc9774bf6a73fe8388080aea1200cbf
-							</div>
-						</div>
-						</c:forEach>
+						
 					</div>
 				</div>
-			</div>
 
-		</div>
-	</div>
 	<!-- End Cart -->
 
 	

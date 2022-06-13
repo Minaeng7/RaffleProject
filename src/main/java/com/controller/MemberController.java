@@ -23,6 +23,7 @@ public class MemberController {
 
 	@RequestMapping(value = "/memberAdd")
 	public String memberAdd(MemberDTO m, Model model) {
+		System.out.println(m);
 		service.memberAdd(m);
 		model.addAttribute("success", "회원가입성공");
 		return "index";
