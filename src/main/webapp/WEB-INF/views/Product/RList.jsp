@@ -109,6 +109,7 @@
 	                                            <div class="why-text">
 	                                                 <h4> RaffleName : ${rdto.nickname }</h4>
 	                                                 <h5> Entry fee : <fmt:formatNumber value="${rdto.per_price }" maxFractionDigits="3"/></h5>
+	                                                 <h6> 조회 : ${rdto.viewcnt }</h6>
 	                                            </div>
                                             </div>
                                         </div>

@@ -108,6 +108,7 @@
                                                 <div class="why-text">
                                                     <h4>RaffleName : ${sdto.nickname }</h4>
                                                     <h5>Price : <fmt:formatNumber value="${sdto.raffleprice }" maxFractionDigits="3"/></h5>
+                                                    <h6> 조회 : ${sdto.viewcnt }</h6>
                                                 </div>
                                             </div>
                                         </div>

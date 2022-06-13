@@ -3,6 +3,8 @@ package com.service;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -86,6 +88,15 @@ public class RaffleService {
 
 	public List<SellRDTO> SSlist() {
 		return dao.SSlist();
+	}
+
+	public void RincreaseViewcnt(int resell_rno, HttpSession session) {
+		dao.RincreaseViewcnt(resell_rno);
+	}
+
+	public void SincreaseViewcnt(int sell_rno, HttpSession session) {
+		dao.SincreaseViewcnt(sell_rno);
+		
 	}
 
 }

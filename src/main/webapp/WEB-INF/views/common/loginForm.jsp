@@ -124,11 +124,6 @@
 						<!-- 회원가입_이름 -->
 					</div>
 					<div class="input-field">
-						<i class="fas fa-lock"></i> <input type="text"
-							placeholder="Nickname" name="nickname" />
-						<!-- 회원가입_닉네임 -->
-					</div>
-					<div class="input-field">
 						<i class="fas fa-lock"></i> <input type="date" id="start"
 							name="birth" value="2000-01-01" min="1900-01-01" max="2022-12-31" />
 						<!-- 회원가입_생년월일 -->

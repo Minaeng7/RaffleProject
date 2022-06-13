@@ -69,6 +69,8 @@
 			<exclude-mapping path="/SellRetrieve"/>
 			<exclude-mapping path="/notice"/>
 			<exclude-mapping path="/nview"/>
+			<exclude-mapping path="/memberAdd"/>
+			<exclude-mapping path="/idDuplicateCheck"/>
 			<beans:ref bean="LoginCheckInterceptor"/>
 		</interceptor>
 	</interceptors> 
