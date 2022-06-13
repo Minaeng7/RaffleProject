@@ -133,7 +133,7 @@ public class RaffleController {
 	}
 	@RequestMapping("/DeleteMyRaffleSS")
 	public ModelAndView DeleteMyRaffleSS(int sell_rno, HttpSession session) {
-		System.out.println(sell_rno);
+//		System.out.println(sell_rno);
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		HashMap <String, Integer> map = new HashMap<>();
