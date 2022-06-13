@@ -161,7 +161,7 @@
                                     <li>
                                         <div class="form-group quantity-box">
                                             <label class="control-label">Quantity</label>
-                                            <input class="form-control" id="quantity" name="spot" value="0" min="0" max="${rdto.attend_amount }" type="number"  onclick="check_quantity()">
+                                            <input class="form-control" id="quantity" name="spot" value="0" min="1" max="${rdto.attend_amount }" type="number"  onclick="check_quantity()">
                                         </div>
                                     </li>
                                 </ul>

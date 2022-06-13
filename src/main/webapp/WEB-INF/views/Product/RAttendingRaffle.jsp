@@ -54,6 +54,10 @@ $(document).ready(function() {
 		
 	});//end click
 	
+	$("#updatebtn").on("click", function() {
+		
+	})
+	
 });//end ready
 </script>
 </head>
@@ -91,6 +95,7 @@ $(document).ready(function() {
     <input type="hidden" name="phone" value="${login.phone }">
     <input type="hidden" name="rafflename" value="${dto.rafflename }">
     <input type="hidden" name="spot" value="${dto.spot }">
+    <input type="hidden" name="attend_amount" value="${rdto.attend_amount-dto.spot}">
     <div class="cart-box-main">
         <div class="container">
             <div class="row">
@@ -191,7 +196,7 @@ $(document).ready(function() {
 	                                    <h5>총 결제금액</h5>
 	                                    <div class="ml-auto h5"> ${rdto.per_price * dto.spot } 원</div><br>
 	                                </div>
-	                               	<input type="submit" value="결제하기" style="border: 1px solid #e5e5e5">
+	                               	<input type="submit" value="결제하기" id="updatebtn" style="border: 1px solid #e5e5e5">
                             	</div>
                             	<hr class="d-flex">
                         	</div>

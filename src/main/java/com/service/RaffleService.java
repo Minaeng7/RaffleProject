@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dao.RaffleDAO;
+import com.dto.RSpotDTO;
 import com.dto.ResellRDTO;
 import com.dto.SellRDTO;
 
@@ -90,6 +91,7 @@ public class RaffleService {
 		return dao.SSlist();
 	}
 
+
 	public void RincreaseViewcnt(int resell_rno, HttpSession session) {
 		dao.RincreaseViewcnt(resell_rno);
 	}
@@ -97,6 +99,11 @@ public class RaffleService {
 	public void SincreaseViewcnt(int sell_rno, HttpSession session) {
 		dao.SincreaseViewcnt(sell_rno);
 		
+	}
+
+	public void updatingSpot(ResellRDTO rdto) {
+		// TODO Auto-generated method stub
+		dao.updatingSpot(rdto);
 	}
 
 }
