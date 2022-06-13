@@ -23,7 +23,14 @@
 	<select id="ResellList" resultType="ResellRDTO">
 		select * from resell_r
 	</select>	
-
+	
+	<update id="updatingSpot" parameterType = "ResellRDTO">
+	update resell_r
+	set  attend_amount = #{attend_amount}
+	where resell_rno = #{resell_rno}
+	</update>
+	
+	
 	<update id="UpdateResell_r" parameterType = "ResellRDTO">
 	update resell_r
 	set rafflename = #{rafflename}, total_price = #{total_price}

@@ -49,6 +49,7 @@ public class AttendController {
 		Rservice.DeleteSpotR(map);
 		session.setAttribute("mesg", dto.getRafflename());
 		Rservice.registinglist(dto);
+		service.updatingSpot(rdto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Rdto", Rdto);
 		mav.addObject("dto", dto);

@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.dto.RSpotDTO;
 import com.dto.ResellRDTO;
 import com.dto.SSpotDTO;
 import com.dto.SellRDTO;
@@ -87,5 +88,11 @@ public class RaffleDAO {
 	public List<SellRDTO> SSlist() {
 		return template.selectList("RaffleMapper.SSlist");
 	}
+
+	public void updatingSpot(ResellRDTO rdto) {
+		template.update("RaffleMapper.updatingSpot",rdto);
+		
+	}
+
 	
 }

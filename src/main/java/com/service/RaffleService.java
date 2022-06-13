@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dao.RaffleDAO;
+import com.dto.RSpotDTO;
 import com.dto.ResellRDTO;
 import com.dto.SellRDTO;
 
@@ -87,5 +88,12 @@ public class RaffleService {
 	public List<SellRDTO> SSlist() {
 		return dao.SSlist();
 	}
+
+	public void updatingSpot(ResellRDTO rdto) {
+		// TODO Auto-generated method stub
+		dao.updatingSpot(rdto);
+	}
+
+	
 
 }
