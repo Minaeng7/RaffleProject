@@ -88,8 +88,6 @@ alert("해당 래플은 이미 추첨이 완료 되었습니다.")
 		</c:if>
 <!-- End Cart -->
     
-    <jsp:include page="common/bottom.jsp"></jsp:include>
-
      <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -106,7 +104,6 @@ alert("해당 래플은 이미 추첨이 완료 되었습니다.")
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
->>>>>>> b9092b3fd54f307e8d20ff7e953b27ff3b95943d
 </body>
 
 </html>
