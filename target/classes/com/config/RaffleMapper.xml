@@ -83,4 +83,15 @@
 	order by DBMS_RANDOM.RANDOM )
 	where <![CDATA[rownum<8]]>
 	</select>
+	
+	<update id="RincreaseViewcnt">
+		update resell_r
+		set viewcnt = viewcnt + 1
+		where resell_rno = #{resell_rno}
+	</update>	
+	<update id="SincreaseViewcnt">
+		update sell_r
+		set viewcnt = viewcnt + 1
+		where sell_rno = #{sell_rno}
+	</update>
 </mapper>

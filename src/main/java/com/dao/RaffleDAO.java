@@ -76,5 +76,14 @@ public class RaffleDAO {
 	public List<SellRDTO> SSlist() {
 		return template.selectList("RaffleMapper.SSlist");
 	}
+
+	public Object RincreaseViewcnt(int resell_rno) {
+		return template.update("RaffleMapper.RincreaseViewcnt", resell_rno);
+	}
+
+	public Object SincreaseViewcnt(int sell_rno) {
+		return template.update("RaffleMapper.SincreaseViewcnt", sell_rno);
+		
+	}
 	
 }

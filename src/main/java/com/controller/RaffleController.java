@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
@@ -51,8 +52,9 @@ public class RaffleController {
 		return mav;
 	}	
 	@RequestMapping(value="/ResellRetrieve")
-	public ModelAndView ResllRetrieve(int resell_rno) {//상품상세정보
+	public ModelAndView ResllRetrieve(int resell_rno, HttpSession session) {//상품상세정보
 		List<ResellRDTO> rlist = service.RRlist();
+		service.RincreaseViewcnt(resell_rno, session);
 		ModelAndView mav = new ModelAndView();
 		ResellRDTO rdto = service.ResellRetrieve(resell_rno);
 		mav.addObject("rdto", rdto);
@@ -62,8 +64,9 @@ public class RaffleController {
 	}
 	
 	@RequestMapping(value="/SellRetrieve")
-	public ModelAndView SellRetrieve(int sell_rno) {//상품상세정보 
+	public ModelAndView SellRetrieve(int sell_rno, HttpSession session) {//상품상세정보 
 		List<SellRDTO> slist = service.SSlist();
+		service.SincreaseViewcnt(sell_rno, session);
 		ModelAndView mav = new ModelAndView();
 		SellRDTO sdto = service.SellRetrieve(sell_rno);
 		mav.addObject("sdto", sdto);
@@ -127,4 +130,10 @@ public class RaffleController {
 		
 		return "redirect:RList";
 	}
+	/*
+	 * @RequestMapping("/listView") public ModelAndView view(@RequestParam int
+	 * resell_rno, HttpSession session) { service.increaseViewcnt(resell_rno,
+	 * session); ModelAndView mav = new ModelAndView(); mav.addObject("sellrdto",
+	 * resell_rno); mav.setViewName("Product/RList"); return mav; }
+	 */
 }
