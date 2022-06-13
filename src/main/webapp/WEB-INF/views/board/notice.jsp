@@ -130,9 +130,22 @@
 									                    <td>${notice.viewcnt }</td>
 									                </tr>
 									                </c:forEach>
-									            </tbody>
+									            
+				        					</tbody>
+				        					
 									        </table>
 									        <div class="paging">
+									        	<!-- 관리자 -->
+										        <c:if test="${login.memberno  == 0 }">
+										        <div style="text-align: right; margin-top:30px;">
+										            <button type="button" onclick="location.href='write'" class="btn btn-secondary" style="float: right;  ">글 쓰기</button>
+										        </div>
+										        </c:if>
+										        <!-- 관리자 아닌경우 -->
+										         <c:if test="${login.memberno != 0 }">
+										        <div style="text-align: right; margin-top:30px;">
+										        </div>
+										        </c:if>
 									            <a href="#" class="bt">첫 페이지</a>
 									            <a href="#" class="bt">이전 페이지</a>
 									            <a href="#" class="num on">1</a>
@@ -140,6 +153,7 @@
 									            <a href="#" class="num">3</a>
 									            <a href="#" class="bt">다음 페이지</a>
 									            <a href="#" class="bt">마지막 페이지</a>
+									            
 									        </div>
 									    </div>
 									 </div>
