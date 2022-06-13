@@ -55,7 +55,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    	<li class="nav-item"><a class="nav-link">${login.userid } 님</a></li>
+                    	<li class="nav-item"><a class="nav-link">${login.username } 님</a></li>
                         <li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
@@ -79,7 +79,7 @@
                                 <li><a href="forum">자유 게시판</a></li>
                             </ul>
                         </li>
-                       <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/Minaeng7/RaffleProject.git">Github</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -173,8 +173,8 @@
                                 <li><a href="forum">자유 게시판</a></li>
                             </ul>
                         </li>
-                       <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
-                    </ul>
+                       	<li class="nav-item"><a class="nav-link" href="https://github.com/Minaeng7/RaffleProject.git">Github</a></li>
+                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
 
@@ -182,16 +182,12 @@
                <div class="attr-nav">
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li class="side-menu"><a href="#">
-						<i class="fa fa-shopping-bag"></i>
-                            <span class="badge">3</span>
-					</a></li>
                     </ul>
                 </div>
                <!--  End Atribute Navigation -->
             </div>
             <!-- Start Side Menu -->
-            <div class="side">
+            <!-- <div class="side">
                 <a href="#" class="close-side"><i class="fa fa-times"></i></a>
                 <li class="cart-box">
                     <ul class="cart-list">
@@ -216,7 +212,7 @@
                         </li>
                     </ul>
                 </li>
-            </div>
+            </div> -->
             <!-- End Side Menu -->
         </nav>
         <!-- End Navigation -->
