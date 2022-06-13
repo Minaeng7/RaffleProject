@@ -54,33 +54,50 @@
         </div>
     </div>
     <!-- End Top Search -->
-    <ul class="left-board">
-        <li class="left-side-menu">게시판 목록</li>
-        <li><a href="notice">공지사항</a></li>
-        <li><a class="notice_color" href="forum">자유 게시판</a></li>
-
-    </ul>
-    <div class="board_list_wrap">
-        <table class="board_list">
-            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 10px;">자유게시판 수정</caption>
-        </table>
-        <form action="update">
-        <input type="hidden" name="memberno" value="${fdto.memberno }" />
-	        <div id="forum_title">
-	            제목 <input name="title" id="utitle" rows="1" cols="55" value="${fdto.title }" maxlength="100" required></input>
-	        </div>
-	        <div id="forum_content">
-	           번호 <input type="text" name="bno" value="${fdto.bno }" readonly><br><br>
-	           작성자 <input type="text" name="username" value="${login.username }" readonly><br>
-	            본문 <textarea name="content" id="ucontent" required>${fdto.content }</textarea>
-	            <button type="submit" name="" class="btn btn-secondary" style="margin-left: 710px;
-	            margin-top: 15px;">저장하기</button>
-	        </div>
-		</form>
+ 
+    <!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>자유게시판 페이지입니다.</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/raffle/">Home</a></li>
+                        <li class="breadcrumb-item active">자유게시판</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- End All Title Box -->
+    
+    <div class="shop-box-inner">
+        <div class="container">
+            <div class="row">
+			    <div class="board_list_wrap">
+			        <table class="board_list">
+			            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 10px;">자유게시판 수정</caption>
+			        </table>
+			        <form action="update">
+			        <input type="hidden" name="memberno" value="${fdto.memberno }" />
+				        <div id="forum_title">
+				            제목 <input name="title" id="utitle" rows="1" cols="55" value="${fdto.title }" maxlength="100" required></input>
+				        </div>
+				        <div id="forum_content">
+				           번호 <input type="text" name="bno" value="${fdto.bno }" readonly><br><br>
+				           작성자 <input type="text" name="username" value="${login.username }" readonly><br>
+				            본문 <textarea name="content" id="ucontent" required>${fdto.content }</textarea>
+				            <button type="submit" name="" class="btn btn-secondary" style="margin-left: 710px;
+				            margin-top: 15px;">저장하기</button>
+				        </div>
+					</form>
+			    </div>
+		    </div>
+	    </div>
+    </div>
+			    
     <!-- End My Account -->
 
- 	<jsp:include page="../common/bottom.jsp"></jsp:include>
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

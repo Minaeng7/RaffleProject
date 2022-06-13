@@ -145,8 +145,8 @@
                                 <ul>
                                     <li>
                                         <div class="form-group size-st">
-                                            <label class="size-label">Size</label>
-                                            <select id="basic" class="selectpicker show-tick form-control">
+                                            <label class="size-label">Size</label> <select id="basic"
+										class="selectpicker show-tick form-control">
 												<option value="0">Size</option>
 												<option value="230">230</option>
 												<option value="240">240</option>
@@ -212,7 +212,7 @@
  <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
     <!-- ALL PLUGINS -->
     <script src="js/jquery.superslides.min.js"></script>
     <!-- <script src="js/bootstrap-select.js"></script> -->
