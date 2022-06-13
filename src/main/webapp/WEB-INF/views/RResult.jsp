@@ -77,7 +77,7 @@
 			당첨자 우편번호 : ${Winner.post}<br>
 			당첨자 주소 : ${Winner.addr1}<br>
 			당첨자 연락처 : ${Winner.phone}<br>
-			<button>결제하기</button>
+			<button>확인</button>
 			</h2>
 			</form>
 			<c:if test="${RResult.memberno!=Winner.memberno}">
