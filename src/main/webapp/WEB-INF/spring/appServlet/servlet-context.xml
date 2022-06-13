@@ -58,6 +58,7 @@
 			<exclude-mapping path="/package/**"/>
 			<exclude-mapping path="/dist/**"/>
 			<exclude-mapping path="/src/**"/>
+			<exclude-mapping path="/login"/>
 			<exclude-mapping path="/loginForm"/>
 			<exclude-mapping path="/idDuplicateCheck"/>
 			<exclude-mapping path="/memberAdd"/>
