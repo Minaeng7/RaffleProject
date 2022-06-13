@@ -209,22 +209,16 @@
 							<div class="products-single fix">
 								<a href="링크">
 									<div class="box-img-hover">
-<<<<<<< HEAD
 										<img src="images/img-pro-${i }.jpg" class="img-fluid" alt="Image">
-=======
-										<img src="images/img-pro-1.jpg" class="img-fluid" alt="Image">
->>>>>>> a899d8c26dc9774bf6a73fe8388080aea1200cbf
+
 									</div>
 
 									<div class="why-text">
 										<h4>${slist.rafflename }</h4>
 										<h5><fmt:formatNumber value="${slist.raffleprice }" maxFractionDigits="3"/></h5>
 									</div>
-<<<<<<< HEAD
 									</a>
-=======
 							</div>
-							</a>
 						</div>
 						<div class="item">
 							<div class="products-single fix">
