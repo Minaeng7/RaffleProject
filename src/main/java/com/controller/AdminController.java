@@ -90,5 +90,11 @@ public class AdminController {
 		mav.setViewName("Admin/view");
 		return mav;
 	}
-
+	@RequestMapping("/DeleteForum")
+	public ModelAndView DeleteForum(int bno) {
+		service.DeleteForum(bno);
+		ModelAndView mav = new ModelAndView();
+		mav = selectForum();
+		return mav;
+	}
 }

@@ -52,6 +52,11 @@ public class AdminService {
 		return dao.selectForum();
 	}
 
+	public void DeleteForum(int bno) {
+		dao.DeleteForum(bno);
+		
+	}
+
 
 
 	
