@@ -25,7 +25,8 @@ public class MemberController {
 	public String memberAdd(MemberDTO m, Model model) {
 //		System.out.println(m);
 		service.memberAdd(m);
-//		model.addAttribute("success", "회원가입성공");
+		String success = "회원가입성공";
+		model.addAttribute("success", success);
 		return "index";
 	}
 	

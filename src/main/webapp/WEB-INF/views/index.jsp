@@ -12,6 +12,12 @@
 		document.location.href="/raffle";
 	</script>
 </c:if>
+<c:if test="${!empty success}">
+	<script>
+		alert("회원가입 성공")
+		document.location.href="/raffle";
+	</script>
+</c:if>
 <html>
 <head>
 <meta charset="UTF-8">
