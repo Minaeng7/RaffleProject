@@ -67,10 +67,10 @@
     <!-- Start Cart  -->
     
     <h1 align="center">당첨자 확인</h1><br>
-	<c:choose>
-		<c:when test="${RResult.memberno == Winner.memberno }">
+
+		<c:if test="${RResult.memberno == Winner.memberno }">
 			<form action="MyAttendedRaffle">
-			<input type="hidden" value=${Winner.resell_rno } name="resell_rno">
+			<input type="hidden" value=${Winner.resell_rno }" name="resell_rno">
 			<h2 align="center">
 			당첨 래플 번호 : ${Winner.resell_rno}<br>
 			당첨자 이름 : ${Winner.username}<br>
@@ -80,22 +80,21 @@
 			<button>확인</button>
 			</h2>
 			</form>
-		</c:when>
-		<c:when test="${RResult.memberno!=Winner.memberno}">
+			<c:if test="${RResult.memberno!=Winner.memberno}">
 			<script>
 			alert('안타깝습니다! 다음 기회에');
 			document.location.href = "MyAttendedRaffle";
 			</script>
-			</c:when>
-		<c:when test="${empty Winner.resell_rno || RResult.memberno != Winner.memberno}">
+			</c:if>
+		</c:if>
+		<c:if test="${empty Winner.resell_rno }">
 			<h2 align="center">
 			아직 추첨이 진행되지 않았습니다. 
 			추첨 후 확인해주세요
 			<a href = "MyAttendedRaffle"><button>확인</button></a>
 			</h2>
 			
-		</c:when>
-</c:choose>
+		</c:if>
 <!-- End Cart -->
     
      <!-- ALL JS FILES -->
@@ -115,5 +114,4 @@
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
 </body>
-
 </html>

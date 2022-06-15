@@ -9,6 +9,7 @@
 <c:if test="${!empty mesg}">
 	<script>
 		alert("해당 래플은 참가자가 없습니다. 메인페이지로 이동합니다.")
+		document.location.href="/raffle";
 	</script>
 </c:if>
 <html>
