@@ -41,9 +41,8 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
                             <h4>About Raffles</h4>
-                            <p>for Collectors! <br>한정판, 구하기 힘든 제품들을 저렴한 가격에 구매,<br> 원하는 가격에 판매해보세요!
-                                </p>
-                            <ul>
+                            <p>For Collectors! <br>한정판, 구하기 힘든 제품들을 저렴한 가격에 구매,<br> 원하는 가격에 판매해보세요!</p>
+                            <ul style="padding-top : 70px;">
                                 <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
@@ -58,13 +57,13 @@
                         <div class="footer-link">
                             <h4>Information</h4>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Project Raffle!</a></li>
-                                <li><a href="#">Min hyeong</a></li>
-                                <li><a href="#">Jin hong</a></li>
-                                <li><a href="#">eun ji</a></li>
-                                <li><a href="#">chan won</a></li>
-                                <li><a href="#">jin woo</a></li>
+                                <li><a href="#">&nbsp; About Us</a></li>
+                                <li><a href="#">&nbsp; Project Raffle!</a></li>
+                                <li><a href="#">&nbsp; Min hyeong</a></li>
+                                <li><a href="#">&nbsp; Jin hong</a></li>
+                                <li><a href="#">&nbsp; Eun ji</a></li>
+                                <li><a href="#">&nbsp; Chan won</a></li>
+                                <li><a href="#">&nbsp; Jin woo</a></li>
                             </ul>
                         </div>
                     </div>
@@ -72,14 +71,14 @@
                         <div class="footer-link-contact">
                             <h4>Contact Us</h4>
                             <ul>
-                                <li>
+                                <li> 
                                     <p><i class="fas fa-map-marker-alt"></i>Team Raffle <br>for collectors<br> New Trading Platform</p>
                                 </li>
-                                <li>
+                                <li style="padding-top: 20px">
                                     <p><i class="fas fa-phone-square"></i>Github: <a href="https://github.com/Minaeng7/RaffleProject.git">https://github.com/Minaeng7/RaffleProject.git</a></p>
                                 </li>
-                                <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:m271704@kakao.com">Send to Raffle Team</a></p>
+                                <li style="padding-top: 20px">
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="#">Send to Raffle Team</a></p>
                                 </li>
                             </ul>
                         </div>
