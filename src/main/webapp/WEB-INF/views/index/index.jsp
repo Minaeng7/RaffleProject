@@ -285,8 +285,8 @@ setInterval(function() {
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
                             <button class="active" data-filter="*">All</button>
+                            <button data-filter=".resell">Resell</button><!--  -->
                             <button data-filter=".raffle">Raffle</button><!-- Seller -->
-                            <button data-filter=".resell">Re-sell</button><!--  -->
                         </div>
                     </div>
                 </div>

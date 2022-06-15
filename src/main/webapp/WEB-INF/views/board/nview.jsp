@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -80,6 +81,8 @@
 			        <table class="board_list">
 			            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 15px;">공지사항</caption>
 			        </table>
+			        <form action="admin_edit">
+			        <input type="hidden" name="memberno" value="${login.memberno }">
 			        <div id="forum_title">
 			          	  제목 <input type="text" name="title" id="utitle" rows="1" cols="55" value="${ndto.title }" maxlength="100" readonly></input><br>
 						번호 <input type="text" name="bno" value="${ndto.bno }" readonly><br><br>
@@ -88,10 +91,23 @@
 			        <div id="forum_content">
 			           	본문  <textarea name="content" id="ucontent" cols="2" readonly>${ndto.content }</textarea>
 			        </div>
+			        <!-- <div style="text-align: right; margin-top:30px;">
+			            <button type="button" onclick="location.href='notice'" class="btn btn-secondary">목록보기</button>
+			        </div> -->
+			        <!-- 작성자 -->
+			        <c:if test="${login.memberno  == 0}">
+			        <div style="text-align: right; margin-top:30px;">
+			            <button type="submit" class="btn btn-secondary">수정</button>
+			            <button type="button" onclick="location.href='admin_delete?bno=${ndto.bno}'" class="btn btn-secondary">삭제</button>
+			        </div>
+			        </c:if>
+			        <!-- 작성자 아닌경우 -->
+			         <c:if test="${login.memberno != 0}">
 			        <div style="text-align: right; margin-top:30px;">
 			            <button type="button" onclick="location.href='notice'" class="btn btn-secondary">목록보기</button>
 			        </div>
-				
+			        </c:if>
+				</form>
 			    </div>
 		    </div>
 	    </div>

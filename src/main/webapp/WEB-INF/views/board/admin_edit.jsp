@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
+<!-- Basic -->
+
 <head>
-<meta charset="utf-8">
+
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Mobile Metas -->
@@ -35,39 +37,12 @@
     <![endif]-->
     <script src="package/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="package/dist/sweetalert2.min.css">
-<script type="text/javascript">
-$(document).ready(function(){
-	
-	$("#btnSave").on("click", function() {
-		var title = $("#title").val();
-		var content = $("#content").val();
-		var username = $("#username").val();
-		
-		if (title == "") {
-			alert("제목을 입력하세요");
-			$("#title").focus();
-			//document.form.title.focus();
-			return;
-		}
-		if (content == "") {
-			alert("내용을 입력하세요");
-			document.form.content.focus();
-			return;
-		}
-		if (username == "") {
-			alert("이름을 입력하세요");
-			document.form.username.focus();
-			return;
-		}
-		document.form.submit();
-	})	
-})
-
-</script>
+ 
 </head>
-<body>
 
-<jsp:include page="../common/top.jsp"></jsp:include>
+<body>
+          
+    <jsp:include page="../common/top.jsp"></jsp:include>
     <!-- Start Top Search -->
     <div class="top-search">
         <div class="container">
@@ -80,15 +55,15 @@ $(document).ready(function(){
     </div>
     <!-- End Top Search -->
  
-      <!-- Start All Title Box -->
+    <!-- Start All Title Box -->
     <div class="all-title-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>자유게시판</h2>
+                    <h2>공지사항</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/raffle/">Home</a></li>
-                        <li class="breadcrumb-item active">자유게시판</li>
+                        <li class="breadcrumb-item active">공지사항</li>
                     </ul>
                 </div>
             </div>
@@ -101,26 +76,26 @@ $(document).ready(function(){
             <div class="row">
 			    <div class="board_list_wrap">
 			        <table class="board_list">
-			            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 10px;">자유게시판 작성</caption>
+			            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 10px;">공지사항 수정</caption>
 			        </table>
-			        <form action="insert">
-			        	<input type="hidden" name="memberno" value="${login.memberno }"/>
+			        <form action="admin_update">
+			        <input type="hidden" name="memberno" value="${ndto.memberno }" />
 				        <div id="forum_title">
-				            제목 <input name="title" id="utitle" rows="1" cols="55" value="" maxlength="100" required></input>
+				            제목 <input name="title" id="utitle" rows="1" cols="55" value="${ndto.title }" maxlength="100" required></input>
 				        </div>
 				        <div id="forum_content">
+				           번호 <input type="text" name="bno" value="${ndto.bno }" readonly><br><br>
 				           작성자 <input type="text" name="username" value="${login.username }" readonly><br>
-				            본문 <textarea name="content" id="ucontent" required></textarea>
+				            본문 <textarea name="content" id="ucontent" required>${ndto.content }</textarea>
 				            <button type="submit" name="" class="btn btn-secondary" style="margin-left: 710px;
 				            margin-top: 15px;">저장하기</button>
 				        </div>
 					</form>
 			    </div>
-    		</div>
-    	</div>
+		    </div>
+	    </div>
     </div>
-    
-  
+			    
     <!-- End My Account -->
 
     <!-- ALL JS FILES -->

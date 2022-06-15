@@ -85,10 +85,10 @@ $(document).ready(function(){
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>자유게시판</h2>
+                    <h2>공지사항</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/raffle/">Home</a></li>
-                        <li class="breadcrumb-item active">자유게시판</li>
+                        <li class="breadcrumb-item active">공지사항</li>
                     </ul>
                 </div>
             </div>
@@ -101,9 +101,9 @@ $(document).ready(function(){
             <div class="row">
 			    <div class="board_list_wrap">
 			        <table class="board_list">
-			            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 10px;">자유게시판 작성</caption>
+			            <caption class="notice" style="border-bottom: 1px solid black; margin-bottom: 10px;">공지사항 작성</caption>
 			        </table>
-			        <form action="insert">
+			        <form action="admin_insert">
 			        	<input type="hidden" name="memberno" value="${login.memberno }"/>
 				        <div id="forum_title">
 				            제목 <input name="title" id="utitle" rows="1" cols="55" value="" maxlength="100" required></input>

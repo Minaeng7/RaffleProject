@@ -91,5 +91,35 @@ public class BoardController {
 		fservice.delete(bno);
 		return "redirect:forum";
 	}
+	//관리자 게시글 작성 화면
+	@RequestMapping("/admin_write")
+	public String admin_write() {
+		return "board/admin_write";
+	}
+	//관리자 게시글 등록
+	@RequestMapping(value = "/admin_insert")
+	public String admin_insert(NoticeDTO dto) {
+		fservice.admin_create(dto);
+		return "redirect:notice";
+	}
+	@RequestMapping("/admin_edit")
+	public ModelAndView admin_edit(NoticeDTO dto, HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("ndto", dto);
+		mav.setViewName("board/admin_edit");
+		return mav;
+	}
+	//관리자 게시글 수정
+	@RequestMapping("/admin_update")
+	public String admin_update(NoticeDTO dto) {
+		fservice.admin_update(dto);
+		return "redirect:notice";
+	}
+	//관리자 게시글 삭제
+	@RequestMapping("/admin_delete")
+	public String admin_delete(@RequestParam int bno) {
+		fservice.admin_delete(bno);
+		return "redirect:notice";
+	}
 	
 }

@@ -138,7 +138,7 @@
 									        	<!-- 관리자 -->
 										        <c:if test="${login.memberno  == 0 }">
 										        <div style="text-align: right; margin-top:30px;">
-										            <button type="button" onclick="location.href='write'" class="btn btn-secondary" style="float: right;  ">글 쓰기</button>
+										            <button type="button" onclick="location.href='admin_write'" class="btn btn-secondary" style="float: right;  ">글 쓰기</button>
 										        </div>
 										        </c:if>
 										        <!-- 관리자 아닌경우 -->
