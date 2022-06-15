@@ -37,7 +37,7 @@
 	
 	<h1 align="center">당첨자 확인</h1><br>
 
-		<c:if test="${memberno==Winner.memberno }">
+		<c:if test="${!empty Winner.sell_rno && memberno==Winner.memberno }">
 			<form action="SAttendingRaffle">
 			<input type="hidden" value="${Winner.sell_rno }" name="sell_rno">
 			<h2 align="center">
@@ -49,12 +49,6 @@
 			<button>결제하기</button>
 			</h2>
 			</form>
-			<c:if test="${memberno!=Winner.memberno}">
-			<script>
-			alert('안타깝습니다! 다음 기회에');
-			document.location.href = "MyAttendedRaffle";
-			</script>
-			</c:if>
 		</c:if>
 		<c:if test="${empty Winner.sell_rno }">
 			<h2 align="center">
@@ -62,8 +56,12 @@
 			추첨 후 확인해주세요
 			<a href = "MyAttendedRaffle"><button>확인</button></a>
 			</h2>
-			
 		</c:if>
-		
+		<c:if test="${!empty Winner.sell_rno && memberno!=Winner.memberno}">
+			<script>
+			alert('안타깝습니다! 다음 기회에');
+			document.location.href = "MyAttendedRaffle";
+			</script>
+		</c:if>
 </body>
 </html>

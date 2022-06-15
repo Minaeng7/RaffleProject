@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.dao.ForumDAO;
 import com.dto.ForumDTO;
+import com.dto.NoticeDTO;
 
 @Service
 public class ForumService {
@@ -65,5 +66,30 @@ public class ForumService {
 	}
 	public void delete(int bno) {
 		dao.delete(bno);
+	}
+	public void admin_create(NoticeDTO dto) {
+		String title = dto.getTitle();
+		String content = dto.getContent();
+		String username = dto.getUsername();
+		//태그문자 처리
+		title = title.replace("<", "&lt;");
+		title = title.replace("<", "&gt;");
+		username = username.replace("<", "&lt;");
+		username = username.replace("<", "&gt;");
+		//공백문자 처리
+		title = title.replace("  ", "&nbsp;&nbsp;");
+		username = username.replace("  ", "&nbsp;&nbsp;");
+		//줄바꿈 문자처리
+		content = content.replace("\n", "<br>");
+		dto.setTitle(title);
+		dto.setContent(content);
+		dto.setUsername(username);;
+		dao.admin_create(dto);
+	}
+	public void admin_update(NoticeDTO dto) {
+		dao.admin_update(dto);
+	}
+	public void admin_delete(int bno) {
+		dao.admin_delete(bno);
 	}
 }

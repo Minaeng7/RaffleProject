@@ -69,12 +69,14 @@ public class RandomController {
 			String mesg = "Anybody didn't attend";
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("mesg", mesg);
+//			mav.setViewName("redirect:../raffle/");
 			mav.setViewName("index");
 			return mav;
 		}
 		Collections.shuffle(list);
 		SSpotDTO dto = list.get(0);
 		sservice.AddWinner(dto);
+//		System.out.println(dto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Winner",dto);
 		mav.setViewName("SWinneris");
@@ -84,7 +86,7 @@ public class RandomController {
 	public ModelAndView WinnercheckR(int resell_rno, ResellRDTO rdto) {
 		RwinDTO dto = rservice.Winnercheck(resell_rno);
 		ModelAndView mav = new ModelAndView();
-		System.out.println(rdto);
+//		System.out.println(rdto);
 		mav.addObject("Winner",dto);
 		mav.addObject("rdto", rdto);
 		mav.setViewName("RWinneris");

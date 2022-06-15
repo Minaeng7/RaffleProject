@@ -22,4 +22,23 @@
 		select * from notice
 		where bno = #{bno}
 	</select>
+	
+	<!-- 게시글 작성 -->
+	<insert id="insert">
+		insert into notice(bno, title, content, username, memberno)
+		values(forum_seq_bno.nextval, #{title}, #{content}, #{username}, #{memberno})
+	</insert>
+	
+		<!-- 게시글 수정 -->
+	<update id="update" parameterType="NoticeDTO">
+		update notice
+		set title = #{title}, content = #{content}
+		where bno = #{bno} and memberno = #{memberno}
+	</update>
+	<!-- 게시글 삭제 -->
+	<delete id="delete" parameterType="int">
+		delete from notice
+		where bno = #{bno}
+	</delete>
+	
 </mapper>

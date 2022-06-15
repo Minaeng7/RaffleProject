@@ -23,9 +23,9 @@ public class MemberController {
 
 	@RequestMapping(value = "/memberAdd")
 	public String memberAdd(MemberDTO m, Model model) {
-		System.out.println(m);
+//		System.out.println(m);
 		service.memberAdd(m);
-		model.addAttribute("success", "회원가입성공");
+//		model.addAttribute("success", "회원가입성공");
 		return "index";
 	}
 	
@@ -63,7 +63,7 @@ public class MemberController {
 		MemberDTO dto2 = (MemberDTO)session.getAttribute("login");
 		int memberno = dto2.getMemberno();
 		dto.setMemberno(memberno);
-		System.out.println(dto);
+//		System.out.println(dto);
 		service.updateMyinfo(dto);
 		dto = service.myinfo(memberno);
 		ModelAndView mav = new ModelAndView();

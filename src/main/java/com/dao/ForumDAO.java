@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dto.ForumDTO;
+import com.dto.NoticeDTO;
 
 @Repository
 public class ForumDAO {
@@ -36,5 +37,17 @@ public class ForumDAO {
 
 	public void delete(int bno) {
 		template.delete("ForumMapper.delete", bno);
+	}
+
+	public void admin_create(NoticeDTO dto) {
+		template.insert("NoticeMapper.insert", dto);
+	}
+
+	public void admin_update(NoticeDTO dto) {
+		template.update("NoticeMapper.update", dto);
+	}
+
+	public void admin_delete(int bno) {
+		template.delete("NoticeMapper.delete", bno);
 	}
 }
