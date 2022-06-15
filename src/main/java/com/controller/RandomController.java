@@ -74,6 +74,7 @@ public class RandomController {
 		}
 		Collections.shuffle(list);
 		SSpotDTO dto = list.get(0);
+//		System.out.println(dto);
 		sservice.AddWinner(dto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Winner",dto);
@@ -84,7 +85,7 @@ public class RandomController {
 	public ModelAndView WinnercheckR(int resell_rno, ResellRDTO rdto) {
 		RwinDTO dto = rservice.Winnercheck(resell_rno);
 		ModelAndView mav = new ModelAndView();
-		System.out.println(rdto);
+//		System.out.println(rdto);
 		mav.addObject("Winner",dto);
 		mav.addObject("rdto", rdto);
 		mav.setViewName("RWinneris");
