@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AdminMapper">
+
+	<select id="SellList" resultType="SellRDTO">
+		select * from sell_r
+	</select>
+	<select id="ResellList" resultType="ResellRDTO">
+		select * from resell_r
+	</select>
+	<delete id = "DeleteSRaffle" parameterType = "int">
+	delete 
+	from sell_r
+	where sell_rno = #{sell_rno}
+	</delete>
+	<delete id = "DeleteRRaffle" parameterType = "int">
+	delete 
+	from resell_r
+	where resell_rno = #{resell_rno}
+	</delete>
+	<select id="selectMembers" resultType="MemberDTO">
+		select * from member
+	</select>
+	<delete id = "DeleteMember" parameterType = "int">
+	delete 
+	from member
+	where memberno = #{memberno}
+	</delete>
+	<select id="selectForum" resultType="ForumDTO">
+		select * from forum
+	</select>
+		<select id="view" resultType="ForumDTO">
+		select * from forum
+		where bno = #{bno}
+	</select>
+
+</mapper>
