@@ -12,6 +12,7 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 	<default-servlet-handler/>
+<!-- 	<view-controller path="/Admin" view-name="Adminindex"/> -->
 	<view-controller path="/memberForm" view-name="memberForm"/>
 	<view-controller path="/loginForm" view-name="loginForm"/>
 	<view-controller path="/UpdateMyRaffleR" view-name="/MyRaffle/UpdateMyRaffleR"/>

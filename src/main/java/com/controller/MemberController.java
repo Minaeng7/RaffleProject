@@ -20,6 +20,8 @@ import com.service.MemberSerivce;
 public class MemberController {
 	@Autowired
 	MemberSerivce service;
+	@Autowired
+	AdminController admin;
 
 	@RequestMapping(value = "/memberAdd")
 	public String memberAdd(MemberDTO m, Model model) {
@@ -33,9 +35,14 @@ public class MemberController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@RequestParam Map<String, String> map, Model model, HttpSession session) {
 		MemberDTO dto = service.login(map);
-		if (dto != null) {
+		if (dto != null && dto.getMemberno() != 00) {
 			session.setAttribute("login", dto);
 			return "redirect:../raffle";// main.jsp
+			
+		} else if (dto.getMemberno() == 00) {
+			session.setAttribute("login", dto);
+			String nextpage = admin.Admin();
+			return nextpage;
 		} else {
 			model.addAttribute("mesg", "아이디 또는 비번이 잘못되었습니다.");
 			return "loginForm";

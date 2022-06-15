@@ -38,6 +38,7 @@
 				<value>classpath:com/config/SupervisingMapper.xml</value>
 				<value>classpath:com/config/ForumMapper.xml</value>
 				<value>classpath:com/config/NoticeMapper.xml</value>
+				<value>classpath:com/config/AdminMapper.xml</value>
 			</list>
 		</property>
 		<property name="typeAliases">
