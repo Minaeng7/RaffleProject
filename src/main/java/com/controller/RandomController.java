@@ -75,6 +75,7 @@ public class RandomController {
 		}
 		Collections.shuffle(list);
 		SSpotDTO dto = list.get(0);
+//		System.out.println(dto);
 		sservice.AddWinner(dto);
 //		System.out.println(dto);
 		ModelAndView mav = new ModelAndView();
