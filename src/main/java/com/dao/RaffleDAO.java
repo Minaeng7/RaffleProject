@@ -11,6 +11,7 @@ import com.dto.RSpotDTO;
 import com.dto.ResellRDTO;
 import com.dto.SSpotDTO;
 import com.dto.SellRDTO;
+import com.dto.SwinDTO;
 
 @Repository
 public class RaffleDAO {
@@ -101,6 +102,10 @@ public class RaffleDAO {
 	public void updatingSpot(ResellRDTO rdto) {
 		template.update("RaffleMapper.updatingSpot",rdto);
 		
+	}
+
+	public void orderSell(SwinDTO sdto) {
+		template.insert("RaffleMapper.orderSell", sdto);
 	}
 
 }

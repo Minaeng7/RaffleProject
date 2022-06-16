@@ -122,4 +122,10 @@
 		set viewcnt = viewcnt + 1
 		where sell_rno = #{sell_rno}
 	</update>
+	
+	<insert id="orderSell">
+		insert into sorder
+		(sell_rno, username, post, addr1, addr2, phone, memberno)
+		values (#{sell_rno}, #{username}, #{post}, #{addr1}, #{addr2}, #{phone}, #{memberno})
+	</insert>
 </mapper>
