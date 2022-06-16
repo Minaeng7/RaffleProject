@@ -12,7 +12,7 @@ import com.dto.SellRDTO;
 import com.service.RaffleService;
 
 @Controller
-public class MainCotroller {
+public class MainController {
 
 	@Autowired
 	RaffleService service;
