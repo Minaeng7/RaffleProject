@@ -12,6 +12,7 @@ import com.dao.RaffleDAO;
 import com.dto.RSpotDTO;
 import com.dto.ResellRDTO;
 import com.dto.SellRDTO;
+import com.dto.SwinDTO;
 
 @Service
 public class RaffleService {
@@ -104,6 +105,10 @@ public class RaffleService {
 	public void updatingSpot(ResellRDTO rdto) {
 		// TODO Auto-generated method stub
 		dao.updatingSpot(rdto);
+	}
+
+	public void orderSell(SwinDTO sdto) {
+		dao.orderSell(sdto);
 	}
 
 }
