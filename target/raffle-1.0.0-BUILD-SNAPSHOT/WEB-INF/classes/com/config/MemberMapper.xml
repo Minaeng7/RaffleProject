@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberMapper">
+
+
+	<select id="login" parameterType="hashmap"
+		resultType="MemberDTO">
+		select *
+		from member
+		where userid =#{userid} and
+		passwd=#{passwd}
+	</select>
+
+	<insert id="memberAdd" parameterType="MemberDTO">
+		insert into
+		member(memberno,userid,passwd,username,post,
+		addr1,addr2,phone,birth,email)
+		values(
+		MEMBER_SEQ_MEMBERNO.nextval,#{userid},#{passwd},#{username},#{post},
+		#{addr1},#{addr2},#{phone},#{birth},#{email})
+	</insert>
+	<!-- <select id="login" parameterType="hashmap" resultType="MemberDTO"> 
+		select * from member where userid = #{userid} and passwd = #{passwd} </select> -->
+
+	<select id="idCheck" parameterType="string"
+		resultType="MemberDTO">
+		select *
+		from member
+		where userid =#{userid}
+	</select>
+	<update id="updateMyinfo" parameterType="MemberDTO">
+		update member
+		set
+		email = #{email}, passwd = #{passwd}, phone =
+		#{phone}, post = #{post}, addr1 = #{addr1}, addr2 = #{addr2}
+		where memberno = #{memberno}
+	</update>
+	<select id="myinfo" resultType="MemberDTO">
+		select *
+		from member
+		where memberno = #{memberno}
+	</select>
+</mapper>
