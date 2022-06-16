@@ -51,7 +51,7 @@
     <script type="text/javascript">
     
 /* for문 사용 필요 */
-setInterval(function() {
+/* setInterval(function() {
         
         var dday = new Date("July 02, 2022, 0:00:00").getTime();
         
@@ -167,7 +167,7 @@ setInterval(function() {
         }else{
         document.getElementById("count5").innerHTML = day + "일 " + hour + ":" + min + ":" + sec ;
     }
-        }, 0000);
+        }, 0000); */
 </script>
 </head>
 
@@ -193,7 +193,7 @@ setInterval(function() {
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20">나이키 범고래의 주인공은?</h1>
-                            <p class="m-b-40" id="count0">id:count0</p>
+                            <p class="m-b-40" id="count0"></p>
                         </div>
                     </div>
                 </div>
@@ -219,7 +219,7 @@ setInterval(function() {
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20">나이키 x 슈프림 콜라보 신발!</h1>
-                            <p class="m-b-40" id="count2">id:count2</p>
+                            <p class="m-b-40" id="count2"></p>
                         </div>
                     </div>
                 </div>
@@ -258,7 +258,7 @@ setInterval(function() {
                     <div class="shop-cat-box1" style="height: 100px; ">
                         <a class="brand-text" href="#">${slist.nickname}<br>
                             <h1  class="product_item" id="count3"></h1>
-                            <p class="PI">남은시간</p>
+                            <p class="PI"></p>
 
                         </a>
                     </div>
