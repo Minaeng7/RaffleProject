@@ -138,7 +138,7 @@
 							</div>
 							<div class="col-12">
 								<button type="submit"
-									class="btn btn-primary btn-block text-uppercase">Add
+									class="btn btn-dark btn-block text-uppercase">Add
 									Product Now</button>
 							</div>
 						</form>
