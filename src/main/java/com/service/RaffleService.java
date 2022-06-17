@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service;
 import com.dao.RaffleDAO;
 import com.dto.RSpotDTO;
 import com.dto.ResellRDTO;
+import com.dto.RwinDTO;
 import com.dto.SellRDTO;
+import com.dto.SorderDTO;
+import com.dto.SwinDTO;
 
 @Service
 public class RaffleService {
@@ -104,6 +107,18 @@ public class RaffleService {
 	public void updatingSpot(ResellRDTO rdto) {
 		// TODO Auto-generated method stub
 		dao.updatingSpot(rdto);
+	}
+
+	public void orderSell(SwinDTO sdto) {
+		dao.orderSell(sdto);
+	}
+
+	public List<SwinDTO> WinListS() {
+		return dao.WinListS();
+	}
+
+	public List<RwinDTO> WinListR() {
+		return dao.WinListR();
 	}
 
 }

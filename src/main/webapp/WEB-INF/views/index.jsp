@@ -55,7 +55,7 @@
     <script  src="https://code.jquery.com/jquery-3.6.0.js" ></script>
     <script type="text/javascript">
 /* for문 사용 필요 */
-setInterval(function() {
+/* setInterval(function() {
         
         var dday = new Date("May 02, 2022, 2:00:00").getTime();
         
@@ -171,7 +171,7 @@ setInterval(function() {
         }else{
         document.getElementById("count5").innerHTML = day + "일 " + hour + ":" + min + ":" + sec ;
     }
-        }, 1000);
+        }, 1000); */
 </script>
 </head>
 

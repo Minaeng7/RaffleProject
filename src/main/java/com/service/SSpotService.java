@@ -1,5 +1,6 @@
 package com.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,4 +50,9 @@ public class SSpotService {
 	public void Sorder(int sell_rno) {
 		dao.Sorder(sell_rno);
 	}
+
+	public void DeleteSpotS(HashMap<String, Integer> map) {
+		dao.DeleteSpotS(map);
+	}
+
 }

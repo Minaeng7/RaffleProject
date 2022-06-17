@@ -53,4 +53,9 @@ public class AdminDAO {
 		return session.selectOne("AdminMapper.view", bno);
 	}
 
+	public void DeleteForum(int bno) {
+		session.delete("AdminMapper.DeleteForum", bno);
+		
+	}
+
 }

@@ -36,4 +36,9 @@
 		where bno = #{bno}
 	</select>
 
+	<delete id = "DeleteForum" parameterType = "int">
+	delete 
+	from Forum
+	where bno = #{bno}
+	</delete>
 </mapper>

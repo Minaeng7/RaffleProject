@@ -68,9 +68,16 @@ public class AttendController {
 	}
 	
 	@RequestMapping("/Sorder")
-	public ModelAndView Sorder(SwinDTO Sdto, SellRDTO dto) {
+	public ModelAndView Sorder(SwinDTO Sdto, SellRDTO dto, SSpotDTO sdto) {
+		int memberno = sdto.getMemberno();
+		int sell_rno = sdto.getSell_rno();
+		HashMap <String, Integer> map = new HashMap<>();
+		map.put("memberno", memberno);
+		map.put("sell_rno", sell_rno);
+		Sservice.DeleteSpotS(map);
 		dto = service.SellRetrieve(Sdto.getSell_rno());
 		Sservice.Sorder(Sdto.getSell_rno());
+		service.orderSell(Sdto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Sdto", Sdto);
 		mav.addObject("dto", dto);

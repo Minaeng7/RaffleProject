@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+<beans:beans
+	xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -7,10 +8,12 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-	
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
+
 	<default-servlet-handler/>
 <!-- 	<view-controller path="/Admin" view-name="Adminindex"/> -->
 	<view-controller path="/memberForm" view-name="memberForm"/>
@@ -30,58 +33,74 @@
 	<view-controller path="/AddResell" view-name="AddResell"/>
 	<view-controller path="/edit" view-name="/board/edit"/>
 
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/css/**" location="/resources/css/" />
 	<resources mapping="/fonts/**" location="/resources/fonts/" />
 	<resources mapping="/images/**" location="/resources/images/" />
 	<resources mapping="/js/**" location="/resources/js/" />
 	<resources mapping="/php/**" location="/resources/php/" />
-	<resources mapping="/webfonts/**" location="/resources/webfonts/" />
-	<resources mapping="/package/**" location="/resources/package/" />
-	<resources mapping="/dist/**" location="/resources/package/dist/" />
-	<resources mapping="/src/**" location="/resources/package/src/" />
+	<resources mapping="/webfonts/**"
+		location="/resources/webfonts/" />
+	<resources mapping="/package/**"
+		location="/resources/package/" />
+	<resources mapping="/dist/**"
+		location="/resources/package/dist/" />
+	<resources mapping="/src/**"
+		location="/resources/package/src/" />
 
 	<!-- interceptor -->
-	<beans:bean id="LoginCheckInterceptor" class="com.interceptor.LoginCheckInterceptor"></beans:bean>
+	<beans:bean id="LoginCheckInterceptor"
+		class="com.interceptor.LoginCheckInterceptor"></beans:bean>
 	<interceptors>
 		<interceptor>
-			<mapping path="/**"/>
-			
-			<exclude-mapping path="/"/>
-			<exclude-mapping path="/resources/**"/>
-			<exclude-mapping path="/css/**"/>
-			<exclude-mapping path="/fonts/**"/>
-			<exclude-mapping path="/images/**"/>
-			<exclude-mapping path="/js/**"/>
-			<exclude-mapping path="/php/**"/>
-			<exclude-mapping path="/webfonts/**"/>
-			<exclude-mapping path="/package/**"/>
-			<exclude-mapping path="/dist/**"/>
-			<exclude-mapping path="/src/**"/>
-			<exclude-mapping path="/login"/>
-			<exclude-mapping path="/loginForm"/>
-			<exclude-mapping path="/idDuplicateCheck"/>
-			<exclude-mapping path="/memberAdd"/>
-			<exclude-mapping path="/logout"/>
-			<exclude-mapping path="/SList"/>
-			<exclude-mapping path="/RList"/>
-			<exclude-mapping path="/ResellRetrieve"/>
-			<exclude-mapping path="/SellRetrieve"/>
-			<exclude-mapping path="/notice"/>
-			<exclude-mapping path="/nview"/>
-			<exclude-mapping path="/memberAdd"/>
-			<exclude-mapping path="/idDuplicateCheck"/>
-			<beans:ref bean="LoginCheckInterceptor"/>
-		</interceptor>
-	</interceptors> 
+			<mapping path="/**" />
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<exclude-mapping path="/" />
+			<exclude-mapping path="/resources/**" />
+			<exclude-mapping path="/css/**" />
+			<exclude-mapping path="/fonts/**" />
+			<exclude-mapping path="/images/**" />
+			<exclude-mapping path="/js/**" />
+			<exclude-mapping path="/php/**" />
+			<exclude-mapping path="/webfonts/**" />
+			<exclude-mapping path="/package/**" />
+			<exclude-mapping path="/dist/**" />
+			<exclude-mapping path="/src/**" />
+			<exclude-mapping path="/login" />
+			<exclude-mapping path="/loginForm" />
+			<exclude-mapping path="/idDuplicateCheck" />
+			<exclude-mapping path="/memberAdd" />
+			<exclude-mapping path="/logout" />
+			<exclude-mapping path="/SList" />
+			<exclude-mapping path="/RList" />
+			<exclude-mapping path="/ResellRetrieve" />
+			<exclude-mapping path="/SellRetrieve" />
+			<exclude-mapping path="/notice" />
+			<exclude-mapping path="/nview" />
+			<exclude-mapping path="/memberAdd" />
+			<exclude-mapping path="/idDuplicateCheck" />
+			<beans:ref bean="LoginCheckInterceptor" />
+		</interceptor>
+	</interceptors>
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
+		in the /WEB-INF/views directory -->
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
+
+	<!-- 파일 업로드 객체 설정 -->
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="10485760" /><!-- 10MB -->
+	</beans:bean>
 	
+
 	<context:component-scan base-package="com.*" />
-	
+
 </beans:beans>

@@ -87,6 +87,7 @@ $(document).ready(function() {
     <input type="hidden" name="sell_rno" value="${sdto.sell_rno }">
     <input type="hidden" name="memberno" value="${login.memberno }">
     <input type="hidden" name="phone" value="${login.phone }">
+    <input type="hidden" name="rafflename" value="${sdto.rafflename }">
     <div class="cart-box-main">
         <div class="container">
             <div class="row">
@@ -146,7 +147,7 @@ $(document).ready(function() {
                                     <div class="media mb-2 border-bottom">
                                         <div class="media-body"> <a href="SellRetrieve?sell_rno=${sdto.sell_rno }">${sdto.nickname }</a>
                                             <div class="small text-muted">가격 : ${sdto.rafflename }</div>
-                                            <img src="images/img-pro-${sdto.sell_rno }.jpg" class="img-fluid" alt="Image" style="height:200px; length:200px;">
+                                            <img src="images/${sdto.image }.jpg" class="img-fluid" alt="Image" style="height:200px; length:200px;">
                                         </div>
                                     </div>
                                 </div>

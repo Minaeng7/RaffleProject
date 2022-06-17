@@ -98,4 +98,9 @@
 		from rspot
 		where resell_rno = #{Resell_rno} and memberno = #{memberno}
 	</delete>
+	<delete id="DeleteSpotS" parameterType="Hashmap">
+		delete
+		from sspot
+		where sell_rno = #{sell_rno} and memberno = #{memberno}
+	</delete>
 </mapper>

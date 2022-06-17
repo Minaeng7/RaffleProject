@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ForumMapper">
+	
+	<!-- 게시글 전체 목록 조회 -->
+	<select id="listAll" resultType="ForumDTO">
+		select *
+		from forum
+		<!-- order by bno desc, regdate desc -->
+	</select>
+	
+	<!-- 게시글 작성 -->
+	<insert id="insert">
+		insert into forum(bno, title, content, username, memberno)
+		values(forum_seq_bno.nextval, #{title}, #{content}, #{username}, #{memberno})
+	</insert>
+	<!-- 게시글 상세보기 -->
+	<select id="view" resultType="ForumDTO">
+		select * from forum
+		where bno = #{bno}
+	</select>
+	<!-- 게시글 조회수 증가 -->
+	<update id="increaseViewcnt">
+		update forum
+		set viewcnt = viewcnt + 1
+		where bno = #{bno}
+	</update>
+	<!-- 게시글 수정 -->
+	<update id="update" parameterType="ForumDTO">
+		update forum
+		set title = #{title}, content = #{content}
+		where bno = #{bno} and memberno = #{memberno}
+	</update>
+	<!-- 게시글 삭제 -->
+	<delete id="delete" parameterType="int">
+		delete from forum
+		where bno = #{bno}
+	</delete>
+	
+</mapper>
