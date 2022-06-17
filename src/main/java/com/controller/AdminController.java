@@ -16,6 +16,7 @@ import com.dto.NoticeDTO;
 import com.dto.ResellRDTO;
 import com.dto.SellRDTO;
 import com.service.AdminService;
+import com.service.ForumService;
 import com.service.NoticeService;
 
 @Controller
@@ -25,6 +26,8 @@ public class AdminController {
 	AdminService service;
 	@Autowired
 	NoticeService nservice;
+	@Autowired
+	ForumService fservice;
 	
 	@RequestMapping("/Admin")
 	public String Admin() {
@@ -78,6 +81,7 @@ public class AdminController {
 		mav = selectMembers();
 		return mav;
 	}
+	//자유게시판 관리메뉴
 	@RequestMapping("/AdminForum")
 	public ModelAndView selectForum() {
 		List<ForumDTO> flist = (List<ForumDTO>) service.selectForum();
@@ -86,16 +90,7 @@ public class AdminController {
 		mav.setViewName("AdminBoard");
 		return mav;
 	}
-	//공지사항 상세내용 조회, 조회수 증가
-	@RequestMapping("/AdminNotice")
-	public ModelAndView nview (@RequestParam int bno, HttpSession session) {
-		//System.out.println("nview"+bno);
-		nservice.increaseViewcnt(bno, session);
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("ndto", nservice.read(bno));
-		mav.setViewName("board/nview");
-		return mav;
-	}
+	
 	@RequestMapping("/Adminview")
 	public ModelAndView view (@RequestParam int bno) {
 		ModelAndView mav = new ModelAndView();
@@ -109,5 +104,47 @@ public class AdminController {
 		ModelAndView mav = new ModelAndView();
 		mav = selectForum();
 		return mav;
+	}
+	//공지사항 관리메뉴(Admin/top.jsp에서 링크걸려있음)
+	@RequestMapping("/AdminNotice")
+	public ModelAndView AdminNotice () {
+		List<NoticeDTO> noticelist = nservice.notice();		//notice table에서 select
+//		System.out.println(noticelist);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("notice", noticelist);
+		mav.setViewName("AdminNotice");
+		return mav;
+	}
+	
+	//관리자 게시글 작성 화면
+	@RequestMapping("/admin_write")
+	public String admin_write() {
+		return "Admin/admin_write";
+	}
+	
+	@RequestMapping("/admin_edit")
+	public ModelAndView admin_edit(NoticeDTO dto, HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("ndto", dto);
+		mav.setViewName("Admin/admin_edit");
+		return mav;
+	}
+	//관리자 게시글 수정
+	@RequestMapping("/admin_update")
+	public String admin_update(NoticeDTO dto) {
+		fservice.admin_update(dto);
+		return "redirect:/Admin";
+	}
+	//관리자 게시글 삭제
+	@RequestMapping("/admin_delete")
+	public String admin_delete(@RequestParam int bno) {
+		fservice.admin_delete(bno);
+		return "redirect:/Admin";
+	}
+	//관리자 게시글 등록
+	@RequestMapping(value = "/admin_insert")
+	public String admin_insert(NoticeDTO dto) {
+		fservice.admin_create(dto);
+		return "redirect:/Admin";
 	}
 }
