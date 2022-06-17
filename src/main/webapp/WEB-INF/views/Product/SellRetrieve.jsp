@@ -204,12 +204,11 @@
 					</div>
 					<div class="featured-products-box owl-carousel owl-theme">
 					<c:forEach items="${slist }" var="slist">
-                   	<c:set var ="i" value = "${i+1 }"/>	
 						<div class="item">
 							<div class="products-single fix">
 								<a href="링크">
 									<div class="box-img-hover">
-										<img src="images/img-pro-${i }.jpg" class="img-fluid" alt="Image">
+										<img src="images/${slist.image }.jpg" class="img-fluid" alt="Image">
 
 									</div>
 

@@ -152,7 +152,7 @@
                                 <h4>Short Description:</h4>
                                 <p style="padding:20px;">${rdto.text }</p>
                                 <ul>
-                                    <li>
+                                    <!-- <li>
                                         <div class="form-group size-st">
                                             <label class="size-label">Size</label> <select id="basic"
 										class="selectpicker show-tick form-control">
@@ -166,7 +166,8 @@
 												<option value="290">290</option>
 											</select>
                                         </div>
-                                    </li>
+                                    </li> -->
+                                    <li><br><textarea rows="1" cols="30" readonly></textarea></li>
                                     <li>
                                         <div class="form-group quantity-box">
                                             <label class="control-label">Quantity</label>
@@ -195,12 +196,11 @@
                     </div>
                     <div class="featured-products-box owl-carousel owl-theme">
 					<c:forEach items="${rlist }" var="rlist">
-                   	<c:set var ="i" value = "${i+1 }"/>
                         <div class="item">
                             <div class="products-single fix">
                                 <a href="ResellRetrieve?resell_rno=${rlist.resell_rno }">
                                 <div class="box-img-hover">
-                                    <img src="images/img-resell-${i }.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/${rlist.image }.jpg" class="img-fluid" alt="Image">
                                 </div>
                             
                                 <div class="why-text">
