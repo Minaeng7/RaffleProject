@@ -49,14 +49,23 @@
 	        var a = "${rdto.attend_amount}";
 	        var amount = parseInt(a);
 	        //console.log(amount);
-	        if(quantity >= amount ){
+	        if(quantity > amount ){
 	  			Swal.fire(amount+" 개까지만 신청가능합니다.");
 			}
 
         };     
+        
+         function NotAccess_Check(){
+            var Prod_memberno = "${rdto.memberno}"
+            var Login_memberno = "${login.memberno}"
+            
+            if(Prod_memberno == Login_memberno){
+            	Swal.fire("본인 상품은 응모가 불가합니다.");
+            	event.preventDefault();
+            }
+        };
 
     </script>
-
 </head>
 
 <body>
@@ -168,7 +177,8 @@
 
                                 <div class="price-box-bar">
                                     <div class="cart-and-bay-btn">
-                                       <a> <input type="submit" class="btn hvr-hover" data-fancybox-close="" style="margin-right:15px" value="구매하기"></a>
+                                       <a> <input id="purchase" name="purchase" type="submit" class="btn hvr-hover" data-fancybox-close="
+                                       			" style="margin-right:15px" value="구매하기" onclick="NotAccess_Check()"></a>
                                         <!-- <a class="btn hvr-hover" data-fancybox-close="" href="#">장바구니</a> -->
                                     </div>
                                 </div>
