@@ -65,6 +65,16 @@
 
 	};
 	
+	function NotAccess_Check(){
+        var Prod_memberno = "${sdto.memberno}";
+        var Login_memberno = "${login.memberno}";
+        
+        if(Prod_memberno == Login_memberno){
+        	Swal.fire("본인 상품은 응모가 불가합니다.");
+        	event.preventDefault();
+        }
+    };
+	
 	
 </script>
 </head>
@@ -187,8 +197,8 @@
 
 						<div class="price-box-bar">
 							<div class="cart-and-bay-btn">
-								<a><input type="submit" id="attend" class="btn hvr-hover" data-fancybox-close="" 
-								style="margin-right: 15px" value="응모하기" ></a>
+								<a><input id="apply" name="apply" type="submit" id="attend" class="btn hvr-hover" data-fancybox-close="" 
+								style="margin-right: 15px" value="응모하기" onclick="NotAccess_Check()"></a>
 							</div>
 						</div>
 						</form>
