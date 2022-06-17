@@ -1,5 +1,6 @@
 package com.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -50,4 +51,9 @@ public class SSpotDAO {
 	public void Sorder(int sell_rno) {
 		session.selectOne("SpotMapper.Sorder", sell_rno);
 	}
+
+	public void DeleteSpotS(HashMap<String, Integer> map) {
+		session.delete("SpotMapper.DeleteSpotS", map);
+	}
+
 }
