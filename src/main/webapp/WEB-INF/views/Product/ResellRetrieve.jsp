@@ -56,11 +56,11 @@
         };     
         
          function NotAccess_Check(){
-            var Prod_memberno = "${rdto.memberno}"
-            var Login_memberno = "${login.memberno}"
+            var Prod_memberno = "${rdto.memberno}";
+            var Login_memberno = "${login.memberno}";
             
             if(Prod_memberno == Login_memberno){
-            	Swal.fire("본인 상품은 응모가 불가합니다.");
+            	Swal.fire("본인 상품은 구매가 불가합니다.");
             	event.preventDefault();
             }
         };
