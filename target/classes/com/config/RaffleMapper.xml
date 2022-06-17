@@ -128,4 +128,10 @@
 		(sell_rno, username, post, addr1, addr2, phone, memberno)
 		values (#{sell_rno}, #{username}, #{post}, #{addr1}, #{addr2}, #{phone}, #{memberno})
 	</insert>
+	<select id="WinListS" resultType="SWinDTO">
+		select * from swinning
+	</select>
+	<select id="WinListR" resultType="RWinDTO">
+		select * from rwinning
+	</select>
 </mapper>

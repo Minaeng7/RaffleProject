@@ -9,12 +9,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
 import com.dto.ResellRDTO;
+import com.dto.RwinDTO;
 import com.dto.SellRDTO;
+import com.dto.SwinDTO;
 import com.service.RaffleService;
 
 @Controller
@@ -40,10 +41,10 @@ public class RaffleController {
 	@RequestMapping("/SList")
 	public ModelAndView SellList(SellRDTO sdto) {//리스트 뿌리기
 		List<SellRDTO> slist = (List<SellRDTO>) service.SellList();
-//		System.out.println(slist);
+		List<SwinDTO> dto = service.WinListS();
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", slist);
-//		System.out.println(slist);
+		mav.addObject("dto", dto);
 		mav.setViewName("SList");
 		return mav;
 	}
@@ -51,8 +52,10 @@ public class RaffleController {
 	@RequestMapping("/RList")
 	public ModelAndView ResellList(ResellRDTO rdto) {
 		List<ResellRDTO> rlist = (List<ResellRDTO>) service.ResellList();
+		List<RwinDTO> dto = service.WinListR();
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rlist);
+		mav.addObject("dto", dto);
 		mav.setViewName("RList");
 		return mav;
 	}	

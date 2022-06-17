@@ -94,19 +94,25 @@
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                     <div class="row">
                                     
-                                    <!-- 사진 반복 시작 부분 -->
+									<!-- 사진 반복 시작 부분 -->
                                     <!-- RaffleController에서 키값으로 sdto -->
-                                    <c:forEach var="sdto" items="${sdto}" >
+                                    <c:forEach var="sdto" items="${sdto}" varStatus="status">
+                                    	
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
-                                                   
                                                     <a href="SellRetrieve?sell_rno=${sdto.sell_rno }">
                                                     <img src="images/${sdto.image }.jpg" class="img-fluid" alt="Image" border="0">
                                                     </a>
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4>RaffleName : ${sdto.nickname }</h4>
+                                                	<c:forEach var="dto" items="${dto }">
+	                                                	<c:if test="${dto.sell_rno == sdto.sell_rno}">
+	                                                	<h2 style="color:red">SOLD OUT</h2>
+	                                                	</c:if>
+                                                	</c:forEach>
+                                                    <h4>RaffleName : ${sdto.nickname } 
+                                                    </h4>
                                                     <h5>Price : <fmt:formatNumber value="${sdto.raffleprice }" maxFractionDigits="3"/></h5>
                                                     <h6> 조회 : ${sdto.viewcnt }</h6>
                                                 </div>
