@@ -16,12 +16,15 @@ import com.dto.NoticeDTO;
 import com.dto.ResellRDTO;
 import com.dto.SellRDTO;
 import com.service.AdminService;
+import com.service.NoticeService;
 
 @Controller
 public class AdminController {
 
 	@Autowired
 	AdminService service;
+	@Autowired
+	NoticeService nservice;
 	
 	@RequestMapping("/Admin")
 	public String Admin() {
@@ -81,6 +84,16 @@ public class AdminController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("fdto", flist);
 		mav.setViewName("AdminBoard");
+		return mav;
+	}
+	//공지사항 상세내용 조회, 조회수 증가
+	@RequestMapping("/AdminNotice")
+	public ModelAndView nview (@RequestParam int bno, HttpSession session) {
+		//System.out.println("nview"+bno);
+		nservice.increaseViewcnt(bno, session);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("ndto", nservice.read(bno));
+		mav.setViewName("board/nview");
 		return mav;
 	}
 	@RequestMapping("/Adminview")
