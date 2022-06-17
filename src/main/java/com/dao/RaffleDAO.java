@@ -9,8 +9,10 @@ import org.springframework.stereotype.Repository;
 
 import com.dto.RSpotDTO;
 import com.dto.ResellRDTO;
+import com.dto.RwinDTO;
 import com.dto.SSpotDTO;
 import com.dto.SellRDTO;
+import com.dto.SorderDTO;
 import com.dto.SwinDTO;
 
 @Repository
@@ -106,6 +108,14 @@ public class RaffleDAO {
 
 	public void orderSell(SwinDTO sdto) {
 		template.insert("RaffleMapper.orderSell", sdto);
+	}
+
+	public List<SwinDTO> WinListS() {
+		return template.selectList("RaffleMapper.WinListS");
+	}
+
+	public List<RwinDTO> WinListR() {
+		return template.selectList("RaffleMapper.WinListR");
 	}
 
 }

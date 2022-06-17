@@ -107,6 +107,11 @@
 				                                <img src="images/${rdto.image }.jpg" class="img-fluid" alt="Image">
 				                                </a>
 	                                            <div class="why-text">
+	                                            	<c:forEach var="dto" items="${dto }">
+	                                                	<c:if test="${dto.resell_rno == rdto.resell_rno}">
+	                                                	<h2 style="color:red">SOLD OUT</h2>
+	                                                	</c:if>
+                                                	</c:forEach>
 	                                                 <h4> RaffleName : ${rdto.nickname }</h4>
 	                                                 <h5> Entry fee : <fmt:formatNumber value="${rdto.per_price }" maxFractionDigits="3"/></h5>
 	                                                 <h6> 조회 : ${rdto.viewcnt }</h6>
