@@ -63,10 +63,13 @@ public class RaffleController {
 	public ModelAndView ResllRetrieve(int resell_rno, HttpSession session) {//상품상세정보
 		List<ResellRDTO> rlist = service.RRlist();
 		service.RincreaseViewcnt(resell_rno, session);
+		RwinDTO rwin = service.OrderDoneR(resell_rno);
+		System.out.println(rwin);
 		ModelAndView mav = new ModelAndView();
 		ResellRDTO rdto = service.ResellRetrieve(resell_rno);
 		mav.addObject("rdto", rdto);
 		mav.addObject("rlist", rlist);
+		mav.addObject("rwin", rwin);
 		mav.setViewName("ResellRetrieve");
 		return mav;
 	}
@@ -75,10 +78,12 @@ public class RaffleController {
 	public ModelAndView SellRetrieve(int sell_rno, HttpSession session) {//상품상세정보 
 		List<SellRDTO> slist = service.SSlist();
 		service.SincreaseViewcnt(sell_rno, session);
+		SwinDTO swin = service.OrderDoneS(sell_rno);
 		ModelAndView mav = new ModelAndView();
 		SellRDTO sdto = service.SellRetrieve(sell_rno);
 		mav.addObject("sdto", sdto);
 		mav.addObject("slist", slist);
+		mav.addObject("swin", swin);
 		mav.setViewName("SellRetrieve");
 		return mav;
 	}

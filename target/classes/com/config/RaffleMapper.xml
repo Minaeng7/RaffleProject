@@ -134,4 +134,12 @@
 	<select id="WinListR" resultType="RWinDTO">
 		select * from rwinning
 	</select>
+	<select id="OrderDoneR" resultType="RWinDTO">
+		select * from rwinning
+		where resell_rno = #{resell_rno}
+	</select>
+	<select id="OrderDoneS" resultType="SWinDTO">
+		select * from swinning
+		where sell_rno = #{sell_rno}
+	</select>
 </mapper>

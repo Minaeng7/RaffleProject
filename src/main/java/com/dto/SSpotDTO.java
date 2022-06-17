@@ -13,27 +13,29 @@ public class SSpotDTO {
 	String addr1;
 	String addr2;
 	String phone;
+	String soption;
 	public SSpotDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public SSpotDTO(int sell_rno, int memberno, String rafflename,  String username, String post,
-			String addr1, String addr2, String phone) {
+	public SSpotDTO(int sell_rno, int memberno, String rafflename, String username, String post, String addr1,
+			String addr2, String phone, String soption) {
 		super();
 		this.sell_rno = sell_rno;
 		this.memberno = memberno;
-		this.Rafflename = rafflename;
+		Rafflename = rafflename;
 		this.username = username;
 		this.post = post;
 		this.addr1 = addr1;
 		this.addr2 = addr2;
 		this.phone = phone;
+		this.soption = soption;
 	}
 	@Override
 	public String toString() {
 		return "SSpotDTO [sell_rno=" + sell_rno + ", memberno=" + memberno + ", Rafflename=" + Rafflename
-				+", username=" + username + ", post=" + post + ", addr1=" + addr1
-				+ ", addr2=" + addr2 + ", phone=" + phone + "]";
+				+ ", username=" + username + ", post=" + post + ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone="
+				+ phone + ", soption=" + soption + "]";
 	}
 	public int getSell_rno() {
 		return sell_rno;
@@ -82,6 +84,12 @@ public class SSpotDTO {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	public String getSoption() {
+		return soption;
+	}
+	public void setSoption(String soption) {
+		this.soption = soption;
 	}
 	
 }
