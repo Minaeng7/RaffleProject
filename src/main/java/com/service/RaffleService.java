@@ -121,4 +121,12 @@ public class RaffleService {
 		return dao.WinListR();
 	}
 
+	public RwinDTO OrderDoneR(int resell_rno) {
+		return dao.OrderDoneR(resell_rno);
+	}
+
+	public SwinDTO OrderDoneS(int sell_rno) {
+		return dao.OrderDoneS(sell_rno);
+	}
+
 }

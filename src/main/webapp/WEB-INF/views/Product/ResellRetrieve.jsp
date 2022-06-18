@@ -63,6 +63,11 @@
             	Swal.fire("본인 상품은 구매가 불가합니다.");
             	event.preventDefault();
             }
+            
+            if(${rwin.resell_rno == rdto.resell_rno}){
+            	Swal.fire("품절된 상품입니다.");
+            	event.preventDefault();
+            }
         };
 
     </script>
@@ -147,12 +152,18 @@
                         <h1 style="margin-top : 20px;">래플이름 : ${rdto.nickname }</h1>
                         <h3 style="margin-left: 5px; margin : 10px"> 셀러 이름 : ${rdto.memberno}</h3>
                         <h3 style="margin-left: 5px; margin : 10px"> 참가비 : <fmt:formatNumber value="${rdto.per_price }" maxFractionDigits="3"/></h3>
-                        <h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : ${rdto.attend_amount }</h3>
+                       	<c:if test="${rwin.resell_rno != rdto.resell_rno }">
+                        	<h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : ${rdto.attend_amount }</h3>
+                       	</c:if>
+                        
+                       	<c:if test="${rwin.resell_rno == rdto.resell_rno }">
+                        	<h2 style="color:red">&nbsp;&nbsp;SOLD OUT</h2>
+                       	</c:if>
                             <p>
                                 <h4>Short Description:</h4>
                                 <p style="padding:20px;">${rdto.text }</p>
                                 <ul>
-                                    <li>
+                                    <!-- <li>
                                         <div class="form-group size-st">
                                             <label class="size-label">Size</label> <select id="basic"
 										class="selectpicker show-tick form-control">
@@ -166,13 +177,20 @@
 												<option value="290">290</option>
 											</select>
                                         </div>
-                                    </li>
+                                    </li> -->
+                                    
                                     <li>
                                         <div class="form-group quantity-box">
                                             <label class="control-label">Quantity</label>
                                             <input class="form-control" id="quantity" name="spot" value="0" min="1" max="${rdto.attend_amount }" type="number"  onclick="check_quantity()">
                                         </div>
                                     </li>
+                                    <li>
+                                    <div class="form-group size-st">
+                                    	<label class="size-label">Option</label>
+                                    	<textarea rows="1" cols="30"  style="padding-top: 10px" placeholder="옵션 선택 불가" readonly></textarea>
+                                   	</div>
+                                   	</li>
                                 </ul>
 
                                 <div class="price-box-bar">
@@ -195,12 +213,11 @@
                     </div>
                     <div class="featured-products-box owl-carousel owl-theme">
 					<c:forEach items="${rlist }" var="rlist">
-                   	<c:set var ="i" value = "${i+1 }"/>
                         <div class="item">
                             <div class="products-single fix">
                                 <a href="ResellRetrieve?resell_rno=${rlist.resell_rno }">
                                 <div class="box-img-hover">
-                                    <img src="images/img-resell-${i }.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/${rlist.image }.jpg" class="img-fluid" alt="Image">
                                 </div>
                             
                                 <div class="why-text">
