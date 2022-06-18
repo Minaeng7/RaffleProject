@@ -63,6 +63,8 @@
         <div class="name_profile" >
         <strong class="name" style="font-size : 20px; color:#000; padding:25px 60px 18px 0;"  >${mypage.username}</strong>
         </div>
+        
+        <!-- 새로운 로그인정보  --> 
         <div class="profile_info" >
             <h4 class="group_title">로그인정보</h4>
             <div class="mypage_unit"> 
@@ -105,8 +107,8 @@
         </div>
 
         <button class="btn btn-dark">저장하기</button>
-    </div>
-        
+    </div>	
+        <!-- 새로운 로그인 정보 끝 -->
         </div>
         </form>
     <!-- End My Account -->

@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: qjawl
+=======
+Built-By: kwnji
+>>>>>>> 01b25a5d5ed2afdcd06b51d32c4af0d45a6b8d81
 Build-Jdk: 1.8.0_251
 Created-By: Maven Integration for Eclipse
 
