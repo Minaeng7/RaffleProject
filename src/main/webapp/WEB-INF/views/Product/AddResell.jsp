@@ -85,7 +85,7 @@ $(document).ready(function(){
 
 	<!-- Start My Account  -->
 	<div class="shop-add-box"
-		style="height: 600px; padding-bottom: 0px; margin-bottom: 200px;">
+		style="height: 600px; padding-bottom: 0px; margin-bottom: 400px;">
 		<h1
 			style="border-bottom: 3px solid #222; margin-left: 20px; padding-top: 40px;">래플
 			등록</h1>
@@ -108,13 +108,35 @@ $(document).ready(function(){
 										<i class="fas fa-cloud-upload-alt tm-upload-icon"
 											onclick="document.getElementById('fileInput').click();"></i>
 									</div>
-									<input type="file" id="file" name="file">
-									<input type="file" id="file1" name="file1">
-									<input type="file" id="file2" name="file2">
+									<input type="file" id="file" name="file" onchange="setThumbnail(event);">
+									<input type="file" id="file1" name="file1" onchange="setThumbnail(event);">
+									<input type="file" id="file2" name="file2" onchange="setThumbnail(event);">
 
+									
+									
+<!-- 이미지 미리보기 -->
+	<script>
+	          function setThumbnail(event) {
+		            var uploadWrap = event.target.parentNode; 
+		            //이벤트 대상자의 부모
+		                  var reader = new FileReader();
+		 
+		                   reader.onload = function(event) {
+		                        var newImg = document.createElement("img");
+		                        uploadWrap.appendChild(newImg);
+		                        newImg.setAttribute("src", event.target.result);
+		                        newImg.setAttribute("width", 180);
+								newImg.setAttribute("height", 180);
+		                        newImg.setAttribute("class", "pre_img");
+		                }; 
+		                reader.readAsDataURL(event.target.files[0]);
+						console.log("setThumbnail")
+		    
+		        }
+
+	</script>
 									<hr />
 
-									<div id="thumbnailImgs"></div>
 
 								</div>
 								<div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
