@@ -53,7 +53,7 @@ public class RaffleController {
 		if(!file1.isEmpty()) {
 			String image1 = System.currentTimeMillis()+file1.getOriginalFilename();// 데이터베이스에 image에 저장할 이미지이름 생성	
 			file1.transferTo(new File(path + File.separator + image1));
-			rdto.setImage(image1);
+			rdto.setImage1(image1);
 		}
 		
 		MultipartFile file2 = multi.getFile("file2");// id가 file인 태그의 val 값
@@ -61,7 +61,7 @@ public class RaffleController {
 		if(!file2.isEmpty()) {
 			String image2 = System.currentTimeMillis()+file2.getOriginalFilename();// 데이터베이스에 image에 저장할 이미지이름 생성	
 			file2.transferTo(new File(path + File.separator + image2));
-			rdto.setImage(image2);
+			rdto.setImage2(image2);
 		}
 		service.addResell_r(rdto);
 		return "redirect:../RList";
