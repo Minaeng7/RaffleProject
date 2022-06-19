@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <!-- Basic -->
 
 <head>
@@ -61,16 +60,12 @@
     </div>
     <!-- End Top Search -->
     
-     <!-- Start All Title Box -->
+       <!-- Start All Title Box -->
     <div class="all-title-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>자유게시판 관리</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">자유게시판 관리</li>
-                    </ul>
+                    <h2>공지사항 관리</h2>
                 </div>
             </div>
         </div>
@@ -91,16 +86,16 @@
                         </div>
                          <div class="filter-sidebar-left">
                             <div class="title-left">
-                                <h3>관리 메뉴</h3>
+                                <h3>게시판 목록</h3>
                             </div>
                             <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
-                                <a href="AdminForum" class="list-group-item list-group-item-action notice_color">자유게시판 관리</a>
-                                <a href="AdminNotice" class="list-group-item list-group-item-action notice_color">공지사항 관리</a>
+                                <a href="notice" class="list-group-item list-group-item-action notice_color">공지사항 관리</a>
+                                <a href="forum" class="list-group-item list-group-item-action">자유게시판 관리</a>
                             </div>
                         </div>
                     </div>
                 </div>
-	<!-- 왼쪽 카테고리 끝 -->
+                	<!-- 왼쪽 카테고리 끝 -->
 			    <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
 			    	<div class="right-product-box">
                         <div class="row product-categorie-box">
@@ -109,35 +104,45 @@
                                     <div class="row">
 									    <div class="board_list_wrap">
 									        <table class="board_list">
-									            <caption class="notice">자유게시판 관리</caption>
+									            <caption class="notice">공지사항</caption>
 									            <thead>
 									                <tr class="notice_menu">
 									                    <th>번호</th>
 									                    <th>제목</th>
 									                    <th>글쓴이</th>
 									                    <th>작성일</th>
-									                    <th>삭제</th>
+									                    <th>조회</th>
 									                </tr>
 									            </thead>
 									            <tbody>
-									            <c:forEach var="fdto" items="${fdto }" varStatus="status">
+									            	<!-- AdminController에서 /AdminNotice에 맵핑되어 있는 메서드 -->
+									                <c:forEach var="notice" items="${notice }" varStatus="status">
 									                <tr>
-									                    <td>${fdto.bno }</td>
+									                    <td>${notice.bno }</td>
 									                    <td class="tit" style="width:440px;">
-									                        <a href="Adminview?bno=${fdto.bno }">${fdto.title }</a>
+									                        <a href="nview?bno=${notice.bno }">${notice.title }</a>
 									                    </td>
-									                    <td>${fdto.username }</td>
-									                    <td><fmt:formatDate value="${fdto.regdate }" pattern="yy-MM-dd"/></td>
-									                     <td><form action= "DeleteForum">
-									                    <input type="hidden" name = "bno" value = "${fdto.bno}">
-									                    <button>삭제</button>
-									                    </form></td>
+									                    <td>${notice.username }</td>
+									                    <td><fmt:formatDate value="${notice.regdate }" pattern="yy-MM-dd"/></td>
+									                    <td>${notice.viewcnt }</td>
 									                </tr>
 									                </c:forEach>
-									                
-									            </tbody>
+									            
+				        					</tbody>
+				        					
 									        </table>
 									        <div class="paging">
+									        	<!-- 관리자 -->
+										        <c:if test="${login.memberno  == 0 }">
+										        <div style="text-align: right; margin-top:30px;">
+										            <button type="button" onclick="location.href='admin_write'" class="btn btn-secondary" style="float: right;  ">글 쓰기</button>
+										        </div>
+										        </c:if>
+										        <!-- 관리자 아닌경우 -->
+										         <c:if test="${login.memberno != 0 }">
+										        <div style="text-align: right; margin-top:30px;">
+										        </div>
+										        </c:if>
 									            <a href="#" class="bt">첫 페이지</a>
 									            <a href="#" class="bt">이전 페이지</a>
 									            <a href="#" class="num on">1</a>
@@ -145,9 +150,10 @@
 									            <a href="#" class="num">3</a>
 									            <a href="#" class="bt">다음 페이지</a>
 									            <a href="#" class="bt">마지막 페이지</a>
-									       </div>
+									            
+									        </div>
 									    </div>
-			   						 </div>
+									 </div>
 			    				 </div>
 			    			</div>
 			    		</div>

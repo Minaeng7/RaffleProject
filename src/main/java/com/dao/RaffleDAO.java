@@ -118,4 +118,12 @@ public class RaffleDAO {
 		return template.selectList("RaffleMapper.WinListR");
 	}
 
+	public RwinDTO OrderDoneR(int resell_rno) {
+		return template.selectOne("RaffleMapper.OrderDoneR", resell_rno);
+	}
+
+	public SwinDTO OrderDoneS(int sell_rno) {
+		return template.selectOne("RaffleMapper.OrderDoneS", sell_rno);
+	}
+
 }

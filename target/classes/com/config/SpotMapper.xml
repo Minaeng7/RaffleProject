@@ -17,8 +17,8 @@
 	<insert id="Sregistringlist" parameterType="SSpotDTO">
 		insert into
 		Sspot(sell_rno, memberno, rafflename,  username, post, addr1,
-		addr2, phone)
-		values ( #{sell_rno}, #{memberno}, #{rafflename} , #{username}, #{post}, #{addr1}, #{addr2}, #{phone})
+		addr2, phone, soption)
+		values ( #{sell_rno}, #{memberno}, #{rafflename} , #{username}, #{post}, #{addr1}, #{addr2}, #{phone}, #{soption})
 	</insert>
 
 	<select id="RShuffle" parameterType="int"
