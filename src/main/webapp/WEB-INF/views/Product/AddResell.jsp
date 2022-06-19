@@ -99,7 +99,7 @@ $(document).ready(function(){
 							</div>
 						</div>
 
-						<form action="loginCheck/AddResell" class="tm-edit-product-form">
+						<form action="loginCheck/AddResell" enctype="multipart/form-data" method="post" class="tm-edit-product-form">
 
 
 							<div class="row tm-edit-product-row">
@@ -108,8 +108,9 @@ $(document).ready(function(){
 										<i class="fas fa-cloud-upload-alt tm-upload-icon"
 											onclick="document.getElementById('fileInput').click();"></i>
 									</div>
-									<input type="file" id="upImgFiles" name=""
-										onChange="uploadImgPreview();" accept="image/*" multiple required>
+									<input type="file" id="file" name="file">
+									<input type="file" id="file1" name="file1">
+									<input type="file" id="file2" name="file2">
 
 									<hr />
 
@@ -165,7 +166,7 @@ $(document).ready(function(){
 							</div>
 							<div class="col-12">
 								<button type="submit"
-									class="btn btn-primary btn-block text-uppercase">Add
+									class="btn btn-dark btn-block text-uppercase">Add
 									Product Now</button>
 							</div>
 						</form>

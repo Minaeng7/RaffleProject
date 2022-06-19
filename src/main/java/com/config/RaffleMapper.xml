@@ -6,8 +6,8 @@
 
 	<insert id="addResell_r" parameterType="ResellRDTO">
 		insert into resell_r
-		(resell_rno, memberno, nickname, rafflename, attend_amount, per_price, text, total_price, deadline)
-		values (RESELL_R_SEQ_RESELL_RNO.nextval, #{memberno}, #{nickname}, #{rafflename}, #{attend_amount}, #{per_price}, #{text}, #{total_price}, #{deadline})
+		(resell_rno, memberno, nickname, rafflename, attend_amount, per_price, text, total_price, deadline, image)
+		values (RESELL_R_SEQ_RESELL_RNO.nextval, #{memberno}, #{nickname}, #{rafflename}, #{attend_amount}, #{per_price}, #{text}, #{total_price}, #{deadline}, #{image})
 	</insert>
 
 	<insert id="addSell_r" parameterType="SellRDTO">
