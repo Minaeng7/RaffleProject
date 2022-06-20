@@ -12,8 +12,8 @@
 
 	<insert id="addSell_r" parameterType="SellRDTO">
 		insert into sell_r
-		(sell_rno, memberno, nickname, rafflename, raffleprice, raffleamount, text, deadline)
-		values (SELL_R_SEQ_SELL_RNO.nextval, #{memberno}, #{nickname}, #{rafflename}, #{raffleprice}, #{raffleamount}, #{text}, #{deadline})
+		(sell_rno, memberno, nickname, rafflename, raffleprice, raffleamount, text, deadline, image, image1, image2)
+		values (SELL_R_SEQ_SELL_RNO.nextval, #{memberno}, #{nickname}, #{rafflename}, #{raffleprice}, #{raffleamount}, #{text}, #{deadline} ,#{image, jdbcType=VARCHAR}, #{image1, jdbcType=VARCHAR}, #{image2, jdbcType=VARCHAR})
 	</insert>
 	
 	<select id="SellList" resultType="SellRDTO">
