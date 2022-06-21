@@ -120,7 +120,7 @@ $(document).ready(function(){
 									<input type="file" id="upImgFiles" onChange="uploadImgPreview();" accept="image/*" multiple>
 									<input type="text" 
 									<hr /> -->
-									<img class="d-block w-100 img-fluid" src="images/${rdto.image}.jpg" alt="" />
+									<img class="d-block w-100 img-fluid" src="images/${rdto.image}" alt="" />
 									<div id="thumbnailImgs"></div>
 								</div>
 								<div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">

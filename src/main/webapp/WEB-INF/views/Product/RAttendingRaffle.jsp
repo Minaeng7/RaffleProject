@@ -147,7 +147,7 @@ $(document).ready(function() {
                                     	
                                         <div class="media-body"> <a href="ResellRetrieve?resell_rno=${rdto.resell_rno }">${rdto.nickname }</a>
                                         	<div class="small text-muted" >${rdto.rafflename }</div>
-                                        	<img src="images/${rdto.image }.jpg" class="img-fluid" alt="Image" style="height:200px; length:200px;">
+                                        	<img src="images/${rdto.image }" class="img-fluid" alt="Image" style="height:200px; length:200px;">
                                         	<input type="hidden" name="image" value="${rdto.image }"/>
                                         </div>
                                     </div>

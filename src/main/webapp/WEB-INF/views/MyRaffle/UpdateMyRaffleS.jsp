@@ -90,7 +90,7 @@
 										onChange="uploadImgPreview();" accept="image/*" multiple>
 
 									<hr /> -->
-									<img class="d-block w-100 img-fluid" src="images/${sellrdto.image}.jpg" alt="" />
+									<img class="d-block w-100 img-fluid" src="images/${sellrdto.image}" alt="" />
 									<div id="thumbnailImgs"></div>
 
 								</div>

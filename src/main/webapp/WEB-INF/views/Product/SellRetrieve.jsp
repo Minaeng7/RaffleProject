@@ -124,15 +124,15 @@
 						class="single-product-slider carousel slide" data-ride="carousel">
 						<div class="carousel-inner" role="listbox">
 							<div class="carousel-item active">
-								<img class="d-block w-100" src="images/${sdto.image }.jpg"
+								<img class="d-block w-100" src="images/${sdto.image }"
 									alt="First slide">
 							</div>
 							<div class="carousel-item">
-								<img class="d-block w-100" src="images/${sdto.image }-1.jpg"
+								<img class="d-block w-100" src="images/${sdto.image1 }"
 									alt="Second slide">
 							</div>
 							<div class="carousel-item">
-								<img class="d-block w-100" src="images/${sdto.image }-2.jpg"
+								<img class="d-block w-100" src="images/${sdto.image2 }"
 									alt="Third slide">
 							</div>
 						</div>
@@ -146,12 +146,12 @@
 						<ol class="carousel-indicators">
 							<li data-target="#carousel-example-1" data-slide-to="0"
 								class="active"><img class="d-block w-100 img-fluid"
-								src="images/${sdto.image }.jpg" alt="" /></li>
+								src="images/${sdto.image }" alt="" /></li>
 							<li data-target="#carousel-example-1" data-slide-to="1"><img
-								class="d-block w-100 img-fluid" src="images/${sdto.image }-1.jpg"
+								class="d-block w-100 img-fluid" src="images/${sdto.image1 }"
 								alt="" /></li>
 							<li data-target="#carousel-example-1" data-slide-to="2"><img
-								class="d-block w-100 img-fluid" src="images/${sdto.image }-2.jpg"
+								class="d-block w-100 img-fluid" src="images/${sdto.image2 }"
 								alt="" /></li> 
 						</ol>
 					</div>
@@ -233,9 +233,9 @@
 					<c:forEach items="${slist }" var="slist">
 						<div class="item">
 							<div class="products-single fix">
-								<a href="링크">
+								<a href="SellRetrieve?sell_rno=${slist.sell_rno }">
 									<div class="box-img-hover">
-										<img src="images/${slist.image }.jpg" class="img-fluid" alt="Image">
+										<img src="images/${slist.image }" class="img-fluid" alt="Image">
 
 									</div>
 

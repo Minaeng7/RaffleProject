@@ -110,9 +110,9 @@
                 <div class="col-xl-5 col-lg-5 col-md-6">
                     <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"> <img class="d-block w-100" src="images/${rdto.image }.jpg" alt="First slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/${rdto.image }-1.jpg" alt="Second slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/${rdto.image }-2.jpg" alt="Third slide"> </div>
+                            <div class="carousel-item active"> <img class="d-block w-100" src="images/${rdto.image }" alt="First slide"> </div>
+                            <div class="carousel-item"> <img class="d-block w-100" src="images/${rdto.image1 }" alt="Second slide"> </div>
+                            <div class="carousel-item"> <img class="d-block w-100" src="images/${rdto.image2 }" alt="Third slide"> </div>
                         </div>
                         <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev"> 
 						<i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -124,13 +124,13 @@
 					</a>
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-example-1" data-slide-to="0" class="active">
-                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }.jpg" alt="" />
+                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }" alt="" />
                             </li>
                             <li data-target="#carousel-example-1" data-slide-to="1">
-                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }-1.jpg" alt="" />
+                                <img class="d-block w-100 img-fluid" src="images/${rdto.image1 }" alt="" />
                             </li>
                             <li data-target="#carousel-example-1" data-slide-to="2">
-                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }-2.jpg" alt="" />
+                                <img class="d-block w-100 img-fluid" src="images/${rdto.image2 }" alt="" />
                             </li>
                         </ol>
                     </div>
@@ -216,7 +216,7 @@
                             <div class="products-single fix">
                                 <a href="ResellRetrieve?resell_rno=${rlist.resell_rno }">
                                 <div class="box-img-hover">
-                                    <img src="images/${rlist.image }.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/${rlist.image }" class="img-fluid" alt="Image">
                                 </div>
                             
                                 <div class="why-text">

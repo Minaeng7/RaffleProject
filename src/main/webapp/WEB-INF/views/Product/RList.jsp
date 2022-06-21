@@ -104,7 +104,7 @@
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
                                             	<a href="ResellRetrieve?resell_rno=${rdto.resell_rno }">
-				                                <img src="images/${rdto.image }.jpg" class="img-fluid" alt="Image">
+				                                <img src="images/${rdto.image }" class="img-fluid" alt="Image">
 				                                </a>
 	                                            <div class="why-text">
 	                                            	<c:forEach var="dto" items="${dto }">

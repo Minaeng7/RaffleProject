@@ -109,7 +109,7 @@ $(document).ready(function(){
 										onChange="uploadImgPreview();" accept="image/*" multiple>
 
 									<hr /> -->
-									<img class="d-block w-100 img-fluid" src="images/${resellrdto.image}.jpg" alt="" />
+									<img class="d-block w-100 img-fluid" src="images/${resellrdto.image}" alt="" />
 									<div id="thumbnailImgs"></div>
 
 								</div>

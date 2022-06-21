@@ -147,7 +147,7 @@ $(document).ready(function() {
                                     <div class="media mb-2 border-bottom">
                                         <div class="media-body"> <a href="SellRetrieve?sell_rno=${sdto.sell_rno }">${sdto.nickname }</a>
                                             <div class="small text-muted">가격 : ${sdto.rafflename }</div>
-                                            <img src="images/${sdto.image }.jpg" class="img-fluid" alt="Image" style="height:200px; length:200px;">
+                                            <img src="images/${sdto.image }" class="img-fluid" alt="Image" style="height:200px; length:200px;">
                                         </div>
                                     </div>
                                 </div>
