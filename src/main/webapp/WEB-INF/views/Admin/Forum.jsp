@@ -130,7 +130,7 @@
 									                    <td><fmt:formatDate value="${fdto.regdate }" pattern="yy-MM-dd"/></td>
 									                     <td><form action= "DeleteForum">
 									                    <input type="hidden" name = "bno" value = "${fdto.bno}">
-									                    <button>삭제</button>
+									                    <button class="btn btn-outline-dark">삭제</button>
 									                    </form></td>
 									                </tr>
 									                </c:forEach>

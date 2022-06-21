@@ -39,8 +39,8 @@
 <input type = "hidden" name = "resell_rno" value = "${rno}"/>
 &nbsp;
 <h1 align="center">정말 삭제하시겠습니까?</h1><br>
-<button >삭제</button>
-<button formaction="SupervisingRaffle">취소</button>
+<button class="btn btn-outline-dark">삭제</button>
+<button formaction="SupervisingRaffle" class="btn btn-outline-dark">취소</button>
 </form>
 
 

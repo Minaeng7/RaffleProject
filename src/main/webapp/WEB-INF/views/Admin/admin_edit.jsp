@@ -83,7 +83,7 @@
 				           번호 <input type="text" name="bno" value="${ndto.bno }" readonly><br><br>
 				           작성자 <input type="text" name="username" value="${login.username }" readonly><br>
 				            본문 <textarea name="content" id="ucontent" required>${ndto.content }</textarea>
-				            <button type="submit" name="" class="btn btn-secondary" style="margin-left: 710px;
+				            <button type="submit" name="" class="btn btn-outline-dark" style="margin-left: 710px;
 				            margin-top: 15px;">저장하기</button>
 				        </div>
 					</form>

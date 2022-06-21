@@ -111,7 +111,7 @@ $(document).ready(function(){
 				        <div id="forum_content">
 				           작성자 <input type="text" name="username" value="${login.username }" readonly><br>
 				            본문 <textarea name="content" id="ucontent" required></textarea>
-				            <button type="submit" name="" class="btn btn-secondary" style="margin-left: 710px;
+				            <button type="submit" name="" class="btn btn-outline-dark" style="margin-left: 710px;
 				            margin-top: 15px;">저장하기</button>
 				        </div>
 					</form>

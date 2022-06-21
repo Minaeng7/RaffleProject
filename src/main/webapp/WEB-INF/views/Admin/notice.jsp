@@ -89,8 +89,8 @@
                                 <h3>게시판 목록</h3>
                             </div>
                             <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
-                                <a href="notice" class="list-group-item list-group-item-action notice_color">공지사항 관리</a>
-                                <a href="forum" class="list-group-item list-group-item-action">자유게시판 관리</a>
+                                <a href="AdminNotice" class="list-group-item list-group-item-action notice_color">공지사항 관리</a>
+                                <a href="AdminForum" class="list-group-item list-group-item-action">자유게시판 관리</a>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
 									        	<!-- 관리자 -->
 										        <c:if test="${login.memberno  == 0 }">
 										        <div style="text-align: right; margin-top:30px;">
-										            <button type="button" onclick="location.href='admin_write'" class="btn btn-secondary" style="float: right;  ">글 쓰기</button>
+										            <button type="button" onclick="location.href='admin_write'" class="btn btn-outline-dark" style="float: right;  ">글 쓰기</button>
 										        </div>
 										        </c:if>
 										        <!-- 관리자 아닌경우 -->

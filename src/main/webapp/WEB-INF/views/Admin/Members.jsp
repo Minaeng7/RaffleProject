@@ -129,7 +129,7 @@
 									                    <td>${mdto.email}</td>
 									                    <td><form action= "DeleteMember">
 									                    <input type="hidden" name = "memberno" value = "${mdto.memberno}">
-									                    <button>추방</button>
+									                    <button class="btn btn-outline-dark">추방</button>
 									                    </form></td>
 									                </tr>
 									                </c:forEach>
