@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>Server error 500 bootdey - Bootdey.com</title>
+    <title>Error</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -15,13 +17,13 @@
     <div class="error-container error-500">
         <div class="error">
             <div class="error-title">
-                Server Error
+                Error
             </div>
             <div class="error-number">
                 500
             </div>
             <div class="error-description">
-                Ooops!! Something went wrong!
+                	잘못된 접근입니다.
             </div>
             <div class="error-or">
                 <div class="or-line"></div>

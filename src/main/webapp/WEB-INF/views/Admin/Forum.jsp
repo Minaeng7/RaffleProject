@@ -94,8 +94,8 @@
                                 <h3>관리 메뉴</h3>
                             </div>
                             <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
-                                <a href="AdminForum" class="list-group-item list-group-item-action notice_color">자유게시판 관리</a>
                                 <a href="AdminNotice" class="list-group-item list-group-item-action notice_color">공지사항 관리</a>
+                                <a href="AdminForum" class="list-group-item list-group-item-action notice_color">자유게시판 관리</a>
                             </div>
                         </div>
                     </div>

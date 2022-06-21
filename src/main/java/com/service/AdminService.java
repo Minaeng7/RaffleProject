@@ -18,46 +18,44 @@ public class AdminService {
 	@Autowired
 	AdminDAO dao;
 
-	public List<SellRDTO> SellList() {
+	public List<SellRDTO> SellList() throws Exception {
 		return dao.SellList();
 	}
 
-	public List<ResellRDTO> ResellList() {
+	public List<ResellRDTO> ResellList() throws Exception {
 		return dao.ResellList();
 	}
 
-	public void DeleteSRaffle(int sell_rno) {
+	public void DeleteSRaffle(int sell_rno) throws Exception {
 		dao.DeleteSRaffle(sell_rno);
-		
+
 	}
 
-	public void DeleteRRaffle(int resell_rno) {
+	public void DeleteRRaffle(int resell_rno) throws Exception {
 		dao.DeleteRRaffle(resell_rno);
-		
+
 	}
-	public Object read(int bno) {
+
+	public Object read(int bno) throws Exception {
 		return dao.read(bno);
 	}
 
-	public List<MemberDTO> selectMembers() {
+	public List<MemberDTO> selectMembers() throws Exception {
 		return dao.selectMembers();
 	}
 
-	public void DeleteMember(int memberno) {
+	public void DeleteMember(int memberno) throws Exception {
 		dao.DeleteMember(memberno);
-		
+
 	}
 
-	public List<ForumDTO> selectForum() {
+	public List<ForumDTO> selectForum() throws Exception {
 		return dao.selectForum();
 	}
 
-	public void DeleteForum(int bno) {
+	public void DeleteForum(int bno) throws Exception {
 		dao.DeleteForum(bno);
-		
+
 	}
 
-
-
-	
 }

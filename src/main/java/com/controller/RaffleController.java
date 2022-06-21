@@ -92,8 +92,24 @@ public class RaffleController {
 	
 	@RequestMapping("/SList")
 	public ModelAndView SellList(SellRDTO sdto) {//리스트 뿌리기
-		List<SellRDTO> slist = (List<SellRDTO>) service.SellList();
-		List<SwinDTO> dto = service.WinListS();
+		List<SellRDTO> slist = null;
+		try {
+			slist = (List<SellRDTO>) service.SellList();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
+		List<SwinDTO> dto = null;
+		try {
+			dto = service.WinListS();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", slist);
 		mav.addObject("dto", dto);
@@ -103,8 +119,24 @@ public class RaffleController {
 	
 	@RequestMapping("/RList")
 	public ModelAndView ResellList(ResellRDTO rdto) {
-		List<ResellRDTO> rlist = (List<ResellRDTO>) service.ResellList();
-		List<RwinDTO> dto = service.WinListR();
+		List<ResellRDTO> rlist = null;
+		try {
+			rlist = (List<ResellRDTO>) service.ResellList();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
+		List<RwinDTO> dto = null;
+		try {
+			dto = service.WinListR();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rlist);
 		mav.addObject("dto", dto);
@@ -113,12 +145,42 @@ public class RaffleController {
 	}	
 	@RequestMapping(value="/ResellRetrieve")
 	public ModelAndView ResllRetrieve(int resell_rno, HttpSession session) {//상품상세정보
-		List<ResellRDTO> rlist = service.RRlist();
-		service.RincreaseViewcnt(resell_rno, session);
-		RwinDTO rwin = service.OrderDoneR(resell_rno);
+		List<ResellRDTO> rlist = null;
+		try {
+			rlist = service.RRlist();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
+		try {
+			service.RincreaseViewcnt(resell_rno, session);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
+		RwinDTO rwin = null;
+		try {
+			rwin = service.OrderDoneR(resell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		System.out.println(rwin);
 		ModelAndView mav = new ModelAndView();
-		ResellRDTO rdto = service.ResellRetrieve(resell_rno);
+		ResellRDTO rdto = null;
+		try {
+			rdto = service.ResellRetrieve(resell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		mav.addObject("rdto", rdto);
 		mav.addObject("rlist", rlist);
 		mav.addObject("rwin", rwin);
@@ -128,11 +190,41 @@ public class RaffleController {
 	
 	@RequestMapping(value="/SellRetrieve")
 	public ModelAndView SellRetrieve(int sell_rno, HttpSession session) {//상품상세정보 
-		List<SellRDTO> slist = service.SSlist();
-		service.SincreaseViewcnt(sell_rno, session);
-		SwinDTO swin = service.OrderDoneS(sell_rno);
+		List<SellRDTO> slist = null;
+		try {
+			slist = service.SSlist();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
+		try {
+			service.SincreaseViewcnt(sell_rno, session);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
+		SwinDTO swin = null;
+		try {
+			swin = service.OrderDoneS(sell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
-		SellRDTO sdto = service.SellRetrieve(sell_rno);
+		SellRDTO sdto = null;
+		try {
+			sdto = service.SellRetrieve(sell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		mav.addObject("sdto", sdto);
 		mav.addObject("slist", slist);
 		mav.addObject("swin", swin);
@@ -148,7 +240,14 @@ public class RaffleController {
 	}
 	@RequestMapping("UpdateMyRaffleRR")
 	public ModelAndView UpdateMyRaffleRR(ResellRDTO rdto, HttpSession session) {//수정
-		service.UpdateResell_r(rdto);
+		try {
+			service.UpdateResell_r(rdto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav = con.MyRaffle(session);
 		return mav;
@@ -162,7 +261,14 @@ public class RaffleController {
 	}
 	@RequestMapping("UpdateMyRaffleSS")
 	public ModelAndView UpdateMyRaffleSS(SellRDTO rdto, HttpSession session) {
-		service.UpdateSell_r(rdto);
+		try {
+			service.UpdateSell_r(rdto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav = con.MyRaffle(session);
 		return mav;
@@ -185,7 +291,14 @@ public class RaffleController {
 		HashMap <String, Integer> map = new HashMap<>();
 		map.put("memberno", memberno);
 		map.put("resell_rno", resell_rno);
-		service.DeleteMyRaffleR(map);
+		try {
+			service.DeleteMyRaffleR(map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav = con.MyRaffle(session);
 		return mav;
@@ -199,7 +312,14 @@ public class RaffleController {
 		HashMap <String, Integer> map = new HashMap<>();
 		map.put("memberno", memberno);
 		map.put("sell_rno", sell_rno);
-		service.DeleteMyRaffleS(map);
+		try {
+			service.DeleteMyRaffleS(map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav = con.MyRaffle(session);
 		return mav;

@@ -17,41 +17,41 @@ public class SSpotService {
 	@Autowired
 	SSpotDAO dao;
 
-	public int registinglist(SSpotDTO dto) {
+	public int registinglist(SSpotDTO dto) throws Exception {
 		int n = dao.registinglist(dto);
 		return n;
 	}
 
-	public List<SSpotDTO> shuffle(int sell_rno) {
+	public List<SSpotDTO> shuffle(int sell_rno) throws Exception {
 		List<SSpotDTO> list = dao.shuffle(sell_rno);
 		return list;
 	}
 
-	public void UpdateMyAttendingS(SSpotDTO rdto) {
+	public void UpdateMyAttendingS(SSpotDTO rdto) throws Exception {
 		dao.UpdateMyAttendingS(rdto);
-		
+
 	}
 
-	public void DeleteMyAttendingS(SSpotDTO sdto) {
+	public void DeleteMyAttendingS(SSpotDTO sdto) throws Exception {
 		dao.DelteMyAttendingS(sdto);
-		
+
 	}
 
-	public void AddWinner(SSpotDTO dto) {
+	public void AddWinner(SSpotDTO dto) throws Exception {
 		dao.AddWinner(dto);
-		
+
 	}
 
-	public SwinDTO Winnercheck(int sell_rno) {
+	public SwinDTO Winnercheck(int sell_rno) throws Exception {
 		SwinDTO dto = dao.Winnercheck(sell_rno);
 		return dto;
 	}
 
-	public void Sorder(int sell_rno) {
+	public void Sorder(int sell_rno) throws Exception {
 		dao.Sorder(sell_rno);
 	}
 
-	public void DeleteSpotS(HashMap<String, Integer> map) {
+	public void DeleteSpotS(HashMap<String, Integer> map) throws Exception {
 		dao.DeleteSpotS(map);
 	}
 

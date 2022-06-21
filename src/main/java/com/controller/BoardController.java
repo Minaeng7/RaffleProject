@@ -26,7 +26,15 @@ public class BoardController {
 	//공지사항 목록
 	@RequestMapping("/notice")
 	public ModelAndView notice() {
-		List<NoticeDTO> notice = nservice.notice();
+		List<NoticeDTO> notice = null;
+		try {
+			notice = nservice.notice();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		//System.out.println("notice : "+notice);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("notice", notice);
@@ -37,16 +45,37 @@ public class BoardController {
 	@RequestMapping("/nview")
 	public ModelAndView nview (@RequestParam int bno, HttpSession session) {
 		//System.out.println("nview"+bno);
-		nservice.increaseViewcnt(bno, session);
+		try {
+			nservice.increaseViewcnt(bno, session);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("ndto", nservice.read(bno));
+		try {
+			mav.addObject("ndto", nservice.read(bno));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		mav.setViewName("board/nview");
 		return mav;
 	}
 	//게시글 목록
 	@RequestMapping("/forum")
 	public ModelAndView list() {
-		List<ForumDTO> list = fservice.listAll();
+		List<ForumDTO> list = null;
+		try {
+			list = fservice.listAll();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", list);
 		mav.setViewName("forum");
@@ -60,15 +89,33 @@ public class BoardController {
 	//게시글 등록
 	@RequestMapping(value = "/insert")
 	public String insert(ForumDTO dto) {
-		fservice.create(dto);
+		try {
+			fservice.create(dto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		return "redirect:forum";
 	}
 	//게시글 상세내용 조회, 조회수 증가
 	@RequestMapping("/view")
 	public ModelAndView view (@RequestParam int bno, HttpSession session) {
-		fservice.increaseViewcnt(bno, session);
+		try {
+			fservice.increaseViewcnt(bno, session);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("dto", fservice.read(bno));
+		try {
+			mav.addObject("dto", fservice.read(bno));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		mav.setViewName("board/view");
 		return mav;
 	}
@@ -82,13 +129,23 @@ public class BoardController {
 	//게시글 수정
 	@RequestMapping("/update")
 	public String update(ForumDTO dto) {
-		fservice.update(dto);
+		try {
+			fservice.update(dto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		return "redirect:forum";
 	}
 	//게시글 삭제
 	@RequestMapping("/delete")
 	public String delete(@RequestParam int bno) {
-		fservice.delete(bno);
+		try {
+			fservice.delete(bno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		return "redirect:forum";
 	}
 	

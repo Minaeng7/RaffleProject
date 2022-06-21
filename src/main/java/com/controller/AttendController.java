@@ -31,7 +31,15 @@ public class AttendController {
 
 	@RequestMapping("/RAttendingRaffle")
 	public ModelAndView RAttendingRaffle(RSpotDTO dto, HttpSession session) {// 응모
-		ResellRDTO rdto = service.ResellRetrieve(dto.getResell_rno());
+		ResellRDTO rdto = null;
+		try {
+			rdto = service.ResellRetrieve(dto.getResell_rno());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rdto);
 		mav.addObject("dto", dto);
@@ -46,10 +54,31 @@ public class AttendController {
 		HashMap <String, Integer> map = new HashMap<>();
 		map.put("memberno", memberno);
 		map.put("Resell_rno", Resell_rno);
-		Rservice.DeleteSpotR(map);
+		try {
+			Rservice.DeleteSpotR(map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		session.setAttribute("mesg", dto.getRafflename());
-		Rservice.registinglist(dto);
-		service.updatingSpot(rdto);
+		try {
+			Rservice.registinglist(dto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
+		try {
+			service.updatingSpot(rdto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Rdto", Rdto);
 		mav.addObject("dto", dto);
@@ -60,7 +89,15 @@ public class AttendController {
 	
 	@RequestMapping("/SAttendingRaffle")
 	public ModelAndView SAttendingRaffle(SwinDTO dto, HttpSession session) {// 응모
-		SellRDTO sdto = service.SellRetrieve(dto.getSell_rno());
+		SellRDTO sdto = null;
+		try {
+			sdto = service.SellRetrieve(dto.getSell_rno());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", sdto);
 		mav.setViewName("SAttendingRaffle");
@@ -74,10 +111,38 @@ public class AttendController {
 		HashMap <String, Integer> map = new HashMap<>();
 		map.put("memberno", memberno);
 		map.put("sell_rno", sell_rno);
-		Sservice.DeleteSpotS(map);
-		dto = service.SellRetrieve(Sdto.getSell_rno());
-		Sservice.Sorder(Sdto.getSell_rno());
-		service.orderSell(Sdto);
+		try {
+			Sservice.DeleteSpotS(map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
+		try {
+			dto = service.SellRetrieve(Sdto.getSell_rno());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
+		try {
+			Sservice.Sorder(Sdto.getSell_rno());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
+		try {
+			service.orderSell(Sdto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Sdto", Sdto);
 		mav.addObject("dto", dto);
@@ -87,7 +152,13 @@ public class AttendController {
 
 	@RequestMapping("/SAttend")
 	public String SAttend(SSpotDTO dto, HttpSession session) {
-		int n = Sservice.registinglist(dto);
+		int n = 0;
+		try {
+			n = Sservice.registinglist(dto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		session.setAttribute("num", n);
 		return "redirect:SellRetrieve?sell_rno=" + dto.getSell_rno();
 	}
@@ -98,7 +169,15 @@ public class AttendController {
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		map.put("memberno", dto.getMemberno());
 		map.put("resell_rno", rdto.getResell_rno());
-		RSpotDTO Rdto = Rservice.selectRSpot(map);
+		RSpotDTO Rdto = null;
+		try {
+			Rdto = Rservice.selectRSpot(map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 //		System.out.println(rdto);
 		mav.addObject("rdto", rdto);
@@ -109,13 +188,23 @@ public class AttendController {
 
 	@RequestMapping("UpdateMyAttendingRR")
 	public String UpdateMyAttendingRR(RSpotDTO rdto, HttpSession session) {// 수정화면에서 update 실행
-		Rservice.UpdateMyAttendingR(rdto);
+		try {
+			Rservice.UpdateMyAttendingR(rdto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		return "redirect:MyAttendedRaffle";
 	}
 
 	@RequestMapping("UpdateMyAttendingSS")
 	public String UpdateMyAttendingSS(SSpotDTO rdto, HttpSession session) {
-		Sservice.UpdateMyAttendingS(rdto);
+		try {
+			Sservice.UpdateMyAttendingS(rdto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		return "redirect:Mypage";
 	}
 
@@ -136,7 +225,12 @@ public class AttendController {
 		MemberDTO dto = (MemberDTO) session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		rdto.setMemberno(memberno);
-		Rservice.DeleteMyAttendingR(rdto);
+		try {
+			Rservice.DeleteMyAttendingR(rdto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		return "redirect:MyAttendedRaffle";
 	}
 
@@ -156,7 +250,12 @@ public class AttendController {
 		MemberDTO dto = (MemberDTO) session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		sdto.setMemberno(memberno);
-		Sservice.DeleteMyAttendingS(sdto);
+		try {
+			Sservice.DeleteMyAttendingS(sdto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		return "redirect:MyAttendedRaffle";
 	}
 

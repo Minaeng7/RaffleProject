@@ -17,32 +17,33 @@ public class SupervisingDAO {
 	@Autowired
 	SqlSessionTemplate session;
 
-	public List<ResellRDTO> selectMyAttendedRaffleR(int memberno) {
+	public List<ResellRDTO> selectMyAttendedRaffleR(int memberno) throws Exception {
 		List<ResellRDTO> list = new ArrayList<>();
-		list= session.selectList("SupervisingMapper.selectMyAttendedRaffleR", memberno);
+		list = session.selectList("SupervisingMapper.selectMyAttendedRaffleR", memberno);
 		return list;
 	}
 
-	public List<ResellRDTO> selectMyRaffleR(int memberno) {
-		List <ResellRDTO> list = new ArrayList<>();
+	public List<ResellRDTO> selectMyRaffleR(int memberno) throws Exception {
+		List<ResellRDTO> list = new ArrayList<>();
 		list = session.selectList("SupervisingMapper.selectMyRaffleR", memberno);
 		return list;
 	}
-	public List<SellRDTO> selectMyAttendedRaffleS(int memberno) {
+
+	public List<SellRDTO> selectMyAttendedRaffleS(int memberno) throws Exception {
 		List<SellRDTO> list = new ArrayList<>();
-		list= session.selectList("SupervisingMapper.selectMyAttendedRaffleS", memberno);
+		list = session.selectList("SupervisingMapper.selectMyAttendedRaffleS", memberno);
 		return list;
 	}
 
-	public List<SellRDTO> selectMyRaffleS(int memberno) {
-		List <SellRDTO> list = new ArrayList<>();
+	public List<SellRDTO> selectMyRaffleS(int memberno) throws Exception {
+		List<SellRDTO> list = new ArrayList<>();
 		list = session.selectList("SupervisingMapper.selectMyRaffleS", memberno);
 		return list;
 	}
 
-	public MemberDTO Mypage(int memberno) {
+	public MemberDTO Mypage(int memberno) throws Exception {
 		MemberDTO dto = session.selectOne("SupervisingMapper.Mypage", memberno);
 		return dto;
 	}
-	
+
 }

@@ -35,7 +35,15 @@ public class AdminController {
 	}
 	@RequestMapping("/AdminSRaffle")
 	public ModelAndView selectSRafflelist() {
-		List<SellRDTO> slist = (List<SellRDTO>) service.SellList();
+		List<SellRDTO> slist = null;
+		try {
+			slist = (List<SellRDTO>) service.SellList();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sdto", slist);
 		mav.setViewName("AdminRaffle");
@@ -44,7 +52,15 @@ public class AdminController {
 
 	@RequestMapping("/AdminRRaffle")
 	public ModelAndView selectRRafflelist() {
-		List<ResellRDTO> rlist = (List<ResellRDTO>) service.ResellList();
+		List<ResellRDTO> rlist = null;
+		try {
+			rlist = (List<ResellRDTO>) service.ResellList();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("rdto", rlist);
 		mav.setViewName("AdminRaffle");
@@ -53,7 +69,14 @@ public class AdminController {
 	
 	@RequestMapping("/DeleteSRaffle")
 	public ModelAndView DeleteSRaffle(int sell_rno) {
-		service.DeleteSRaffle(sell_rno);
+		try {
+			service.DeleteSRaffle(sell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav = selectSRafflelist();
 		return mav;
@@ -61,14 +84,29 @@ public class AdminController {
 	
 	@RequestMapping("/DeleteRRaffle")
 	public ModelAndView DeleteRRaffle(int resell_rno) {
-		service.DeleteRRaffle(resell_rno);
+		try {
+			service.DeleteRRaffle(resell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav = selectRRafflelist();
 		return mav;
 	}
 	@RequestMapping("/AdminMembers")
 	public ModelAndView selectMembers() {
-		List<MemberDTO> mlist = (List<MemberDTO>) service.selectMembers();
+		List<MemberDTO> mlist = null;
+		try {
+			mlist = (List<MemberDTO>) service.selectMembers();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mdto", mlist);
 		mav.setViewName("AdminMembers");
@@ -76,7 +114,14 @@ public class AdminController {
 	}
 	@RequestMapping("/DeleteMember")
 	public ModelAndView DeleteMember(int memberno) {
-		service.DeleteMember(memberno);
+		try {
+			service.DeleteMember(memberno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav = selectMembers();
 		return mav;
@@ -84,7 +129,15 @@ public class AdminController {
 	//자유게시판 관리메뉴
 	@RequestMapping("/AdminForum")
 	public ModelAndView selectForum() {
-		List<ForumDTO> flist = (List<ForumDTO>) service.selectForum();
+		List<ForumDTO> flist = null;
+		try {
+			flist = (List<ForumDTO>) service.selectForum();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("fdto", flist);
 		mav.setViewName("AdminBoard");
@@ -94,13 +147,26 @@ public class AdminController {
 	@RequestMapping("/Adminview")
 	public ModelAndView view (@RequestParam int bno) {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("dto", service.read(bno));
+		try {
+			mav.addObject("dto", service.read(bno));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		mav.setViewName("Admin/view");
 		return mav;
 	}
 	@RequestMapping("/DeleteForum")
 	public ModelAndView DeleteForum(int bno) {
-		service.DeleteForum(bno);
+		try {
+			service.DeleteForum(bno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav = selectForum();
 		return mav;
@@ -108,7 +174,15 @@ public class AdminController {
 	//공지사항 관리메뉴(Admin/top.jsp에서 링크걸려있음)
 	@RequestMapping("/AdminNotice")
 	public ModelAndView AdminNotice () {
-		List<NoticeDTO> noticelist = nservice.notice();		//notice table에서 select
+		List<NoticeDTO> noticelist = null;
+		try {
+			noticelist = nservice.notice();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}		//notice table에서 select
 //		System.out.println(noticelist);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("notice", noticelist);
@@ -132,19 +206,34 @@ public class AdminController {
 	//관리자 게시글 수정
 	@RequestMapping("/admin_update")
 	public String admin_update(NoticeDTO dto) {
-		fservice.admin_update(dto);
+		try {
+			fservice.admin_update(dto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		return "redirect:/Admin";
 	}
 	//관리자 게시글 삭제
 	@RequestMapping("/admin_delete")
 	public String admin_delete(@RequestParam int bno) {
-		fservice.admin_delete(bno);
+		try {
+			fservice.admin_delete(bno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		return "redirect:/Admin";
 	}
 	//관리자 게시글 등록
 	@RequestMapping(value = "/admin_insert")
 	public String admin_insert(NoticeDTO dto) {
-		fservice.admin_create(dto);
+		try {
+			fservice.admin_create(dto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		return "redirect:/Admin";
 	}
 }

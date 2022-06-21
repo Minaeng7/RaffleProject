@@ -8,32 +8,31 @@ import org.springframework.stereotype.Service;
 import com.dao.MemberDAO;
 import com.dto.MemberDTO;
 
-
 @Service
 public class MemberSerivce {
 	@Autowired
 	MemberDAO dao;
-	
-	public void memberAdd(MemberDTO m) {
-		//System.out.println("service");
+
+	public void memberAdd(MemberDTO m) throws Exception {
+		// System.out.println("service");
 		dao.memberAdd(m);
 	}
 
-	public MemberDTO login(Map<String, String> map) {
-		MemberDTO dto = dao.login(map); 
+	public MemberDTO login(Map<String, String> map) throws Exception {
+		MemberDTO dto = dao.login(map);
 		return dto;
 	}
 
-	public MemberDTO idCheck(String userid) {
-		MemberDTO dto= dao.idCheck(userid);
+	public MemberDTO idCheck(String userid) throws Exception {
+		MemberDTO dto = dao.idCheck(userid);
 		return dto;
 	}
 
-	public void updateMyinfo(MemberDTO dto) {
+	public void updateMyinfo(MemberDTO dto) throws Exception {
 		dao.updateMyinfo(dto);
 	}
 
-	public MemberDTO myinfo(int memberno) {
+	public MemberDTO myinfo(int memberno) throws Exception {
 		MemberDTO dto = dao.myinfo(memberno);
 		return dto;
 	}
