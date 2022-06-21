@@ -17,31 +17,31 @@ public class SupervisingService {
 	@Autowired
 	SupervisingDAO dao;
 
-	public List<ResellRDTO> selectMyAttendedRaffleR(int memberno) {//응모한 래플 정보
+	public List<ResellRDTO> selectMyAttendedRaffleR(int memberno) throws Exception {// 응모한 래플 정보
 		List<ResellRDTO> list = new ArrayList<>();
 		list = dao.selectMyAttendedRaffleR(memberno);
 		return list;
 	}
 
-	public List<ResellRDTO> selectMyRaffleR(int memberno) {//내가 만든 래플 정보
+	public List<ResellRDTO> selectMyRaffleR(int memberno) throws Exception {// 내가 만든 래플 정보
 		List<ResellRDTO> list = new ArrayList<>();
 		list = dao.selectMyRaffleR(memberno);
 		return list;
 	}
 
-	public List<SellRDTO> selectMyAttendedRaffleS(int memberno) {
+	public List<SellRDTO> selectMyAttendedRaffleS(int memberno) throws Exception {
 		List<SellRDTO> list = new ArrayList<>();
 		list = dao.selectMyAttendedRaffleS(memberno);
 		return list;
 	}
 
-	public List<SellRDTO> selectMyRaffleS(int memberno) {
+	public List<SellRDTO> selectMyRaffleS(int memberno) throws Exception {
 		List<SellRDTO> list = new ArrayList<>();
 		list = dao.selectMyRaffleS(memberno);
 		return list;
 	}
 
-	public MemberDTO Mypage(int memberno) {
+	public MemberDTO Mypage(int memberno) throws Exception {
 		MemberDTO dto = dao.Mypage(memberno);
 		return dto;
 	}

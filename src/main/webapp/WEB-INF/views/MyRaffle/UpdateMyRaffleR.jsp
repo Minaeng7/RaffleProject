@@ -109,7 +109,7 @@ $(document).ready(function(){
 										onChange="uploadImgPreview();" accept="image/*" multiple>
 
 									<hr /> -->
-									<img class="d-block w-100 img-fluid" src="images/${resellrdto.image}.jpg" alt="" />
+									<img class="d-block w-100 img-fluid" src="images/${resellrdto.image}" alt="" />
 									<div id="thumbnailImgs"></div>
 
 								</div>
@@ -157,7 +157,7 @@ $(document).ready(function(){
 							</div>
 							<div class="col-12">
 								<button type="submit"
-									class="btn btn-primary btn-block text-uppercase">Update
+									class="btn btn-dark btn-block text-uppercase">Update
 									Product Now</button>
 							</div>
 						</form>

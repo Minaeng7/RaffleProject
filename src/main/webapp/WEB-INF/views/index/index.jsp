@@ -244,7 +244,7 @@
               <c:forEach var="slist" items="${slist}" ><!-- 여기 부터 반복 -->
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="height: 280px; ">
                     <a href="SellRetrieve?sell_rno=${slist.sell_rno }">
-                        <img class="img-fluid" src="images/${slist.image }.jpg" alt="" />
+                        <img class="img-fluid" src="images/${slist.image }" alt="" />
                 	</a>
                 </div>
               </c:forEach>
@@ -302,7 +302,7 @@
 	                            <div class="type-lb">
 	                             <!--마감임박 넣을거면 넣는곳-->
 	                            </div>
-	                            <img src="images/${slist_new.image }.jpg" class="img-fluid" alt="Image">
+	                            <img src="images/${slist_new.image }" class="img-fluid" alt="Image">
 	                        </div>
 	                        <div class="why-text">
 	                            <h4>${slist_new.nickname }</h4>
@@ -323,7 +323,7 @@
 	                            <div class="type-lb">
 	                              <!--마감임박 넣을거면 넣는곳-->
 	                            </div>
-	                            <img src="images/${rlist_new.image }.jpg" class="img-fluid" alt="Image">
+	                            <img src="images/${rlist_new.image }" class="img-fluid" alt="Image">
 	                        </div>
 	                        <div class="why-text">
 	                            <h4>${rlist_new.nickname }</h4>

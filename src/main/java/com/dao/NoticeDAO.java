@@ -14,11 +14,11 @@ public class NoticeDAO {
 	@Autowired
 	SqlSessionTemplate template;
 
-	public List<NoticeDTO> notice() {
+	public List<NoticeDTO> notice() throws Exception {
 		return template.selectList("NoticeMapper.notice");
 	}
 
-	public void increaseViewcnt(int bno) {
+	public void increaseViewcnt(int bno) throws Exception {
 		template.update("NoticeMapper.increaseViewcnt", bno);
 	}
 
@@ -30,7 +30,7 @@ public class NoticeDAO {
 //		template.update("BoardMapper.increaseViewcnt", bno);
 //	}
 //
-	public Object read(int bno) {
+	public Object read(int bno) throws Exception {
 		return template.selectOne("NoticeMapper.view", bno);
 	}
 //

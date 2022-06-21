@@ -29,7 +29,15 @@ public class RandomController {
 	
 	@RequestMapping("/RShuffle")
 	public ModelAndView RShuffle(int resell_rno, ResellRDTO rdto) {//추첨
-		RwinDTO Wdto = rservice.Winnercheck(resell_rno);
+		RwinDTO Wdto = null;
+		try {
+			Wdto = rservice.Winnercheck(resell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		if (Wdto != null) {
 			String mesg = "해당 래플은 이미 추첨이 완료 되었습니다.";
 			ModelAndView mav = new ModelAndView();
@@ -37,7 +45,15 @@ public class RandomController {
 			mav.addObject("mesg", mesg);
 			return mav;
 		}
-		List<RSpotDTO>list = rservice.shuffle(resell_rno);
+		List<RSpotDTO> list = null;
+		try {
+			list = rservice.shuffle(resell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		if (list.size() == 0) {
 			String mesg = "해당 래플은 참가자가 없습니다. 메인페이지로 이동합니다.";
 			ModelAndView mav = new ModelAndView();
@@ -47,7 +63,14 @@ public class RandomController {
 		}
 		Collections.shuffle(list);
 		RSpotDTO dto = list.get(0);
-		rservice.AddWinner(dto);
+		try {
+			rservice.AddWinner(dto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Winner",dto);
 		mav.addObject("rdto", rdto);
@@ -56,7 +79,15 @@ public class RandomController {
 	}
 	@RequestMapping("/SShuffle")
 	public ModelAndView SShuffle(int sell_rno) {
-		SwinDTO Wdto = sservice.Winnercheck(sell_rno);
+		SwinDTO Wdto = null;
+		try {
+			Wdto = sservice.Winnercheck(sell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		if (Wdto != null) {
 			String mesg = "해당 래플은 이미 추첨이 완료 되었습니다.";
 			ModelAndView mav = new ModelAndView();
@@ -64,7 +95,15 @@ public class RandomController {
 			mav.addObject("mesg", mesg);
 			return mav;
 		}
-		List<SSpotDTO>list = sservice.shuffle(sell_rno);
+		List<SSpotDTO> list = null;
+		try {
+			list = sservice.shuffle(sell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		if (list.size() == 0) {
 			String mesg = "Anybody didn't attend";
 			ModelAndView mav = new ModelAndView();
@@ -76,7 +115,14 @@ public class RandomController {
 		Collections.shuffle(list);
 		SSpotDTO dto = list.get(0);
 //		System.out.println(dto);
-		sservice.AddWinner(dto);
+		try {
+			sservice.AddWinner(dto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 //		System.out.println(dto);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Winner",dto);
@@ -85,7 +131,15 @@ public class RandomController {
 	}
 	@RequestMapping("/WinnercheckR")
 	public ModelAndView WinnercheckR(int resell_rno, ResellRDTO rdto) {
-		RwinDTO dto = rservice.Winnercheck(resell_rno);
+		RwinDTO dto = null;
+		try {
+			dto = rservice.Winnercheck(resell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 //		System.out.println(rdto);
 		mav.addObject("Winner",dto);
@@ -97,7 +151,15 @@ public class RandomController {
 	@RequestMapping("/RResult")
 	public ModelAndView RResult(int resell_rno, HttpSession session, ResellRDTO rdto) {
 		MemberDTO mdto = (MemberDTO) session.getAttribute("login");
-		RwinDTO dto = rservice.Winnercheck(resell_rno);
+		RwinDTO dto = null;
+		try {
+			dto = rservice.Winnercheck(resell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Winner",dto);
 		mav.addObject("RResult", mdto);
@@ -107,7 +169,15 @@ public class RandomController {
 	}
 	@RequestMapping("/WinnercheckS")
 	public ModelAndView WinnercheckS(int sell_rno) {
-		SwinDTO dto = sservice.Winnercheck(sell_rno);
+		SwinDTO dto = null;
+		try {
+			dto = sservice.Winnercheck(sell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("Winner",dto);
 		mav.setViewName("SWinneris");
@@ -115,7 +185,15 @@ public class RandomController {
 	}
 	@RequestMapping("/SResult")
 	public ModelAndView SResult(int sell_rno,HttpSession session) {
-		SwinDTO dto = sservice.Winnercheck(sell_rno);
+		SwinDTO dto = null;
+		try {
+			dto = sservice.Winnercheck(sell_rno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		MemberDTO mdto = (MemberDTO)session.getAttribute("login");
 		int memberno = mdto.getMemberno();
 		ModelAndView mav = new ModelAndView();

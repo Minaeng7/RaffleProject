@@ -90,7 +90,7 @@
 										onChange="uploadImgPreview();" accept="image/*" multiple>
 
 									<hr /> -->
-									<img class="d-block w-100 img-fluid" src="images/${sellrdto.image}.jpg" alt="" />
+									<img class="d-block w-100 img-fluid" src="images/${sellrdto.image}" alt="" />
 									<div id="thumbnailImgs"></div>
 
 								</div>
@@ -132,7 +132,7 @@
 							</div>
 							<div class="col-12">
 								<button
-									class="btn btn-primary btn-block text-uppercase">Update
+									class="btn btn-dark btn-block text-uppercase">Update
 									Product Now</button>
 							</div>
 						</form>

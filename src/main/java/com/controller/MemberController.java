@@ -26,7 +26,12 @@ public class MemberController {
 	@RequestMapping(value = "/memberAdd")
 	public String memberAdd(MemberDTO m, Model model) {
 //		System.out.println(m);
-		service.memberAdd(m);
+		try {
+			service.memberAdd(m);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		String success = "회원가입성공";
 		model.addAttribute("success", success);
 		return "index";
@@ -34,19 +39,24 @@ public class MemberController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@RequestParam Map<String, String> map, Model model, HttpSession session) {
-		MemberDTO dto = service.login(map);
-		if (dto != null && dto.getMemberno() != 00) {
-			session.setAttribute("login", dto);
-			return "redirect:../raffle";// main.jsp
-			
-		} else if (dto.getMemberno() == 00) {
-			session.setAttribute("login", dto);
-			String nextpage = admin.Admin();
-			return nextpage;
-		} else {
+		MemberDTO dto = null;
+		try {
+			dto = service.login(map);
+			if (dto != null && dto.getMemberno() != 00) {
+				session.setAttribute("login", dto);
+				return "redirect:../raffle";// main.jsp
+				
+			} else if (dto.getMemberno() == 00) {
+				session.setAttribute("login", dto);
+				String nextpage = admin.Admin();
+				return nextpage;
+			}
+		} catch (Exception e) {
 			model.addAttribute("mesg", "아이디 또는 비번이 잘못되었습니다.");
-			return "loginForm";
+			return "Error/LoginError";
 		}
+		return null;
+		
 
 	}
 	
@@ -59,7 +69,13 @@ public class MemberController {
 	@RequestMapping(value = "/idDuplicateCheck", produces="text/plain;charset=UTF-8")
 	@ResponseBody
 	public String idDuplicatedCheck(@RequestParam("id") String userid) {
-		MemberDTO dto= service.idCheck(userid);
+		MemberDTO dto = null;
+		try {
+			dto = service.idCheck(userid);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "Error/Error";
+		}
 		String mesg="";
 		if(dto != null) {
 			mesg="아이디 중복";
@@ -71,9 +87,26 @@ public class MemberController {
 		MemberDTO dto2 = (MemberDTO)session.getAttribute("login");
 		int memberno = dto2.getMemberno();
 		dto.setMemberno(memberno);
+		
 //		System.out.println(dto);
-		service.updateMyinfo(dto);
-		dto = service.myinfo(memberno);
+		try {
+			service.updateMyinfo(dto);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+
+		}
+		try {
+			dto = service.myinfo(memberno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("Error/Error");
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mypage",dto);
 		mav.setViewName("Mypage");

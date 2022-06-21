@@ -75,7 +75,7 @@
                            </div>
                            <div class="rounded p-2 bg-light">
                                <div class="media mb-2 border-bottom">
-                               <img src="images/img-resell-${Sdto.sell_rno }.jpg" class="img-fluid" alt="Image" style="height:200px; length:200px; float: left;">
+                               <img src="images/img-resell-${Sdto.sell_rno }" class="img-fluid" alt="Image" style="height:200px; length:200px; float: left;">
                                    <div class="media-body">
 	                                   <div class="font-weight-bold">${Sdto.post } ${Sdto.addr1} ${Sdto.addr2}</div>
 	                                   <a href="SellRetrieve?sell_rno=${Sdto.sell_rno }">${dto.rafflename }</a>
