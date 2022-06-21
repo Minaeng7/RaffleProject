@@ -94,11 +94,11 @@
 										<td><fmt:formatNumber value="${item.raffleprice }" maxFractionDigits="3"/></td>
 										<td><form action=SResult>
 												<input type="hidden" name=sell_rno value="${item.sell_rno}">
-												<button>확인</button>
+												<button class="btn btn-outline-dark">확인</button>
 											</form></td>
 										<td><form action="DeleteMyAttendingS">
 												<input type="hidden" name=sell_rno value="${item.sell_rno}">
-												<button>응모 취소</button>
+												<button class="btn btn-outline-dark">응모 취소</button>
 											</form></td>
 									</tr>
 								</c:forEach>
@@ -149,7 +149,7 @@
 												<input type="hidden" name="deadline" value="${item.deadline }">
 												<input type="hidden" name="text" value="${item.text }">
 												<input type="hidden" name="image" value="${item.image }">
-												<button>수정</button>
+												<button class="btn btn-outline-dark">수정</button>
 											</form></td>
 										<td><form action="RResult">
 												<input type="hidden" name="resell_rno" value="${item.resell_rno }"> 
@@ -163,13 +163,13 @@
 												<input type="hidden" name="deadline" value="${item.deadline }">
 												<input type="hidden" name="text" value="${item.text }">
 												<input type="hidden" name="image" value="${item.image }">
-													<button>확인</button>
+													<button class="btn btn-outline-dark">확인</button>
 											</form></td>
 
 										<td><form action="DeleteAttendingR">
 												<input type="hidden" name="resell_rno"
 													value="${item.resell_rno }">
-												<button>응모 취소</button>
+												<button class="btn btn-outline-dark">응모 취소</button>
 											</form></td>
 									</tr>
 								</c:forEach>

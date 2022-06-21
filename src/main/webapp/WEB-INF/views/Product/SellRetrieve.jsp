@@ -214,8 +214,8 @@
 
 						<div class="price-box-bar">
 							<div class="cart-and-bay-btn">
-								<a><input id="apply" name="apply" type="submit" id="attend" class="btn hvr-hover" data-fancybox-close="" 
-								style="margin-right: 15px" value="응모하기" onclick="NotAccess_Check()"></a>
+								<input id="apply" name="apply" type="submit" id="attend" class="btn btn-outline-dark" data-fancybox-close="" 
+								style="margin-right: 15px" value="응모하기" onclick="NotAccess_Check()">
 							</div>
 						</div>
 						</form>

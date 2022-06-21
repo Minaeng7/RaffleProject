@@ -106,7 +106,7 @@
                 </div>
         </div>
 
-        <button class="btn btn-dark">저장하기</button>
+        <button class="btn btn-outline-dark">저장하기</button>
     </div>	
         <!-- 새로운 로그인 정보 끝 -->
         </div>

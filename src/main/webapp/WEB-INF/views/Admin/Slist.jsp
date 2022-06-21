@@ -128,7 +128,7 @@
 									                    <td>${sdto.raffleprice}</td>
 									                    <td><form action= "DeleteSRaffle">
 									                    <input type="hidden" name = "sell_rno" value = "${sdto.sell_rno}">
-									                    <button>삭제</button>
+									                    <button class="btn btn-outline-dark">삭제</button>
 									                    </form></td>
 									                </tr>
 									                </c:forEach>

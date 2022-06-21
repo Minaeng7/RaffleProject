@@ -94,14 +94,14 @@
 				        <!-- 작성자 -->
 				        <c:if test="${login.memberno  == dto.memberno }">
 				        <div style="text-align: right; margin-top:30px;">
-				            <button type="submit" class="btn btn-secondary">수정</button>
-				            <button type="button" onclick="location.href='delete?bno=${dto.bno}'" class="btn btn-secondary">삭제</button>
+				            <button type="submit" class="btn btn-outline-dark">수정</button>
+				            <button type="button" onclick="location.href='delete?bno=${dto.bno}'" class="btn btn-outline-dark">삭제</button>
 				        </div>
 				        </c:if>
 				        <!-- 작성자 아닌경우 -->
 				         <c:if test="${login.memberno != dto.memberno }">
 				        <div style="text-align: right; margin-top:30px;">
-				            <button type="button" onclick="location.href='forum'" class="btn btn-secondary">목록보기</button>
+				            <button type="button" onclick="location.href='forum'" class="btn btn-outline-dark">목록보기</button>
 				        </div>
 				        </c:if>
 				        

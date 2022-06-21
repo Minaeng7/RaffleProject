@@ -100,7 +100,7 @@ public class AttendController {
 		map.put("resell_rno", rdto.getResell_rno());
 		RSpotDTO Rdto = Rservice.selectRSpot(map);
 		ModelAndView mav = new ModelAndView();
-		System.out.println(rdto);
+//		System.out.println(rdto);
 		mav.addObject("rdto", rdto);
 		mav.addObject("Rdto", Rdto);
 		mav.setViewName("MyRaffle/UpdateAttendingR");

@@ -195,9 +195,8 @@
 
                                 <div class="price-box-bar">
                                     <div class="cart-and-bay-btn">
-                                       <a> <input id="purchase" name="purchase" type="submit" class="btn hvr-hover" data-fancybox-close="
-                                       			" style="margin-right:15px" value="구매하기" onclick="NotAccess_Check()"></a>
-                                        <!-- <a class="btn hvr-hover" data-fancybox-close="" href="#">장바구니</a> -->
+                                       <input id="purchase" name="purchase" type="submit" class="btn btn-outline-dark" data-fancybox-close="
+                                       			" style="margin-right:15px" value="구매하기" onclick="NotAccess_Check()">
                                     </div>
                                 </div>
 						</form>
