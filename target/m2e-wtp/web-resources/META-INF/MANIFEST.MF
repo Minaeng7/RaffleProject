@@ -1,5 +1,13 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: qjawl
+=======
+<<<<<<< HEAD
+Built-By: kwnji
+=======
+Built-By: jdmsw
+>>>>>>> d4bd722272d7fe709c8a57c82efad3156ef0521f
+>>>>>>> 1d53e70150f59f825ca7b7a5017c4fa826c97989
 Build-Jdk: 1.8.0_251
 Created-By: Maven Integration for Eclipse
 

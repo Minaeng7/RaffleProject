@@ -1,14 +1,19 @@
 package com.controller;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.MemberDTO;
@@ -25,15 +30,62 @@ public class RaffleController {
 	@Autowired
 	SupervisingController con;
 	
+	@Resource(name="uploadPath")
+	private String path;
 	
-	@RequestMapping("/loginCheck/AddSell")
-	public String AddSell(SellRDTO sdto) {
+	@RequestMapping(value="/loginCheck/AddSell", method=RequestMethod.POST)
+	public String AddSell(SellRDTO sdto, MultipartHttpServletRequest multi) throws Exception {
+			MultipartFile file = multi.getFile("file");// id가 file인 태그의 val 값
+		
+		if(!file.isEmpty()) {
+			String image = System.currentTimeMillis()+file.getOriginalFilename();// 데이터베이스에 image에 저장할 이미지이름 생성	
+			file.transferTo(new File(path + File.separator + image));
+			sdto.setImage(image);
+		}
+		MultipartFile file1 = multi.getFile("file1");// id가 file인 태그의 val 값
+		
+		if(!file1.isEmpty()) {
+			String image1 = System.currentTimeMillis()+file1.getOriginalFilename();// 데이터베이스에 image에 저장할 이미지이름 생성	
+			file1.transferTo(new File(path + File.separator + image1));
+			sdto.setImage1(image1);
+		}
+		
+		MultipartFile file2 = multi.getFile("file2");// id가 file인 태그의 val 값
+
+		if(!file2.isEmpty()) {
+			String image2 = System.currentTimeMillis()+file2.getOriginalFilename();// 데이터베이스에 image에 저장할 이미지이름 생성	
+			file2.transferTo(new File(path + File.separator + image2));
+			sdto.setImage2(image2);
+		}
+		
 		service.addSell_r(sdto);		
 		return "redirect:../SList";
 	}
 
-	@RequestMapping("/loginCheck/AddResell")
-	public String AddResell(ResellRDTO rdto) {
+	@RequestMapping(value="/loginCheck/AddResell", method=RequestMethod.POST)
+	public String AddResell(ResellRDTO rdto, MultipartHttpServletRequest multi) throws Exception {
+		MultipartFile file = multi.getFile("file");// id가 file인 태그의 val 값
+		
+		if(!file.isEmpty()) {
+			String image = System.currentTimeMillis()+file.getOriginalFilename();// 데이터베이스에 image에 저장할 이미지이름 생성	
+			file.transferTo(new File(path + File.separator + image));
+			rdto.setImage(image);
+		}
+		MultipartFile file1 = multi.getFile("file1");// id가 file인 태그의 val 값
+		
+		if(!file1.isEmpty()) {
+			String image1 = System.currentTimeMillis()+file1.getOriginalFilename();// 데이터베이스에 image에 저장할 이미지이름 생성	
+			file1.transferTo(new File(path + File.separator + image1));
+			rdto.setImage1(image1);
+		}
+		
+		MultipartFile file2 = multi.getFile("file2");// id가 file인 태그의 val 값
+
+		if(!file2.isEmpty()) {
+			String image2 = System.currentTimeMillis()+file2.getOriginalFilename();// 데이터베이스에 image에 저장할 이미지이름 생성	
+			file2.transferTo(new File(path + File.separator + image2));
+			rdto.setImage2(image2);
+		}
 		service.addResell_r(rdto);
 		return "redirect:../RList";
 	}
