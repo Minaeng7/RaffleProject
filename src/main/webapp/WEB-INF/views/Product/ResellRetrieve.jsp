@@ -64,7 +64,7 @@
             	event.preventDefault();
             }
             
-            if(${rwin.resell_rno == rdto.resell_rno}){
+            if(${rwin.resell_rno == rdto.resell_rno} || ${rdto.attend_amount == 0}){
             	Swal.fire("품절된 상품입니다.");
             	event.preventDefault();
             }
@@ -156,7 +156,7 @@
                         	<h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : ${rdto.attend_amount }</h3>
                        	</c:if>
                         
-                       	<c:if test="${rwin.resell_rno == rdto.resell_rno }">
+                       	<c:if test="${rwin.resell_rno == rdto.resell_rno || rdto.attend_amount == 0 }">
                         	<h2 style="color:red">&nbsp;&nbsp;SOLD OUT</h2>
                        	</c:if>
                             <p>

@@ -100,39 +100,85 @@ $(document).ready(function(){
 						</div>
 
 						<form action="loginCheck/AddResell" enctype="multipart/form-data" method="post" class="tm-edit-product-form">
-
+							<input type="hidden" name="viewcnt" value="0">
 
 							<div class="row tm-edit-product-row">
 								<div class="col-xl-6 col-lg-6 col-md-12">
-									<div class="tm-product-img-dummy mx-auto">
-										<i class="fas fa-cloud-upload-alt tm-upload-icon"
-											onclick="document.getElementById('fileInput').click();"></i>
-									</div>
-									<input type="file" id="file" name="file" onchange="setThumbnail(event);">
-									<input type="file" id="file1" name="file1" onchange="setThumbnail(event);">
-									<input type="file" id="file2" name="file2" onchange="setThumbnail(event);">
-
-									
-									
+									<img id="blah" src="#" style="width:180px; height:180px" onclick="inputfile()"/>
+									<img id="blah1" src="#" style="width:180px; height:180px" onclick="inputfile1()"/>
+									<img id="blah2" src="#"  style="width:180px; height:180px" onclick="inputfile2()"/>
+									<input type="file" id="file" name="file" onchange="setThumbnail(event);" required>
+									<input type="file" id="file1" name="file1" onchange="setThumbnail1(event);" required>
+									<input type="file" id="file2" name="file2" onchange="setThumbnail2(event);" required>
+							
 <!-- 이미지 미리보기 -->
 	<script>
-	          function setThumbnail(event) {
-		            var uploadWrap = event.target.parentNode; 
-		            //이벤트 대상자의 부모
-		                  var reader = new FileReader();
-		 
-		                   reader.onload = function(event) {
-		                        var newImg = document.createElement("img");
-		                        uploadWrap.appendChild(newImg);
-		                        newImg.setAttribute("src", event.target.result);
-		                        newImg.setAttribute("width", 180);
-								newImg.setAttribute("height", 180);
-		                        newImg.setAttribute("class", "pre_img");
-		                }; 
-		                reader.readAsDataURL(event.target.files[0]);
+			function inputfile(){
+				$('#file').click();
+				
+			}
+			function inputfile1(){
+				$('#file1').click();
+				
+			}
+			function inputfile2(){
+				$('#file2').click();
+				
+			}
+	
+	
+	
+	          function setThumbnail(event) {
+		            var uploadWrap = event.target.parentNode; 
+		            //이벤트 대상자의 부모
+		                  var reader = new FileReader();
+		 
+		                   reader.onload = function(event) {
+		                        var newImg = document.createElement("img");
+								$('#blah').attr('src',event.target.result);		                       
+								 uploadWrap.appendChild(newImg);
+
+								
+		                }; 
+		                reader.readAsDataURL(event.target.files[0]);
 						console.log("setThumbnail")
-		    
-		        }
+		    
+		        }
+
+	          function setThumbnail1(event) {
+		            var uploadWrap = event.target.parentNode; 
+		            //이벤트 대상자의 부모
+		                  var reader = new FileReader();
+		 
+		                   reader.onload = function(event) {
+		                        var newImg = document.createElement("img");
+								$('#blah1').attr('src',event.target.result);		                     
+								   uploadWrap.appendChild(newImg);
+
+								
+		                }; 
+		                reader.readAsDataURL(event.target.files[0]);
+						console.log("setThumbnail")
+		    
+		        }
+
+
+	          function setThumbnail2(event) {
+		            var uploadWrap = event.target.parentNode; 
+		            //이벤트 대상자의 부모
+		                  var reader = new FileReader();
+		 
+		                   reader.onload = function(event) {
+		                        var newImg = document.createElement("img");
+								$('#blah2').attr('src',event.target.result);		                       
+								 uploadWrap.appendChild(newImg);
+
+								
+		                }; 
+		                reader.readAsDataURL(event.target.files[0]);
+						console.log("setThumbnail")
+		    
+		        }
 
 	</script>
 									<hr />

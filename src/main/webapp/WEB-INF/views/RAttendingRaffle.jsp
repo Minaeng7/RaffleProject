@@ -38,7 +38,6 @@
 
 <jsp:include page="common/top.jsp"></jsp:include>
 <jsp:include page="Product/RAttendingRaffle.jsp"></jsp:include>
-<jsp:include page="common/bottom.jsp"></jsp:include>
     
      <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>

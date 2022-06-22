@@ -152,11 +152,13 @@ public class AttendController {
 
 	@RequestMapping("/SAttend")
 	public String SAttend(SSpotDTO dto, HttpSession session) {
+//		System.out.println(dto);
 		int n = 0;
 		try {
 			n = Sservice.registinglist(dto);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			return "Error/Error";
 		}
 		session.setAttribute("num", n);
@@ -203,6 +205,7 @@ public class AttendController {
 			Sservice.UpdateMyAttendingS(rdto);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			return "Error/Error";
 		}
 		return "redirect:Mypage";

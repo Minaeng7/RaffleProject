@@ -7,7 +7,7 @@ public class SSpotDTO {
 
 	int sell_rno;
 	int memberno;
-	String Rafflename;
+	String rafflename;
 	String username;
 	String post;
 	String addr1;
@@ -23,7 +23,7 @@ public class SSpotDTO {
 		super();
 		this.sell_rno = sell_rno;
 		this.memberno = memberno;
-		Rafflename = rafflename;
+		this.rafflename = rafflename;
 		this.username = username;
 		this.post = post;
 		this.addr1 = addr1;
@@ -33,7 +33,7 @@ public class SSpotDTO {
 	}
 	@Override
 	public String toString() {
-		return "SSpotDTO [sell_rno=" + sell_rno + ", memberno=" + memberno + ", Rafflename=" + Rafflename
+		return "SSpotDTO [sell_rno=" + sell_rno + ", memberno=" + memberno + ", rafflename=" + rafflename
 				+ ", username=" + username + ", post=" + post + ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone="
 				+ phone + ", soption=" + soption + "]";
 	}
@@ -50,10 +50,10 @@ public class SSpotDTO {
 		this.memberno = memberno;
 	}
 	public String getRafflename() {
-		return Rafflename;
+		return rafflename;
 	}
 	public void setRafflename(String rafflename) {
-		Rafflename = rafflename;
+		this.rafflename = rafflename;
 	}
 	public String getUsername() {
 		return username;

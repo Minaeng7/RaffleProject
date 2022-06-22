@@ -171,7 +171,7 @@ public class RaffleController {
 			mav.setViewName("Error/Error");
 			return mav;
 		}
-		System.out.println(rwin);
+//		System.out.println(rwin);
 		ModelAndView mav = new ModelAndView();
 		ResellRDTO rdto = null;
 		try {
@@ -266,6 +266,7 @@ public class RaffleController {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			ModelAndView mav = new ModelAndView();
+			e.printStackTrace();
 			mav.setViewName("Error/Error");
 			return mav;
 		}
