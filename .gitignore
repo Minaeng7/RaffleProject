@@ -1,1 +1,3 @@
 target/
+
+src/**/servlet-context.xml
