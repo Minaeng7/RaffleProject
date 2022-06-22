@@ -100,7 +100,6 @@ $(document).ready(function(){
 						</div>
 
 						<form action="loginCheck/AddResell" enctype="multipart/form-data" method="post" class="tm-edit-product-form">
-							<input type="hidden" name="viewcnt" value="0">
 
 							<div class="row tm-edit-product-row">
 								<div class="col-xl-6 col-lg-6 col-md-12">

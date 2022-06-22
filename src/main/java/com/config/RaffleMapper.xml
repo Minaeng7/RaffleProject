@@ -6,14 +6,14 @@
 
 	<insert id="addResell_r" parameterType="ResellRDTO">
 		insert into resell_r
-		(resell_rno, memberno, nickname, rafflename, attend_amount, per_price, text, total_price, deadline, image, image1, image2, viewcnt)
-		values (RESELL_R_SEQ_RESELL_RNO.nextval, #{memberno}, #{nickname}, #{rafflename}, #{attend_amount}, #{per_price}, #{text}, #{total_price}, #{deadline}, #{image, jdbcType=VARCHAR}, #{image1, jdbcType=VARCHAR}, #{image2, jdbcType=VARCHAR}, #{viewcnt})
+		(resell_rno, memberno, nickname, rafflename, attend_amount, per_price, text, total_price, deadline, image, image1, image2)
+		values (RESELL_R_SEQ_RESELL_RNO.nextval, #{memberno}, #{nickname}, #{rafflename}, #{attend_amount}, #{per_price}, #{text}, #{total_price}, #{deadline}, #{image, jdbcType=VARCHAR}, #{image1, jdbcType=VARCHAR}, #{image2, jdbcType=VARCHAR})
 	</insert>
 
 	<insert id="addSell_r" parameterType="SellRDTO">
 		insert into sell_r
-		(sell_rno, memberno, nickname, rafflename, raffleprice, raffleamount, text, deadline, image, image1, image2, viewcnt)
-		values (SELL_R_SEQ_SELL_RNO.nextval, #{memberno}, #{nickname}, #{rafflename}, #{raffleprice}, #{raffleamount}, #{text}, #{deadline} ,#{image, jdbcType=VARCHAR}, #{image1, jdbcType=VARCHAR}, #{image2, jdbcType=VARCHAR}, #{viewcnt})
+		(sell_rno, memberno, nickname, rafflename, raffleprice, raffleamount, text, deadline, image, image1, image2)
+		values (SELL_R_SEQ_SELL_RNO.nextval, #{memberno}, #{nickname}, #{rafflename}, #{raffleprice}, #{raffleamount}, #{text}, #{deadline} ,#{image, jdbcType=VARCHAR}, #{image1, jdbcType=VARCHAR}, #{image2, jdbcType=VARCHAR})
 	</insert>
 	
 	<select id="SellList" resultType="SellRDTO">
