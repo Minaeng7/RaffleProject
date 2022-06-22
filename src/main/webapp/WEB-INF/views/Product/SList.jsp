@@ -104,7 +104,7 @@
                                                     <img src="images/${sdto.image }" class="img-fluid" alt="Image" border="0">
                                                     </a>
                                                 </div>
-                                                <div class="why-text">
+                                                <div class="why-text" style="height:180px">
                                                 	<c:forEach var="dto" items="${dto }">
 	                                                	<c:if test="${dto.sell_rno == sdto.sell_rno}">
 	                                                	<h2 style="color:red">SOLD OUT</h2>
