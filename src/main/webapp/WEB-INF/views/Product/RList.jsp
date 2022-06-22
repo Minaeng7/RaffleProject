@@ -106,7 +106,7 @@
                                             	<a href="ResellRetrieve?resell_rno=${rdto.resell_rno }">
 				                                <img src="images/${rdto.image }" class="img-fluid" alt="Image">
 				                                </a>
-	                                            <div class="why-text">
+	                                            <div class="why-text" style="height:180px">
 	                                            	<c:forEach var="dto" items="${dto }">
 	                                                	<c:if test="${dto.resell_rno == rdto.resell_rno}">
 	                                                	<h2 style="color:red">SOLD OUT</h2>
