@@ -144,7 +144,7 @@ $(document).ready(function(){
 									<div class="row">
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="expire_date">Deadline</label> <input
-												id="expire_date" name="deadline" type="text" value = "${resellrdto.deadline}"
+												id="expire_date" name="deadline" type="date" value = "${resellrdto.deadline}"
 												class="form-control validate" data-large-mode="true" required/>
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">

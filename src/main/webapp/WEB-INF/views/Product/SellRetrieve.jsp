@@ -175,7 +175,7 @@
                         	<h3 style="margin-left: 5px; margin: 10px">잔여 수량 : ${sdto.raffleamount }</h3>
                        	</c:if>
                         
-                       	<c:if test="${swin.sell_rno == sdto.sell_rno }">
+                       	<c:if test="${swin.sell_rno == sdto.sell_rno}">
                         	<h2 style="color:red">&nbsp;&nbsp;SOLD OUT</h2>
                        	</c:if>
 						<p>
