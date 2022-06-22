@@ -102,7 +102,7 @@
 	
 		<beans:bean id="uploadPath" class="java.lang.String">
 
-		<beans:constructor-arg value="C:\eclipse\STS_stu\WORKSPACE\RaffleProject_Final\src\main\webapp\resources\images" />
+		<beans:constructor-arg value="C:\ACORN\STS_WORKSPACE\RaffleProject\src\main\webapp\resources\images" />
 
 		</beans:bean>
 
