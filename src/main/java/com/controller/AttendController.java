@@ -224,7 +224,7 @@ public class AttendController {
 
 	@RequestMapping("DeleteMyAttendingRR") // Raffleno도 같이 넘겨주도록 향후 수정
 	public String DeleteMyAttendingRR(RSpotDTO rdto, HttpSession session) {// delete 실행
-//		System.out.println(rdto);
+		System.out.println(rdto);
 		MemberDTO dto = (MemberDTO) session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		rdto.setMemberno(memberno);
