@@ -128,7 +128,7 @@
 									                    <td>${rdto.per_price}</td>
 									                    <td><form action= "DeleteRRaffle">
 									                    <input type="hidden" name = "resell_rno" value = "${rdto.resell_rno}">
-									                    <button>삭제</button>
+									                    <button class="btn btn-outline-dark">삭제</button>
 									                    </form></td>
 									                </tr>
 									                </c:forEach>

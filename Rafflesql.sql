@@ -514,3 +514,29 @@ CREATE TABLE SORDER
 ALTER TABLE SORDER
 ADD CONSTRAINT SORDER_SELL_RNO_FK FOREIGN KEY(SELL_RNO)
 REFERENCES SELL_R(SELL_RNO) ON DELETE CASCADE;
+
+ALTER TALBE SSPOT
+ADD SOPTION VARCHAR(20);
+
+UPDATE SELL_R SET IMAGE = 'img-pro-1.jpg' WHERE rafflename = '1201A664-021';
+UPDATE SELL_R SET IMAGE = 'img-pro-2.jpg' WHERE rafflename = '307385-141';
+UPDATE SELL_R SET IMAGE = 'img-pro-3.jpg' WHERE rafflename = '414571-167';
+UPDATE SELL_R SET IMAGE = 'img-pro-4.jpg' WHERE rafflename = '555088-036';
+UPDATE SELL_R SET IMAGE = 'img-pro-5.jpg' WHERE rafflename = 'AQ0818-148';
+UPDATE SELL_R SET IMAGE = 'img-pro-6.jpg' WHERE rafflename = 'BB550WBG';
+UPDATE SELL_R SET IMAGE = 'img-pro-7.jpg' WHERE rafflename = 'BQ6472-121';
+UPDATE SELL_R SET IMAGE = 'img-pro-8.jpg' WHERE rafflename = 'BQ6817-602';
+UPDATE SELL_R SET IMAGE = 'img-pro-9.jpg' WHERE rafflename = 'CP9652';
+UPDATE SELL_R SET IMAGE = 'img-pro-10.jpg' WHERE rafflename = 'CT4142-710';
+UPDATE RESELL_R SET IMAGE = 'img-resell-1.jpg' WHERE rafflename = 'DC7294-103';
+UPDATE RESELL_R SET IMAGE = 'img-resell-2.jpg' WHERE rafflename = 'FW4968';
+UPDATE RESELL_R SET IMAGE = 'img-resell-3.jpg' WHERE rafflename = 'GZ6202';
+UPDATE RESELL_R SET IMAGE = 'img-resell-4.jpg' WHERE rafflename = 'GZ6984';
+UPDATE RESELL_R SET IMAGE = 'img-resell-5.jpg' WHERE rafflename = 'CT8529-410';
+UPDATE RESELL_R SET IMAGE = 'img-resell-6.jpg' WHERE rafflename = 'DD1391-100';
+UPDATE RESELL_R SET IMAGE = 'img-resell-7.jpg' WHERE rafflename = 'DO7216-100';
+UPDATE RESELL_R SET IMAGE = 'img-resell-8.jpg' WHERE rafflename = 'DO9406-200';
+UPDATE RESELL_R SET IMAGE = 'img-resell-9.jpg' WHERE rafflename = 'F36640';
+UPDATE RESELL_R SET IMAGE = 'img-resell-10.jpg' WHERE rafflename = 'GZ1935';
+UPDATE RESELL_R SET IMAGE = 'img-resell-11.jpg' WHERE rafflename = 'M992GR';
+commit;

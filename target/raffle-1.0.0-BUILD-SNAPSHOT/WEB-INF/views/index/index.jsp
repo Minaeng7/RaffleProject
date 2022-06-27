@@ -51,7 +51,7 @@
     <script type="text/javascript">
     
 /* for문 사용 필요 */
-setInterval(function() {
+/* setInterval(function() {
         
         var dday = new Date("July 02, 2022, 0:00:00").getTime();
         
@@ -167,7 +167,7 @@ setInterval(function() {
         }else{
         document.getElementById("count5").innerHTML = day + "일 " + hour + ":" + min + ":" + sec ;
     }
-        }, 0000);
+        }, 0000); */
 </script>
 </head>
 
@@ -193,7 +193,7 @@ setInterval(function() {
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20">나이키 범고래의 주인공은?</h1>
-                            <p class="m-b-40" id="count0">id:count0</p>
+                            <p class="m-b-40" id="count0"></p>
                         </div>
                     </div>
                 </div>
@@ -219,7 +219,7 @@ setInterval(function() {
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20">나이키 x 슈프림 콜라보 신발!</h1>
-                            <p class="m-b-40" id="count2">id:count2</p>
+                            <p class="m-b-40" id="count2"></p>
                         </div>
                     </div>
                 </div>
@@ -244,7 +244,7 @@ setInterval(function() {
               <c:forEach var="slist" items="${slist}" ><!-- 여기 부터 반복 -->
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="height: 280px; ">
                     <a href="SellRetrieve?sell_rno=${slist.sell_rno }">
-                        <img class="img-fluid" src="images/${slist.image }.jpg" alt="" />
+                        <img class="img-fluid" src="images/${slist.image }" alt="" />
                 	</a>
                 </div>
               </c:forEach>
@@ -258,7 +258,7 @@ setInterval(function() {
                     <div class="shop-cat-box1" style="height: 100px; ">
                         <a class="brand-text" href="#">${slist.nickname}<br>
                             <h1  class="product_item" id="count3"></h1>
-                            <p class="PI">남은시간</p>
+                            <p class="PI"></p>
 
                         </a>
                     </div>
@@ -302,7 +302,7 @@ setInterval(function() {
 	                            <div class="type-lb">
 	                             <!--마감임박 넣을거면 넣는곳-->
 	                            </div>
-	                            <img src="images/${slist_new.image }.jpg" class="img-fluid" alt="Image">
+	                            <img src="images/${slist_new.image }" class="img-fluid" alt="Image">
 	                        </div>
 	                        <div class="why-text">
 	                            <h4>${slist_new.nickname }</h4>
@@ -323,7 +323,7 @@ setInterval(function() {
 	                            <div class="type-lb">
 	                              <!--마감임박 넣을거면 넣는곳-->
 	                            </div>
-	                            <img src="images/${rlist_new.image }.jpg" class="img-fluid" alt="Image">
+	                            <img src="images/${rlist_new.image }" class="img-fluid" alt="Image">
 	                        </div>
 	                        <div class="why-text">
 	                            <h4>${rlist_new.nickname }</h4>

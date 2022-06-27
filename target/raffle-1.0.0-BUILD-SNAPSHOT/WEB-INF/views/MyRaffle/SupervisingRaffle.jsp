@@ -78,19 +78,19 @@
 									<input type = "hidden" name = text value = "${item.text}">
 									<input type = "hidden" name = deadline value = "${item.deadline}">
 									<input type = "hidden" name = image value = "${item.image}">
-									<button>수정</button>
+									<button type="submit" class="btn btn-outline-dark">수정</button>
 									</form></td>
 									<td><form action="SShuffle">
 									<input type = "hidden" name = sell_rno value = "${item.sell_rno}">
-									<button>추첨</button>
+									<button type="submit" class="btn btn-outline-dark">추첨</button>
 									</form></td>
 									<td><form action = "WinnercheckS" >
 									<input type = "hidden" name = sell_rno value = "${item.sell_rno}">
-									<p align="center"><button>확인</button></p>
+									<p align="center"><button type="submit" class="btn btn-outline-dark">확인</button></p>
 									</form></td>
 									<td><form action ="DeleteMyRaffleS">
 									<input type = "hidden" name = sell_rno value = "${item.sell_rno}">
-									<button>삭제</button>
+									<button type="submit" class="btn btn-outline-dark">삭제</button>
 									</form></td>
 								</tr>
 								</c:forEach>
@@ -142,7 +142,7 @@
 										<input type = "hidden" name = deadline value = "${item.deadline}">
 										<input type = "hidden" name = text value = "${item.text}">
 										<input type = "hidden" name = image value = "${item.image}">
-									<button>수정</button>
+									<button type="submit" class="btn btn-outline-dark">수정</button>
 									</form></td>
 									<td><form action = "RShuffle">
 										<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
@@ -156,7 +156,7 @@
 										<input type = "hidden" name = deadline value = "${item.deadline}">
 										<input type = "hidden" name = text value = "${item.text}">
 										<input type = "hidden" name = image value = "${item.image}">
-									<button>추첨</button>
+									<button type="submit" class="btn btn-outline-dark">추첨</button>
 									</form></td>
 									<td><form action = "WinnercheckR" >
 										<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
@@ -170,11 +170,11 @@
 										<input type = "hidden" name = deadline value = "${item.deadline}">
 										<input type = "hidden" name = text value = "${item.text}">
 										<input type = "hidden" name = image value = "${item.image}">
-									<p align="center"><button>확인</button></p>
+									<p align="center"><button type="submit" class="btn btn-outline-dark">확인</button></p>
 									</form></td>
 									<td><form action = "DeleteMyRaffleR">
 									<input type = "hidden" name = resell_rno value = "${item.resell_rno}">
-									<button>삭제</button>
+									<button type="submit" class="btn btn-outline-dark">삭제</button>
 									</form></td>
 								</tr>
 								</c:forEach>

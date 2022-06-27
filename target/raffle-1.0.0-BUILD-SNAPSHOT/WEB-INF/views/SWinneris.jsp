@@ -49,14 +49,14 @@ alert("해당 래플은 이미 추첨이 완료 되었습니다.")
 			당첨자 우편번호 : ${Winner.post}<br>
 			당첨자 주소 : ${Winner.addr1}<br>
 			당첨자 연락처 : ${Winner.phone}<br>
-			<a href = "SupervisingRaffle"><button>확인</button></a>
+			<a href = "SupervisingRaffle"><button class="btn btn-outline-dark">확인</button></a>
 			</h2>
 		</c:if>
 		<c:if test="${empty Winner.sell_rno }">
 			<h2 align="center">
 			아직 추첨이 진행되지 않았습니다. 
 			추첨 후 확인해주세요
-			<a href = "SupervisingRaffle"><button>확인</button></a>
+			<a href = "SupervisingRaffle"><button class="btn btn-outline-dark">확인</button></a>
 			</h2>
 		</c:if>
 </body>

@@ -42,8 +42,18 @@
 
 </head>
 <body>
+<!-- 관리자로 로그인 시 변경되는 부분 -->
+<c:choose>
+	<c:when test="${login.memberno == 0 }">
+		<jsp:include page="../Admin/top.jsp"></jsp:include>
+	</c:when>
+	<c:when test="${login.memberno != 0 }">
+		<jsp:include page="../common/top.jsp"></jsp:include>
+	</c:when>
+</c:choose>
+	
 
-<jsp:include page="../common/top.jsp"></jsp:include>
+
 
 <!-- Start Top Search -->
     <div class="top-search">
@@ -63,10 +73,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2>공지사항</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/raffle/">Home</a></li>
-                        <li class="breadcrumb-item active">공지사항</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -94,17 +100,17 @@
 			        <!-- <div style="text-align: right; margin-top:30px;">
 			            <button type="button" onclick="location.href='notice'" class="btn btn-secondary">목록보기</button>
 			        </div> -->
-			        <!-- 작성자 -->
+			        <!-- 관리자일 경우 수정 /삭제 가능-->
 			        <c:if test="${login.memberno  == 0}">
 			        <div style="text-align: right; margin-top:30px;">
-			            <button type="submit" class="btn btn-secondary">수정</button>
-			            <button type="button" onclick="location.href='admin_delete?bno=${ndto.bno}'" class="btn btn-secondary">삭제</button>
+			            <button type="submit" class="btn btn-outline-dark">수정</button>
+			            <button type="button" onclick="location.href='admin_delete?bno=${ndto.bno}'" class="btn btn-outline-dark">삭제</button>
 			        </div>
 			        </c:if>
-			        <!-- 작성자 아닌경우 -->
-			         <c:if test="${login.memberno != 0}">
+			        <!-- 관리자 아닌경우 -->
+			        <c:if test="${login.memberno != 0}">
 			        <div style="text-align: right; margin-top:30px;">
-			            <button type="button" onclick="location.href='notice'" class="btn btn-secondary">목록보기</button>
+			            <button type="button" onclick="location.href='notice'" class="btn btn-outline-dark">목록보기</button>
 			        </div>
 			        </c:if>
 				</form>
