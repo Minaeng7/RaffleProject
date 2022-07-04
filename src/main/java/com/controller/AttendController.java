@@ -228,7 +228,18 @@ public class AttendController {
 		MemberDTO dto = (MemberDTO) session.getAttribute("login");
 		int memberno = dto.getMemberno();
 		rdto.setMemberno(memberno);
+		int rno = rdto.getResell_rno();
+		HashMap <String, Integer> data = new HashMap<>();
+		data.put("rno", rno);
+		data.put("mno", memberno);
 		try {
+			int rspot = Rservice.getspot(data);
+			int amount = Rservice.getamount(rno);
+			int namount = rspot + amount;
+			HashMap <String, Integer> ndata = new HashMap<>();
+			ndata.put("rno", rno);
+			ndata.put("namount", namount);
+			Rservice.updateamount(ndata);
 			Rservice.DeleteMyAttendingR(rdto);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

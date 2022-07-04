@@ -63,4 +63,19 @@ public class RSpotDAO {
 
 	}
 
+	public int getspot(HashMap<String, Integer> data) {
+		int spot = session.selectOne("SpotMapper.getspot", data);
+		return spot;
+	}
+
+	public int getamount(int rno) {
+		int amount = session.selectOne("RaffleMapper.getamount", rno);
+		return amount;
+	}
+
+	public void updateamount(HashMap<String, Integer> ndata) {
+		session.update("RaffleMapper.updateamount",ndata);
+		
+	}
+
 }

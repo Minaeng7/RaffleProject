@@ -103,4 +103,9 @@
 		from sspot
 		where sell_rno = #{sell_rno} and memberno = #{memberno}
 	</delete>
+	<select id = "getspot" parameterType = "Hashmap" resultType = "int">
+		select spot
+		from rspot
+		where resell_rno = #{rno} and memberno = #{mno}
+	</select>
 </mapper>

@@ -142,4 +142,15 @@
 		select * from swinning
 		where sell_rno = #{sell_rno}
 	</select>
+	
+	<select id = "getamount" parameterType = "int" resultType = "int">
+		select attend_amount
+		from resell_r
+		where resell_rno = #{resell_rno}
+	</select>
+	<update id = "updateamount" parameterType = "HashMap">
+		update resell_r
+		set attend_amount = #{namount}
+		where resell_rno = #{rno}
+	</update>
 </mapper>

@@ -196,7 +196,7 @@
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="stock">Raffleamount</label> <input id="stock"
 												name="raffleamount" type="text"
-												class="form-control validate" value="1" readonly />
+												class="form-control validate" />
 										</div>
 									</div>
 								</div>
