@@ -46,8 +46,8 @@
 <input type="hidden" name="phone" value="${rdto.phone }">
 <input type="hidden" name="spot" value="${rdto.spot }">
 <h1 align="center">정말 삭제하시겠습니까?</h1><br>
-<button >삭제</button>
-<button formaction="MyAttendedRaffle">취소</button>
+<button class="btn btn-outline-dark">삭제</button>
+<button formaction="MyAttendedRaffle"  class="btn btn-outline-dark">취소</button>
 </form>
 
 

@@ -142,7 +142,7 @@
 									            <a href="#" class="num">3</a>
 									            <a href="#" class="bt">다음 페이지</a>
 									            <a href="#" class="bt">마지막 페이지</a>
-									            <button type="button" onclick="location.href='write'" class="btn btn-secondary" style="float: right;  ">글 쓰기</button>
+									            <button type="button" onclick="location.href='write'" class="btn btn-outline-dark" style="float: right;  ">글 쓰기</button>
 									        </div>
 									    </div>
 			   						 </div>

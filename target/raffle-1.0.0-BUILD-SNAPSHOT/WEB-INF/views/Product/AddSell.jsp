@@ -65,7 +65,7 @@
 
 	<!-- Start My Account  -->
 	<div class="shop-add-box"
-		style="height: 600px; padding-bottom: 0px; margin-bottom: 200px;">
+		style="height: 600px; padding-bottom: 0px; margin-bottom: 400px;">
 		<h1
 			style="border-bottom: 3px solid #222; margin-left: 20px; padding-top: 40px;">래플
 			등록</h1>
@@ -79,22 +79,87 @@
 							</div>
 						</div>
 
-						<form action="loginCheck/AddSell" class="tm-edit-product-form">
-
+						<form action="loginCheck/AddSell"  enctype="multipart/form-data" method="post" class="tm-edit-product-form">
 
 							<div class="row tm-edit-product-row">
 								<div class="col-xl-6 col-lg-6 col-md-12">
-									<div class="tm-product-img-dummy mx-auto">
-										<i class="fas fa-cloud-upload-alt tm-upload-icon"
-											onclick="document.getElementById('fileInput').click();"></i>
-									</div>
-									<input type="file" id="upImgFiles" name=""
-										onChange="uploadImgPreview();" accept="image/*" multiple required>
+									<img id="blah" src="#" style="width:180px; height:180px" onclick="inputfile()"/>
+									<img id="blah1" src="#" style="width:180px; height:180px" onclick="inputfile1()"/>
+									<img id="blah2" src="#"  style="width:180px; height:180px" onclick="inputfile2()"/>
+									<input type="file" id="file" name="file" onchange="setThumbnail(event);" required>
+									<input type="file" id="file1" name="file1" onchange="setThumbnail1(event);" required>
+									<input type="file" id="file2" name="file2" onchange="setThumbnail2(event);" required>
+							
+<!-- 이미지 미리보기 -->
+	<script>
+			function inputfile(){
+				$('#file').click();
+				
+			}
+			function inputfile1(){
+				$('#file1').click();
+				
+			}
+			function inputfile2(){
+				$('#file2').click();
+				
+			}
+	
+	
+	
+	          function setThumbnail(event) {
+		            var uploadWrap = event.target.parentNode; 
+		            //이벤트 대상자의 부모
+		                  var reader = new FileReader();
+		 
+		                   reader.onload = function(event) {
+		                        var newImg = document.createElement("img");
+								$('#blah').attr('src',event.target.result);		                       
+								 uploadWrap.appendChild(newImg);
 
-									<hr />
+								
+		                }; 
+		                reader.readAsDataURL(event.target.files[0]);
+						console.log("setThumbnail")
+		    
+		        }
 
-									<div id="thumbnailImgs"></div>
+	          function setThumbnail1(event) {
+		            var uploadWrap = event.target.parentNode; 
+		            //이벤트 대상자의 부모
+		                  var reader = new FileReader();
+		 
+		                   reader.onload = function(event) {
+		                        var newImg = document.createElement("img");
+								$('#blah1').attr('src',event.target.result);		                     
+								   uploadWrap.appendChild(newImg);
 
+								
+		                }; 
+		                reader.readAsDataURL(event.target.files[0]);
+						console.log("setThumbnail")
+		    
+		        }
+
+
+	          function setThumbnail2(event) {
+		            var uploadWrap = event.target.parentNode; 
+		            //이벤트 대상자의 부모
+		                  var reader = new FileReader();
+		 
+		                   reader.onload = function(event) {
+		                        var newImg = document.createElement("img");
+								$('#blah2').attr('src',event.target.result);		                       
+								 uploadWrap.appendChild(newImg);
+
+								
+		                }; 
+		                reader.readAsDataURL(event.target.files[0]);
+						console.log("setThumbnail")
+		    
+		        }
+
+	</script>
 								</div>
 								<div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
 									<div class="form-group mb-3">
@@ -131,7 +196,7 @@
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="stock">Raffleamount</label> <input id="stock"
 												name="raffleamount" type="text"
-												class="form-control validate" required />
+												class="form-control validate" value="1" readonly />
 										</div>
 									</div>
 								</div>

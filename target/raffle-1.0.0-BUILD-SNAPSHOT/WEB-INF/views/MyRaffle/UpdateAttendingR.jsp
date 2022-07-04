@@ -120,7 +120,7 @@ $(document).ready(function(){
 									<input type="file" id="upImgFiles" onChange="uploadImgPreview();" accept="image/*" multiple>
 									<input type="text" 
 									<hr /> -->
-									<img class="d-block w-100 img-fluid" src="images/${rdto.image}.jpg" alt="" />
+									<img class="d-block w-100 img-fluid" src="images/${rdto.image}" alt="" />
 									<div id="thumbnailImgs"></div>
 								</div>
 								<div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
@@ -185,7 +185,7 @@ $(document).ready(function(){
 							</div>
 							<div class="col-12">
 								<button type="submit"
-									class="btn btn-primary btn-block text-uppercase">Update
+									class="btn btn-dark btn-block text-uppercase">Update
 									Product Now</button>
 							</div>
 						</form>

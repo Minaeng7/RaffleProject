@@ -147,7 +147,7 @@ $(document).ready(function() {
                                     	
                                         <div class="media-body"> <a href="ResellRetrieve?resell_rno=${rdto.resell_rno }">${rdto.nickname }</a>
                                         	<div class="small text-muted" >${rdto.rafflename }</div>
-                                        	<img src="images/${rdto.image }.jpg" class="img-fluid" alt="Image" style="height:200px; length:200px;">
+                                        	<img src="images/${rdto.image }" class="img-fluid" alt="Image" style="height:200px; length:200px;">
                                         	<input type="hidden" name="image" value="${rdto.image }"/>
                                         </div>
                                     </div>
@@ -196,13 +196,11 @@ $(document).ready(function() {
 	                                    <h5>총 결제금액</h5>
 	                                    <div class="ml-auto h5"> ${rdto.per_price * dto.spot } 원</div><br>
 	                                </div>
-	                               	<input type="submit" value="결제하기" id="updatebtn" style="border: 1px solid #e5e5e5">
+	                               	<input type="submit" value="결제하기" id="updatebtn" class="btn btn-outline-dark">
                             	</div>
                             	<hr class="d-flex">
                         	</div>
                          
-                        	<div class="col-12 d-flex shopping-box"> <a href="checkout.html" class="ml-auto btn hvr-hover">Place Order</a> </div>
-                        
                     	</div>
                 	</div>
             	</div>

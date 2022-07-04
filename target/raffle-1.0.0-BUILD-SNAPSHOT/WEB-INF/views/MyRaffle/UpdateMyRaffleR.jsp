@@ -109,7 +109,7 @@ $(document).ready(function(){
 										onChange="uploadImgPreview();" accept="image/*" multiple>
 
 									<hr /> -->
-									<img class="d-block w-100 img-fluid" src="images/${resellrdto.image}.jpg" alt="" />
+									<img class="d-block w-100 img-fluid" src="images/${resellrdto.image}" alt="" />
 									<div id="thumbnailImgs"></div>
 
 								</div>
@@ -144,7 +144,7 @@ $(document).ready(function(){
 									<div class="row">
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
 											<label for="expire_date">Deadline</label> <input
-												id="expire_date" name="deadline" type="text" value = "${resellrdto.deadline}"
+												id="expire_date" name="deadline" type="date" value = "${resellrdto.deadline}"
 												class="form-control validate" data-large-mode="true" required/>
 										</div>
 										<div class="form-group mb-3 col-xs-12 col-sm-6">
@@ -157,7 +157,7 @@ $(document).ready(function(){
 							</div>
 							<div class="col-12">
 								<button type="submit"
-									class="btn btn-primary btn-block text-uppercase">Update
+									class="btn btn-dark btn-block text-uppercase">Update
 									Product Now</button>
 							</div>
 						</form>

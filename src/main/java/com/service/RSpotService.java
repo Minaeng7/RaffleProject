@@ -63,4 +63,19 @@ public class RSpotService {
 
 	}
 
+	public int getspot(HashMap<String, Integer> data) {
+		int spot = dao.getspot(data);
+		return spot;
+	}
+
+	public int getamount(int rno) {
+		int amount = dao.getamount(rno);
+		return amount;
+	}
+
+	public void updateamount(HashMap<String, Integer> ndata) {
+		dao.updateamount(ndata);
+		
+	}
+
 }

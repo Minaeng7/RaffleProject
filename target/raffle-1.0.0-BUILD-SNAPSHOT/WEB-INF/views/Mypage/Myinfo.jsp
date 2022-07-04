@@ -63,13 +63,6 @@
         <div class="name_profile" >
         <strong class="name" style="font-size : 20px; color:#000; padding:25px 60px 18px 0;"  >${mypage.username}</strong>
         </div>
-<!--  새로운 회원정보 -->
-      <form action = "updateMyinfo">
-      <div class="mypagebox" align="center">
-        <h1 style="border-bottom: 3px solid #222; margin-left:20px">회원정보</h1>
-        <div class="name_profile" >
-        <strong class="name" style="font-size : 20px; color:#000; padding:25px 60px 18px 0;"  >${mypage.username}</strong>
-        </div>
         
         <!-- 새로운 로그인정보  --> 
         <div class="profile_info" >
@@ -113,10 +106,9 @@
                 </div>
         </div>
 
-        <button class="btn btn-dark">저장하기</button>
-    </div>
-	        
-<!--  새로운 회원정보 끝  -->
+        <button class="btn btn-outline-dark">저장하기</button>
+    </div>	
+        <!-- 새로운 로그인 정보 끝 -->
         </div>
         </form>
     <!-- End My Account -->

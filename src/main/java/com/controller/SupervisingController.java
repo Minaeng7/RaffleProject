@@ -57,7 +57,7 @@ public class SupervisingController {//mypage기능
 			mav.setViewName("Error/Error");
 			return mav;
 		}
-//		System.out.println("myattended "+list);
+		System.out.println("myattended "+list);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("AttendedRaffleR", listR);
 		mav.addObject("AttendedRaffleS", listS);

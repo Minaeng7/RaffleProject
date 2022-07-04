@@ -52,6 +52,7 @@
 				<value>com.dto.RwinDTO</value>
 				<value>com.dto.NoticeDTO</value>
 				<value>com.dto.ForumDTO</value>
+				<value>com.dto.SorderDTO</value>
 			</list>
 		</property>
 	</bean>
@@ -60,4 +61,5 @@
 		<constructor-arg name="sqlSessionFactory"
 			ref="sessionFactory"></constructor-arg>
 	</bean>
+	
 </beans>

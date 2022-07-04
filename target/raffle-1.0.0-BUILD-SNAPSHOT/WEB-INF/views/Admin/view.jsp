@@ -93,7 +93,7 @@
 				        
 			
 				        <div style="text-align: right; margin-top:30px;">
-				            <button type="button" onclick="location.href='AdminForum'" class="btn btn-secondary">목록보기</button>
+				            <button type="button" onclick="location.href='AdminForum'" class="btn btn-outline-dark">목록보기</button>
 				        </div>
 
 						</form>

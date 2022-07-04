@@ -49,14 +49,28 @@
 	        var a = "${rdto.attend_amount}";
 	        var amount = parseInt(a);
 	        //console.log(amount);
-	        if(quantity >= amount ){
+	        if(quantity > amount ){
 	  			Swal.fire(amount+" 개까지만 신청가능합니다.");
 			}
 
         };     
+        
+         function NotAccess_Check(){
+            var Prod_memberno = "${rdto.memberno}";
+            var Login_memberno = "${login.memberno}";
+            
+            if(Prod_memberno == Login_memberno){
+            	Swal.fire("본인 상품은 구매가 불가합니다.");
+            	event.preventDefault();
+            }
+            
+            if(${rwin.resell_rno == rdto.resell_rno} || ${rdto.attend_amount == 0}){
+            	Swal.fire("품절된 상품입니다.");
+            	event.preventDefault();
+            }
+        };
 
     </script>
-
 </head>
 
 <body>
@@ -96,9 +110,9 @@
                 <div class="col-xl-5 col-lg-5 col-md-6">
                     <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"> <img class="d-block w-100" src="images/${rdto.image }.jpg" alt="First slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/${rdto.image }-1.jpg" alt="Second slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/${rdto.image }-2.jpg" alt="Third slide"> </div>
+                            <div class="carousel-item active"> <img class="d-block w-100" src="images/${rdto.image }" alt="First slide"> </div>
+                            <div class="carousel-item"> <img class="d-block w-100" src="images/${rdto.image1 }" alt="Second slide"> </div>
+                            <div class="carousel-item"> <img class="d-block w-100" src="images/${rdto.image2 }" alt="Third slide"> </div>
                         </div>
                         <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev"> 
 						<i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -110,13 +124,13 @@
 					</a>
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-example-1" data-slide-to="0" class="active">
-                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }.jpg" alt="" />
+                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }" alt="" />
                             </li>
                             <li data-target="#carousel-example-1" data-slide-to="1">
-                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }-1.jpg" alt="" />
+                                <img class="d-block w-100 img-fluid" src="images/${rdto.image1 }" alt="" />
                             </li>
                             <li data-target="#carousel-example-1" data-slide-to="2">
-                                <img class="d-block w-100 img-fluid" src="images/${rdto.image }-2.jpg" alt="" />
+                                <img class="d-block w-100 img-fluid" src="images/${rdto.image2 }" alt="" />
                             </li>
                         </ol>
                     </div>
@@ -138,12 +152,18 @@
                         <h1 style="margin-top : 20px;">래플이름 : ${rdto.nickname }</h1>
                         <h3 style="margin-left: 5px; margin : 10px"> 셀러 이름 : ${rdto.memberno}</h3>
                         <h3 style="margin-left: 5px; margin : 10px"> 참가비 : <fmt:formatNumber value="${rdto.per_price }" maxFractionDigits="3"/></h3>
-                        <h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : ${rdto.attend_amount }</h3>
+                       	<c:if test="${rwin.resell_rno != rdto.resell_rno }">
+                        	<h3 style="margin-left: 5px; margin : 10px"> 참가 가능 인원 : ${rdto.attend_amount }</h3>
+                       	</c:if>
+                        
+                       	<c:if test="${rwin.resell_rno == rdto.resell_rno || rdto.attend_amount == 0 }">
+                        	<h2 style="color:red">&nbsp;&nbsp;SOLD OUT</h2>
+                       	</c:if>
                             <p>
                                 <h4>Short Description:</h4>
                                 <p style="padding:20px;">${rdto.text }</p>
                                 <ul>
-                                    <li>
+                                    <!-- <li>
                                         <div class="form-group size-st">
                                             <label class="size-label">Size</label> <select id="basic"
 										class="selectpicker show-tick form-control">
@@ -157,19 +177,26 @@
 												<option value="290">290</option>
 											</select>
                                         </div>
-                                    </li>
+                                    </li> -->
+                                    
                                     <li>
                                         <div class="form-group quantity-box">
                                             <label class="control-label">Quantity</label>
                                             <input class="form-control" id="quantity" name="spot" value="0" min="1" max="${rdto.attend_amount }" type="number"  onclick="check_quantity()">
                                         </div>
                                     </li>
+                                    <li>
+                                    <div class="form-group size-st">
+                                    	<label class="size-label">Option</label>
+                                    	<textarea rows="1" cols="30"  style="padding-top: 10px" placeholder="옵션 선택 불가" readonly></textarea>
+                                   	</div>
+                                   	</li>
                                 </ul>
 
                                 <div class="price-box-bar">
                                     <div class="cart-and-bay-btn">
-                                       <a> <input type="submit" class="btn hvr-hover" data-fancybox-close="" style="margin-right:15px" value="구매하기"></a>
-                                        <!-- <a class="btn hvr-hover" data-fancybox-close="" href="#">장바구니</a> -->
+                                       <input id="purchase" name="purchase" type="submit" class="btn btn-outline-dark" data-fancybox-close="
+                                       			" style="margin-right:15px" value="구매하기" onclick="NotAccess_Check()">
                                     </div>
                                 </div>
 						</form>
@@ -185,12 +212,11 @@
                     </div>
                     <div class="featured-products-box owl-carousel owl-theme">
 					<c:forEach items="${rlist }" var="rlist">
-                   	<c:set var ="i" value = "${i+1 }"/>
                         <div class="item">
                             <div class="products-single fix">
                                 <a href="ResellRetrieve?resell_rno=${rlist.resell_rno }">
                                 <div class="box-img-hover">
-                                    <img src="images/img-resell-${i }.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/${rlist.image }" class="img-fluid" alt="Image">
                                 </div>
                             
                                 <div class="why-text">
